@@ -36,32 +36,32 @@ jobs:
           git commit -m "Mirror on $(date)"
           git push --force origin main:gh-pages
 
-    mirror-kaspars-net:
-      name: Mirror kaspars.net
-      runs-on: ubuntu-20.04
-      env:
-        DEBUG: website-scraper:info
-      steps:
-        - uses: actions/checkout@v2
+  mirror-kaspars-net:
+    name: Mirror kaspars.net
+    runs-on: ubuntu-20.04
+    env:
+      DEBUG: website-scraper:info
+    steps:
+      - uses: actions/checkout@v2
 
-        - uses: actions/setup-node@v2
-          with:
-            node-version: '14'
-        
-        - name: Install dependencies
-          run: npm install
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      
+      - name: Install dependencies
+        run: npm install
 
-        - name: Mirror kaspars.net
-          run: |
-            rm -rf docs/kaspars.net
-            npm run mirror kaspars.net
-        
-        - name: Commit changes
-          run: |
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git add --force docs/kaspars.net
-            git commit -m "Mirror on $(date)"
-            git push --force origin main:gh-pages
+      - name: Mirror kaspars.net
+        run: |
+          rm -rf docs/kaspars.net
+          npm run mirror kaspars.net
+      
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add --force docs/kaspars.net
+          git commit -m "Mirror on $(date)"
+          git push --force origin main:gh-pages
 
 
