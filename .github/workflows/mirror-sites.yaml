@@ -24,9 +24,7 @@ jobs:
         run: npm install
 
       - name: Pull in the latest mirrors
-        run: |
-          git fetch
-          git merge --strategy-option=ours origin/gh-pages
+        run: git rebase origin/gh-pages
 
       - name: Mirror kasparsdambis.lv
         run: |
