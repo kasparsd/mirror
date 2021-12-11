@@ -23,11 +23,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Pull in the latest mirrors
-        run: |
-          git fetch
-          git rebase origin/gh-pages
-
       - name: Mirror kasparsdambis.lv
         run: |
           rm -rf docs/kasparsdambis.lv
