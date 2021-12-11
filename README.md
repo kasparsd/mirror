@@ -7,3 +7,7 @@ This repository contains [GitHub actions](.github/workflows) that use the [`mirr
 - [kaspars.net](https://kaspars.net) at [mirror.dambis.id.lv/kaspars.net](https://mirror.dambis.id.lv/kaspars.net/)
 - [kasparsdambis.lv](https://kasparsdambis.lv) at [mirror.dambis.id.lv/kasparsdambis.lv](https://mirror.dambis.id.lv/kasparsdambis.lv/)
 
+## Notes
+
+- We're not using `wget --mirror` because it adjusts the `canonical` meta tags which we probably don't want.
+
