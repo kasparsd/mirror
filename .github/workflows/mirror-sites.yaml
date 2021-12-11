@@ -8,8 +8,8 @@ on:
     - cron: '0 12 * * 1'
 
 jobs:
-  mirror-kasparsdambis-lv:
-    name: Mirror kasparsdambis.lv
+  mirror-sites:
+    name: Mirror sites
     runs-on: ubuntu-20.04
     env:
       DEBUG: website-scraper:info
@@ -22,41 +22,19 @@ jobs:
       
       - name: Install dependencies
         run: npm install
+
+      - name: Pull in the latest mirrors
+        run: |
+          git fetch
+          git merge --strategy-option=ours origin/gh-pages
 
       - name: Mirror kasparsdambis.lv
         run: |
-          git merge --strategy-option=ours origin/gh-pages
           rm -rf docs/kasparsdambis.lv
           npm run mirror kasparsdambis.lv
-      
-      - name: Commit changes
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add --force docs/kasparsdambis.lv
-          git commit -m "Mirror on $(date)"
-          git push --force origin main:gh-pages
-
-  mirror-kaspars-net:
-    name: Mirror kaspars.net
-    runs-on: ubuntu-20.04
-    needs: mirror-kasparsdambis-lv
-    if: ${{ always() }}
-    env:
-      DEBUG: website-scraper:info
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      
-      - name: Install dependencies
-        run: npm install
 
       - name: Mirror kaspars.net
         run: |
-          git merge --strategy-option=ours origin/gh-pages
           rm -rf docs/kaspars.net
           npm run mirror kaspars.net
       
@@ -64,7 +42,7 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add --force docs/kaspars.net
+          git add --force docs
           git commit -m "Mirror on $(date)"
           git push --force origin main:gh-pages
 
