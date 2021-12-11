@@ -40,6 +40,8 @@ jobs:
   mirror-kaspars-net:
     name: Mirror kaspars.net
     runs-on: ubuntu-20.04
+    needs: mirror-kasparsdambis-lv
+    if: ${{ always() }}
     env:
       DEBUG: website-scraper:info
     steps:
