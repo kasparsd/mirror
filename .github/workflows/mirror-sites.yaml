@@ -25,6 +25,7 @@ jobs:
 
       - name: Mirror kasparsdambis.lv
         run: |
+          git merge --strategy-option=ours origin/gh-pages
           rm -rf docs/kasparsdambis.lv
           npm run mirror kasparsdambis.lv
       
@@ -53,6 +54,7 @@ jobs:
 
       - name: Mirror kaspars.net
         run: |
+          git merge --strategy-option=ours origin/gh-pages
           rm -rf docs/kaspars.net
           npm run mirror kaspars.net
       
