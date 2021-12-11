@@ -11,3 +11,6 @@ This repository contains [GitHub actions](.github/workflows) that use the [`mirr
 
 - We're not using `wget --mirror` because it adjusts the `canonical` meta tags which we probably don't want.
 
+## Credits
+
+Created by [Kaspars Dambis](https://kaspars.net) and licensed under [MIT](LICENSE).
