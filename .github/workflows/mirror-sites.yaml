@@ -23,8 +23,9 @@ jobs:
         run: npm install
 
       - name: Mirror kasparsdambis.lv
-        run: rm -rf docs/kasparsdambis.lv
-        run: npm run mirror kasparsdambis.lv
+        run: |
+          rm -rf docs/kasparsdambis.lv
+          npm run mirror kasparsdambis.lv
       
       - name: Commit changes
         run: |
