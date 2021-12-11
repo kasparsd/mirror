@@ -24,7 +24,7 @@ class MyPlugin {
 	apply(addAction) {
 		addAction('generateFilename', ({filename}) => {
             if (filename.startsWith(hostname)) {
-                filename = filename.replace(hostname, ''); // Keep the hostname resources in the root directory.
+                filename = filename.replace(hostname, '.'); // Keep the hostname resources in the root directory.
             } else {
                 filename = `__${filename}`; // Prefix remote hostnames to isolate.
             }
