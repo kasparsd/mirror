@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "dependencies": {
+    "website-scraper": "^4.2.3"
+  },
+  "scripts": {
+    "mirror": "node mirror.js"
+  }
+}
