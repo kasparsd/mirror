@@ -17,7 +17,8 @@ const urlsExclude = [
     'replytocom=', // Comment permalinks.
     '/go/', // Link cloaker.
     'banggood.com',
-    'aliexpress.com'
+    'aliexpress.com',
+    'makerfeed.kaspars.net',
 ];
 
 class MyPlugin {
