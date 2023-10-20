@@ -28,12 +28,14 @@ jobs:
           git checkout gh-pages -- docs
 
       - name: Mirror kasparsdambis.lv
+        continue-on-error: true
         run: |
           git rm docs/kasparsdambis.lv
           npm run mirror kasparsdambis.lv
           git add docs/kasparsdambis.lv
 
       - name: Mirror kaspars.net
+        continue-on-error: true
         run: |
           git rm docs/kaspars.net
           npm run mirror kaspars.net
