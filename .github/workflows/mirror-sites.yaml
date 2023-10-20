@@ -10,11 +10,11 @@ on:
 jobs:
   mirror-sites:
     name: Mirror sites
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       DEBUG: website-scraper:info
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
