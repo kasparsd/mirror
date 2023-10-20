@@ -1,4 +1,4 @@
-const scrape = require('website-scraper');
+import websiteScraper from 'website-scraper';
 
 const cliArgs = process.argv.slice(2);
 if (!cliArgs.length) {
@@ -51,4 +51,4 @@ const options = {
     ],
 };
 
-scrape(options);
+websiteScraper(options);

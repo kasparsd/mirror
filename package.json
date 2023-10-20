@@ -1,7 +1,8 @@
 {
   "private": true,
+  "type": "module",
   "dependencies": {
-    "website-scraper": "^4.2.3"
+    "website-scraper": "^5.3.1"
   },
   "scripts": {
     "mirror": "node mirror.js"
