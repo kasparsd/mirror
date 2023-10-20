@@ -23,21 +23,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Checkout existing mirrors
+        run: |
+          git checkout gh-pages -- docs
+
       - name: Mirror kasparsdambis.lv
         run: |
-          rm -rf docs/kasparsdambis.lv
+          git rm docs/kasparsdambis.lv
           npm run mirror kasparsdambis.lv
+          git add docs/kasparsdambis.lv
 
       - name: Mirror kaspars.net
         run: |
-          rm -rf docs/kaspars.net
+          git rm docs/kaspars.net
           npm run mirror kaspars.net
+          git add --force docs/kaspars.net
       
       - name: Commit changes
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add --force docs
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git commit -m "Mirror on $(date)"
           git push --force origin main:gh-pages
 
