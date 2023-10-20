@@ -23,23 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Checkout existing mirrors
-        run: |
-          git checkout gh-pages -- docs
-
       - name: Mirror kasparsdambis.lv
         continue-on-error: true
-        run: |
-          git rm docs/kasparsdambis.lv
-          npm run mirror kasparsdambis.lv
-          git add docs/kasparsdambis.lv
+        run: npm run mirror kasparsdambis.lv
 
       - name: Mirror kaspars.net
         continue-on-error: true
-        run: |
-          git rm docs/kaspars.net
-          npm run mirror kaspars.net
-          git add --force docs/kaspars.net
+        run: npm run mirror kaspars.net
       
       - name: Commit changes
         run: |
