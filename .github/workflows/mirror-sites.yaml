@@ -35,6 +35,7 @@ jobs:
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add --force docs
           git commit -m "Mirror on $(date)"
           git push --force origin main:gh-pages
 
