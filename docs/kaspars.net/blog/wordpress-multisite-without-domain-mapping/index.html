@@ -1,0 +1,649 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>WordPress Multisite Without a Domain Mapping Plugin (WordPress) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » WordPress Multisite Without a Domain Mapping Plugin Comments Feed" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping/feed">
+<style id="activitypub-followers-style-inline-css" type="text/css">
+.activitypub-follower-block.is-style-compact .activitypub-handle,.activitypub-follower-block.is-style-compact .sep{display:none}.activitypub-follower-block.is-style-with-lines ul li{border-bottom:.5px solid;margin-bottom:.5rem;padding-bottom:.5rem}.activitypub-follower-block.is-style-with-lines ul li:last-child{border-bottom:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle,.activitypub-follower-block.is-style-with-lines .activitypub-name{text-decoration:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle:hover,.activitypub-follower-block.is-style-with-lines .activitypub-name:hover{text-decoration:underline}.activitypub-follower-block ul{margin:0!important;padding:0!important}.activitypub-follower-block li{display:flex;margin-bottom:1rem}.activitypub-follower-block img{border-radius:50%;height:40px;margin-right:var(--wp--preset--spacing--20,.5rem);width:40px}.activitypub-follower-block .activitypub-link{align-items:center;color:inherit!important;display:flex;flex-flow:row nowrap;max-width:100%;text-decoration:none!important}.activitypub-follower-block .activitypub-handle,.activitypub-follower-block .activitypub-name{text-decoration:underline;text-decoration-thickness:.8px;text-underline-position:under}.activitypub-follower-block .activitypub-handle:hover,.activitypub-follower-block .activitypub-name:hover{text-decoration:none}.activitypub-follower-block .activitypub-name{font-size:var(--wp--preset--font-size--normal,16px)}.activitypub-follower-block .activitypub-actor{font-size:var(--wp--preset--font-size--small,13px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follower-block .sep{padding:0 .2rem}.activitypub-follower-block .wp-block-query-pagination{margin-top:1.5rem}.activitypub-follower-block .activitypub-pager{cursor:default}.activitypub-follower-block .activitypub-pager.current{opacity:.33}.activitypub-follower-block .page-numbers{padding:0 .2rem}.activitypub-follower-block .page-numbers.current{font-weight:700;opacity:1}
+
+</style>
+<style id="activitypub-follow-me-style-inline-css" type="text/css">
+.activitypub-follow-me-block-wrapper{width:100%}.activitypub-follow-me-block-wrapper.has-background .activitypub-profile,.activitypub-follow-me-block-wrapper.has-border-color .activitypub-profile{padding-left:1rem;padding-right:1rem}.activitypub-follow-me-block-wrapper .activitypub-profile{align-items:center;display:flex;padding:1rem 0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__avatar{border-radius:50%;height:75px;margin-right:1rem;width:75px}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__content{flex:1;min-width:0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__handle,.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{line-height:1.2;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{font-size:1.25em}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__follow{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:1rem}.activitypub__modal.components-modal__frame{background-color:#f7f7f7;color:#333}.activitypub__modal.components-modal__frame .components-modal__header-heading,.activitypub__modal.components-modal__frame h4{color:#333;letter-spacing:inherit;word-spacing:inherit}.activitypub__modal.components-modal__frame .components-modal__header .components-button:hover{color:var(--wp--preset--color--white)}.activitypub__dialog{max-width:40em}.activitypub__dialog h4{line-height:1;margin:0}.activitypub__dialog .activitypub-dialog__section{margin-bottom:2em}.activitypub__dialog .activitypub-dialog__description{font-size:var(--wp--preset--font-size--normal,.75rem);margin:.33em 0 1em}.activitypub__dialog .activitypub-dialog__button-group{align-items:flex-end;display:flex;justify-content:flex-end}.activitypub__dialog .activitypub-dialog__button-group svg{height:21px;margin-right:.5em;width:21px}.activitypub__dialog .activitypub-dialog__button-group input{background-color:var(--wp--preset--color--white);border:1px solid var(--wp--preset--color--black);border-radius:inherit 0;color:var(--wp--preset--color--black);flex:1;padding:6px 12px}.activitypub__dialog .activitypub-dialog__button-group button{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:0;text-decoration:none}
+
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/4510"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.3">
+<link rel="canonical" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping">
+<link rel="shortlink" href="https://kaspars.net/4510">
+<link rel="alternate" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwordpress-multisite-without-domain-mapping">
+<link rel="alternate" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwordpress-multisite-without-domain-mapping&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="WordPress Multisite Without a Domain Mapping Plugin">
+<meta property="og:description" content="Here is a quick tip — you don’t need to use a&nbsp;domain mapping plugin to have&nbsp;a WordPress Multisite with top-level domains and/o...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2013/02/wordpress-multisite-top-level-domains.png">
+<meta property="og:url" content="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-4510 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+	<li id="menu-item-5782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5782"><a title="My projects, social profiles and suggested podcasts" href="../../links/">Links</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/">Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/wordpress/" rel="category tag">WordPress</a> →</div>
+		
+		<article class="post-4510 post type-post status-publish format-standard has-post-thumbnail hentry category-wordpress tag-how-to has-featured-image" id="post-4510" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					WordPress Multisite Without a Domain Mapping Plugin			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Fri, 08 Feb 2013 15:26:02 +0200">February 8, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 12 Dec 2016 23:16:32 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/wordpress/" rel="category tag">WordPress</a></span> <span class="meta-item meta-tags tags"><a href="../tag/how-to/" rel="tag">How to</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">19&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<p>Here is a quick tip — <strong>you don’t need to use a&nbsp;domain mapping plugin to have&nbsp;a WordPress Multisite with top-level domains and/or sudomains</strong>. WordPress allows you to change a sub-domain to a top level domain once you have added the site:</p>
+<p><img decoding="async" class="aligncenter size-full wp-image-6102" src="../../wp-content/uploads/2013/02/wordpress-multisite-domain-no-mapping.png" alt="WordPress Multisite Top Level Domain Support" width="982" height="685" srcset="../../wp-content/uploads/2013/02/wordpress-multisite-domain-no-mapping.png 982w, ../../wp-content/uploads/2013/02/wordpress-multisite-domain-no-mapping-800x558.png 800w" sizes="(max-width: 982px) 100vw, 982px"></p>
+<p>&nbsp;</p>
+<p>The only important thing is to set the <code>COOKIE_DOMAIN</code> to <del datetime="2013-02-13T14:33:46+00:00">something empty</del> an empty string in your <code>wp-config.php</code>:</p>
+<pre>define('COOKIE_DOMAIN', '');</pre>
+<p>otherwise WordPress <a href="http://core.trac.wordpress.org/browser/trunk/wp-includes/ms-default-constants.php?rev=21881#L75">will always set it</a> to your network’s <code>$current_site-&gt;domain</code> and you won’t be able to login into any of the other sites.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../envato-could-allow-100-gpl-themes-and-plugins/" rel="prev">Envato Could Allow 100% GPL Themes and Plugins</a></h4></li><li><h4 class="next"><a href="../add-rel-attribute-to-each-gallery-post/" rel="next">Add Unique Rel Attribute to Each Gallery Within a Post</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../develop-wordpress-multisite-locally-using-production-database/" rel="bookmark" title="Develop and Work with WordPress Multisite Locally Using a Production Database">Develop and Work with WordPress Multisite Locally Using a Production Database</a></li>
+<li><a href="../ssl-wordpress-multisite/" rel="bookmark" title="WordPress Admin Over SSL in Multisite">WordPress Admin Over SSL in Multisite</a></li>
+<li><a href="../wordpress-com-usability/" rel="bookmark" title="WordPress.com Usability Issues">WordPress.com Usability Issues</a></li>
+<li><a href="../quick-reply-templates-plugin-and-wordpress-2-8/" rel="bookmark" title="Quick Reply Templates Plugin and WordPress 2.8">Quick Reply Templates Plugin and WordPress 2.8</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					19 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-31446">
+				<div id="div-comment-31446" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/6a2fcfec8b4787594bd2db264f85ecdb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/6a2fcfec8b4787594bd2db264f85ecdb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Spacechimp</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-31446">May 10, 2013 at 13:20</a>		</div>
+
+		<p>That’s pretty awesome but is that all we have to do?</p>
+<p>What changes to the DNS settings do we have to make to make sure the domain points in the right direction?</p>
+<p>Cheers<br>
+Spacechimp</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=31446#respond" data-commentid="31446" data-postid="4510" data-belowelement="div-comment-31446" data-respondelement="respond" data-replyto="Reply to Spacechimp" aria-label="Reply to Spacechimp">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-31447">
+				<div id="div-comment-31447" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-31447">May 10, 2013 at 13:35</a>		</div>
+
+		<p><a href="#comment-31446" rel="nofollow">Spacechimp</a>, you will need to setup a <a href="http://en.wikipedia.org/wiki/Wildcard_DNS_record" rel="nofollow">wildcard subdomain</a> with a single A record that sends all requests to ANYNAME.yourdomain.com to your server.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=31447#respond" data-commentid="31447" data-postid="4510" data-belowelement="div-comment-31447" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-31516">
+				<div id="div-comment-31516" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/f258e10efb6045109406ffacd6c0984f/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/f258e10efb6045109406ffacd6c0984f/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.wphostinggeeks.com/how-to/install-wp-multisite-with-top-level-domains/" class="url" rel="ugc external nofollow">Matt</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-31516">May 14, 2013 at 13:54</a>		</div>
+
+		<p>Thanks for the tip, I can confirm that it works. This is what I did:</p>
+<p>1. Registered a few domains and changed DNS records to point them to my VPS<br>
+2. Added my primary domain to my VPS and the other ones as virtual hosts (you can also use a wildcard subdomain).<br>
+3.   Install WordPress and enable Multisite with subdomains. (you *can* use the www-prefix if you want)<br>
+4. Create new sites and change the site URL as shown on the screenshot in the post. </p>
+<p>I added a link to my signature for more detailed instructions.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=31516#respond" data-commentid="31516" data-postid="4510" data-belowelement="div-comment-31516" data-respondelement="respond" data-replyto="Reply to Matt" aria-label="Reply to Matt">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-31961">
+				<div id="div-comment-31961" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/119089fee359e8566528e1505ebd2f15/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/119089fee359e8566528e1505ebd2f15/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Umesh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-31961">May 30, 2013 at 23:56</a>		</div>
+
+		<p>Hi,</p>
+<p>– I have a multisite installation with sub-directory approach (not sub-domains).<br>
+– primary site has its own domain (ex: abc.com) but not for the sub-sites in the network. So all the sub-sites will look like this: abc.com/sub-site1 so on.</p>
+<p>Now the question is do I even need domain mapping?</p>
+<p>Any suggestion will be a great help.</p>
+<p>Thanks!<br>
+Umesh</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=31961#respond" data-commentid="31961" data-postid="4510" data-belowelement="div-comment-31961" data-respondelement="respond" data-replyto="Reply to Umesh" aria-label="Reply to Umesh">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-31984">
+				<div id="div-comment-31984" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-31984">May 31, 2013 at 09:07</a>		</div>
+
+		<p><a href="#comment-31961" rel="nofollow">Umesh</a>, for a setup like you described you don’t need the domain mapping plugin. Everything should work just out of the box.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=31984#respond" data-commentid="31984" data-postid="4510" data-belowelement="div-comment-31984" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-32463">
+				<div id="div-comment-32463" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/194aca3f777686bc8d0de85285fc2eb5/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/194aca3f777686bc8d0de85285fc2eb5/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Hernan C</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-32463">June 12, 2013 at 15:46</a>		</div>
+
+		<p>Hey Kaspars, thank you for writing this.<br>
+I use WP MS with domain mapping for a small (18) blog network, where users can register in any site and comment in any other with single sign-on (I use “Remote login” in the domain mapping plugin). Users login at domain.com/login/sitename/, not at each site’s singledomain.com.<br>
+If I disable the plugin and start using your straightforward technique, would I lose the single sign-on part? I know WP MS is designed closer to WP.com with many unrelated blogs, instead a tightly-knit blog network.<br>
+I’d like to know if someone experienced this before testing with a live site (and I know, I should have a staging environment, but every day that passes is a heavier task).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=32463#respond" data-commentid="32463" data-postid="4510" data-belowelement="div-comment-32463" data-respondelement="respond" data-replyto="Reply to Hernan C" aria-label="Reply to Hernan C">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-32466">
+				<div id="div-comment-32466" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-32466">June 12, 2013 at 16:34</a>		</div>
+
+		<p><a href="#comment-32463" rel="nofollow">Hernan</a>, I haven’t used the plugin you mentioned so I won’t be able to comment on it. I think creating a test setup locally would be the best approach for finding out if it works or not.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=32466#respond" data-commentid="32466" data-postid="4510" data-belowelement="div-comment-32466" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-33102">
+				<div id="div-comment-33102" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a15cbedc85d9cbd0d87f4a49e1c3313e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a15cbedc85d9cbd0d87f4a49e1c3313e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.leemangold.com" class="url" rel="ugc external nofollow">Lee Mangold</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-33102">July 2, 2013 at 03:11</a>		</div>
+
+		<p>Are there any security implications with removing the COOKIE_DOMAIN ?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=33102#respond" data-commentid="33102" data-postid="4510" data-belowelement="div-comment-33102" data-respondelement="respond" data-replyto="Reply to Lee Mangold" aria-label="Reply to Lee Mangold">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-33155">
+				<div id="div-comment-33155" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-33155">July 4, 2013 at 23:42</a>		</div>
+
+		<p>No security implications, <a href="#comment-33102" rel="nofollow">Lee</a>. Your browser will set the cookie domain to the current domain by default.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=33155#respond" data-commentid="33155" data-postid="4510" data-belowelement="div-comment-33155" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-33215">
+				<div id="div-comment-33215" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fe5b794adf1ba72b9367719dced8e8e0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fe5b794adf1ba72b9367719dced8e8e0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.arc-culture.be" class="url" rel="ugc external nofollow">Didier</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-33215">July 8, 2013 at 17:35</a>		</div>
+
+		<p>Hello,<br>
+Thank you for this tip. I’m interested. Please could you tell us more about:</p>
+<p>1. Implication on the SEO with this method?<br>
+2. Following the “recommended” method, to be able to use top level domain, the wordpress space must be put at the base root of the server, wich can be annoying. What about it with your method?</p>
+<p>Thank You,</p>
+<p>Didier</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=33215#respond" data-commentid="33215" data-postid="4510" data-belowelement="div-comment-33215" data-respondelement="respond" data-replyto="Reply to Didier" aria-label="Reply to Didier">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-33243">
+				<div id="div-comment-33243" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-33243">July 10, 2013 at 12:40</a>		</div>
+
+		<p><a href="#comment-33215" rel="nofollow">Didier</a> — 1. there are no SEO implications with using either of methods. Search engines care only about the site content. 2. WordPress can be placed anywhere on the server as long as the web server knows which domains should be sent to that WordPress instance.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=33243#respond" data-commentid="33243" data-postid="4510" data-belowelement="div-comment-33243" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-36489">
+				<div id="div-comment-36489" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/b9e475be3cd74a9f00b5317f055fe690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/b9e475be3cd74a9f00b5317f055fe690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://loveofallwisdom.com" class="url" rel="ugc external nofollow">Amod Lele</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-36489">November 27, 2013 at 18:06</a>		</div>
+
+		<p>THANK YOU so much for the COOKIE_DOMAIN tip!! My multisite install hasn’t been working, and I’ve been looking all over for a fix and didn’t get any help from the WordPress forums. Now it works! Thank you!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=36489#respond" data-commentid="36489" data-postid="4510" data-belowelement="div-comment-36489" data-respondelement="respond" data-replyto="Reply to Amod Lele" aria-label="Reply to Amod Lele">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-36533">
+				<div id="div-comment-36533" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/124530194355cf0708f6a4d2df2a1da6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/124530194355cf0708f6a4d2df2a1da6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Tomlee</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-36533">January 1, 2014 at 20:45</a>		</div>
+
+		<p>Hi Kaspars<br>
+Bingo,exactly what i was looking for .<br>
+9 threads up you said to Umesh that there is no for need domain mapping  and there is  is nothing more in his case as Everything should work just out of the box. Now since his case is also my I wanted to add his question and to ask you if that mean that I should skip the instruction under “Network Setup”<br>
+that say 1 Add the following to your wp-config.php file in…. 2Add the following to your .htaccess file in ….?<br>
+Thx</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=36533#respond" data-commentid="36533" data-postid="4510" data-belowelement="div-comment-36533" data-respondelement="respond" data-replyto="Reply to Tomlee" aria-label="Reply to Tomlee">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-36534">
+				<div id="div-comment-36534" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-36534">January 2, 2014 at 12:44</a>		</div>
+
+		<p><a href="#comment-36533" rel="nofollow">Tomlee</a>, you shouldn’t skip that part. It is required for WordPress to actually know it is being used as multi-site install.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=36534#respond" data-commentid="36534" data-postid="4510" data-belowelement="div-comment-36534" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-43791">
+				<div id="div-comment-43791" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/23ffe81d8cd2144e035463e8452e34f8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/23ffe81d8cd2144e035463e8452e34f8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.pixelhuset.dk" class="url" rel="ugc external nofollow">Kasper</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-43791">May 1, 2014 at 12:52</a>		</div>
+
+		<p>Brilliant – I was searching for this and refused to believe that the only way to achieve it was by using big, bulky plugins. Amazing that somebody can actually sell a plugin to do this for 20$</p>
+<p>Anyway, thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=43791#respond" data-commentid="43791" data-postid="4510" data-belowelement="div-comment-43791" data-respondelement="respond" data-replyto="Reply to Kasper" aria-label="Reply to Kasper">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-52608">
+				<div id="div-comment-52608" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/8288c338d706ee3e83e86a1b8f6eb1e7/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/8288c338d706ee3e83e86a1b8f6eb1e7/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://asimetrick.com" class="url" rel="ugc external nofollow">Nicolas</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-52608">June 7, 2014 at 10:06</a>		</div>
+
+		<p>Yes, definitely brilliant. I’ve been using a Domain Mapping plugin for the last couple of years and today I learnt it was useless!</p>
+<p>Why is this not documented in WordPress.org Codex? Is it not a basic feature for WordPress Multisite?</p>
+<p>Thanks.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=52608#respond" data-commentid="52608" data-postid="4510" data-belowelement="div-comment-52608" data-respondelement="respond" data-replyto="Reply to Nicolas" aria-label="Reply to Nicolas">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-56628">
+				<div id="div-comment-56628" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/794205b7227e961c171d93c92ae47c61/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/794205b7227e961c171d93c92ae47c61/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://tarei.me" class="url" rel="ugc external nofollow">Tarei</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-56628">July 23, 2014 at 02:55</a>		</div>
+
+		<p>Thanks for the #protip… Happily working away on multisite locally now, woot!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=56628#respond" data-commentid="56628" data-postid="4510" data-belowelement="div-comment-56628" data-respondelement="respond" data-replyto="Reply to Tarei" aria-label="Reply to Tarei">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-68280">
+				<div id="div-comment-68280" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/0c7f02af4f361fc398a95f60771ca8e8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/0c7f02af4f361fc398a95f60771ca8e8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://lkrnac.net" class="url" rel="ugc external nofollow">Lubos Krnac</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-68280">October 5, 2014 at 13:59</a>		</div>
+
+		<p>I followed this blog post to set up domains for WordPress Multisite. My only problem is that all images are uploded and served from main domain. </p>
+<p>Do you know how should I set it up that images uploaded from secondary domain will be uploaded to and served from secondary domain?</p>
+<p>I also asked this question on Stack Exchange:<br>
+<a href="http://wordpress.stackexchange.com/questions/163426/why-are-images-uploaded-to-main-domain-when-using-multisite-with-different-doma" rel="nofollow ugc">http://wordpress.stackexchange.com/questions/163426/why-are-images-uploaded-to-main-domain-when-using-multisite-with-different-doma</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=68280#respond" data-commentid="68280" data-postid="4510" data-belowelement="div-comment-68280" data-respondelement="respond" data-replyto="Reply to Lubos Krnac" aria-label="Reply to Lubos Krnac">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-68922">
+				<div id="div-comment-68922" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-68922">October 8, 2014 at 13:51</a>		</div>
+
+		<p>Looks like <code>wp_upload_dir()</code> is prepending the wrong URL to all asset URLs. The only way this can happen is when <code>get_option( 'siteurl' )</code> returns the URL of your primary site. Could you please check the value of <code>siteurl</code> in <code>/wp-admin/options.php</code> of handysvandy.net.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wordpress-multisite-without-domain-mapping?replytocom=68922#respond" data-commentid="68922" data-postid="4510" data-belowelement="div-comment-68922" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a39cf3bd948633ff76da9658f960f914" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="4510" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><!-- Mailchimp for WordPress v4.9.11 - https://www.mc4wp.com/ --><input type="hidden" name="_mc4wp_subscribe_wp-comment-form" value="0"><p class="mc4wp-checkbox mc4wp-checkbox-wp-comment-form "><label><input type="checkbox" name="_mc4wp_subscribe_wp-comment-form" value="1"><span>Send me new blog posts via e-mail.</span></label></p><!-- / Mailchimp for WordPress --></form>	</div><!-- #respond -->
+	
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widgets, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7, <a href="https://preseto.com/plugins/gumroad-embed">Gumroad Embed</a> and this <a href="https://preseto.com/themes/list">List theme</a>. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h1 class="widget-title">Subscribe to my email newsletter</h1><script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.11 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-5767" method="post" data-id="5767" data-name="Default sign-up form"><div class="mc4wp-form-fields"><p>
+  	<labe>
+      	Enter your email:
+		<input type="email" id="mc4wp_email" name="EMAIL" required="">
+  	</labe>
+    <input type="submit" value="Sign up">
+</p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1711368680"><input type="hidden" name="_mc4wp_form_id" value="5767"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1"><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+											<li>
+					<a href="../how-much-insulation-is-enough/">How Much Insulation is Too Much?</a>
+									</li>
+											<li>
+					<a href="../electric-hot-water-heater-insulation-efficiency/">Insulation Efficiency of Electric Hot Water Heaters</a>
+									</li>
+											<li>
+					<a href="../tuya-smart-box-house-keeper-air-quality/">Notes on Tuya Air Quality Sensors</a>
+									</li>
+											<li>
+					<a href="../ventilation-air-heat-cool-passive-house/">Use Ventilation Exhaust Air for Space Heating and Hot Water</a>
+									</li>
+											<li>
+					<a href="../zemismart-zigbee-homekit-hub/">Notes on Zemismart HomeKit Zigbee Hub</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="Mans blogs latviešu valodā" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/8b8edbd8b8f53942788f9053392168ce.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script async="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	74 queries in 0.1908 seconds on Mon, 25 Mar 2024 12:11:20 +0000.-->
+
+
+
+</body></html>

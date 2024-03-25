@@ -1,0 +1,1316 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Idea: WordPress Theme for Audio &amp; Video Podcast Websites (WordPress) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Idea: WordPress Theme for Audio &amp; Video Podcast Websites Comments Feed" href="https://kaspars.net/blog/wordpress-theme-for-video-audio-podcast-websites/feed">
+<style id="activitypub-followers-style-inline-css" type="text/css">
+.activitypub-follower-block.is-style-compact .activitypub-handle,.activitypub-follower-block.is-style-compact .sep{display:none}.activitypub-follower-block.is-style-with-lines ul li{border-bottom:.5px solid;margin-bottom:.5rem;padding-bottom:.5rem}.activitypub-follower-block.is-style-with-lines ul li:last-child{border-bottom:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle,.activitypub-follower-block.is-style-with-lines .activitypub-name{text-decoration:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle:hover,.activitypub-follower-block.is-style-with-lines .activitypub-name:hover{text-decoration:underline}.activitypub-follower-block ul{margin:0!important;padding:0!important}.activitypub-follower-block li{display:flex;margin-bottom:1rem}.activitypub-follower-block img{border-radius:50%;height:40px;margin-right:var(--wp--preset--spacing--20,.5rem);width:40px}.activitypub-follower-block .activitypub-link{align-items:center;color:inherit!important;display:flex;flex-flow:row nowrap;max-width:100%;text-decoration:none!important}.activitypub-follower-block .activitypub-handle,.activitypub-follower-block .activitypub-name{text-decoration:underline;text-decoration-thickness:.8px;text-underline-position:under}.activitypub-follower-block .activitypub-handle:hover,.activitypub-follower-block .activitypub-name:hover{text-decoration:none}.activitypub-follower-block .activitypub-name{font-size:var(--wp--preset--font-size--normal,16px)}.activitypub-follower-block .activitypub-actor{font-size:var(--wp--preset--font-size--small,13px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follower-block .sep{padding:0 .2rem}.activitypub-follower-block .wp-block-query-pagination{margin-top:1.5rem}.activitypub-follower-block .activitypub-pager{cursor:default}.activitypub-follower-block .activitypub-pager.current{opacity:.33}.activitypub-follower-block .page-numbers{padding:0 .2rem}.activitypub-follower-block .page-numbers.current{font-weight:700;opacity:1}
+
+</style>
+<style id="activitypub-follow-me-style-inline-css" type="text/css">
+.activitypub-follow-me-block-wrapper{width:100%}.activitypub-follow-me-block-wrapper.has-background .activitypub-profile,.activitypub-follow-me-block-wrapper.has-border-color .activitypub-profile{padding-left:1rem;padding-right:1rem}.activitypub-follow-me-block-wrapper .activitypub-profile{align-items:center;display:flex;padding:1rem 0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__avatar{border-radius:50%;height:75px;margin-right:1rem;width:75px}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__content{flex:1;min-width:0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__handle,.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{line-height:1.2;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{font-size:1.25em}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__follow{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:1rem}.activitypub__modal.components-modal__frame{background-color:#f7f7f7;color:#333}.activitypub__modal.components-modal__frame .components-modal__header-heading,.activitypub__modal.components-modal__frame h4{color:#333;letter-spacing:inherit;word-spacing:inherit}.activitypub__modal.components-modal__frame .components-modal__header .components-button:hover{color:var(--wp--preset--color--white)}.activitypub__dialog{max-width:40em}.activitypub__dialog h4{line-height:1;margin:0}.activitypub__dialog .activitypub-dialog__section{margin-bottom:2em}.activitypub__dialog .activitypub-dialog__description{font-size:var(--wp--preset--font-size--normal,.75rem);margin:.33em 0 1em}.activitypub__dialog .activitypub-dialog__button-group{align-items:flex-end;display:flex;justify-content:flex-end}.activitypub__dialog .activitypub-dialog__button-group svg{height:21px;margin-right:.5em;width:21px}.activitypub__dialog .activitypub-dialog__button-group input{background-color:var(--wp--preset--color--white);border:1px solid var(--wp--preset--color--black);border-radius:inherit 0;color:var(--wp--preset--color--black);flex:1;padding:6px 12px}.activitypub__dialog .activitypub-dialog__button-group button{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:0;text-decoration:none}
+
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/386"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.3">
+<link rel="canonical" href="https://kaspars.net/blog/wordpress-theme-for-video-audio-podcast-websites">
+<link rel="shortlink" href="https://kaspars.net/386">
+<link rel="alternate" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwordpress-theme-for-video-audio-podcast-websites">
+<link rel="alternate" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwordpress-theme-for-video-audio-podcast-websites&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wordpress-theme-for-video-audio-podcast-websites">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Idea: WordPress Theme for Audio &amp; Video Podcast Websites">
+<meta property="og:description" content="Update (December 16, 2008): Thank you everyone for expressing such a great interest in this theme. I am hoping to release it early next year...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2008/07/theme-idea-video-red-initial-concept.png">
+<meta property="og:url" content="https://kaspars.net/blog/wordpress-theme-for-video-audio-podcast-websites">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-386 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+	<li id="menu-item-5782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5782"><a title="My projects, social profiles and suggested podcasts" href="../../links/">Links</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/">Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/wordpress/" rel="category tag">WordPress</a> →</div>
+		
+		<article class="post-386 post type-post status-publish format-standard has-post-thumbnail hentry category-wordpress has-featured-image" id="post-386" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Idea: WordPress Theme for Audio &amp; Video Podcast Websites			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Wed, 16 Jul 2008 03:13:32 +0300">July 16, 2008</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Thu, 23 Aug 2012 12:45:48 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/wordpress/" rel="category tag">WordPress</a></span>  <span class="meta-item meta-comment-count">
+			<a href="#comments">70&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<p><strong>Update (December 16, 2008)</strong>: Thank you everyone for expressing such a great interest in this theme. I am hoping to release it early next year (2009). If you would like to support the development, <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=kaspars%40konstruktors%2ecom&amp;item_name=WordPress%20plugin%20and%20theme%20support&amp;no_shipping=1&amp;no_note=1&amp;tax=0&amp;currency_code=EUR&amp;lc=LV&amp;bn=PP%2dDonationsBF&amp;charset=UTF%2d8">donations</a> are more than welcome.</p>
+<p><strong>Update</strong>: I have posted the <a title="Preview of 6:00 AM Podcast theme for WordPress" href="../600-am-podcast-theme-preview/">first HTML mock-ups</a> of this WordPress theme.</p>
+<p>Here are a few sketches of a WordPress theme that would be ideal for video/audio podcast websites and blogs.<span id="more-386"></span></p>
+<p>Here’s the deal — if 20 people <em>who are currently producing a video/audio podcast</em> leave a comment saying <em>“I would <strong>so</strong> want to use it for my podcast’s website/blog.”</em> then I will make it and release it for <strong>free</strong> (under <abbr title="General Public License">GPL</abbr>) as a response to <a href="http://www.press75.com/2008/07/tvelements" rel="nofollow"><em>TV.Elements</em></a> ($50) and <a href="http://quommunication.com/video/" rel="nofollow"><em>Video</em></a> ($39).</p>
+<p style="text-align: center;"><a href="../../wp-content/uploads/2008/07/theme-idea-video-green-on-light-background.png"><img loading="lazy" decoding="async" class="withborder size-medium wp-image-389 aligncenter" title="Green on lighter background: Audio/Video Podcast WordPress Theme" src="../../wp-content/uploads/2008/07/theme-idea-video-green-on-light-background-480x432.png" alt="Green on lighter background: Audio/Video Podcast WordPress Theme" width="480" height="432"></a></p>
+<p><a href="../../wp-content/uploads/2008/07/theme-idea-video-blue-2.png"><img loading="lazy" decoding="async" class="withborder size-medium wp-image-388 aligncenter" title="Blue shade: Audio/Video Podcast WordPress Theme" src="../../wp-content/uploads/2008/07/theme-idea-video-blue-2-480x432.png" alt="Blue shade: Audio/Video Podcast WordPress Theme" width="480" height="432"></a></p>
+<p><a href="../../wp-content/uploads/2008/07/theme-idea-video-blue.png"><img loading="lazy" decoding="async" class="withborder size-medium wp-image-387 aligncenter" title="Audio/Video Podcast WordPress Theme: Blue" src="../../wp-content/uploads/2008/07/theme-idea-video-blue-480x432.png" alt="" width="480" height="432"></a></p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../tabbed-widgets-in-wild/" rel="prev">Tabbed Widgets in the Wild</a></h4></li><li><h4 class="next"><a href="../what-makes-a-great-journalist/" rel="next">What Makes a Great Journalist</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../600-am-podcast-theme-preview/" rel="bookmark" title="6:00 AM Podcast Theme Preview">6:00 AM Podcast Theme Preview</a></li>
+<li><a href="../new-simple-wordpress-theme-sans-serif-racer/" rel="bookmark" title="New WordPress Theme: Sans–serif Racer">New WordPress Theme: Sans–serif Racer</a></li>
+<li><a href="../podcast-of-the-week-wordpress-weekly/" rel="bookmark" title="Podcast of the week: WordPress Weekly">Podcast of the week: WordPress Weekly</a></li>
+<li><a href="../static-headless-rest/" rel="bookmark" title="Static Websites with Headless WordPress via REST API">Static Websites with Headless WordPress via REST API</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					70 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1" id="comment-592">
+				<div id="div-comment-592" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/47d9ed7085513c41018e6d89531f76be/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/47d9ed7085513c41018e6d89531f76be/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.dkcell.com.br/design" class="url" rel="ugc external nofollow">kaiserlino</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-592">July 16, 2008 at 06:45</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”<br>
+hehe</p>
+<p>For sure we would use it.<br>
+We actually use our system podcast for <a href="http://www.ezoneonline.com.br/podcast.php" rel="nofollow ugc">http://www.ezoneonline.com.br/podcast.php</a><br>
+but we also want to grow it and make it as a separate part of the stuff :D</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-593">
+				<div id="div-comment-593" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/cbd5f1fd53be1d2ef6c7e867d3540001/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/cbd5f1fd53be1d2ef6c7e867d3540001/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.nahnu.org" class="url" rel="ugc external nofollow">nahnu</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-593">July 16, 2008 at 08:26</a>		</div>
+
+		<p>i registered nahnu.tv for these themes :p</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-594">
+				<div id="div-comment-594" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/acb986371a2e9e325dd530e05d89f72f/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/acb986371a2e9e325dd530e05d89f72f/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://onkulis.com/blog" class="url" rel="ugc external nofollow">Miks</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-594">July 16, 2008 at 10:14</a>		</div>
+
+		<p>I think this one looks lot better than our theme on podraide.lv. So:</p>
+<p>“I would so want to use it for my podcast’s website/blog.”</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-595">
+				<div id="div-comment-595" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-595">July 16, 2008 at 10:35</a>		</div>
+
+		<p><a href="#comment-7449" rel="reply">kaiserlino</a>, <a href="#comment-7450" rel="reply">nahnu</a> and <a href="#comment-7452" rel="reply">Mik</a>, I wasn’t expecting even a single person to comment on this so thanks a lot for your feedback. If continues at the same pace, I better go back to my HTML/CSS drawing board.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-596">
+				<div id="div-comment-596" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fe5728d8596577a509a1729b093cc8b6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fe5728d8596577a509a1729b093cc8b6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://eftu.co.cc/" class="url" rel="ugc external nofollow">Eftu</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-596">July 16, 2008 at 10:55</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”</p>
+<p>That would be great for my upcoming blog.</p>
+<p>Thanks!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-597">
+				<div id="div-comment-597" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/52b3156a71aa9792e9caf29c60db7bb5/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/52b3156a71aa9792e9caf29c60db7bb5/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">steffy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-597">July 16, 2008 at 11:48</a>		</div>
+
+		<p>sure I would use it for sure</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-598">
+				<div id="div-comment-598" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/5a7ef270f177badd1aa8c5a55c7bd6a7/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/5a7ef270f177badd1aa8c5a55c7bd6a7/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">m-alo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-598">July 16, 2008 at 11:51</a>		</div>
+
+		<p>I’m currently not podcasting, but if I were, I would definitely consider using your theme.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-599">
+				<div id="div-comment-599" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/103ce88d8951f191e82c01f75e992ad6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/103ce88d8951f191e82c01f75e992ad6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Kunduz</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-599">July 16, 2008 at 12:47</a>		</div>
+
+		<p>I like your work, clean and artistic style, so I’d like to see other themes also..</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-600">
+				<div id="div-comment-600" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/25d96ebdbae5afa566a8d50cfe9f55b8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/25d96ebdbae5afa566a8d50cfe9f55b8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.robinmalau.com" class="url" rel="ugc external nofollow">Robin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-600">July 16, 2008 at 20:04</a>		</div>
+
+		<p>“I would love to use it for my podcast’s website/blog.”</p>
+<p>Currently this is the 9th comment. Can i post 11 more?</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-601">
+				<div id="div-comment-601" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-601">July 16, 2008 at 20:14</a>		</div>
+
+		<p><a href="#comment-7458" rel="reply">Robin</a>, sure you can, if you are currently producing/hosting/co-hosting <em>two</em> or more podcasts. Just give a link to those shows.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-602">
+				<div id="div-comment-602" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/47d9ed7085513c41018e6d89531f76be/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/47d9ed7085513c41018e6d89531f76be/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.dkcell.com.br/design" class="url" rel="ugc external nofollow">kaiserlino</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-602">July 16, 2008 at 23:45</a>		</div>
+
+		<p>Hey…<br>
+Thanks for answering…<br>
+Really hope you code them :D</p>
+<p>I am not as good as you, but if need some help and i can do, will do for sure :D</p>
+<p>See ua</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-603">
+				<div id="div-comment-603" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/5d1b027de81c038d538c210270b7944b/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/5d1b027de81c038d538c210270b7944b/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Florent</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-603">July 17, 2008 at 16:52</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog.</p>
+<p>&lt;it looks great and very eronomic !</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-604">
+				<div id="div-comment-604" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/f317b701d597fa3718e5e4507eb7867e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/f317b701d597fa3718e5e4507eb7867e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://gracefellowship.ie/" class="url" rel="ugc external nofollow">Mike</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-604">July 18, 2008 at 17:36</a>		</div>
+
+		<p>Sign me up, I need a theme like this…</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-605">
+				<div id="div-comment-605" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d19a104b2fdb4f2d95746be2509e5edb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d19a104b2fdb4f2d95746be2509e5edb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://globlog.fr/blog/hchicha-tv/" class="url" rel="ugc external nofollow">Hchicha</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-605">July 27, 2008 at 11:54</a>		</div>
+
+		<p>Waw! looks very nice and ergonomic … Is there news about it freinds?</p>
+<p>“I would love to use it for my podcast’s website/blog.”</p>
+<p>BRAVO !!!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-606">
+				<div id="div-comment-606" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/f2d964deed7fb2a6709c8d12ec40fbd8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/f2d964deed7fb2a6709c8d12ec40fbd8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Warren</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-606">July 28, 2008 at 17:50</a>		</div>
+
+		<p>I would absolutely use this for my video blog.</p>
+<p>(makes me wish I didn’t pay $$ for video elements)</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-607">
+				<div id="div-comment-607" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://indielab.org" class="url" rel="ugc external nofollow">Adam W. Warner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-607">July 28, 2008 at 18:29</a>		</div>
+
+		<p>I would LOVE to have access to this specialized audio and video WordPress theme. I run a website that provides free P-based blogs especially for media creators and will be adding specialized themes shortly.</p>
+<p>Please, please, make this theme. I would happy to promote your site or otherwise help you.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-608">
+				<div id="div-comment-608" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/09eb13029765a262f733e4a6b09d3cfe/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/09eb13029765a262f733e4a6b09d3cfe/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://beadblog.manykites.org" class="url" rel="ugc external nofollow">Milt Lee</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-608">July 28, 2008 at 20:47</a>		</div>
+
+		<p>Yes, I can’t wait to use it. Thanks for a great looking theme.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-609">
+				<div id="div-comment-609" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/25c5613dc0d614d07275ec6da7e966b0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/25c5613dc0d614d07275ec6da7e966b0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">amber</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-609">July 29, 2008 at 04:15</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”<br>
+But i could not decide on a theme…but yours is great</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-610">
+				<div id="div-comment-610" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/cc2dc1fcbf174a912e4659e64c3355ee/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/cc2dc1fcbf174a912e4659e64c3355ee/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">George</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-610">July 31, 2008 at 20:41</a>		</div>
+
+		<p>This would be perfect for my video blog.</p>
+<p>Yes, please publish it!</p>
+<p>Thanks,<br>
+G.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-611">
+				<div id="div-comment-611" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/1e048feae6612cdd63247ba0f0863e9d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/1e048feae6612cdd63247ba0f0863e9d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Francis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-611">August 1, 2008 at 06:23</a>		</div>
+
+		<p>Oh I want it, I want it!  My video blog would be 100% better.</p>
+<p>Add my vote.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-612">
+				<div id="div-comment-612" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-612">August 1, 2008 at 11:59</a>		</div>
+
+		<p><a href="#comment-7449" rel="reply">kaiserlino</a>, <a href="#comment-7452" rel="reply">Miks</a> and <a href="#comment-7504" rel="reply">Adam W. Warner</a> seem to be the only people who actually run their own audio/video podcasts (judging by the provided URLs).</p>
+<p>I am really looking forward to the remaining 17 people who currently <strong>do produce</strong> a podcast, and theme will be yours.</p>
+<p>So if you did leave a comment without the URL, please post it again.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-613">
+				<div id="div-comment-613" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d19a104b2fdb4f2d95746be2509e5edb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d19a104b2fdb4f2d95746be2509e5edb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.hchicha.net" class="url" rel="ugc external nofollow">Hchicha</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-613">August 1, 2008 at 12:10</a>		</div>
+
+		<p><a href="#comment-7527" rel="nofollow">Kaspars</a>, ohh! :)</p>
+<p>Here is my vidblog<br>
+<a href="http://globlog.fr/blog/hchicha-tv/" rel="nofollow ugc">http://globlog.fr/blog/hchicha-tv/</a></p>
+<p>And here is my podcasts site:</p>
+<p><a href="http://radiohchicha.com" rel="nofollow ugc">http://radiohchicha.com</a></p>
+<p>Thanks a lot for this very good work.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-614">
+				<div id="div-comment-614" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-614">August 1, 2008 at 12:27</a>		</div>
+
+		<p><a href="#comment-7528" rel="reply">Hchicha</a>, excellent. Now we are at 4.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-615">
+				<div id="div-comment-615" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/f2d964deed7fb2a6709c8d12ec40fbd8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/f2d964deed7fb2a6709c8d12ec40fbd8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Warren</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-615">August 1, 2008 at 17:54</a>		</div>
+
+		<p>here’s the URL for my video blog:</p>
+<p><a href="http://italy.culturaltravel.net/" rel="nofollow ugc">http://italy.culturaltravel.net/</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-616">
+				<div id="div-comment-616" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://indielab.org" class="url" rel="ugc external nofollow">Adam W. Warner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-616">August 1, 2008 at 18:40</a>		</div>
+
+		<p>Milt Lee from above also left his video blog link;)</p>
+<p><a href="http://beadblog.manykites.org/" rel="nofollow ugc">http://beadblog.manykites.org/</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-617">
+				<div id="div-comment-617" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Duarte</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-617">August 2, 2008 at 22:52</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog.</p>
+<p>Hell, yeah! I’ve been searching for more than enough time for a decent podcast theme, and this is the best I’ve seen.</p>
+<p>Podcast: <a href="http://www.geekarmyknife.com" rel="nofollow ugc">http://www.geekarmyknife.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-618">
+				<div id="div-comment-618" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Duarte</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-618">August 2, 2008 at 22:56</a>		</div>
+
+		<p><a href="#comment-7552" rel="nofollow">Duarte</a>,</p>
+<p>I forgot! It would be great if it could work well with <a href="http://www.mightyseek.com/podpress/" title="Podpress" rel="nofollow"></a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-619">
+				<div id="div-comment-619" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/cdc7ffcaa025660060c6dc235d2d7e8d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Duarte</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-619">August 2, 2008 at 22:57</a>		</div>
+
+		<p>…Podpress (where’s the link I posted??)</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-620">
+				<div id="div-comment-620" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/7b9b49e06c2e04a98d2e11955d744c46/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/7b9b49e06c2e04a98d2e11955d744c46/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://wallawallavalley.tv" class="url" rel="ugc external nofollow">R Doug Sapp</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-620">August 3, 2008 at 22:12</a>		</div>
+
+		<p>sure I would use it for sure</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-621">
+				<div id="div-comment-621" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/16cc858e19628db850f4e14f2d0d10f3/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/16cc858e19628db850f4e14f2d0d10f3/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://theory.isthereason.com" class="url" rel="ugc external nofollow">Kevin Lim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-621">August 3, 2008 at 22:58</a>		</div>
+
+		<p>I’m in! I run theorycast at <a href="http://theorycast.blip.tv/" rel="nofollow ugc">http://theorycast.blip.tv/</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-622">
+				<div id="div-comment-622" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/442e9986100c69345ff0cdb3008c04c0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/442e9986100c69345ff0cdb3008c04c0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.jimkukral.com" class="url" rel="ugc external nofollow">Jim Kukral</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-622">August 3, 2008 at 23:11</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”</p>
+<p>Over at the Daily Flip. <a href="http://www.jimkukral.com" rel="nofollow ugc">http://www.jimkukral.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-623">
+				<div id="div-comment-623" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-623">August 4, 2008 at 03:53</a>		</div>
+
+		<p>Thank you everyone. It looks like I’ll have to do it.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-624">
+				<div id="div-comment-624" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/186f8d5dbf9d440464480fbe19db4c43/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://indielab.org" class="url" rel="ugc external nofollow">Adam W. Warner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-624">August 4, 2008 at 03:57</a>		</div>
+
+		<p>Yaaaaay!!!!!</p>
+<p>Kaspars, I just want to give you a heartfelt THANK YOU. I’m excited to be able to develop with this theme!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-625">
+				<div id="div-comment-625" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/ad1b3ae666879f06eedd4031034edd7f/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/ad1b3ae666879f06eedd4031034edd7f/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.theworldskitchen.com" class="url" rel="ugc external nofollow">Cathy Zheutlin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-625">August 4, 2008 at 07:04</a>		</div>
+
+		<p>I would so want to use this for my podcasts which should be ready to go in September.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-626">
+				<div id="div-comment-626" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/6e1dc1e93c8c110222106c6598121a13/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/6e1dc1e93c8c110222106c6598121a13/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.beachwalks.tv" class="url" rel="ugc external nofollow">roxanne darling</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-626">August 4, 2008 at 07:10</a>		</div>
+
+		<p>Looks like a terrific theme! I would ask for a deep footer area too to list archives and categories, and hopefully it would accept widgets in the sidebar so we could run extra things in there.</p>
+<p>Thank you!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-627">
+				<div id="div-comment-627" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/5d1b027de81c038d538c210270b7944b/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/5d1b027de81c038d538c210270b7944b/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">florent</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-627">August 4, 2008 at 10:41</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”<br>
+I change it for september. All my podcasts tell about employement, jobs and hire.</p>
+<p>This is an exemple here :<br>
+<a href="http://blog.31000emploi.com/31000emploi-podcaste-par-petitdeviendragrand/" rel="nofollow ugc">http://blog.31000emploi.com/31000emploi-podcaste-par-petitdeviendragrand/</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-628">
+				<div id="div-comment-628" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/44194ce37c38f4adf996544795acb0ad/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/44194ce37c38f4adf996544795acb0ad/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.videoreporter.nl" class="url" rel="ugc external nofollow">Ruud Elmendorp</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-628">August 4, 2008 at 16:41</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-629">
+				<div id="div-comment-629" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/2fe7f9a8cc50d5c9b56f60e708e8ef42/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/2fe7f9a8cc50d5c9b56f60e708e8ef42/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.scottstead.com" class="url" rel="ugc external nofollow">scottstead</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-629">August 4, 2008 at 17:32</a>		</div>
+
+		<p>Great looking theme – I’d definitely be interested in using this theme for my podcast/website/blog. :)</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-630">
+				<div id="div-comment-630" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/09eb13029765a262f733e4a6b09d3cfe/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/09eb13029765a262f733e4a6b09d3cfe/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://hollowbonefilms.com" class="url" rel="ugc external nofollow">Milt Lee</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-630">August 4, 2008 at 19:17</a>		</div>
+
+		<p>I actually left the url for my newest blog.  It’s not totally active yet as I want to use your theme for it.  I didn’t realize that you wanted a URL for a blog that I’m doing all the time.  Here that one is:  <a href="http://hollowbonefilms.com" rel="nofollow ugc">http://hollowbonefilms.com</a></p>
+<p>So when will the theme be available?<br>
+thanks,<br>
+Milt Lee</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-631">
+				<div id="div-comment-631" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/e3cd115a7e0427953cedf2b5eeda1ce5/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/e3cd115a7e0427953cedf2b5eeda1ce5/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Doug Groves</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-631">August 5, 2008 at 03:47</a>		</div>
+
+		<p>““I would so want to use it for my podcast’s website/blog.”</p>
+<p>Check it out at <a href="http://www.rgbfilter.com" rel="nofollow ugc">http://www.rgbfilter.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-632">
+				<div id="div-comment-632" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/7270879b8941dffda704f53204afdb4c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/7270879b8941dffda704f53204afdb4c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.geekarmyknife.com" class="url" rel="ugc external nofollow">henriette weber kristiansen</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-632">August 7, 2008 at 06:55</a>		</div>
+
+		<p>I want to use it for the geek army knife podcast as well =)</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-633">
+				<div id="div-comment-633" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43f02cd8dcf6fc2a48731697c27c7d05/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43f02cd8dcf6fc2a48731697c27c7d05/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.apodo.com.mx" class="url" rel="ugc external nofollow">John</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-633">August 9, 2008 at 00:21</a>		</div>
+
+		<p>Definitely! Would perhaps even transition our site over in order to combine blog + video podcast. :-)</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-634">
+				<div id="div-comment-634" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43f02cd8dcf6fc2a48731697c27c7d05/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43f02cd8dcf6fc2a48731697c27c7d05/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.apodo.com.mx" class="url" rel="ugc external nofollow">John</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-634">August 9, 2008 at 01:53</a>		</div>
+
+		<p><a href="#comment-7633" rel="nofollow">John</a>,<br>
+Here: <a href="http://www.apodo.com.mx" rel="nofollow ugc">http://www.apodo.com.mx</a> &amp; (soon:) <a href="http://www.disparo.com" rel="nofollow ugc">http://www.disparo.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-635">
+				<div id="div-comment-635" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/bd5bcfd368b99b3c8022d368d2453c39/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/bd5bcfd368b99b3c8022d368d2453c39/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.thebije.com/" class="url" rel="ugc external nofollow">Harry</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-635">August 10, 2008 at 21:25</a>		</div>
+
+		<p>Yes, I would so want to use it for my podcast’s blog.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-636">
+				<div id="div-comment-636" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/96cd1a2d7aca7f68e5e8175fb5dbb6dc/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/96cd1a2d7aca7f68e5e8175fb5dbb6dc/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">motionitem</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-636">August 22, 2008 at 13:39</a>		</div>
+
+		<p>any updates on this?</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-637">
+				<div id="div-comment-637" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-637">August 22, 2008 at 13:54</a>		</div>
+
+		<p><a href="#comment-7777" rel="nofollow">motionitem</a>, I am currently really busy with ‘real’ work and will create this theme whenever I have some free time.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-638">
+				<div id="div-comment-638" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/3b3f5c29969d7b6b8850445cd6054871/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/3b3f5c29969d7b6b8850445cd6054871/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.ckr-prod.net/fussball/" class="url" rel="ugc external nofollow">CKR-PROD</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-638">August 28, 2008 at 18:54</a>		</div>
+
+		<p>Very nice, I would also so want to use it for my podcast’s blog.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-639">
+				<div id="div-comment-639" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a0acf8720fae61ca00c8694aaadf7fc8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a0acf8720fae61ca00c8694aaadf7fc8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">H78</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-639">August 30, 2008 at 08:48</a>		</div>
+
+		<p>Keep me posted! I would love this theme!!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-640">
+				<div id="div-comment-640" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fc334617e089ab304f2a8dfcb79d8bf2/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fc334617e089ab304f2a8dfcb79d8bf2/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://5elemente.code-blocx.de/" class="url" rel="ugc external nofollow">GPSchnyder</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-640">September 8, 2008 at 00:02</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”</p>
+<p>As my Tattoo is “growing” I need a new Site :-)</p>
+<p>-george</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-641">
+				<div id="div-comment-641" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/233fa73b073f20abd707020c36287638/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/233fa73b073f20abd707020c36287638/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.fastpitchillustrated.com" class="url" rel="ugc external nofollow">gary leland</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-641">September 18, 2008 at 05:00</a>		</div>
+
+		<p>I want this and would use it</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-642">
+				<div id="div-comment-642" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/233fa73b073f20abd707020c36287638/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/233fa73b073f20abd707020c36287638/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.fastpitchillustrated.com" class="url" rel="ugc external nofollow">gary leland</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-642">September 19, 2008 at 01:05</a>		</div>
+
+		<p>My website is <a href="http://www.fastpitchillustrated.com" rel="nofollow ugc">http://www.fastpitchillustrated.com</a></p>
+<p>I also have <a href="http://www.podcastpickle.com" rel="nofollow ugc">http://www.podcastpickle.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-643">
+				<div id="div-comment-643" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/e435aa4cb35191dde08a934dafa8bc1a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/e435aa4cb35191dde08a934dafa8bc1a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.seareporter.com" class="url" rel="ugc external nofollow">Harald Husø</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-643">September 20, 2008 at 11:33</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-644">
+				<div id="div-comment-644" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fc5d4a9fcd1f9fd756b217fbcc0f5e6d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fc5d4a9fcd1f9fd756b217fbcc0f5e6d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">thibaut</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-644">September 24, 2008 at 20:09</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog<br>
+<a href="http://www.spud.fr" rel="nofollow ugc">http://www.spud.fr</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-645">
+				<div id="div-comment-645" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a406370308a0af7b9600e1da5f10b2d8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a406370308a0af7b9600e1da5f10b2d8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://Youlovejoe.com" class="url" rel="ugc external nofollow">joe</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-645">October 8, 2008 at 02:41</a>		</div>
+
+		<p>This is HOT HOT HOT!. Where is the download link i think were at about 50 + replys on a download! awesoem layout!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-646">
+				<div id="div-comment-646" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a406370308a0af7b9600e1da5f10b2d8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a406370308a0af7b9600e1da5f10b2d8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://photoshopnow.blogspot.com/" class="url" rel="ugc external nofollow">http://photoshopnow.blogspot.com/</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-646">October 8, 2008 at 02:47</a>		</div>
+
+		<p>My video blog is on blogger until i can use this sick ass theme~!  i hunt down the best in video tutorials and behind the scenes stuff for multimedia artists.</p>
+<p>PhotoshopNOW.blogspot.com</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-647">
+				<div id="div-comment-647" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/0a508ee62e0da43cfae89d0fb8dfd223/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/0a508ee62e0da43cfae89d0fb8dfd223/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Nada</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-647">October 22, 2008 at 22:09</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog!!!!!!!!</p>
+<p>Thanks!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-648">
+				<div id="div-comment-648" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/879acf49635f1c1b5bddd0782593e2f3/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/879acf49635f1c1b5bddd0782593e2f3/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.rockclimbingpodcast.com" class="url" rel="ugc external nofollow">Adam</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-648">November 5, 2008 at 03:14</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog.</p>
+<p><a href="http://www.rockclimbingpodcast.com" rel="nofollow ugc">http://www.rockclimbingpodcast.com</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-649">
+				<div id="div-comment-649" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/968bf2f655502d532bc85f0e636b3d87/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/968bf2f655502d532bc85f0e636b3d87/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.miravos.tv" class="url" rel="ugc external nofollow">Ismael Briasco</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-649">November 8, 2008 at 05:42</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”</p>
+<p>My videoblog is <a href="http://www.miravos.tv" rel="nofollow">miravos.tv</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-650">
+				<div id="div-comment-650" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/4464c4b43d454e26e0f26aaf8ad9b289/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/4464c4b43d454e26e0f26aaf8ad9b289/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Morgan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-650">November 13, 2008 at 05:48</a>		</div>
+
+		<p>Any news?</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-651">
+				<div id="div-comment-651" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a2ee16319676f9fe6c0142f08c00297e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a2ee16319676f9fe6c0142f08c00297e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://dyxy.com" class="url" rel="ugc external nofollow">Rick</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-651">November 18, 2008 at 01:02</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-652">
+				<div id="div-comment-652" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/1ad0a3c527673778274269d58f122f3e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/1ad0a3c527673778274269d58f122f3e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">ovande</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-652">November 18, 2008 at 22:37</a>		</div>
+
+		<p>is this theme available for download?</p>
+<p>thanks</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-653">
+				<div id="div-comment-653" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-653">November 18, 2008 at 23:05</a>		</div>
+
+		<p><a href="#comment-8729" rel="reply">ovande</a>, no, not yet. See the update at the beginning of the post.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-654">
+				<div id="div-comment-654" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/dff18473489cc432454a95fba4b10553/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/dff18473489cc432454a95fba4b10553/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://nitzan.co.uk" class="url" rel="ugc external nofollow">Nitzan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-654">November 20, 2008 at 10:43</a>		</div>
+
+		<p>sweet theme. would mos def would like to use it.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-655">
+				<div id="div-comment-655" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/1ad0a3c527673778274269d58f122f3e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/1ad0a3c527673778274269d58f122f3e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.podspiritism.org" class="url" rel="ugc external nofollow">ovande</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-655">November 21, 2008 at 04:22</a>		</div>
+
+		<p>loooooooooooove it.</p>
+<p>I would so want to use it for my podcast’s website/blog.”</p>
+<p><a href="http://www.podspiritism.org" rel="nofollow ugc">http://www.podspiritism.org</a></p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-656">
+				<div id="div-comment-656" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/eef6ccc3975b2c7f420a6f57c6e78e45/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/eef6ccc3975b2c7f420a6f57c6e78e45/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Woto Wibowo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-656">December 12, 2008 at 12:17</a>		</div>
+
+		<p>“I would so want to use it for my podcast’s website/blog.”<br>
+“I would so want to use it for my podcast’s website/blog.”<br>
+“I would so want to use it for my podcast’s website/blog.”<br>
+“I would so want to use it for my podcast’s website/blog.”</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-657">
+				<div id="div-comment-657" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/2be66efede754b269528c505487ba92d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/2be66efede754b269528c505487ba92d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Coreen Salamanca</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-657">December 15, 2008 at 00:24</a>		</div>
+
+		<p>This layout is cutting edge.  My colleague and I would definitely use this for our vlog site.  It’s about time someone create a format like this!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-658">
+				<div id="div-comment-658" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/bf441698b8b399acd60c3eac9b2b25d6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/bf441698b8b399acd60c3eac9b2b25d6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Perry</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-658">December 15, 2008 at 21:17</a>		</div>
+
+		<p>Please!! I would love to give this theme a whirl!!</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-659">
+				<div id="div-comment-659" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/10c08766bf4234c49c2f6e85c7693732/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/10c08766bf4234c49c2f6e85c7693732/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-659">December 17, 2008 at 00:31</a>		</div>
+
+		<p>I would so want to use it for my podcast’s website/blog.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-660">
+				<div id="div-comment-660" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/10c08766bf4234c49c2f6e85c7693732/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/10c08766bf4234c49c2f6e85c7693732/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-660">December 17, 2008 at 00:34</a>		</div>
+
+		<p>i’m in, for the redesign of <a href="http://www.noisescapetv.com" rel="nofollow">noisescapetv.com</a> a videoblog/cable access show</p>
+
+		
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-661">
+				<div id="div-comment-661" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-661">December 17, 2008 at 01:05</a>		</div>
+
+		<p>Thank you, everyone, for your amazing interest in this theme. I am really busy now doing other things, so the best estimate for the potential release date is the end of January 2009.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+				Comments are closed.<p class="nocomments"></p>			
+			
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widgets, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7, <a href="https://preseto.com/plugins/gumroad-embed">Gumroad Embed</a> and this <a href="https://preseto.com/themes/list">List theme</a>. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h1 class="widget-title">Subscribe to my email newsletter</h1><script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.11 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-5767" method="post" data-id="5767" data-name="Default sign-up form"><div class="mc4wp-form-fields"><p>
+  	<labe>
+      	Enter your email:
+		<input type="email" id="mc4wp_email" name="EMAIL" required="">
+  	</labe>
+    <input type="submit" value="Sign up">
+</p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1711368671"><input type="hidden" name="_mc4wp_form_id" value="5767"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1"><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+											<li>
+					<a href="../how-much-insulation-is-enough/">How Much Insulation is Too Much?</a>
+									</li>
+											<li>
+					<a href="../electric-hot-water-heater-insulation-efficiency/">Insulation Efficiency of Electric Hot Water Heaters</a>
+									</li>
+											<li>
+					<a href="../tuya-smart-box-house-keeper-air-quality/">Notes on Tuya Air Quality Sensors</a>
+									</li>
+											<li>
+					<a href="../ventilation-air-heat-cool-passive-house/">Use Ventilation Exhaust Air for Space Heating and Hot Water</a>
+									</li>
+											<li>
+					<a href="../zemismart-zigbee-homekit-hub/">Notes on Zemismart HomeKit Zigbee Hub</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="Mans blogs latviešu valodā" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/bc0b01011b5e035dfbcba7391789d26d.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script async="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	76 queries in 0.1673 seconds on Mon, 25 Mar 2024 12:11:11 +0000.-->
+
+
+
+</body></html>

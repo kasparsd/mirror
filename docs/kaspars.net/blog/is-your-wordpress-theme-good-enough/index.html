@@ -1,0 +1,909 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Is Your WordPress Theme Good Enough? (WordPress) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Is Your WordPress Theme Good Enough? Comments Feed" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough/feed">
+<style id="activitypub-followers-style-inline-css" type="text/css">
+.activitypub-follower-block.is-style-compact .activitypub-handle,.activitypub-follower-block.is-style-compact .sep{display:none}.activitypub-follower-block.is-style-with-lines ul li{border-bottom:.5px solid;margin-bottom:.5rem;padding-bottom:.5rem}.activitypub-follower-block.is-style-with-lines ul li:last-child{border-bottom:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle,.activitypub-follower-block.is-style-with-lines .activitypub-name{text-decoration:none}.activitypub-follower-block.is-style-with-lines .activitypub-handle:hover,.activitypub-follower-block.is-style-with-lines .activitypub-name:hover{text-decoration:underline}.activitypub-follower-block ul{margin:0!important;padding:0!important}.activitypub-follower-block li{display:flex;margin-bottom:1rem}.activitypub-follower-block img{border-radius:50%;height:40px;margin-right:var(--wp--preset--spacing--20,.5rem);width:40px}.activitypub-follower-block .activitypub-link{align-items:center;color:inherit!important;display:flex;flex-flow:row nowrap;max-width:100%;text-decoration:none!important}.activitypub-follower-block .activitypub-handle,.activitypub-follower-block .activitypub-name{text-decoration:underline;text-decoration-thickness:.8px;text-underline-position:under}.activitypub-follower-block .activitypub-handle:hover,.activitypub-follower-block .activitypub-name:hover{text-decoration:none}.activitypub-follower-block .activitypub-name{font-size:var(--wp--preset--font-size--normal,16px)}.activitypub-follower-block .activitypub-actor{font-size:var(--wp--preset--font-size--small,13px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follower-block .sep{padding:0 .2rem}.activitypub-follower-block .wp-block-query-pagination{margin-top:1.5rem}.activitypub-follower-block .activitypub-pager{cursor:default}.activitypub-follower-block .activitypub-pager.current{opacity:.33}.activitypub-follower-block .page-numbers{padding:0 .2rem}.activitypub-follower-block .page-numbers.current{font-weight:700;opacity:1}
+
+</style>
+<style id="activitypub-follow-me-style-inline-css" type="text/css">
+.activitypub-follow-me-block-wrapper{width:100%}.activitypub-follow-me-block-wrapper.has-background .activitypub-profile,.activitypub-follow-me-block-wrapper.has-border-color .activitypub-profile{padding-left:1rem;padding-right:1rem}.activitypub-follow-me-block-wrapper .activitypub-profile{align-items:center;display:flex;padding:1rem 0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__avatar{border-radius:50%;height:75px;margin-right:1rem;width:75px}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__content{flex:1;min-width:0}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__handle,.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{line-height:1.2;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__name{font-size:1.25em}.activitypub-follow-me-block-wrapper .activitypub-profile .activitypub-profile__follow{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:1rem}.activitypub__modal.components-modal__frame{background-color:#f7f7f7;color:#333}.activitypub__modal.components-modal__frame .components-modal__header-heading,.activitypub__modal.components-modal__frame h4{color:#333;letter-spacing:inherit;word-spacing:inherit}.activitypub__modal.components-modal__frame .components-modal__header .components-button:hover{color:var(--wp--preset--color--white)}.activitypub__dialog{max-width:40em}.activitypub__dialog h4{line-height:1;margin:0}.activitypub__dialog .activitypub-dialog__section{margin-bottom:2em}.activitypub__dialog .activitypub-dialog__description{font-size:var(--wp--preset--font-size--normal,.75rem);margin:.33em 0 1em}.activitypub__dialog .activitypub-dialog__button-group{align-items:flex-end;display:flex;justify-content:flex-end}.activitypub__dialog .activitypub-dialog__button-group svg{height:21px;margin-right:.5em;width:21px}.activitypub__dialog .activitypub-dialog__button-group input{background-color:var(--wp--preset--color--white);border:1px solid var(--wp--preset--color--black);border-radius:inherit 0;color:var(--wp--preset--color--black);flex:1;padding:6px 12px}.activitypub__dialog .activitypub-dialog__button-group button{align-self:center;background-color:var(--wp--preset--color--black);color:var(--wp--preset--color--white);margin-left:0;text-decoration:none}
+
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/9533da429c1e5959e69e0b6e37cded91.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/409"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.3">
+<link rel="canonical" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough">
+<link rel="shortlink" href="https://kaspars.net/409">
+<link rel="alternate" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fis-your-wordpress-theme-good-enough">
+<link rel="alternate" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fis-your-wordpress-theme-good-enough&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Is Your WordPress Theme Good Enough?">
+<meta property="og:description" content="Following the release of the Tabbed Widgets plugin many people left comments saying that it doesn’t work with the theme they are using...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2008/07/wordpress-widgets-illustration.png">
+<meta property="og:url" content="https://kaspars.net/blog/is-your-wordpress-theme-good-enough">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-409 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async" fetchpriority="high">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+	<li id="menu-item-5782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5782"><a title="My projects, social profiles and suggested podcasts" href="../../links/">Links</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/">Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/wordpress/" rel="category tag">WordPress</a> →</div>
+		
+		<article class="post-409 post type-post status-publish format-standard has-post-thumbnail hentry category-wordpress has-featured-image" id="post-409" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Is Your WordPress Theme Good Enough?			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Wed, 23 Jul 2008 18:04:44 +0300">July 23, 2008</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 25 Apr 2010 21:36:54 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/wordpress/" rel="category tag">WordPress</a></span>  <span class="meta-item meta-comment-count">
+			<a href="#comments">36&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<p><img decoding="async" class="size-full wp-image-410 alignright" title="WordPress Widgets" src="../../wp-content/uploads/2008/07/wordpress-widgets-illustration.png" alt="Are your widgets good enough?" width="117" height="116"> Following the release of the <a title="Easily create tabbed and accordion type interface widgets in WordPress" href="../wordpress/322-tabbed-widgets-plugin-for-wordpress/">Tabbed Widgets plugin</a> many people left comments saying that it doesn’t work with the theme they are using. And only then I realized how many themes do not take full advantage of widget functionality that WordPress provides by default. In this article I am going to show you how to fix them.<span id="more-409"></span></p>
+<h3>Widgets… hmm?</h3>
+<p>Let’s think of widgets as if they were plain cardboard boxes. And let’s suppose we both are in a room full of these boxes and we are trying to figure out what is inside each of the box just by looking at them. If they all are exactly the same size, shape and color, then there is no way to differentiate between them.</p>
+<p>On the web everything is built from various markup and layout boxes. In case of WordPress widgets these are usually <code>&lt;div&gt;</code> elements that semantically donate a group of content. So if there are many widgets on a page, then each of them is inside the same <code>&lt;div&gt;</code> box and there is no way to telling them apart… <em>unless</em> unique names (indentifiers) and shared surnames (classes) are applied to each of them.</p>
+<h3>How the Tabbed Widgets Work</h3>
+<p>All the Tabbed Widgets magic is done by two amazing JavaScript functions — <strong><a title="UI Tabs extension for jQuery" href="http://docs.jquery.com/UI/Tabs">Tabs 3</a></strong> by <a title="Author of Tabs extension for jQuery" href="http://stilbuero.de">Klaus Hartl</a> and <strong><a title="UI Accordion extension for jQuery" href="http://docs.jquery.com/UI/Accordion">Accordion</a></strong> by <a title="Author of Accordion extension for jQuery" href="http://bassistance.de/">Jörn Zaefferer</a>, which do the showing &amp; hiding, and the dynamic transitions. Plugin’s PHP backend, however, places other widgets inside those tabbed and accordion blocks.</p>
+<p>Now here is the problem — those Javascript functions need to know which of the fifty seven widgets in your blog’s sidebar are the tabbed ones. Even more — there might be one tabbed and one accordion type widget, right? So how can the scripts target them?</p>
+<p>Unique identifiers or names and surnames, I say, is the answer. But the reality is — many themes do not use the WordPress built-in functionality that automatically generates these identifiers.</p>
+<h3>How to Fix Your WordPress Theme</h3>
+<p>First, find the place where your theme defines <em>sidebar widgets</em>. This is usually done in <code>functions.php</code> file in theme’s folder but it may differ. If you can’t find it, simply go through all the theme files and search for <code>register_sidebar</code>.</p>
+<p>Find the line that defines the HTML element <em>box</em> in which all the widgets are placed. It should look something like this:</p>
+<pre>'before_widget' =&gt; '&lt;div ... &gt;',
+'after_widget' =&gt; '&lt;/div&gt;',</pre>
+<p>If it contains <strong><code>%1$s</code></strong> and <strong><code>%2$s</code></strong> then you should consider donating to the author of the theme for the great job. However, <strong>if they are not present</strong>, then replace it with</p>
+<pre>'before_widget' =&gt; '&lt;div id="%1$s" class="%2$s"&gt;',
+'after_widget' =&gt; '&lt;/div&gt;',</pre>
+<p>and WordPress will automaticaly replace <code>%1$s</code> with a unique identifier (name) and <code>%2$s</code> with a classname (surname) of each widget.</p>
+<h3>Anything Else?</h3>
+<p>Yes, if you find that <code>%1$s</code> and <code>%2$s</code> are missing, please contact the author of the theme with a link to this article. Thank you.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../google-recursion/" rel="prev">Google recursion?</a></h4></li><li><h4 class="next"><a href="../comic-sans-design-challenge/" rel="next">Comic Sans Design Challenge</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../tabbed-widgets-plugin-for-wordpress/" rel="bookmark" title="Tabbed Widgets Plugin for&nbsp;WordPress">Tabbed Widgets Plugin for&nbsp;WordPress</a></li>
+<li><a href="../tabbed-widgets-plugin-update-076/" rel="bookmark" title="Tabbed Widgets Plugin Update (0.76)">Tabbed Widgets Plugin Update (0.76)</a></li>
+<li><a href="../wordpress-plugin-custom-function-widgets/" rel="bookmark" title="WordPress Plugin: Custom Function Widgets">WordPress Plugin: Custom Function Widgets</a></li>
+<li><a href="../tabbed-widgets-updated-for-wordpress-2-8/" rel="bookmark" title="Tabbed Widgets Updated for WordPress 2.8">Tabbed Widgets Updated for WordPress 2.8</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					36 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1" id="comment-664">
+				<div id="div-comment-664" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/6537788b4369ab14e33ea48c561aaec6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/6537788b4369ab14e33ea48c561aaec6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" decoding="async">			<cite class="fn"><a href="http://andreasviklund.com/wordpress-themes/" class="url" rel="ugc external nofollow">Andreas Viklund</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-664">July 27, 2008 at 01:37</a>		</div>
+
+		<p>Excellent, I have just tested the listed code and added it to those of my themes that are about to be updated soon. It will be added in all themes once they have all been updated, because this is a plugin that I know that a lot of people will want to use. :)</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=664#respond" data-commentid="664" data-postid="409" data-belowelement="div-comment-664" data-respondelement="respond" data-replyto="Reply to Andreas Viklund" aria-label="Reply to Andreas Viklund">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-665">
+				<div id="div-comment-665" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-665">July 27, 2008 at 12:36</a>		</div>
+
+		<p><a href="#comment-7497" rel="reply">Andreas</a>, great to hear that and thanks for the effort.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=665#respond" data-commentid="665" data-postid="409" data-belowelement="div-comment-665" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-666">
+				<div id="div-comment-666" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/52bfafa4cc0bdbcebb39fbb19fbdd33a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/52bfafa4cc0bdbcebb39fbb19fbdd33a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">k|torz</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-666">July 28, 2008 at 08:40</a>		</div>
+
+		<p>Thank you very much for your explanation, all is working great now on my <a href="http://inmulotveritas.c.la" title="my blog" rel="nofollow">blog</a>. Very good job!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=666#respond" data-commentid="666" data-postid="409" data-belowelement="div-comment-666" data-respondelement="respond" data-replyto="Reply to k|torz" aria-label="Reply to k|torz">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-667">
+				<div id="div-comment-667" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/52bfafa4cc0bdbcebb39fbb19fbdd33a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/52bfafa4cc0bdbcebb39fbb19fbdd33a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://inmulotveritas.c.la" class="url" rel="ugc external nofollow">k|torz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-667">July 28, 2008 at 16:31</a>		</div>
+
+		<p>I spoke too speed… i think i have conflicts between jquery and prototype…</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=667#respond" data-commentid="667" data-postid="409" data-belowelement="div-comment-667" data-respondelement="respond" data-replyto="Reply to k|torz" aria-label="Reply to k|torz">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-668">
+				<div id="div-comment-668" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-668">August 1, 2008 at 18:01</a>		</div>
+
+		<p><a href="#comment-7502" rel="reply">k|torz</a>, try disabling the plugins which use some kind of javascript and see which one is causing the problem.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=668#respond" data-commentid="668" data-postid="409" data-belowelement="div-comment-668" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-669">
+				<div id="div-comment-669" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/37be065de2ffc26546b6a16f3d0e1dc8/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/37be065de2ffc26546b6a16f3d0e1dc8/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.jeffro2pt0.com" class="url" rel="ugc external nofollow">Jeffro2pt0</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-669">August 4, 2008 at 12:30</a>		</div>
+
+		<p>Glad to see you posted this article Kaspars. I’m getting ready to go through another redesign and if Tabbed widgets doesn’t work, I’ll be back to this page to implement your suggested fixes.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=669#respond" data-commentid="669" data-postid="409" data-belowelement="div-comment-669" data-respondelement="respond" data-replyto="Reply to Jeffro2pt0" aria-label="Reply to Jeffro2pt0">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-670">
+				<div id="div-comment-670" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d879b2067d06c86be1759c1d38586563/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d879b2067d06c86be1759c1d38586563/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.bhuspeaks.com" class="url" rel="ugc external nofollow">Nitin Srivastava</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-670">August 8, 2008 at 17:17</a>		</div>
+
+		<p>Hi,</p>
+<p>This looks to be a wonderful plugin but unfortunately it does not work with Rebel Magazine Theme – <a href="http://www.wpthemedesigner.com/2008/05/07/rebel-magazine-theme/" rel="nofollow ugc">http://www.wpthemedesigner.com/2008/05/07/rebel-magazine-theme/</a>.</p>
+<p>Can you please help me to get your plugin working with Rebel Magazine Theme. My running website is –  <a href="http://www.bhuspeaks.com" rel="nofollow ugc">http://www.bhuspeaks.com</a></p>
+<p>Regards,</p>
+<p>Nitin</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=670#respond" data-commentid="670" data-postid="409" data-belowelement="div-comment-670" data-respondelement="respond" data-replyto="Reply to Nitin Srivastava" aria-label="Reply to Nitin Srivastava">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-671">
+				<div id="div-comment-671" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-671">August 8, 2008 at 17:23</a>		</div>
+
+		<p><a href="#comment-7630" rel="nofollow">Nitin</a>, you should contact the author of that theme and kindly ask him to correct the code that generates the code for the sidebar as described in this article. However, I suggest you try to fix it yourself, first.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=671#respond" data-commentid="671" data-postid="409" data-belowelement="div-comment-671" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-672">
+				<div id="div-comment-672" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d2fde555e5d3929019ce5bfa5f7f7faa/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d2fde555e5d3929019ce5bfa5f7f7faa/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://doddemagen.com" class="url" rel="ugc external nofollow">Bernard Doddema, Jr.</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-672">August 11, 2008 at 18:51</a>		</div>
+
+		<p>This is where I get confused.  It mostly reads as you’ve mentioned but adds the “li” as well as shown below:</p>
+<p><code>[Code fragment removed because of incorrect formatting]</code></p>
+<p>Is this ok or should I remove the “li”?</p>
+<p>Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=672#respond" data-commentid="672" data-postid="409" data-belowelement="div-comment-672" data-respondelement="respond" data-replyto="Reply to Bernard Doddema, Jr." aria-label="Reply to Bernard Doddema, Jr.">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-673">
+				<div id="div-comment-673" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-673">August 13, 2008 at 00:01</a>		</div>
+
+		<p><a href="#comment-7679" rel="nofollow">Bernard</a>, you can leave the li there. I also suggest you read some basic <a href="http://www.google.com/search?q=html+tutorial" rel="nofollow">tutorials about HTML</a> and how it works in order to get a better feel why things should be done one or the other way.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=673#respond" data-commentid="673" data-postid="409" data-belowelement="div-comment-673" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-674">
+				<div id="div-comment-674" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/6d3cf04a33e977441b7bdce4f98f78d3/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/6d3cf04a33e977441b7bdce4f98f78d3/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://culturazzi.org/review/" class="url" rel="ugc external nofollow">Ankur Sharma</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-674">December 5, 2008 at 19:15</a>		</div>
+
+		<p>Thanks, this is a brilliant plugin. This works fine with the changes you suggested if I choose the accordion option. However when I use the tabs option, it goes for a toss.</p>
+<p>The site link is:<br>
+<a href="http://culturazzi.org/review/" rel="nofollow ugc">http://culturazzi.org/review/</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=674#respond" data-commentid="674" data-postid="409" data-belowelement="div-comment-674" data-respondelement="respond" data-replyto="Reply to Ankur Sharma" aria-label="Reply to Ankur Sharma">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-675">
+				<div id="div-comment-675" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-675">March 19, 2009 at 13:18</a>		</div>
+
+		<p>Hi Kaspars,<br>
+I am facing some trouble with implementing your plugin which I really want to use on my blog running under i3theme with two sidebars. My function.php contains unique identifiers as you can see here:</p>
+<p>&lt;?php<br>
+if ( function_exists(‘register_sidebars’) )<br>
+	register_sidebars(2, array(<br>
+        ‘before_widget’ =&gt; ‘&lt;!–sidebox start –&gt;&lt;div id="%1$s" class="dbx-box %2$s"&gt;’,<br>
+        ‘after_widget’ =&gt; ‘&lt;/div&gt;&lt;/div&gt;&lt;!–sidebox end –&gt;’,<br>
+        ‘before_title’ =&gt; ‘&lt;h3 class="dbx-handle"&gt;’,<br>
+        ‘after_title’ =&gt; ‘&lt;/h3&gt;&lt;div class="dbx-content"&gt;’,<br>
+    ));</p>
+<p>But I think there is a problem with the dbx-box and the handling of the left and right sidebar which I cannot figure out properly. I would appreciate any help and also buy you some lunch ;-) if you could help me on that.<br>
+Thank you very much in advance,<br>
+Michael</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=675#respond" data-commentid="675" data-postid="409" data-belowelement="div-comment-675" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-2" id="comment-676">
+				<div id="div-comment-676" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-676">March 19, 2009 at 16:57</a>		</div>
+
+		<p><a href="#comment-9386" rel="nofollow">Michael</a>, could you please give the URL of your site. Thanks.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=676#respond" data-commentid="676" data-postid="409" data-belowelement="div-comment-676" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-677">
+				<div id="div-comment-677" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-677">March 20, 2009 at 00:00</a>		</div>
+
+		<p>Thanks for your answer Kaspars!<br>
+My Url would be <a href="http://www.boystalk.de" rel="nofollow ugc">http://www.boystalk.de</a> I´ll include the widget in the lower part of my right sidebar until I hear from you again, ok?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=677#respond" data-commentid="677" data-postid="409" data-belowelement="div-comment-677" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-678">
+				<div id="div-comment-678" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-678">March 20, 2009 at 00:23</a>		</div>
+
+		<p>Unfortunately, I had to remove the widget due to design problems, do you need to see the widget online? If yes, I´m going to port everything to a test domain, I wanted to do that anyway…someday ;-)</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=678#respond" data-commentid="678" data-postid="409" data-belowelement="div-comment-678" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-679">
+				<div id="div-comment-679" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-679">March 20, 2009 at 00:23</a>		</div>
+
+		<p><a href="#comment-9399" rel="nofollow">Michael</a>, this seems to be a problem on my plugin’s as well as your theme’s side, which places <code>&lt;/h3&gt;&lt;div class="dbx-content"&gt;</code> after the widget title. Notice the final <code>&lt;div&gt;</code>, which is used for wrapping widget’s content.</p>
+<p>The problem is that my plugin tries to hide the default widget title from being displayed inside a tabbed widget, because it is already displayed in the tab.</p>
+<p>You should be able to fix the problem by selecting ‘Show widget title’ next to the widget title under the <em>Tabbed Widgets</em> settings, and adding the following CSS at the end of your theme’s <code>style.css</code> to hide the widget title:</p>
+<p><code>#sidebar-right .tabbed-widget-item .dbx-handle { display:none; }</code></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=679#respond" data-commentid="679" data-postid="409" data-belowelement="div-comment-679" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-680">
+				<div id="div-comment-680" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a89d610dc76ac9bcb21b2502919676d0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Michael</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-680">March 20, 2009 at 01:30</a>		</div>
+
+		<p>Thank you very much for your help Kaspars, I really appreciate it. Selecting a title solves the problem that no box showed up, but I still have the problem that no content is displayed. You can see that for yourself on my website now, I´ll let the widget online for a while.<br>
+I get following error btw: jQuery.easing[jQuery.easing.def] is not a function<br>
+source: <a href="http://www.boystalk.de/wp-content/plugins/tabbed-widgets/js/jquery.easing.js?ver=2.7.1" rel="nofollow ugc">http://www.boystalk.de/wp-content/plugins/tabbed-widgets/js/jquery.easing.js?ver=2.7.1</a><br>
+line: 46<br>
+Michael</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=680#respond" data-commentid="680" data-postid="409" data-belowelement="div-comment-680" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-681">
+				<div id="div-comment-681" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.juanhernandezjr.com" class="url" rel="ugc external nofollow">Cristy</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-681">March 28, 2009 at 01:37</a>		</div>
+
+		<p>Excellent explanation! Thank you! I really don’t know anything about php, codes, whatever…and I guess the theme I chose sucks because none of the codes you suggest are anywhere to be found. My functions.php has the following:</p>
+<p>&lt;?php<br>
+if ( function_exists(‘register_sidebars’) )<br>
+    register_sidebars(2);</p>
+<p>?&gt;</p>
+<p>I can’t find any “before” or “after” anywhere. The theme has sidebars.php, sidebar1.php, and sidebar2.php and the identifiers you speak of don’t exist there. Any clue?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=681#respond" data-commentid="681" data-postid="409" data-belowelement="div-comment-681" data-respondelement="respond" data-replyto="Reply to Cristy" aria-label="Reply to Cristy">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-682">
+				<div id="div-comment-682" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-682">March 28, 2009 at 11:59</a>		</div>
+
+		<p><a href="#comment-9468" rel="nofollow">Cristy</a>, your theme is using the default settings which already include all the necessary identifiers. This is what I see in your website’s HTML output:</p>
+<p><code>&lt;li class="widget widget_text" id="text-390346671"&gt;...</code></p>
+<p>So your theme is all good.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=682#respond" data-commentid="682" data-postid="409" data-belowelement="div-comment-682" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-683">
+				<div id="div-comment-683" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.juanhernandezjr.com" class="url" rel="ugc external nofollow">Cristy</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-683">March 28, 2009 at 20:14</a>		</div>
+
+		<p><a href="#comment-9472" rel="nofollow">Kaspars</a>, ok, but I don’t see the tabbed effect on the sidebars. I have 2 setup up and can’t see them in tabbed nor accordian. Am I doing something wrong? Thanks for the quick reply!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=683#respond" data-commentid="683" data-postid="409" data-belowelement="div-comment-683" data-respondelement="respond" data-replyto="Reply to Cristy" aria-label="Reply to Cristy">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-684">
+				<div id="div-comment-684" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-684">March 28, 2009 at 20:17</a>		</div>
+
+		<p><a href="#comment-9478" rel="nofollow">Cristy</a>, did you add the newly created Tabbed Widget to any of the active sidebars?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=684#respond" data-commentid="684" data-postid="409" data-belowelement="div-comment-684" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-685">
+				<div id="div-comment-685" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c4d01268f36fbb5cc2793e4183a93960/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.juanhernandezjr.com" class="url" rel="ugc external nofollow">Cristy</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-685">March 28, 2009 at 20:26</a>		</div>
+
+		<p>Never mind!!! I figured it out! DUh!!! Great plugin!!! Thanks for your help.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=685#respond" data-commentid="685" data-postid="409" data-belowelement="div-comment-685" data-respondelement="respond" data-replyto="Reply to Cristy" aria-label="Reply to Cristy">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-686">
+				<div id="div-comment-686" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c9910395cf0f46fdf8aac14f27884690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-686">March 28, 2009 at 20:44</a>		</div>
+
+		<p><a href="#comment-9480" rel="nofollow">Cristy</a>, it would be interesting to know what the problem and solution was, just in case anyone else encounters the same issue. Thanks.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=686#respond" data-commentid="686" data-postid="409" data-belowelement="div-comment-686" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-687">
+				<div id="div-comment-687" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/315cfe0134c04c35c06a41c625717a88/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/315cfe0134c04c35c06a41c625717a88/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.complainypants.com" class="url" rel="ugc external nofollow">David</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-687">April 11, 2009 at 00:39</a>		</div>
+
+		<p>It seems like the Tabbed Widgets plugin is working everywhere on my site (<a href="http://www.complainypants.com" rel="nofollow ugc">http://www.complainypants.com</a>) except for on comment pages and other pages that begin with # characters. One those pages, all the tabs are open at once. How can I work around this?</p>
+<p>Problem page:<br>
+<a href="http://www.complainypants.com/2009/04/i-hate-you-and-everybody-else/#comments" rel="nofollow ugc">http://www.complainypants.com/2009/04/i-hate-you-and-everybody-else/#comments</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=687#respond" data-commentid="687" data-postid="409" data-belowelement="div-comment-687" data-respondelement="respond" data-replyto="Reply to David" aria-label="Reply to David">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-688">
+				<div id="div-comment-688" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d7e4fd2861d5f1ee33d0bf59830fd665/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d7e4fd2861d5f1ee33d0bf59830fd665/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://mangacritic.com" class="url" rel="ugc external nofollow">Katherine Dacey</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-688">April 17, 2009 at 23:00</a>		</div>
+
+		<p>Tried inserting the suggested code into my function.php file, and my entire site disappeared–I had to reload the file via my FTP server in order to get access to the WP Admin panel. I checked the forums for the theme (Arthemia Free) and the creators were unable to answer similar questions about tabbed widgets. (They state they’re not big on widgets–not a helpful sign!)</p>
+<p>Here is the line of code as it appears in the function.php file:</p>
+<p>register_sidebar(array(‘name’ =&gt; ‘Sidebar Top’,’before_widget’ =&gt; ”,’after_widget’ =&gt; ”,’before_title’ =&gt; ”,’after_title’ =&gt; ”));</p>
+<p>Can I make your code fix work with this theme file? Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=688#respond" data-commentid="688" data-postid="409" data-belowelement="div-comment-688" data-respondelement="respond" data-replyto="Reply to Katherine Dacey" aria-label="Reply to Katherine Dacey">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-5108">
+				<div id="div-comment-5108" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/b7a87316fe4cbc6de59b6446e6ca8f37/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/b7a87316fe4cbc6de59b6446e6ca8f37/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Impulsgeber</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5108">January 28, 2011 at 16:10</a>		</div>
+
+		<p>Hi. </p>
+<p>I have the following error message in the backend: „Tabbed Widgets plugin isn’t compatible with your theme XXX, because it doesn’t use unique widgets identifiers. Here is how you can fix it. Please disable the plugin while you fix this issue.“</p>
+<p>But it works und the code in the functions.php is correct. So, how can I remove the Errormessage?</p>
+<p>Greetings</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5108#respond" data-commentid="5108" data-postid="409" data-belowelement="div-comment-5108" data-respondelement="respond" data-replyto="Reply to Impulsgeber" aria-label="Reply to Impulsgeber">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-5197">
+				<div id="div-comment-5197" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5197">January 30, 2011 at 19:31</a>		</div>
+
+		<p><a href="#comment-5108" rel="nofollow">Impulsgeber</a>, currently there is no easy way to do it. Could you please email me your theme — I would really like to see why this compatibility check fails.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5197#respond" data-commentid="5197" data-postid="409" data-belowelement="div-comment-5197" data-respondelement="respond" data-replyto="Reply to kaspars" aria-label="Reply to kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-5627">
+				<div id="div-comment-5627" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fc542fe250ccc7eaa4bc8f181ee211a0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fc542fe250ccc7eaa4bc8f181ee211a0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://demo.colorlabsproject.com/arthemia/" class="url" rel="ugc external nofollow">Maggi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5627">February 11, 2011 at 13:40</a>		</div>
+
+		<p>Hi,</p>
+<p>I am having the same problems as Katherine using Arthemia premium except I didn’t insert the code to the php file, since I couldn’t find the text in the file “‘before_widget’ =&gt; ”,<br>
+‘after_widget’ =&gt; ”,”.</p>
+<p>See the functions.php here: <a href="http://pastebin.com/7xKhnWFr" rel="nofollow ugc">http://pastebin.com/7xKhnWFr</a>.</p>
+<p>Best regards.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5627#respond" data-commentid="5627" data-postid="409" data-belowelement="div-comment-5627" data-respondelement="respond" data-replyto="Reply to Maggi" aria-label="Reply to Maggi">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-5629">
+				<div id="div-comment-5629" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5629">February 11, 2011 at 14:59</a>		</div>
+
+		<p><a href="#comment-5627" rel="nofollow">Maggi</a>, see line 17 to 23 of the sample you posted. You need to make them look like this:</p>
+<pre><code>'before_widget' =&amp;gt; '&amp;lt;div id=&amp;quot;%1$s&amp;quot; class=&amp;quot;%2$s&amp;quot;&amp;gt;',
+'after_widget' =&amp;gt; '&amp;lt;/div&amp;gt;'</code></pre>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5629#respond" data-commentid="5629" data-postid="409" data-belowelement="div-comment-5629" data-respondelement="respond" data-replyto="Reply to kaspars" aria-label="Reply to kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-5651">
+				<div id="div-comment-5651" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fc542fe250ccc7eaa4bc8f181ee211a0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fc542fe250ccc7eaa4bc8f181ee211a0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.biofilman.is" class="url" rel="ugc external nofollow">Maggi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5651">February 12, 2011 at 15:19</a>		</div>
+
+		<p><a href="#comment-5629" rel="nofollow">kaspars</a>, thanks for the quick reply. I do not understand completely though. Do you mean that it should look like this: <a href="http://pastebin.com/SJqMhRtM" rel="nofollow ugc">http://pastebin.com/SJqMhRtM</a>?</p>
+<p>I updated the functions.php file on my webpage, and now the widget seems to be working pretty well except for some error, see here: <a href="http://i52.tinypic.com/15ry62e.jpg" rel="nofollow ugc">http://i52.tinypic.com/15ry62e.jpg</a>. Not sure what is causing this, as I’m not good with programming. It does not matter what sidebar I put it on, it always looks like this.</p>
+<p>When the widget was in the footer sidebars though, it looked perfect. No extra space beneath it.</p>
+<p>Best regards.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5651#respond" data-commentid="5651" data-postid="409" data-belowelement="div-comment-5651" data-respondelement="respond" data-replyto="Reply to Maggi" aria-label="Reply to Maggi">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-kaspars bypostauthor even thread-odd thread-alt depth-1" id="comment-5658">
+				<div id="div-comment-5658" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5658">February 12, 2011 at 19:29</a>		</div>
+
+		<p>Yeah, that is correct <a href="#comment-5651" rel="nofollow">Maggi</a>. Regarding the other problem — you need to style those tabs, for which you’ll need some serious CSS knowledge.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=5658#respond" data-commentid="5658" data-postid="409" data-belowelement="div-comment-5658" data-respondelement="respond" data-replyto="Reply to kaspars" aria-label="Reply to kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-7804">
+				<div id="div-comment-7804" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/a084125c824d274ff40cb834cf9f544a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/a084125c824d274ff40cb834cf9f544a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://pixopoint.com/" class="url" rel="ugc external nofollow">Ryan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-7804">April 28, 2011 at 07:25</a>		</div>
+
+		<p>I hadn’t heard of this % business until now. Thanks for the heads up!</p>
+<p>I assumed it was a bug in your plugin until stumbling across this blog post.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=7804#respond" data-commentid="7804" data-postid="409" data-belowelement="div-comment-7804" data-respondelement="respond" data-replyto="Reply to Ryan" aria-label="Reply to Ryan">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-25089">
+				<div id="div-comment-25089" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/ab9d589b7a29e24e81333a18232e32cf/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/ab9d589b7a29e24e81333a18232e32cf/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.thebridesboudoir.com" class="url" rel="ugc external nofollow">Láidir</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-25089">November 24, 2012 at 10:19</a>		</div>
+
+		<p>Hi,</p>
+<p>I’ve tried to make the recommended changes to my functions.php file but for some reason the plugin still doesn’t work. Here’s how my functions.php file looks currently since I edited it according to your instructions:</p>
+<p><a href="http://pastebin.com/u1e5HQPy" rel="nofollow ugc">http://pastebin.com/u1e5HQPy</a></p>
+<p>Initially there were ‘div class’ tags not ‘div id’ tags which you can see in the original functions.php posted in the link below. The %2$s was there but not the %1$s</p>
+<p>My sidebar still shows widgets with that change above but the widget isn’t working. The tabs have never worked for me in any theme I have tried but I got the accordian type working on the last theme but I switched theme and it’s not been working.  </p>
+<p>The widget is set up on the site at the moment if you’d like to check it. Despite that change above I’m still getting the warning in admin side telling me that the theme is not compatible. I’m wondering if by changing the div class to div id if I need to make any changes in the sidebar.php also?</p>
+<p>Here’s how the original functions.php looked before I made the changes you suggest:</p>
+<p><a href="http://pastebin.com/TLGbbeyF" rel="nofollow ugc">http://pastebin.com/TLGbbeyF</a></p>
+<p>I’d be very grateful if I could get the tabbed function working especially, that’s the option I prefer. Thanks for your help in advance.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=25089#respond" data-commentid="25089" data-postid="409" data-belowelement="div-comment-25089" data-respondelement="respond" data-replyto="Reply to Láidir" aria-label="Reply to Láidir">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-25373">
+				<div id="div-comment-25373" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-25373">December 3, 2012 at 09:54</a>		</div>
+
+		<p><a href="#comment-25089" rel="nofollow">Láidir</a>, it looks like your theme is not outputting the required widget settings script that specifies widgets that will be styled as tabbed or accordion. I have no idea why that could happen.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=25373#respond" data-commentid="25373" data-postid="409" data-belowelement="div-comment-25373" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-25361">
+				<div id="div-comment-25361" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/ab9d589b7a29e24e81333a18232e32cf/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/ab9d589b7a29e24e81333a18232e32cf/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn">Laidir</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-25361">December 3, 2012 at 03:23</a>		</div>
+
+		<p>Any reason why my query was deleted? I’d love to know. I spent a lot of time putting my query together and I am now onto the second theme which does not work with your plugin! Come on now… balance your replies thanks! Not everyone is ending up all happy happy and fixed are they and just how many posts are you deleting and ignoring is the question right about now!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=25361#respond" data-commentid="25361" data-postid="409" data-belowelement="div-comment-25361" data-respondelement="respond" data-replyto="Reply to Laidir" aria-label="Reply to Laidir">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-25372">
+				<div id="div-comment-25372" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-25372">December 3, 2012 at 09:46</a>		</div>
+
+		<p>Your comment was not deleted, <a href="#comment-25361" rel="nofollow">Laidir</a>, it’s still in moderation, because I haven’t had the time to look at it.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/is-your-wordpress-theme-good-enough?replytocom=25372#respond" data-commentid="25372" data-postid="409" data-belowelement="div-comment-25372" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a55be4f54f989d4d5baa13c3b4402d81" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="409" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><!-- Mailchimp for WordPress v4.9.11 - https://www.mc4wp.com/ --><input type="hidden" name="_mc4wp_subscribe_wp-comment-form" value="0"><p class="mc4wp-checkbox mc4wp-checkbox-wp-comment-form "><label><input type="checkbox" name="_mc4wp_subscribe_wp-comment-form" value="1"><span>Send me new blog posts via e-mail.</span></label></p><!-- / Mailchimp for WordPress --></form>	</div><!-- #respond -->
+	
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widgets, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7, <a href="https://preseto.com/plugins/gumroad-embed">Gumroad Embed</a> and this <a href="https://preseto.com/themes/list">List theme</a>. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h1 class="widget-title">Subscribe to my email newsletter</h1><script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.11 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-5767" method="post" data-id="5767" data-name="Default sign-up form"><div class="mc4wp-form-fields"><p>
+  	<labe>
+      	Enter your email:
+		<input type="email" id="mc4wp_email" name="EMAIL" required="">
+  	</labe>
+    <input type="submit" value="Sign up">
+</p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1711369072"><input type="hidden" name="_mc4wp_form_id" value="5767"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1"><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+											<li>
+					<a href="../how-much-insulation-is-enough/">How Much Insulation is Too Much?</a>
+									</li>
+											<li>
+					<a href="../electric-hot-water-heater-insulation-efficiency/">Insulation Efficiency of Electric Hot Water Heaters</a>
+									</li>
+											<li>
+					<a href="../tuya-smart-box-house-keeper-air-quality/">Notes on Tuya Air Quality Sensors</a>
+									</li>
+											<li>
+					<a href="../ventilation-air-heat-cool-passive-house/">Use Ventilation Exhaust Air for Space Heating and Hot Water</a>
+									</li>
+											<li>
+					<a href="../zemismart-zigbee-homekit-hub/">Notes on Zemismart HomeKit Zigbee Hub</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="Mans blogs latviešu valodā" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/8b8edbd8b8f53942788f9053392168ce.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script async="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	73 queries in 0.0882 seconds on Mon, 25 Mar 2024 12:17:52 +0000.-->
+
+
+
+</body></html>
