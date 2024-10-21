@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>WireGuard on MikroTik RouterOS (Home Automation) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » WireGuard on MikroTik RouterOS Comments Feed" href="https://kaspars.net/blog/wireguard-mikrotik-routeros/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/7871"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/wireguard-mikrotik-routeros">
+<link rel="shortlink" href="https://kaspars.net/7871">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwireguard-mikrotik-routeros">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwireguard-mikrotik-routeros&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wireguard-mikrotik-routeros">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="WireGuard on MikroTik RouterOS">
+<meta property="og:description" content="WireGuard can be used for a lot of things: Managing router configuration remotely behind NATed networks such as mobile connections.Connectin...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2020/08/wireguard-routing-mikrotik.png">
+<meta property="og:url" content="https://kaspars.net/blog/wireguard-mikrotik-routeros">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wireguard-mikrotik-routeros">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-7871 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/home-automation/" rel="category tag">Home Automation</a> →</div>
+		
+		<article class="post-7871 post type-post status-publish format-standard has-post-thumbnail hentry category-home-automation tag-mikrotik tag-wireguard has-featured-image" id="post-7871" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					WireGuard on MikroTik RouterOS			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Fri, 24 Dec 2021 13:04:47 +0200">December 24, 2021</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Thu, 08 Sep 2022 18:23:28 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/home-automation/" rel="category tag">Home Automation</a></span> <span class="meta-item meta-tags tags"><a href="../tag/mikrotik/" rel="tag">MikroTik</a><a href="../tag/wireguard/" rel="tag">WireGuard</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">2&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p>WireGuard can be used for a lot of things:</p>
+
+
+
+<ul class="wp-block-list"><li>Managing router configuration remotely behind NATed networks such as mobile connections.</li><li>Connecting to your home network while on the road for home automation and safe internet access.</li><li>Connecting several networks over the public internet. </li></ul>
+
+
+
+<p>This post focuses on enabling remote access to Mikrotik routers and the attached networks. All other setups are outside the scope of this document and can be designed by following this awesome <a href="https://github.com/pirate/wireguard-docs#readme">WireGuard documentation</a>.</p>
+
+
+
+<span id="more-7871"></span>
+
+
+
+<p>Mikrotik <a href="https://help.mikrotik.com/docs/display/ROS/WireGuard">added official support for WireGuard</a> in version 7 of RouterOS.</p>
+
+
+
+<h2 class="wp-block-heading">Peers, Servers and Clients </h2>
+
+
+
+<p>With WireGuard everything is a “peer” which often causes confusion about how to configure each device on the network.</p>
+
+
+
+<p>In practice, most consumer devices today are on some kind of private ISP network and can’t be addressed from the public internet which is good for security reasons. Only when your device initiates a connection to a remote service such as google.com (a TCP connection), do all of the routers on the way establish a connection path back to your device. This is called <a href="https://en.wikipedia.org/wiki/Network_address_translation">Network address translation</a> or NAT.</p>
+
+
+
+<p>That is why most WireGuard networks require at least one “peer” with <strong>a real public IP address</strong> that is accessible on the public internet to serve as a gateway. Accessing peers behind NATed connections such as mobile phones and most home internet connections isn’t possible without connecting through a peer on the public internet unless you want to attempt some kind of <a href="https://www.jordanwhited.com/posts/wireguard-endpoint-discovery-nat-traversal/">UDP hole punching</a>.</p>
+
+
+
+<p>This article assumes the following network elements:</p>
+
+
+
+<ul class="wp-block-list"><li>One WireGuard peer on the public network serving as a gateway for the rest of the peers.</li><li>One MikroTik router configured as a WireGuard peer.</li></ul>
+
+
+
+<h2 class="wp-block-heading">WireGuard Gateway or Server Peer</h2>
+
+
+
+<p>This can be any computer with a public IP address running Wireguard. There are <a href="../wireguard-raspberry-pi/" data-type="post" data-id="7597">many guides</a> for how to build one on DigitalOcean, Linode, AWS or any other cloud hosting provider. Alternatively, use <a href="https://www.google.com/search?q=wireguard+provider">one of the commercial offering</a> but keep in mind that anyone with access to the private keys of your peers can access your WireGuard network.</p>
+
+
+
+<p>For our example we’ll use the following server configuration:</p>
+
+
+
+<ul class="wp-block-list"><li>Public IP <code>123.123.123.1</code></li><li>WireGuard <code>ListenPort</code> set to 51820</li><li>WireGuard <code>Address</code> range set to <code>10.100.100.1/24</code> </li><li>WireGuard public key <code>YrXqKGpYLVx829MCcVcb78QFDWIeeWfOyFHmdmZAlF0=</code></li></ul>
+
+
+
+<p>Assuming that the server is up and running, let’s configure the WireGuard peer on RouterOS.</p>
+
+
+
+<h2 class="wp-block-heading">MikroTik as a WireGuard Peer</h2>
+
+
+
+<p>Under the “WireGuard” menu we first create a new WireGuard network interface that defines this MikroTik peer to the rest of the network:</p>
+
+
+
+<h3 class="wp-block-heading">Create New WireGuard Interface</h3>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-interfaces.png" alt="List of WireGuard interfaces in RouterOS" class="wp-image-7925" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-interfaces.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-interfaces-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-interfaces-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>List of WireGuard interfaces in RouterOS.</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-add-new-interface.png" alt="Mikrotik add new WireGuard interface" class="wp-image-7924" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-add-new-interface.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-add-new-interface-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-add-new-interface-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>Add new WireGuard interface. The private and public keys are generated automatically.</figcaption></figure>
+
+
+
+<p>After clicking “OK” or “Apply” it generates the private and public keys that are required for adding this peer to the network. Note down the public key <code>eLgevqdmOawh1t7srQ+Zs3K5l9o2cf33H/S1UwXeX04=</code> as it is needed later for adding the router to the gateway server.</p>
+
+
+
+<h3 class="wp-block-heading">Define Gateway Peer Connection</h3>
+
+
+
+<p>Under the “Peers” tab add the details for the connection to the gateway server:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-peer-configuration.png" alt="Add WireGuard peers to RouterOS" class="wp-image-7926" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-peer-configuration.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-peer-configuration-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-peer-configuration-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>Add WireGuard peers to RouterOS.</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-add-peer-server-gateway.png" alt="Add the WireGuard server peer to RouterOS" class="wp-image-7928" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-add-peer-server-gateway.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-add-peer-server-gateway-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-add-peer-server-gateway-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>Add the WireGuard gateway peer connection to RouterOS.</figcaption></figure>
+
+
+
+<p>Public Key, Endpoint and Endpoint Port are all values of our gateway server described above. The only unique value is the “Allowed Address” which we assign to <code>10.100.100.2/32</code>. </p>
+
+
+
+<p>Optionally configure the “Persistent Keepalive” to ensure it keeps the connection information updated with the gateway when the ISP assigned IP changes.</p>
+
+
+
+<h3 class="wp-block-heading">Add MikroTik Peer to the Gateway Configuration</h3>
+
+
+
+<p>We need to make the Gateway server aware of the newly created peer, so we update its configuration to include the new peer:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="890" height="600" src="../../wp-content/uploads/2021/12/wireguard-server-configuration-for-mikrotik-peer.png" alt="WireGuard server configuration for MikroTik peer" class="wp-image-7935" srcset="../../wp-content/uploads/2021/12/wireguard-server-configuration-for-mikrotik-peer.png 890w, ../../wp-content/uploads/2021/12/wireguard-server-configuration-for-mikrotik-peer-800x539.png 800w" sizes="(max-width: 890px) 100vw, 890px"><figcaption>WireGuard gateway server configuration for our MikroTik peer.</figcaption></figure></div>
+
+
+<p>After restarting the WireGuard interface on the gateway server, the MikroTik traffic monitor for the WireGuard interface should start showing keep-alive and handshake data flowing:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-interface-traffic.png" alt="WireGuard network interface traffic reported in RouterOS" class="wp-image-7936" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-interface-traffic.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-interface-traffic-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-interface-traffic-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>WireGuard network interface traffic reported in RouterOS.</figcaption></figure>
+
+
+
+<p>At this point the MikroTik router should be able to ping the WireGuard network:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-ping.png" alt="WireGuard ping in RouterOS" class="wp-image-7937" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-ping.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ping-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ping-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>RouterOS pinging the WireGuard gateway peer.</figcaption></figure>
+
+
+
+<p>However, nothing has been configured about how the newly created interface can be reached from the outside or inside the MikroTik network.</p>
+
+
+
+<p>To make the WireGuard network accessible from the local <code>192.168.88.0/24</code> network, we must first define its address range and routing information.</p>
+
+
+
+<h3 class="wp-block-heading">Define WireGuard Peer IP and Routes</h3>
+
+
+
+<p>To make the router aware of its new IP address on the WireGuard network, go to “IP &gt; Addresses” and add the address <code>10.100.100.2/24</code>:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-ip-addresses.png" alt="Add WireGuard address route in RouterOS." class="wp-image-7929" srcset="../../wp-content/uploads/2021/12/mikrotik-ip-addresses.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-ip-addresses-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-ip-addresses-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>Add WireGuard address range to RouterOS.</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-address-configuration.png" alt="WireGuard IP address route in RouterOS" class="wp-image-7930" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-address-configuration.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-address-configuration-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-address-configuration-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>Add WireGuard IP address <code>10.100.100.2/24</code> to RouterOS.</figcaption></figure>
+
+
+
+<p>Under “Interface” select the newly created WireGuard interface.</p>
+
+
+
+<p>Notice how this automatically provisioned a new network route for <code>10.100.100.0/24</code> under “IP &gt; Routes”:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="1500" height="921" src="../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-route.png" alt="WireGuard route in RouterOS" class="wp-image-7931" srcset="../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-route.png 1500w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-route-800x491.png 800w, ../../wp-content/uploads/2021/12/mikrotik-wireguard-ip-route-1024x629.png 1024w" sizes="(max-width: 1500px) 100vw, 1500px"><figcaption>WireGuard route in RouterOS.</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Define WireGuard Network Firewall Rules</h2>
+
+
+
+<p>Finally, you need to add the firewall rules to match your desired configuration and access restrictions. See <a href="https://help.mikrotik.com/docs/display/ROS/WireGuard#WireGuard-Applicationexamples">the RouterOS documentation page</a> for a few examples.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../mini-split-space-hot-water-heating/" rel="prev">Using Mini Split Heat Pumps for Space and Hot Water Heating</a></h4></li><li><h4 class="next"><a href="../mysensors-notes/" rel="next">Notes on MySensors</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../wireguard-routing/" rel="bookmark" title="WireGuard Routing and Port Forwarding">WireGuard Routing and Port Forwarding</a></li>
+<li><a href="../wireguard-managers/" rel="bookmark" title="WireGuard Network Managers">WireGuard Network Managers</a></li>
+<li><a href="../wireguard-raspberry-pi/" rel="bookmark" title="WireGuard on Raspberry Pi">WireGuard on Raspberry Pi</a></li>
+<li><a href="../mikrotik-capsman/" rel="bookmark" title="Mikrotik CAPsMAN is Awesome">Mikrotik CAPsMAN is Awesome</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					2 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-318719">
+				<div id="div-comment-318719" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/69c0478f8e09a1a54f7cbe88f56e3152/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/69c0478f8e09a1a54f7cbe88f56e3152/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ben</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-318719">June 23, 2022 at 06:42</a>		</div>
+
+		<p>Great guide. Thank you so much.<br>
+I would like to ask how do you configure the WireGuard network interface traffic graph? I don’t see on my Mikrotik.</p>
+<p>Thank you.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-mikrotik-routeros?replytocom=318719#respond" data-commentid="318719" data-postid="7871" data-belowelement="div-comment-318719" data-respondelement="respond" data-replyto="Reply to Ben" aria-label="Reply to Ben">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-321763">
+				<div id="div-comment-321763" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-321763">July 13, 2022 at 14:02</a>		</div>
+
+		<p>I’m seeing the link to the Wireguard interface graph listed at the <code>/graphs/</code> endpoint of Webfig after clicking on “Graphs” in the main menu above the “End-User License” item. I don’t remember enabling it so it <a href="https://wiki.mikrotik.com/wiki/Manual:Tools/Graphing" rel="nofollow ugc">should be there by default</a>.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-mikrotik-routeros?replytocom=321763#respond" data-commentid="321763" data-postid="7871" data-belowelement="div-comment-321763" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a159278a279019472100c3b8c537a8fb" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="7871" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/wireguard-mikrotik-routeros">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	103 queries in 0.4023 seconds on Mon, 21 Oct 2024 12:07:55 +0000.-->
+
+
+
+</body></html>

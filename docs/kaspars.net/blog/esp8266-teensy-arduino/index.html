@@ -1,0 +1,1046 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>ESP8266 Wi-Fi Module with Teensy and Arduino (Electronics) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » ESP8266 Wi-Fi Module with Teensy and Arduino Comments Feed" href="https://kaspars.net/blog/esp8266-teensy-arduino/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/5442"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/esp8266-teensy-arduino">
+<link rel="shortlink" href="https://kaspars.net/5442">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fesp8266-teensy-arduino">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fesp8266-teensy-arduino&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/esp8266-teensy-arduino">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="ESP8266 Wi-Fi Module with Teensy and Arduino">
+<meta property="og:description" content="Recently&nbsp;I ordered&nbsp;two&nbsp;Espressif ESP8266 breakout modules labeled “ESP8266 Version 01” from hermann_shopp on ebay. It is one ...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2014/12/esp8266-pinout.jpg">
+<meta property="og:url" content="https://kaspars.net/blog/esp8266-teensy-arduino">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/esp8266-teensy-arduino">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-5442 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a> →</div>
+		
+		<article class="post-5442 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics tag-esp8266 has-featured-image" id="post-5442" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					ESP8266 Wi-Fi Module with Teensy and Arduino			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Tue, 02 Dec 2014 23:29:39 +0200">December 2, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Wed, 03 Dec 2014 00:14:13 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a></span> <span class="meta-item meta-tags tags"><a href="../tag/esp8266/" rel="tag">ESP8266</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">44&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<p>Recently&nbsp;I ordered&nbsp;two&nbsp;<a href="https://espressif.com/en/products/esp8266/">Espressif ESP8266</a> breakout modules labeled “ESP8266 Version 01” from <a href="http://www.ebay.co.uk/itm/321588117662">hermann_shopp on ebay</a>. It is one of the coolest little chips for makers to have these days — it connects to the internet, has an <a href="https://github.com/pfalcon/esp-open-sdk">open SDK with complete toolchain</a>, multiple third-party firmware options such as <a href="https://github.com/micropython/micropython/tree/master/esp8266">Micro Python</a>&nbsp;and <a href="https://github.com/nodemcu/nodemcu-firmware">NodeMcu (LUA)</a>. Even <a href="http://hackaday.com/tag/esp8266/">Hackaday loves it</a>.</p>
+<p><span id="more-5442"></span></p>
+<p>Here is a quick overview of what I have learned so far.</p>
+<h2>ESP8266 Breakout Module Pinout</h2>
+<p>There are <a href="https://github.com/esp8266/esp8266-wiki/wiki/Hardware_versions">multiple breakout modules</a> available for this chip. Here is the pinout for the version (possibly ESP-01) that I got:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-5444" src="../../wp-content/uploads/2014/12/esp8266-pinout-800x379.jpg" alt="ESP8266 module pinout" width="800" height="379" srcset="../../wp-content/uploads/2014/12/esp8266-pinout-800x379.jpg 800w, ../../wp-content/uploads/2014/12/esp8266-pinout-1024x485.jpg 1024w, ../../wp-content/uploads/2014/12/esp8266-pinout.jpg 1350w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<ul>
+<li><strong>TX</strong> (UART TX)</li>
+<li><strong>RX</strong> (UART RX)</li>
+<li><strong>CH_PD</strong> (chip power down, should be pulled high to start the chip)</li>
+<li><strong>RST</strong> (reset)</li>
+<li><strong>GPIO0</strong> and <strong>GPIO2</strong> (general purpose input/output pins)</li>
+<li><strong>VCC</strong> (power supply 3.3V, <a href="http://wiki.iteadstudio.com/ESP8266_Serial_WIFI_Module">max. ~300mA</a>)</li>
+<li><strong>GND</strong></li>
+</ul>
+<p>Please note that ESP8266 requires 3.3V power supply and a lot of current (up to 300mA) during wireless transmission. I used two AA batteries in series to power the module.</p>
+<p>Secondly, remember that UART pins are marked with respect to the device itself, therefore <code>TX</code> pin from the module should be conntected to the <code>RX</code> pin on Arduino, like so:</p>
+<pre><code>TX (ESP8266) to RX (Arduino)
+RX (ESP8266) to TX (Arduino)
+</code></pre>
+<h2>Interfacing with ESP8266</h2>
+<p>The default serial baud rate for talking to these modules is <code>9600</code> while most of the other guides online tell you that the baud rate is <code>115200</code>. It depends on the firmware so be sure to try out different baud rates. A good indication of correct wiring and incorrect baud rate is when you see garbled text returned from the module in the serial monitor.</p>
+<p>I decided to use the awesome <a href="https://www.pjrc.com/teensy/teensy31.html">Teensy 3.1</a> to talk to ESP8266 since I no longer had my USB-to-UART cable available. The idea is to have a very simple program on Teensy that relays all the Serial data from the module attached to <code>Serial1</code> pins RX1 (pin 0) and TX1 (pin 1) to the <code>Serial</code> interface that Teensy uses for communicating with your computer:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-5443" src="../../wp-content/uploads/2014/12/esp8266-teensy-arduino.jpg" alt="ESP8266 with Teensy 3.1 (Arduino)" width="600" height="792"></p>
+<p>Using the following Arduino sketch we’re able to use almost any Arduino-compatible microcontroller that supports UART and serial interface as an UART-to-USB module for communicating with ESP8266 instead of an FTDI chip.</p>
+<p>We simply pipe all bytes from ESP8266 connected at <code>Serial1</code> (note the <code>1</code> at the end) interface to <code>Serial</code> which is available from the Arduino serial port monitor.</p>
+<pre><code>void setup() {
+
+    // Setup computer to Arduino serial
+    Serial.begin(9600);
+
+    // Setup Arduino to ESP8266 serial
+    // Use baud rate 115200 during firmware update
+    Serial1.begin(9600);
+
+}
+
+void loop() {
+
+    // Send bytes from ESP8266 to computer
+    if ( Serial1.available() ) {
+        Serial.write( Serial1.read() );
+    }
+
+    // Send bytes from computer back to ESP8266
+    if ( Serial.available() ) {
+        Serial1.write( Serial.read() );
+    }
+
+}
+</code></pre>
+<p>Once everything is wired up correctly you should see the following message in the Arduino serial monitor sent by the module during the boot process:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-5458" src="../../wp-content/uploads/2014/12/esp8266-arduino-serial-monitor.png" alt="ESP8266 output on Arduino serial monitor from Teensy 3.1" width="571" height="317"></p>
+<pre><code>[Vendor:www.ai-thinker.com Version:0.9.2.4]
+
+ready
+</code></pre>
+<p>Now you are able to interact with the module using <a>a set of AT commands</a>. Here is the version information as reported by <code>AT+GMR</code>:</p>
+<pre><code>AT+GMR
+0018000902-AI03
+
+OK
+</code></pre>
+<p>where <code>0018</code> is supposedly the SDK version and <code>000902</code> is the AT version. I have no idea what <code>AI03</code> stands for.</p>
+<h2>Firmware Updates</h2>
+<p>ESP8266 supports firmware updates over the same serial interface with a few changes to the setup — you need to pull the <code>GPIO0</code> pin to ground and use a 115200 baud rate from Teensy to the module.</p>
+<p>There are several tools available for updating the firmware:</p>
+<ul>
+<li>Windows only <a href="http://blog.electrodragon.com/cloud-updating-your-wi07c-esp8266-now/">ESP8266 Flash Downloader</a> and</li>
+<li>Cross-platform <a href="https://github.com/themadinventor/esptool">esptool</a> (Python)</li>
+</ul>
+<p>The <a href="https://github.com/themadinventor/esptool#protocol">protocol for uploading the firmware binaries</a> is well known:</p>
+<blockquote><p>The bootloader protocol uses SLIP framing. Each packet begin and end with 0xC0, all occurrences of 0xC0 and 0xDB inside the packet are replaced with 0xDB 0xDC and 0xDB 0xDD, respectively.</p>
+<p>Inside the frame, the packet consists of a header and a variable-length body. All multi-byte fields are little-endian.</p></blockquote>
+<h3>Cloud Updates</h3>
+<p>Espressif has enabled <a href="http://blog.electrodragon.com/cloud-updating-your-wi07c-esp8266-now/">over-the-air updates for all chips with firmware version greater than 00170901</a>. Make sure your module is running this firmware version by executing the <code>AT+GMR</code> command before trying to do the cloud update.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../concatenate-assets/" rel="prev">Concatenate Assets Instead of Loading Conditionally</a></h4></li><li><h4 class="next"><a href="../esp8266-mount-shared-folder-virtualbox-os-x/" rel="next">Mounting Shared Folder in VirtualBox on OS X for ESP8266 SDK</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../low-power-esp8266/" rel="bookmark" title="Low Power ESP8266">Low Power ESP8266</a></li>
+<li><a href="../esp8266-mount-shared-folder-virtualbox-os-x/" rel="bookmark" title="Mounting Shared Folder in VirtualBox on OS X for ESP8266 SDK">Mounting Shared Folder in VirtualBox on OS X for ESP8266 SDK</a></li>
+<li><a href="../raspberry-pi-wi-fi-settings-sd-card/" rel="bookmark" title="Storing Raspberry Pi Wi-Fi Network Settings on the SD Card">Storing Raspberry Pi Wi-Fi Network Settings on the SD Card</a></li>
+<li><a href="../esp8266-micropython/" rel="bookmark" title="Notes on ESP8266 and MicroPython">Notes on ESP8266 and MicroPython</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					44 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-81566">
+				<div id="div-comment-81566" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81566">December 5, 2014 at 17:19</a>		</div>
+
+		<p>hi.<br>
+es netieku tālāk par AT komandām, tās vienkāši neizpildās :( caur FTDI .. <a href="http://s2.postimg.org/l9pq7t5m1/Screen_Shot_2014_12_05_at_16_59_11.png" rel="nofollow ugc">http://s2.postimg.org/l9pq7t5m1/Screen_Shot_2014_12_05_at_16_59_11.png</a>  t.i. nekas nenotiek</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81566#respond" data-commentid="81566" data-postid="5442" data-belowelement="div-comment-81566" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-81573">
+				<div id="div-comment-81573" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81573">December 5, 2014 at 18:48</a>		</div>
+
+		<p>Izskatās cerīgi! Katra AT komanda ir jābeidz ar “CR+LF” jeb “\r\n” baitiem. <a href="https://learn.sparkfun.com/tutorials/terminal-basics/coolterm-windows-mac-linux" rel="nofollow">Te ir aprakstīts, kā to iestatīt CoolTerm gadījumā</a>.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81573#respond" data-commentid="81573" data-postid="5442" data-belowelement="div-comment-81573" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-81579">
+				<div id="div-comment-81579" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81579">December 5, 2014 at 19:21</a>		</div>
+
+		<p>tas viss jau izdarīts, nepalīdz :(<br>
+izmēģināju CoolTerm, Arduino, screen + vēl pāris win termināļus. un tas man ir uz visiem 5 čipiem. <a href="http://www.ebay.co.uk/itm/201205524305?_trksid=p2060778.m2749.l2649&amp;ssPageName=STRK%3AMEBIDX%3AIT" rel="nofollow ugc">http://www.ebay.co.uk/itm/201205524305?_trksid=p2060778.m2749.l2649&amp;ssPageName=STRK%3AMEBIDX%3AIT</a></p>
+<p>btw es kkā neredzu iepriekšējos komentus</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81579#respond" data-commentid="81579" data-postid="5442" data-belowelement="div-comment-81579" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-81580">
+				<div id="div-comment-81580" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81580">December 5, 2014 at 19:50</a>		</div>
+
+		<p>Tad, manuprāt, vienīgais iemesls varētu būt bojāts TX vads no FTDI uz moduļa RX, jo FTDI RX gals acīmredzot strādā labi, saņemot ielādes informāciju no moduļa. Varbūt ir kāda cita iekārta ar kuru pamēģināt UART savienojumu, piemēram <a href="http://elinux.org/RPi_Serial_Connection" rel="nofollow">Raspberry Pi</a>, lai pārliecinātos, ka vaina nav FTDI pieslēgumā?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81580#respond" data-commentid="81580" data-postid="5442" data-belowelement="div-comment-81580" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-81600">
+				<div id="div-comment-81600" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81600">December 5, 2014 at 22:49</a>		</div>
+
+		<p>nu arī nevar saprast, jo pēc ‘send’ uz čipa nomirgo zilā gaismiņa us super īsu brīdi</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81600#respond" data-commentid="81600" data-postid="5442" data-belowelement="div-comment-81600" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-81704">
+				<div id="div-comment-81704" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81704">December 6, 2014 at 10:45</a>		</div>
+
+		<p>Varbūt vari kādā dienā atnest vienu uz Stabu 17, kur man ir birojs un tad varam pamēģināt ar manu slēgumu. Atsūti gan e-pastu pirms tam.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81704#respond" data-commentid="81704" data-postid="5442" data-belowelement="div-comment-81704" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-81713">
+				<div id="div-comment-81713" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81713">December 6, 2014 at 12:37</a>		</div>
+
+		<p>Šorīt pamēģināju ar CoolTerm un viss strādā ar šādiem uzstādījumiem (visi noklusētie):</p>
+<p><img src="../../wp-content/uploads/2014/12/coolterm-esp8266.png" alt="CoolTerm connected to ESP8266"></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81713#respond" data-commentid="81713" data-postid="5442" data-belowelement="div-comment-81713" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-81601">
+				<div id="div-comment-81601" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Edmunds</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81601">December 5, 2014 at 22:59</a>		</div>
+
+		<p>Kaspar, esi sastapies ar tādu problēmu, kad šito čipu pievieno pie arduino pat pietiek tikai vcc savienot ar 3.3v un GnD ar GnD, kā rezultātā iedegas, protams, uz čipa diodes, bet uzreiz dators restartējas, tas pats notiek arī ja pievieno rx/tx un zemi.</p>
+<p>Vaina čipā vai kaut ko pa vidu vajag ielikt kādu rezistoru vai ko tādu?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81601#respond" data-commentid="81601" data-postid="5442" data-belowelement="div-comment-81601" data-respondelement="respond" data-replyto="Reply to Edmunds" aria-label="Reply to Edmunds">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-81705">
+				<div id="div-comment-81705" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81705">December 6, 2014 at 10:51</a>		</div>
+
+		<p>Man tā ir bijis ar citiem slēgumiem, kas no datora USB pieslēgvietas sāk ņemt vairāk kā 50mA vai 100mA strāvas. Ja pareizi saprotu, tad Tavā gadījumā VCC gan nenāk no datora, bet gan ārēja avota, ja? Tādā gadījumā gan ir grūti pateikt, kas par vainu.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81705#respond" data-commentid="81705" data-postid="5442" data-belowelement="div-comment-81705" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-81602">
+				<div id="div-comment-81602" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81602">December 5, 2014 at 22:59</a>		</div>
+
+		<p>labi, vēl paliek kkāds nix terminālis un PI pēc tam nav ideju.. negribētos pie RF atgriezties :/</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81602#respond" data-commentid="81602" data-postid="5442" data-belowelement="div-comment-81602" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-81712">
+				<div id="div-comment-81712" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Edmunds</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81712">December 6, 2014 at 12:36</a>		</div>
+
+		<p>Kaspar, es biju slēdzis pie arduino nano un nano bija pievienots datoram. Aptuveni pēc 2 sekundēm, pie vcc no moduļa pieslēdzu arduino nano 3.3v tā dators restartejās.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81712#respond" data-commentid="81712" data-postid="5442" data-belowelement="div-comment-81712" data-respondelement="respond" data-replyto="Reply to Edmunds" aria-label="Reply to Edmunds">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-81723">
+				<div id="div-comment-81723" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81723">December 6, 2014 at 14:03</a>		</div>
+
+		<p>Tad problēma noteikti ir strāvas daudzums, ko modulis grib ņemt no 3v3 izejas (<a href="http://forum.arduino.cc/index.php?topic=177059.0" rel="nofollow">kas patiesībā nāk no FTDI čipa</a>) un attiecīgi USB avota. Pamēģini darbināt moduli no atsevišķa 3V avota (piemēram, divas AA baterijas).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81723#respond" data-commentid="81723" data-postid="5442" data-belowelement="div-comment-81723" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-81744">
+				<div id="div-comment-81744" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81744">December 6, 2014 at 19:33</a>		</div>
+
+		<p>hmm nu tad parasti mac bļauc, ka devaiss grib ņemt pa daudz un tiek tas tiks atslēgts, bet restartam imo nav jābūt</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81744#respond" data-commentid="81744" data-postid="5442" data-belowelement="div-comment-81744" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-81886">
+				<div id="div-comment-81886" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81886">December 7, 2014 at 23:22</a>		</div>
+
+		<p>Šovakar meklēju Google pēdējās nedēļās jaunumus par ESP8266. Biju ļoti pārsteigts ieraudzīt latvisku vārdu Kaspars. Un vēl lielāks pārsteigums bija ieraudzīt foto “Vēsā mierā” filmas pirmizrādes vienu no galvenajiem varoņiem. Tā bija ļoti iespaidīga filma.</p>
+<p>Es nodarbojos ar elektroniku un lāzeriem. Tagad strādāju Vecrīgā Šķūņu ielā 4 Atomfizikas un Spektroskopijas Institūtā. </p>
+<p>Pirms 5 gadiem Minhenē biju uztaisījis elektrovelosipēdu.<br>
+Tagad man hobijs ir visādas IoT lietiņas.<br>
+Esmu paguvis sablogot arī par ESP8266:<br>
+<a href="http://www.element14.com/community/groups/internet-of-things/blog/2014/11/19/esp8266-wi-fi-arduino-upload-to-xively" rel="nofollow ugc">http://www.element14.com/community/groups/internet-of-things/blog/2014/11/19/esp8266-wi-fi-arduino-upload-to-xively</a></p>
+<p>Sekošu līdzi Taviem blogiem. Varbūt būs kaut kādi interesanti pielietojumi.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81886#respond" data-commentid="81886" data-postid="5442" data-belowelement="div-comment-81886" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2 parent" id="comment-81889">
+				<div id="div-comment-81889" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-81889">December 7, 2014 at 23:39</a>		</div>
+
+		<p>Paldies par komentāru, Jāni! Kā jau vienmēr — Latvija ir ļoti maza :) Būtu interesanti kādreiz saskrieties, kad būs brīvāks jaunajā gadā. Es padošu ziņu uz e-pastu.</p>
+<p>Šodien noņēmos ar ESP8266 programmēšanu, izmantojot viņu SDK un toolchain. Plānoju par to uzrakstīt, kad būšu pabeidzis pirmo prototipu.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=81889#respond" data-commentid="81889" data-postid="5442" data-belowelement="div-comment-81889" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-3" id="comment-82616">
+				<div id="div-comment-82616" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">janisalnis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82616">December 12, 2014 at 00:06</a>		</div>
+
+		<p>Izlasiju, vieglak ir ieprogrammeet vienreiz lua firmware un peec tam var ar lua komandaam uzrakstiit savu algoritmu caur konsoli un tas saglabaajas peec restarta. Piemeeram zinjo par pumpja iesleegsanos.<br>
+<a href="http://benlo.com/esp8266/#rain" rel="nofollow ugc">http://benlo.com/esp8266/#rain</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82616#respond" data-commentid="82616" data-postid="5442" data-belowelement="div-comment-82616" data-respondelement="respond" data-replyto="Reply to janisalnis" aria-label="Reply to janisalnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-82008">
+				<div id="div-comment-82008" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82008">December 8, 2014 at 17:29</a>		</div>
+
+		<p>Priecājos, ka LV vairāki cilvēki mēģina ESP8266. Kad sanāk būt Vecrīgā var man uzzvanīt un atnākt ciemos uz Institūtu Šķūņu 4 pretī Hesburgerim, Random veikalam. Mēs diezgan daudz paši taisām elektroniku un programmējam.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82008#respond" data-commentid="82008" data-postid="5442" data-belowelement="div-comment-82008" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-82019">
+				<div id="div-comment-82019" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Edmunds</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82019">December 8, 2014 at 18:02</a>		</div>
+
+		<p>Jani, piedava elektronikas interesu pulciņu veidot par šo temu ;)?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82019#respond" data-commentid="82019" data-postid="5442" data-belowelement="div-comment-82019" data-respondelement="respond" data-replyto="Reply to Edmunds" aria-label="Reply to Edmunds">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-2" id="comment-82249">
+				<div id="div-comment-82249" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82249">December 9, 2014 at 23:33</a>		</div>
+
+		<p>Iesaku salodeet 3.3V regulatoru piemeeram LM1117. Tam vajag veel 2 kondensatorus. Tas taisiis 3.3V no USB 5V.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82249#respond" data-commentid="82249" data-postid="5442" data-belowelement="div-comment-82249" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt depth-2" id="comment-82250">
+				<div id="div-comment-82250" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82250">December 9, 2014 at 23:36</a>		</div>
+
+		<p>Jā varetu veidot interešu pulciņu. Open Source ir tāda priekšrocība ka katram nevajag visu no nulles izdarīt un var tikt tālāk uz priekšu.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82250#respond" data-commentid="82250" data-postid="5442" data-belowelement="div-comment-82250" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-82065">
+				<div id="div-comment-82065" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82065">December 8, 2014 at 22:31</a>		</div>
+
+		<p>aizgāja man tas čips – vnk paņēmu citu arduino :/<br>
+čips barojas no 4.5v barokļa, rx/tx pa tiešo uz arduino</p>
+<p>caur FTDI pa tiešo joprojām nekā.</p>
+<p>ESP8266 uz Serial @ 9600, FTDI uz SoftwareSerial @ 5700 debugošanai</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82065#respond" data-commentid="82065" data-postid="5442" data-belowelement="div-comment-82065" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-82080">
+				<div id="div-comment-82080" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82080">December 8, 2014 at 23:39</a>		</div>
+
+		<p>Labi, ka bija kāds Arduino, ar ko pamēģināt. Ko būvēsi?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82080#respond" data-commentid="82080" data-postid="5442" data-belowelement="div-comment-82080" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-82068">
+				<div id="div-comment-82068" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82068">December 8, 2014 at 22:35</a>		</div>
+
+		<p>tiesa pie mana wifi pieslēdzas ar ~3 meģinājumu (wpa2 63 charu parole);<br>
+šad tad timeouti pieprasot kādu hostu – gribētos saprast ar cik voltiem tad īsti būtu jāstrādā.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82068#respond" data-commentid="82068" data-postid="5442" data-belowelement="div-comment-82068" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2 parent" id="comment-82084">
+				<div id="div-comment-82084" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82084">December 8, 2014 at 23:53</a>		</div>
+
+		<p>Man gan ļoti ātri pieslēdzas pie WPA2 — domāju, ka mazāk kā pus sekundē. <a href="https://nurdspace.nl/images/e/e0/ESP8266_Specifications_English.pdf" rel="nofollow">Specenē rakstīts (PDF)</a>, ka ESP8266 čipam VDDIO ir 3.6V un pēc skata sķiet, ka uz moduļa nav sprieguma regulatora.</p>
+<p>Tīkla SSID un parole tiek glabāti moduļa atmiņā un pēc pārstartēšanas tam vajadzētu pašam ļoti ātri pieslēgties pie tīkla. Esi mēģinājis?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82084#respond" data-commentid="82084" data-postid="5442" data-belowelement="div-comment-82084" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-3" id="comment-82277">
+				<div id="div-comment-82277" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82277">December 10, 2014 at 02:17</a>		</div>
+
+		<p>Pieslegshanaas aatrumu var parbaudit pec IP adreses sanemsanas ar komandu AT+CIFSR</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82277#respond" data-commentid="82277" data-postid="5442" data-belowelement="div-comment-82277" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-82082">
+				<div id="div-comment-82082" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82082">December 8, 2014 at 23:51</a>		</div>
+
+		<p>arduino (barebone) pilna māja :D  </p>
+<p>gribās dabeigt wireless temperatūras/mitruma sensorus + termogavlas regulatoru. </p>
+<p>līdz šim izmantoju RF (433 / 315) bet nu tas bija fakaps, visi dačiki jābūto pēc kārtas, lai ‘nepārklātos pārraide’. ar šo wifi cita lieta :D otrā galā sēž priecīgs rpi ar rest api un miers.</p>
+<p>temperatūrai un mitrumam DHT22</p>
+<p>jāsameklē tikai, kas galvas grozīs. baigi daudz _lētu_ variantu nav</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82082#respond" data-commentid="82082" data-postid="5442" data-belowelement="div-comment-82082" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-82087">
+				<div id="div-comment-82087" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82087">December 9, 2014 at 00:02</a>		</div>
+
+		<p>Izklausās interesanti! Varu iedot pārīti nRF24L01+ moduļu, ja neesi vēl mēģinājis. Esi domājis kaut ko uzrakstīt par šo projektu? Man būtu ļoti interesanti palasīt un papētīt!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82087#respond" data-commentid="82087" data-postid="5442" data-belowelement="div-comment-82087" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-82151">
+				<div id="div-comment-82151" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/50b92460785a95d050bf4f282a5f322c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Edmunds</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82151">December 9, 2014 at 08:00</a>		</div>
+
+		<p>Kaspar, pats ar nrf24l01 esi kaut ko sledzis? Tur ja pareizi atceros bija visi 8 pini jaizmanto un lai parsūtītu stringu vai integer čakars ne pa jokam.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82151#respond" data-commentid="82151" data-postid="5442" data-belowelement="div-comment-82151" data-respondelement="respond" data-replyto="Reply to Edmunds" aria-label="Reply to Edmunds">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-82182">
+				<div id="div-comment-82182" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82182">December 9, 2014 at 14:44</a>		</div>
+
+		<p>tikko pamērīju – arduino UNO + esp8266 + DHT22 ‘miera’ režīmā tērē ~50-70mA, kad esp8266 kko sūta (veic web requestu) uzlec uz ~100mA, bet viņu teiktie ~300mA nav pat tuvumā</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82182#respond" data-commentid="82182" data-postid="5442" data-belowelement="div-comment-82182" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-82251">
+				<div id="div-comment-82251" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://85.254.232.222" class="url" rel="ugc external nofollow">Janis Alnis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82251">December 9, 2014 at 23:39</a>		</div>
+
+		<p>Ja ar multimetru mēra, tad man arī tāpat sanāca. Bet multimetrs droši vien rāda vidējo vērtību un pīķi varētu būt 300 mA.<br>
+Pats interesantākais, ka ar CH_PD=GND var iegūt super mazu gulēšanas strāvu 16 uA.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82251#respond" data-commentid="82251" data-postid="5442" data-belowelement="div-comment-82251" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-82253">
+				<div id="div-comment-82253" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/53b46ba54fc0c54f3fae8448334064d1/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.whatwatt.lv" class="url" rel="ugc external nofollow">ansis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-82253">December 9, 2014 at 23:44</a>		</div>
+
+		<p>tas izklausās ļoti jauki :)<br>
+lūk te eksperimenti ar arduino low power un sleepošanu <a href="http://www.disk91.com/2014/technology/hardware/arduino-atmega328p-low-power-consumption/" rel="nofollow ugc">http://www.disk91.com/2014/technology/hardware/arduino-atmega328p-low-power-consumption/</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=82253#respond" data-commentid="82253" data-postid="5442" data-belowelement="div-comment-82253" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-97429">
+				<div id="div-comment-97429" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/f4e671fbe8ff127d3c13f1828469642e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/f4e671fbe8ff127d3c13f1828469642e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">M</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-97429">April 17, 2015 at 22:11</a>		</div>
+
+		<p>Sveiciens visiem!<br>
+Patīkami, ka LV vēl kāds kaut ko ņemas ar šādām lietām. Pirms kāda laiciņa saņēmu savus pirmos ESP, esmu šo to izmēģinājis.<br>
+AT komandas – ir OK, strādā. Bet tālāk arī neko neņēmos, pārgāju uz NodeMCU ar LUA. Pozitīvi – ka var iztikt ar vienu pašu ESP moduli, nevajag ne Arduino, ne kādu citu MCU. Programmēšana samērā vienkārša (turklāt – neesmu programmētājs), protams, var jau trāpīties visādi zemūdens akmeņi, par kuriem vēl neko nezinu. Internetā kaudze ar kodiem – DS18B20 temperatūras sensoriem, WS2812 RGB LEDiem utt, primitīviem WEB serveriem, ThingSpeak.com datu logošanai utt. Pārsteidza arī stabilitāte – nekādu problēmu DS18B20 mērījumus sūtīt uz thingSpeak.com arī 5 dienas no vietas ik pēc 30 sekundēm.<br>
+Vēl ko varu pieminēt – smuki jāuztaisa barošana – pietiekamas amperāžas un ar filtrējošiem kondensatoriem, it īpaši, ja ir pielikts kāds relejs, kurš var iešvunkāt barošanu un izraisīt ESP uzkāršanos.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=97429#respond" data-commentid="97429" data-postid="5442" data-belowelement="div-comment-97429" data-respondelement="respond" data-replyto="Reply to M" aria-label="Reply to M">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-2" id="comment-97479">
+				<div id="div-comment-97479" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Janis Alnis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-97479">April 18, 2015 at 12:34</a>		</div>
+
+		<p>Jauki, ka forumā paradās jaunumi. </p>
+<p>Man paaris meenesus nekaa jauna nav.  Konkurss par gaisa kvalitaates sensoriem beidzies.<br>
+<a href="http://www.element14.com/community/community/design-challenges/in-the-air-design-challenge/blog/2015/01/31/in-the-air-challenge-ndir-co2-meter-connected-to-iot-via-cc3200" rel="nofollow ugc">http://www.element14.com/community/community/design-challenges/in-the-air-design-challenge/blog/2015/01/31/in-the-air-challenge-ndir-co2-meter-connected-to-iot-via-cc3200</a></p>
+<p>Konkursā izmantoju TI CC3200 WiFi bet pēc tam pārgāju uz ESP jo tas ir kompaktāks. CO2 mērītājs ar pielikto Arduino +ESP  stradā bez uzkāršanās. Sobrīd lietoju Xively, bet laikam būs jāiemācas ar ThingsSpeak rīkoties jo Xively datu attēlošanai ir visādas īpatnības.</p>
+<p>Nākamā doma bija pielikt  ESP vannasistabas svariem.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=97479#respond" data-commentid="97479" data-postid="5442" data-belowelement="div-comment-97479" data-respondelement="respond" data-replyto="Reply to Janis Alnis" aria-label="Reply to Janis Alnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-97583">
+				<div id="div-comment-97583" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/15d9722cdbf2b1b15c5ba812aa3c8e46/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/15d9722cdbf2b1b15c5ba812aa3c8e46/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ansis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-97583">April 19, 2015 at 19:40</a>		</div>
+
+		<p>es, savuārt, laikam pārslēgšos uz NRF24L.. pa daudz ēd tas ESP (ar visiem dīp slīpiem etc). es varēju ~3 nedēļas ar l500 mAh izvilkt :/ (DHT sensor, arduino barebone, ESP8266), sūtot 1x 10min. tiesa, bača no kkāda veca fočuka, varbūt ar jaunu jāmēģina.</p>
+<p>btw ja nu kādam noder kods <a href="https://gist.github.com/ezisxl/8fd886d377c94c9d1ced" rel="nofollow ugc">https://gist.github.com/ezisxl/8fd886d377c94c9d1ced</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=97583#respond" data-commentid="97583" data-postid="5442" data-belowelement="div-comment-97583" data-respondelement="respond" data-replyto="Reply to Ansis" aria-label="Reply to Ansis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-100571">
+				<div id="div-comment-100571" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/38d0900a84deaf1d1c7e4dd0472f7631/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/38d0900a84deaf1d1c7e4dd0472f7631/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Cirrus</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-100571">June 5, 2015 at 00:11</a>		</div>
+
+		<p>Thank you for this article – it’s very helpful! I have two questions:<br>
+1. Is it possible to get the Teensy to power itself + a connected ESP8266 if it’s plugged into a computer’s USB port?<br>
+2. How can I set up a Teensy to receive instructions from my website via the ESP8266?</p>
+<p>Thank you!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=100571#respond" data-commentid="100571" data-postid="5442" data-belowelement="div-comment-100571" data-respondelement="respond" data-replyto="Reply to Cirrus" aria-label="Reply to Cirrus">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-100894">
+				<div id="div-comment-100894" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-100894">June 9, 2015 at 21:59</a>		</div>
+
+		<p>1. ESP8266 is reported to draw up to 215mA during transmissions while the 3.3V voltage regulator on Teensy can provide only up to 100mA. It should work but not very reliably. It is recommended to use an external battery to power the ESP8266.</p>
+<p>2. You should start by getting <a href="http://randomnerdtutorials.com/esp8266-web-server/" rel="nofollow">ESP8266 to accept incoming TCP connections (running a TCP server)</a> and check if you can connect to it from your local network. Afterwards you need to configure your internet router to forward the incoming connections to the appropriate port on ESP8266.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=100894#respond" data-commentid="100894" data-postid="5442" data-belowelement="div-comment-100894" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-108016">
+				<div id="div-comment-108016" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Janis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-108016">October 22, 2015 at 00:06</a>		</div>
+
+		<p>Jaunumi: var ESP programmēt no Arduino IDE 1.6.<br>
+Piemēram pievienot ESP platītei DS18B20 temperatūras sensoru un sūtīt vērtības uz Thingsspeak.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=108016#respond" data-commentid="108016" data-postid="5442" data-belowelement="div-comment-108016" data-respondelement="respond" data-replyto="Reply to Janis" aria-label="Reply to Janis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-110556">
+				<div id="div-comment-110556" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Janis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-110556">December 7, 2015 at 13:03</a>		</div>
+
+		<p>Vakar saliku Instructable par ESP Wi-Fi platīti.<br>
+<a href="http://www.instructables.com/id/ESP8266-webservver-programmed-through-Arduino-IDE-/" rel="nofollow ugc">http://www.instructables.com/id/ESP8266-webservver-programmed-through-Arduino-IDE-/</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=110556#respond" data-commentid="110556" data-postid="5442" data-belowelement="div-comment-110556" data-respondelement="respond" data-replyto="Reply to Janis" aria-label="Reply to Janis">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-110560">
+				<div id="div-comment-110560" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-110560">December 7, 2015 at 16:00</a>		</div>
+
+		<p>Lieliski! Paldies, ka padalījies ar saiti.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=110560#respond" data-commentid="110560" data-postid="5442" data-belowelement="div-comment-110560" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt depth-2" id="comment-110566">
+				<div id="div-comment-110566" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/15d9722cdbf2b1b15c5ba812aa3c8e46/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/15d9722cdbf2b1b15c5ba812aa3c8e46/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">ansis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-110566">December 7, 2015 at 19:10</a>		</div>
+
+		<p>vari pakomentēt, kā ar enerģijas patēriņu? es tieši dēļ tā (arī deep sleep) atteicos no esp un pāreju atpakaļ uz rf, kas uztur ack..</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=110566#respond" data-commentid="110566" data-postid="5442" data-belowelement="div-comment-110566" data-respondelement="respond" data-replyto="Reply to ansis" aria-label="Reply to ansis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-110598">
+				<div id="div-comment-110598" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Janis Anlnis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-110598">December 8, 2015 at 07:17</a>		</div>
+
+		<p>ESP kad darbojas patērē ap 75 mA, kad deepsleep ap 30 uA. Mērīju pats.<br>
+Mīnuss tāds, ka paiet kādas 12 s kamēr piekonektējas, nosūta.<br>
+432 MHz sensors noraidītu datus apmēram 100 ms laikā un taupītu baterijas daudz labāk.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=110598#respond" data-commentid="110598" data-postid="5442" data-belowelement="div-comment-110598" data-respondelement="respond" data-replyto="Reply to Janis Anlnis" aria-label="Reply to Janis Anlnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-112815">
+				<div id="div-comment-112815" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/407c9485d0bba36d3ec9f253d52df6e0/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/407c9485d0bba36d3ec9f253d52df6e0/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">HJ</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-112815">January 28, 2016 at 10:24</a>		</div>
+
+		<p>Hey, you shouldn’t have the RST pin dangling around.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=112815#respond" data-commentid="112815" data-postid="5442" data-belowelement="div-comment-112815" data-respondelement="respond" data-replyto="Reply to HJ" aria-label="Reply to HJ">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-112816">
+				<div id="div-comment-112816" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-112816">January 28, 2016 at 11:05</a>		</div>
+
+		<p>That is a very good point!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=112816#respond" data-commentid="112816" data-postid="5442" data-belowelement="div-comment-112816" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-112845">
+				<div id="div-comment-112845" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/9c15f25c2c5b04e9ba02f276bbffcbbb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Janis Anlnis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-112845">January 28, 2016 at 19:27</a>		</div>
+
+		<p>I get random resets with ESP8266 with 3 modules. For temperature monitoring it is no problem, but for counting electricity or gas usage it is unusable because of that. Soldered Reset pin to VCC, tried different power supplies, soldered voltage regulator close to the ESP board. And resets still happen once in a while. Many people report same issue if one googles.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/esp8266-teensy-arduino?replytocom=112845#respond" data-commentid="112845" data-postid="5442" data-belowelement="div-comment-112845" data-respondelement="respond" data-replyto="Reply to Janis Anlnis" aria-label="Reply to Janis Anlnis">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "aae284874caf063f6f425e1470af53aa" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="5442" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/esp8266-teensy-arduino">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	85 queries in 0.5283 seconds on Mon, 21 Oct 2024 12:08:01 +0000.-->
+
+
+
+</body></html>

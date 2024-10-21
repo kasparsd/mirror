@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Video Blog &#8211; Kaspars Dambis</title>
+	<atom:link href="https://kaspars.net/blog/topic/vlog/feed" rel="self" type="application/rss+xml" />
+	<link>https://kaspars.net</link>
+	<description>WordPress, Electronics &#38; Home Automation</description>
+	<lastBuildDate>Sun, 08 Sep 2024 05:56:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+
+<image>
+	<url>https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg</url>
+	<title>Video Blog &#8211; Kaspars Dambis</title>
+	<link>https://kaspars.net</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<atom:link rel="hub" href="https://pubsubhubbub.appspot.com"/><atom:link rel="hub" href="https://pubsubhubbub.superfeedr.com"/>	<item>
+		<title>Use AppleScript to Resize All Windows for Screen Recording</title>
+		<link>https://kaspars.net/blog/applescript-resize-all-windows</link>
+					<comments>https://kaspars.net/blog/applescript-resize-all-windows#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Wed, 04 Sep 2024 09:47:40 +0000</pubDate>
+				<category><![CDATA[Meta]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=9360</guid>
+
+					<description><![CDATA[I wasn&#8217;t able to find a tool to resize and center all open windows to a specific size for screen recording, so I came up with this AppleScript: set windowWidth to 1024set windowHeight to 768tell application "Finder" set {0, 0, screenWidth, screenHeight} to bounds of window of desktopend telltell application "System Events" set position of [&#8230;] <a href="https://kaspars.net/blog/applescript-resize-all-windows" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-video alignwide"><video controls src="https://kaspars.net/wp-content/uploads/2024/09/with-chapters.mp4"></video></figure>
+
+
+
+<p>I wasn&#8217;t able to find a tool to <strong>resize and center all open windows</strong> to a specific size for screen recording, so I came up with this AppleScript:</p>
+
+
+
+<pre class="wp-block-preformatted">set windowWidth to 1024<br />set windowHeight to 768<br /><br />tell application "Finder"<br />	set {0, 0, screenWidth, screenHeight} to bounds of window of desktop<br />end tell<br /><br />tell application "System Events"<br />	set position of windows of (application processes whose visible is true) to {(screenWidth - windowWidth) / 2, (screenHeight - windowHeight) / 2}<br />	set size of windows of (application processes whose visible is true) to {windowWidth, windowHeight}<br />end tell</pre>
+
+
+
+<p>which you can save as an &#8220;Application&#8221; via Automator (built-in macOS app):</p>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2048" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png" alt="Automator create an application with AppleScript" class="wp-image-9373" srcset="https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png 2048w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application-1280x960.png 1280w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application-1920x1440.png 1920w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application-1536x1152.png 1536w" sizes="(max-width: 2048px) 100vw, 2048px" /><figcaption class="wp-element-caption">Select &#8220;Application&#8221; document type in Automator.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="2048" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png" alt="Run AppleScript to resize the application windows" class="wp-image-9372" srcset="https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png 2048w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript-1280x960.png 1280w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript-1920x1440.png 1920w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript-1536x1152.png 1536w" sizes="(max-width: 2048px) 100vw, 2048px" /><figcaption class="wp-element-caption">Add &#8220;Run AppleScript&#8221; action from the Utilities section and paste in the code from above.</figcaption></figure>
+
+
+
+<p>Save it to your desktop or any other convenient location. Double-click the app to run it. </p>
+
+
+
+<p>Approve the permissions requests for Finder and System Events. In addition, open the &#8220;Settings&#8221; app and enable the newly created app under the &#8220;Accessibility&#8221; section:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="1430" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?_t=1725450804" alt="Enable Automator app permissions under Settings &gt; Accessibility" class="wp-image-9375" srcset="https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png 1430w, https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable-1280x1375.png 1280w" sizes="(max-width: 1430px) 100vw, 1430px" /></figure>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/applescript-resize-all-windows/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2024/09/with-chapters.mp4" length="24127566" type="video/mp4" />
+
+		<enclosure url="https://kaspars.net/wp-content/uploads/2024/09/run-applescript-300x300.png" length="24565" type="image/png" />	</item>
+		<item>
+		<title>Using Unit Tests to Find WordPress Plugin Bugs</title>
+		<link>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing</link>
+					<comments>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Fri, 24 Apr 2020 10:33:14 +0000</pubDate>
+				<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7494</guid>
+
+					<description><![CDATA[This is an unedited video of me fixing a bug reported by a user on the WordPress support forum for my Widget Context plugin. Here is the pull request on GitHub if you want to follow along. I start out by writing a unit test for the part of code that is responsible for the [&#8230;] <a href="https://kaspars.net/blog/wordpress-plugin-bug-unit-testing" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Fixing a WordPress Plugin Bug 🐛 with Unit Testing" width="650" height="366" src="https://www.youtube.com/embed/qzeadSqjgn4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>This is an unedited video of me fixing a bug reported by a user on the WordPress support forum for my <a href="https://widgetcontext.com">Widget Context plugin</a>. Here is the <a href="https://github.com/kasparsd/widget-context-wporg/pull/62/files">pull request on GitHub</a> if you want to follow along.</p>
+
+
+
+<span id="more-7494"></span>
+
+
+
+<p>I start out by writing a unit test for the part of code that is responsible for the specific functionality and the new test actually fails so I&#8217;m able to find the bug and fix it while looking at related issues.</p>
+
+
+
+<p>At the end I do the release dance &#8212; update the plugin version number, write the changelog, tag a release on GitHub and deploy to WP.org.</p>
+
+
+
+<p><em>Let me know <a href="https://twitter.com/konstruktors">on Twitter</a> or in the comments below if you would like to see more of this kind of content.</em></p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/automatic-updates-for-plugins-and-themes-hosted-outside-wordpress-extend" rel="bookmark" title="Automatic Updates for Plugins and Themes Hosted Outside WordPress Extend">Automatic Updates for Plugins and Themes Hosted Outside WordPress Extend</a></li>
+<li><a href="https://kaspars.net/blog/widget-logic-plugin-for-wordpress" rel="bookmark" title="Widget Context plugin for WordPress">Widget Context plugin for WordPress</a></li>
+<li><a href="https://kaspars.net/blog/solving-authentication-and-plugin-errors-after-upgrade-to-wordpress-2-5" rel="bookmark" title="Solving the Authentication and Plugin Errors After an Upgrade to WordPress 2.5">Solving the Authentication and Plugin Errors After an Upgrade to WordPress 2.5</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/04/fixing-wordpress-plugin-bug-unit-testing-150x150.png" length="22647" type="image/png" />	</item>
+		<item>
+		<title>How to Bulk Update the &#8220;Tested up to&#8221; Version for WordPress Plugins</title>
+		<link>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version</link>
+					<comments>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Thu, 02 Apr 2020 14:17:54 +0000</pubDate>
+				<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7470</guid>
+
+					<description><![CDATA[Here is a quick demo video of a bash script for updating the &#8220;Tested up to&#8221; version of multiple WordPress plugins at the same time. This solves the pain of updating the readme.txt file for all your plugins whenever a new version of WordPress is released. p.s. Background music provided by my kids 🥁🥳🤣 <a href="https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="How to Bulk Update the &quot;Tested up to&quot; Version for WordPress Plugins" width="650" height="366" src="https://www.youtube.com/embed/Vl0EbVnHvDs?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>Here is <a href="https://www.youtube.com/watch?v=Vl0EbVnHvDs">a quick demo video</a> of <a href="https://github.com/wpsh/batch-mark-as-tested">a bash script</a> for updating the &#8220;Tested up to&#8221; version of multiple WordPress plugins at the same time. This solves the pain of updating the <code>readme.txt</code> file for all your plugins whenever a new version of WordPress is released.</p>
+
+
+
+<p>p.s. Background music provided by my kids 🥁🥳🤣</p>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/04/bulk-update-wordpress-plugin-tested-up-to-plugin-version-150x150.png" length="18535" type="image/png" />	</item>
+		<item>
+		<title>RAK7246 LoRaWAN Gateway Review</title>
+		<link>https://kaspars.net/blog/rak7246-gateway</link>
+					<comments>https://kaspars.net/blog/rak7246-gateway#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 22 Mar 2020 14:36:56 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[LoRaWAN]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7455</guid>
+
+					<description><![CDATA[Single channel LoRaWAN gateways are great for getting started with the LoRaWAN networks and actually sending some data from your sensors to the Things Network and other hubs. I built mine with HopeRF RFM95W radios attached directly to Raspberry Pi: But single-channel gateways are not really useful to the larger LoRaWAN community because they listen [&#8230;] <a href="https://kaspars.net/blog/rak7246-gateway" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="RAK7246 LoRaWAN Gateway Review" width="650" height="366" src="https://www.youtube.com/embed/x7AKwyV8h0Q?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>Single channel LoRaWAN gateways are great for getting started with the LoRaWAN networks and actually sending some data from your sensors to the <a href="https://www.thethingsnetwork.org/">Things Network</a> and other hubs. I built mine with HopeRF RFM95W radios attached directly to Raspberry Pi:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2500" height="1667" src="https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-1024x683.jpeg" alt="" class="wp-image-7458" srcset="https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-1024x683.jpeg 1024w, https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-800x533.jpeg 800w, https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-1536x1024.jpeg 1536w, https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-2048x1366.jpeg 2048w" sizes="(max-width: 2500px) 100vw, 2500px" /><figcaption>Raspberry Pi 3 with a RFM95W LoRa module.</figcaption></figure>
+
+
+
+<p>But single-channel gateways are not really useful to the larger LoRaWAN community because they listen only on one of the eight frequencies and can&#8217;t relay the majority of the LoRaWAN sensor traffic.</p>
+
+
+
+<span id="more-7455"></span>
+
+
+
+<p>Eight channel gateways have always been around USD 200 until very recently when the following low cost gateways have been introduced:</p>
+
+
+
+<ul class="wp-block-list"><li><a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/">The Things Network Indoor gateway</a></li><li><a href="https://mikrotik.com/products/group/lora-products">MicroTik wAP gateway</a></li><li><a href="https://kaspars.net/go/rak7246-aliexpress">RAK Wireless RAK7246</a></li></ul>
+
+
+
+<p>And only the RAK7246 gateway uses a DIY-friendly design with Raspberry Pi Zero as the brain of the device.</p>
+
+
+
+<h2 class="wp-block-heading">The Good</h2>
+
+
+
+<ul class="wp-block-list"><li>Fully assembled device with all software pre-installed.</li><li>DIY friendly design with Raspberry Pi Zero.</li><li>Low price.</li></ul>
+
+
+
+<h2 class="wp-block-heading">The Bad</h2>
+
+
+
+<ul class="wp-block-list"><li>No labels for antenna and other ports.</li><li>Impossible to remove the SD card without disassembling the case.</li></ul>
+
+
+
+<h2 class="wp-block-heading">Buy the RAK7246 LoRaWAN Gateway</h2>
+
+
+
+<ul class="wp-block-list"><li>Buy RAK7246 from the <a href="https://kaspars.net/go/rak7246-store">RAK Wireless Store</a>.</li><li>Buy RAK7246 from the <a href="https://kaspars.net/go/rak7246-aliexpress">RAK Wireless on Aliexpress</a>.</li></ul>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/attiny841-rfm69-mysensors" rel="bookmark" title="MySensors, RFM69 and ATTiny841">MySensors, RFM69 and ATTiny841</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+<li><a href="https://kaspars.net/blog/my-online-backup-strategy-backblaze-review" rel="bookmark" title="Backblaze Review">Backblaze Review</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/rak7246-gateway/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/03/rak7246-lorawan-gateway-raspberrypi-zero-review-150x150.png" length="38277" type="image/png" />	</item>
+		<item>
+		<title>Ikea Trådfri vs Xiaomi Mijia and Aqara Zigbee Switches</title>
+		<link>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches</link>
+					<comments>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 27 Oct 2019 15:00:57 +0000</pubDate>
+				<category><![CDATA[Home Automation]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Zigbee]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7322</guid>
+
+					<description><![CDATA[Ikea Trådfri Zigbee switches/dimmers react much quicker to button presses compared to Xiaomi Mijia and Aqara switches because they don&#8217;t support double clicks. This is similar to how mobile browsers wait a little longer for clicks on links to support the long-press events such as copying the links or opening them in a new window. <a href="https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Ikea Trådfri vs Xiaomi Mijia and Aqara Zigbee Switches" width="650" height="366" src="https://www.youtube.com/embed/bG-DW62mlYU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p><a href="https://kaspars.net/go/ikea-tradfri-zigbee-switches">Ikea Trådfri Zigbee switches/dimmers</a> react much quicker to button presses compared to <a href="https://kaspars.net/go/xiaomi-mijia-zigbee-switch">Xiaomi Mijia</a> and Aqara switches because they don&#8217;t support double clicks. This is similar to how mobile browsers wait a little longer for clicks on links to support the long-press events such as copying the links or opening them in a new window.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/aqara-g2h-homekit" rel="bookmark" title="Use Aqara G2H Zigbee Camera Hub with Home Assistant">Use Aqara G2H Zigbee Camera Hub with Home Assistant</a></li>
+<li><a href="https://kaspars.net/blog/sensor-pilot-web-bluetooth" rel="bookmark" title="Sensor Pilot: A Progressive Web App (PWA) for Bluetooth Sensors">Sensor Pilot: A Progressive Web App (PWA) for Bluetooth Sensors</a></li>
+<li><a href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub" rel="bookmark" title="Notes on Zemismart HomeKit Zigbee Hub">Notes on Zemismart HomeKit Zigbee Hub</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2019/10/xiaomi-mijia-ikea-tradfri-switches-150x150.jpeg" length="3850" type="image/jpeg" />	</item>
+		<item>
+		<title>Solar Powered Raspberry Pi Camera</title>
+		<link>https://kaspars.net/blog/solar-raspberry-pi-camera</link>
+					<comments>https://kaspars.net/blog/solar-raspberry-pi-camera#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Fri, 09 Aug 2019 17:54:25 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Home Automation]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7205</guid>
+
+					<description><![CDATA[Update: this project was featured in issue 92 of the official Raspberry Pi magazine (download as PDF, buy the issue or subscribe). SSH-ing into a remote solar powered Raspberry Pi at the top of an apple tree has a special feeling &#8212; almost like commanding a spaceship where any mistake can cost you a lost [&#8230;] <a href="https://kaspars.net/blog/solar-raspberry-pi-camera" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Solar Powered Raspberry Pi Security Camera, Part 1" width="650" height="366" src="https://www.youtube.com/embed/M53eJI90ETE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p><strong>Update:</strong> this project was featured in <a href="https://magpi.raspberrypi.org/issues/92/">issue 92 of the official Raspberry Pi magazine</a> (<a href="https://magpi.raspberrypi.org/issues/92/pdf">download as PDF</a>, <a href="https://store.rpipress.cc/products/the-magpi-magazine-92">buy the issue</a> or <a href="https://magpi.raspberrypi.org/subscribe/new">subscribe</a>).</p>
+
+
+
+<p>SSH-ing into a remote solar powered Raspberry Pi at the top of an apple tree has a special feeling &#8212; almost like commanding a spaceship where any mistake can cost you a lost link.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree.jpeg"><img loading="lazy" decoding="async" width="1654" height="1654" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-1024x1024.jpeg" alt="Raspberry Pi in a dummy security camera in a tree." class="wp-image-7206" srcset="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-1024x1024.jpeg 1024w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-150x150.jpeg 150w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-800x800.jpeg 800w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree.jpeg 1654w" sizes="(max-width: 1654px) 100vw, 1654px" /></a><figcaption>Raspberry Pi in a dummy security camera case placed in an apple tree with a 100Wp photovoltaic panel and a 12V battery for power.</figcaption></figure>
+
+
+
+<p>I build this project to remotely monitor our countryside house.</p>
+
+
+
+<h2 class="wp-block-heading">Internet Connectivity</h2>
+
+
+
+<p>There are two options:</p>
+
+
+
+<ol class="wp-block-list"><li>A mobile USB modem attached directly to the Raspberry Pi <a href="https://wiki.debian.org/Modem/3G">using the point-to-point (PPP) protocol</a>, or</li><li>A <a href="https://mikrotik.com/product/wap_lte_kit">standalone mobile modem/router</a> creating a WiFi network.</li></ol>
+
+
+
+<p>I decided to go with a standalone modem that is plugged in at my neighbours house because of complexities involved in creating a reliable <a href="https://github.com/kasparsd/remote-pine">PPP connection</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Components</h2>
+
+
+
+<ul class="wp-block-list"><li>$8 <a href="https://kaspars.net/go/raspberry-pi-zero-w">Raspberry Pi Zero W</a> which supports the camera module.</li><li>$29 <a href="https://kaspars.net/go/raspberry-pi-camera-v2">Raspberry Pi Camera module</a> (and <a href="https://kaspars.net/go/raspberry-pi-zero-camera-cable">a cable for Raspberry Pi Zero</a>).</li><li>$18 any 12V battery capable of delivering 1.5W x 24h = 36Wh, such as <a href="https://www.ebay.com/sch/i.html?_nkw=12v+7ah">this 7Ah Pb battery</a> (80Wh).</li><li>$8 <a href="https://kaspars.net/go/dummy-security-camera">dummy security camera</a>.</li><li>$10 <a href="https://kaspars.net/go/12v-solar-charge-controller">12V charge controller</a>.</li><li>$2 <a href="https://kaspars.net/go/5v-dc-buck-converter">12V to 5V buck converter</a> to power the Raspberry Pi.</li><li>$15 cabling and connectors.</li><li>$132 <a href="https://kaspars.net/go/100w-flexible-solar-panel">100Wp solar panel</a>.</li></ul>
+
+
+
+<p>Total: $222 + $7 per month for a 10GB mobile data plan.</p>
+
+
+
+<h2 class="wp-block-heading">Notes</h2>
+
+
+
+<ul class="wp-block-list"><li>Avoid blocking the <code>/dev/video0</code> device when not used to allow other things such as timelapse scripts to capture photos or record videos. This is hard with things like the Motion daemon which constantly blocks the video device source.</li><li>Use the <a href="https://picamera.readthedocs.io/">official <code>picamera</code> Python library</a> for accessing the camera and formatting the image and video to match the required output.</li><li><a href="https://www.harding.motd.ca/autossh/">AutoSSH</a> in combination with a custom <a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd service</a> is great for creating and maintaining a persistent SSH tunnel from Raspberry Pi to a remote server. <strong>Update:</strong> <a href="https://kaspars.net/blog/wireguard-raspberry-pi">Use WireGuard for secure remote access</a>.</li><li>Rsync with hourly cron jobs is great for uploading and syncing photos and videos to a remote server for persistent storage. It also allows deleting older captures from Raspberry Pi while keeping them on the storage server.</li></ul>
+
+
+
+<p>Some of these scripts are available <a href="https://github.com/kasparsd/pine-monitor">in this GitHub project repository</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Photos</h2>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case.jpeg"><img loading="lazy" decoding="async" width="2443" height="2443" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case-1024x1024.jpeg" alt="" class="wp-image-7221" srcset="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case-1024x1024.jpeg 1024w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case-150x150.jpeg 150w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case-800x800.jpeg 800w" sizes="(max-width: 2443px) 100vw, 2443px" /></a><figcaption>Raspberry Pi 3 with a camera module inside a &#8220;dummy&#8221; security camera case.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera.jpeg"><img loading="lazy" decoding="async" width="2427" height="2427" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera-1024x1024.jpeg" alt="" class="wp-image-7215" srcset="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera-1024x1024.jpeg 1024w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera-150x150.jpeg 150w, https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera-800x800.jpeg 800w" sizes="(max-width: 2427px) 100vw, 2427px" /></a><figcaption>Raspberry Pi with a camera module attached to a 12V battery charged by a 100Wp flexible solar panel.</figcaption></figure>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/reolink-battery-camera-remote-protocol" rel="bookmark" title="Remote Access Protocol for Reolink Battery Powered Cameras">Remote Access Protocol for Reolink Battery Powered Cameras</a></li>
+<li><a href="https://kaspars.net/blog/wireguard-raspberry-pi" rel="bookmark" title="WireGuard on Raspberry Pi">WireGuard on Raspberry Pi</a></li>
+<li><a href="https://kaspars.net/blog/raspberry-pi-wi-fi-settings-sd-card" rel="bookmark" title="Storing Raspberry Pi Wi-Fi Network Settings on the SD Card">Storing Raspberry Pi Wi-Fi Network Settings on the SD Card</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/solar-raspberry-pi-camera/feed</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-150x150.jpeg" length="6808" type="image/jpeg" />	</item>
+		<item>
+		<title>KEY-ID FIDO U2F: How to Remove the Green LED</title>
+		<link>https://kaspars.net/blog/key-id-remove-green-led</link>
+					<comments>https://kaspars.net/blog/key-id-remove-green-led#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 26 Nov 2017 19:37:48 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6548</guid>
+
+					<description><![CDATA[The KEY-ID FIDO U2F security keys are a nice alternative to YubiKey 4 Nano&#160;because they cost only $12 instead of $50. However they include a green LED that is always enabled which makes it unsuitable for a permanent installation. In this video I explain how to open the device and remove the LED. Here is [&#8230;] <a href="https://kaspars.net/blog/key-id-remove-green-led" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="KEY-ID FIDO U2F: How to Remove the Green LED" width="650" height="366" src="https://www.youtube.com/embed/AICoq0T_7MA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>The <a href="http://www.key-id.com/key-id-fido-u2f-security-key-online-security/">KEY-ID FIDO U2F security keys</a> are a nice alternative to <a href="https://www.yubico.com/product/yubikey-4-series/#yubikey-4-nano">YubiKey 4 Nano</a>&nbsp;because they cost only $12 instead of $50. However they include a green LED that is always enabled which makes it unsuitable for a permanent installation. In this video I explain how to open the device and remove the LED.</p>
+
+
+
+<p>Here is <a href="https://github.com/hillbrad/U2FReviews">a great overview of the most popular FIDO U2F security keys</a>. And <a href="https://www.imperialviolet.org/2017/10/08/securitykeytest.html">this blog post has useful technical insight into the Key-ID key</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/remove-index-html-from-the-url" rel="bookmark" title="Remove index.html from the URL">Remove index.html from the URL</a></li>
+<li><a href="https://kaspars.net/blog/remove-view-all-posts-filed-under-category-widget" rel="bookmark" title="How to Remove &#8220;View all posts filed under&#8221; Prefix from Link Title Attribute in Category Widget">How to Remove &#8220;View all posts filed under&#8221; Prefix from Link Title Attribute in Category Widget</a></li>
+<li><a href="https://kaspars.net/blog/u2f-google-smart-lock" rel="bookmark" title="Google Smart Lock for All">Google Smart Lock for All</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/key-id-remove-green-led/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Part 2: DIY Electric Skateboard Electronics</title>
+		<link>https://kaspars.net/blog/diy-electric-skateboard-electronics</link>
+					<comments>https://kaspars.net/blog/diy-electric-skateboard-electronics#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 12 Nov 2017 16:45:25 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Electric Skateboard]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6517</guid>
+
+					<description><![CDATA[In episode 9 of my video blog I explain the electronic components required for building a very simple and cheap electric skateboard with a hub motor. It is a follow-up to the&#160;part 1 of the DIY electric skateboard build video. Components Maytech 70mm hub motor Maytech remote with a receiver 120A Car ESC 6S battery [&#8230;] <a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Part 2: DIY Electric Skateboard Electronics" width="650" height="366" src="https://www.youtube.com/embed/yhm4l33IB4c?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=yhm4l33IB4c">episode 9</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I explain the electronic components required for building a very simple and cheap electric skateboard with a hub motor. It is a follow-up to the&nbsp;<a href="https://kaspars.net/blog/vlog/diy-electric-skatboard-hub-motor-trucks">part 1 of the DIY electric skateboard build video</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Components</h2>
+
+
+
+<ul class="wp-block-list"><li><a href="https://kaspars.net/go/maytech-70mm-hubs">Maytech 70mm hub motor</a></li><li><a href="https://kaspars.net/go/maytech-remote">Maytech remote with a receiver</a></li><li><a href="https://kaspars.net/go/120a-car-esc">120A Car ESC</a></li><li><a href="https://kaspars.net/go/6s-battery">6S battery pack</a></li></ul>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks" rel="bookmark" title="Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks">Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+<li><a href="https://kaspars.net/blog/electric-poodle-project" rel="bookmark" title="The Electric Poodle Project">The Electric Poodle Project</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-electric-skateboard-electronics/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/11/diy-electric-skateboard-hub-motor-electronics-150x150.jpg" length="6457" type="image/jpeg" />	</item>
+		<item>
+		<title>Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks</title>
+		<link>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks</link>
+					<comments>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 09 Apr 2017 10:04:03 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Electric Skateboard]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6331</guid>
+
+					<description><![CDATA[In episode 8 of my video blog I show&#160;how to modify standard skateboard trucks to fit a 70mm electric hub motor from Maytech (available for $99). This is a follow-up to my review of the Maytech 90mm hub motors and&#160;part 1 in series of how to build your own light-weight electric skateboard. Maytech 70mm Hub [&#8230;] <a href="https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Part 1: DIY Electric Skateboard, Hub Motor &amp; Trucks" width="650" height="366" src="https://www.youtube.com/embed/Sjut8hVuLWM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=Sjut8hVuLWM">episode 8</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I show&nbsp;how to modify standard skateboard trucks to fit <a href="http://www.maytech.cn/en/mto91hbm-ha/10270.html">a 70mm electric hub motor from Maytech</a> (available for $99). This is a follow-up to <a href="https://kaspars.net/blog/electronics/maytech-90mm-motor-review">my review of the Maytech 90mm hub motors</a> and&nbsp;part 1 in series of how to build your own light-weight electric skateboard.</p>
+
+
+
+<h2 class="wp-block-heading">Maytech 70mm Hub Motors</h2>
+
+
+
+<p>Here are the photos of the hub motor motor components &#8212; the stator, rotor and the wheel.&nbsp;The rest of&nbsp;the photos are <a href="https://www.flickr.com/photos/kasparsdambis/albums/72157679043395564">available on Flickr</a>.</p>
+
+
+
+<p>To buy these motors you can get in touch with Eileen from Maytech eileen@maytech.cn &#8212; and&nbsp;don&#8217;t forget to refer to this blog for a discount.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel.jpg"><img loading="lazy" decoding="async" width="2943" height="1962" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel-800x533.jpg" alt="Maytech 70mm Hub Motor Parts, Stator, Rotor, Wheel" class="wp-image-6342" srcset="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel-800x533.jpg 800w, https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel-1024x683.jpg 1024w" sizes="(max-width: 2943px) 100vw, 2943px" /></a><figcaption>Stator, rotor, wheel and the cover of the hub motor.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator.jpg"><img loading="lazy" decoding="async" width="3023" height="2015" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-800x533.jpg" alt="Maytech 70mm Hub Motor Stator" class="wp-image-6341" srcset="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-800x533.jpg 800w, https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-1024x683.jpg 1024w" sizes="(max-width: 3023px) 100vw, 3023px" /></a><figcaption>Stator of the hub motor.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv.jpg"><img loading="lazy" decoding="async" width="3264" height="2176" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv-800x533.jpg" alt="Measuring the KV rating and speed of the Maytech 70mm hub motor" class="wp-image-6343" srcset="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv-800x533.jpg 800w, https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv-1024x683.jpg 1024w" sizes="(max-width: 3264px) 100vw, 3264px" /></a><figcaption>Measuring the KV rating of the motor &#8212; 2100 RPM at 25V is 84.</figcaption></figure></div>
+
+
+
+<h2 class="wp-block-heading">FVT Sleeping Lion 120A Speed Controller (ESC)</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric.jpg"><img loading="lazy" decoding="async" width="3264" height="2448" src="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric-800x600.jpg" alt="Favourite FVT 120A 12S ESC for Electric Skateboard" class="wp-image-6348" srcset="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric-800x600.jpg 800w, https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric-1024x768.jpg 1024w" sizes="(max-width: 3264px) 100vw, 3264px" /></a></figure></div>
+
+
+
+<p>During the first test run I was using the new <a href="http://www.szfvt.com/en/proshow-105-3-54-54-100-16-3.html">high-voltage 12S 120A skateboard speed controller from FVT</a>. Here are the <a href="https://www.flickr.com/photos/kasparsdambis/albums/72157681905832786">photos of&nbsp;the teardown</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" rel="bookmark" title="Part 2: DIY Electric Skateboard Electronics">Part 2: DIY Electric Skateboard Electronics</a></li>
+<li><a href="https://kaspars.net/blog/maytech-hub-motor-flier-esc-wiring" rel="bookmark" title="Wiring Maytech Hub Motors to Flier Twin ESC">Wiring Maytech Hub Motors to Flier Twin ESC</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks/feed</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/04/part-1-diy-electric-skateboard-hub-motor-trucks-150x150.jpg" length="7125" type="image/jpeg" />	</item>
+		<item>
+		<title>DIY Professional Wireless Headphones</title>
+		<link>https://kaspars.net/blog/diy-wireless-headphones</link>
+					<comments>https://kaspars.net/blog/diy-wireless-headphones#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 12:47:27 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[How to]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6293</guid>
+
+					<description><![CDATA[In episode 7 of my video blog I explain how I converted the popular Sony MDR-7506 headphones into wireless headphones using a bluetooth audio receiver from Havit. This is a follow-up video to my previous&#160;research in&#160;using Bluetooth audio for capturing microphone input on iPhone 7 which doesn&#8217;t have the 3.5mm audio input jack. The Havit [&#8230;] <a href="https://kaspars.net/blog/diy-wireless-headphones" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="DIY Professional Wireless Headphones using Sony MDR-7506" width="650" height="366" src="https://www.youtube.com/embed/t5Zwb16MnJ4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=t5Zwb16MnJ4">episode 7</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I explain how I converted the popular <a href="https://www.amazon.com/dp/B000AJIF4E?tag=ksprs-20">Sony MDR-7506 headphones</a> into wireless headphones using <a href="https://www.amazon.com/dp/B0185GZMMQ?tag=ksprs-20">a bluetooth audio receiver from Havit</a>. This is a follow-up video to my previous&nbsp;<a href="https://kaspars.net/blog/electronics/iphone-7-bluetooth-microphone">research in&nbsp;using Bluetooth audio for capturing microphone input on iPhone 7</a> which doesn&#8217;t have the 3.5mm audio input jack.</p>
+
+
+
+<p>The Havit audio transceiver&nbsp;module uses the&nbsp;<a href="http://www.csr.com/products/63/csr8670">CSR8670 Bluetooth audio chip</a> which is also used in most of the similar devices. It also features a very capable <a href="https://www.diodes.com/assets/Datasheets/PAM8901_8.pdf">PAM8908 headphone driver</a> and audio amplifier.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter.jpg"><img loading="lazy" decoding="async" width="3264" height="2176" src="https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter-800x533.jpg" alt="Bluetooth Audio Transmitter and Receiver from Havit (CSR8670)" class="wp-image-6305" srcset="https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter-800x533.jpg 800w, https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter-1024x683.jpg 1024w" sizes="(max-width: 3264px) 100vw, 3264px" /></a></figure></div>
+
+
+
+<p>The 3.5mm input jack on the PCB can be soldered directly to the three audio signal wires of the&nbsp;Sony MDR-7508 headphones and placed inside the left headphone&nbsp;after drilling the required holes for the on/off switch, the micro-USB charging port and the 3.5mm audio input port which continues to work&nbsp;just like before the modifications:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers.jpg"><img loading="lazy" decoding="async" width="2974" height="1983" src="https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers-800x533.jpg" alt="Sony MDR-7506 Headphone Speaker" class="wp-image-6306" srcset="https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers-800x533.jpg 800w, https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers-1024x683.jpg 1024w" sizes="(max-width: 2974px) 100vw, 2974px" /></a></figure></div>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/iphone-7-bluetooth-microphone" rel="bookmark" title="Using 3.5mm and XLR Microphones with iPhone 7 over Bluetooth">Using 3.5mm and XLR Microphones with iPhone 7 over Bluetooth</a></li>
+<li><a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" rel="bookmark" title="Part 2: DIY Electric Skateboard Electronics">Part 2: DIY Electric Skateboard Electronics</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-wireless-headphones/feed</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/03/diy-professional-wireless-bluetooth-headphones-sony-mdr-7506-havit-150x150.jpg" length="7116" type="image/jpeg" />	</item>
+		<item>
+		<title>Display for Orange Pi Zero</title>
+		<link>https://kaspars.net/blog/spi-display-orange-pi-zero</link>
+					<comments>https://kaspars.net/blog/spi-display-orange-pi-zero#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 05 Mar 2017 17:00:22 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Orange Pi Zero]]></category>
+		<category><![CDATA[raspberrypi]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6275</guid>
+
+					<description><![CDATA[After figuring out the GPIO pin names of the Orange Pi Zero expansion port it is&#160;relatively easy to configure any&#160;TFT&#160;display as a FBTFT device&#160;attached over the SPI bus, as long as you know the name of the chip used to drive the LCD screen. Here is a list of all the chips supported by the [&#8230;] <a href="https://kaspars.net/blog/spi-display-orange-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Display for Orange Pi Zero" width="650" height="366" src="https://www.youtube.com/embed/Td-R_Rk2VQ4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>After figuring out the <a href="https://kaspars.net/blog/linux/orange-pi-zero-gpio">GPIO pin names of the Orange Pi Zero expansion port</a> it is&nbsp;relatively easy to configure any&nbsp;TFT&nbsp;display as <a href="https://github.com/notro/fbtft/wiki/fbtft_device">a FBTFT device</a>&nbsp;attached over the SPI bus, as long as you know the name of the chip used to drive the LCD screen. Here is <a href="https://github.com/torvalds/linux/tree/master/drivers/staging/fbtft">a list of all the chips supported by the Linux kernel</a> out of the box.</p>
+
+
+
+<p>The display I have&nbsp;is&nbsp;very similar to this <a href="http://www.waveshare.com/product/3.2inch-RPi-LCD-B.htm">3.2″ Waveshare touch-screen display</a> that uses the <a href="https://cdn-shop.adafruit.com/datasheets/ILI9340.pdf">ILI9340 LCD driver (PDF)</a> chip. It was only a matter of specifying the two GPIO pins used for <code>DC</code> (Data or Command) and <code>RST</code> (Reset) in addition to the SPI port.</p>
+
+
+
+<ul class="wp-block-list"><li>H2+ port <code>PA00</code>&nbsp;maps to&nbsp;<strong>GPIO 0</strong>, connected to <code>RST</code></li><li>H2+ port <code>PA03</code>&nbsp;maps to <strong>GPIO 3</strong>, connected to <code>DC</code></li><li>H2+ <strong>SPI bus 1</strong> is connected to the display module SPI pins.</li></ul>
+
+
+
+<p>The following command can be used to load the FBTFT device with the required configuration: </p>
+
+
+
+<pre class="wp-block-code"><code>$ sudo modprobe fbtft_device custom name=fb_ili9340 gpios=dc:3,reset:0 speed=16000000 busnum=1 rotate=90</code></pre>
+
+
+
+<p>And then map the console output to the newly created framebuffer device:</p>
+
+
+
+<pre class="wp-block-code"><code>$ con2fbmap 1 8</code></pre>
+
+
+
+<p>where 8 stands for <code>/dev/fb8</code>.</p>
+
+
+
+<p>Here is the display running <code>htop</code>:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare.jpg"><img loading="lazy" decoding="async" width="2000" height="1334" src="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare-800x534.jpg" alt="3.2″ TFT LCD Display for Orange Pi Zero Over SPI" class="wp-image-6246" srcset="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare-800x534.jpg 800w, https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare-1024x683.jpg 1024w, https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare.jpg 2000w" sizes="(max-width: 2000px) 100vw, 2000px" /></a></figure></div>
+
+
+
+<h2 class="wp-block-heading">Permanent Setup</h2>
+
+
+
+<p>Create a new file&nbsp;<code>/etc/modules-load.d/fbtft.conf</code> with the following content:</p>
+
+
+
+<pre class="wp-block-code"><code>fbtft_device</code></pre>
+
+
+
+<p>Create another file <code>/etc/modprobe.d/fbtft.conf</code> with the configuration for&nbsp;the <code>fbtft_device</code>&nbsp;device: </p>
+
+
+
+<pre class="wp-block-code"><code>options fbtft_device custom name=fb_ili9340 gpios=dc:3,reset:0 speed=16000000 busnum=1 rotate=90</code></pre>
+
+
+
+<p>Finally, edit <code>/boot/armbianEnv.txt</code> to map the console output to the framebuffer device during the boot, by appending the following: </p>
+
+
+
+<pre class="wp-block-code"><code>extraargs="fbcon=map:8"</code></pre>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/orange-pi-zero-gpio" rel="bookmark" title="Orange Pi Zero GPIO Pins">Orange Pi Zero GPIO Pins</a></li>
+<li><a href="https://kaspars.net/blog/orange-pi-zero" rel="bookmark" title="Orange Pi Zero as a Web Server">Orange Pi Zero as a Web Server</a></li>
+<li><a href="https://kaspars.net/blog/attiny841-rfm69-mysensors" rel="bookmark" title="MySensors, RFM69 and ATTiny841">MySensors, RFM69 and ATTiny841</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/spi-display-orange-pi-zero/feed</wfw:commentRss>
+			<slash:comments>44</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/03/display-for-orange-pi-zero-150x150.jpg" length="6908" type="image/jpeg" />	</item>
+		<item>
+		<title>PiJack Ethernet Hat for Raspberry Pi Zero</title>
+		<link>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero</link>
+					<comments>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sat, 11 Feb 2017 19:09:43 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6206</guid>
+
+					<description><![CDATA[In episode 5 of my video blog I review the PiJack Ethernet Hat&#160;($15) for the Raspberry Pi Zero. This is a follow-up to my review of the Orange Pi Zero computer&#160;($9) which has a built-in Ethernet and WiFi. PiJack uses&#160;the Microchip ENC28J60 Ethernet controller which is capable of 10 Mbps (or just 1.25MB/s). While the [&#8230;] <a href="https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="PiJack Ethernet Hat for Raspberry Pi Zero" width="650" height="366" src="https://www.youtube.com/embed/PcT6ncGLMjE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=PcT6ncGLMjE">episode 5</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I review the <a href="https://pijack.net/">PiJack Ethernet Hat</a>&nbsp;($15) for the Raspberry Pi Zero. This is a follow-up to my <a href="https://www.youtube.com/watch?v=RUf0WLs7U_8">review of the Orange Pi Zero computer</a>&nbsp;($9) which has a built-in Ethernet and WiFi.</p>
+
+
+
+<p>PiJack uses&nbsp;the <a href="http://www.microchip.com/wwwproducts/en/en022889">Microchip ENC28J60 Ethernet controller</a> which is capable of 10 Mbps (or just 1.25MB/s). While the Raspberry Pi Zero will&nbsp;recognize and configure the PiJack automatically, the actual networking speed&nbsp;didn&#8217;t exceed 5 Mbps with&nbsp;the&nbsp;<code>iperf</code>&nbsp;test&nbsp;or when downloading a large file over a local network using <code>wget</code>.</p>
+
+
+
+<div class="wp-block-image size-large wp-image-6212"><figure class="aligncenter"><img loading="lazy" decoding="async" width="1876" height="932" src="https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver-1024x509.png" alt="PiJack Hat for Raspberry Pi Zero with ENC28J60 Ethernet Controller" class="wp-image-6212" srcset="https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver-1024x509.png 1024w, https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver-800x397.png 800w, https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver.png 1876w" sizes="(max-width: 1876px) 100vw, 1876px" /><figcaption>PiJack uses the Microchip ENC28J60 Ethernet controller.</figcaption></figure></div>
+
+
+
+<p>Here is the <code>ethtool</code>&nbsp;report with the PiJack connected:</p>
+
+
+
+<div class="wp-block-image size-large wp-image-6210"><figure class="aligncenter"><img loading="lazy" decoding="async" width="1876" height="978" src="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet-1024x534.png" alt="Ethtool Report of PiJack Ethernet Hat for Raspberry Pi Zero" class="wp-image-6210" srcset="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet-1024x534.png 1024w, https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet-800x417.png 800w, https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet.png 1876w" sizes="(max-width: 1876px) 100vw, 1876px" /><figcaption>Ethtool Report of PiJack.</figcaption></figure></div>
+
+
+
+<h2 class="wp-block-heading">Power Consumption</h2>
+
+
+
+<p>Transferring a 1GB file over a local network using PiJack attached to the Raspberry Pi Zero consumes around 170mA or 0.85W while the Orange Pi Zero uses around 100mA or 0.5W for the same task. These are only very rough figures&nbsp;and will probably be different with&nbsp;your setup.</p>
+
+
+
+<h2 class="wp-block-heading">Conclusions</h2>
+
+
+
+<p>PiJack is a good product if you don&#8217;t want to move away from the Raspberry Pi ecosystem for your project and you need to transfer only limited amounts of data. The Orange Pi Zero and NanoPi NEO are much cheaper at&nbsp;$10 and offer higher networking speeds and lower power consumption. The <a href="https://www.armbian.com/">Armbian</a> operating system has <a href="https://forum.armbian.com/">a great community</a> and plenty&nbsp;people interested in improving both the performance and power consumption of these well documented <a href="http://linux-sunxi.org/Main_Page">Allwinner SoC</a> based&nbsp;computers.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/orange-pi-zero" rel="bookmark" title="Orange Pi Zero as a Web Server">Orange Pi Zero as a Web Server</a></li>
+<li><a href="https://kaspars.net/blog/solar-raspberry-pi-camera" rel="bookmark" title="Solar Powered Raspberry Pi Camera">Solar Powered Raspberry Pi Camera</a></li>
+<li><a href="https://kaspars.net/blog/raspberry-pi-wi-fi-settings-sd-card" rel="bookmark" title="Storing Raspberry Pi Wi-Fi Network Settings on the SD Card">Storing Raspberry Pi Wi-Fi Network Settings on the SD Card</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethernet-hat-raspberry-pi-zero-150x150.jpg" length="4897" type="image/jpeg" />	</item>
+		<item>
+		<title>Orange Pi Zero as a Web Server</title>
+		<link>https://kaspars.net/blog/orange-pi-zero</link>
+					<comments>https://kaspars.net/blog/orange-pi-zero#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Mon, 30 Jan 2017 11:10:51 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Nginx]]></category>
+		<category><![CDATA[raspberrypi]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6192</guid>
+
+					<description><![CDATA[In episode 4 of my video blog I review Orange Pi Zero &#8212; the cheapest low-power computer with native Ethernet support, available on AliExpress for only $9. I&#8217;m using it as a headless webserver running Armbian to host a ToR relay. With Wi-Fi and USB ports disabled it consumes around 0.5W which amounts to 4.5kWh per year or $1.50. <a href="https://kaspars.net/blog/orange-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Orange Pi Zero as a Headless Webserver" width="650" height="366" src="https://www.youtube.com/embed/RUf0WLs7U_8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=RUf0WLs7U_8">episode 4</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I review <a href="http://www.orangepi.org/orangepizero/">Orange Pi Zero</a> &#8212; the cheapest low-power computer with native Ethernet support, <a href="https://www.aliexpress.com/store/product/New-Orange-Pi-Zero-H2-Quad-Core-Open-source-512MB-development-board-beyond-Raspberry-Pi/1553371_32761500374.html">available on AliExpress for only $9</a>. I&#8217;m using it as a headless webserver running <a href="https://www.armbian.com/">Armbian</a> to host a <a href="https://community.torproject.org/relay/">ToR relay</a>. With Wi-Fi and USB ports disabled it consumes around 0.5W which amounts to 4.5kWh per year or $1.50.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/spi-display-orange-pi-zero" rel="bookmark" title="Display for Orange Pi Zero">Display for Orange Pi Zero</a></li>
+<li><a href="https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero" rel="bookmark" title="PiJack Ethernet Hat for Raspberry Pi Zero">PiJack Ethernet Hat for Raspberry Pi Zero</a></li>
+<li><a href="https://kaspars.net/blog/orange-pi-zero-gpio" rel="bookmark" title="Orange Pi Zero GPIO Pins">Orange Pi Zero GPIO Pins</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/orange-pi-zero/feed</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep4-orange-pi-zero-review-150x150.png" length="38627" type="image/png" />	</item>
+		<item>
+		<title>The Electric Poodle Project</title>
+		<link>https://kaspars.net/blog/electric-poodle-project</link>
+					<comments>https://kaspars.net/blog/electric-poodle-project#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 15 Jan 2017 18:27:10 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6162</guid>
+
+					<description><![CDATA[In episode 3 of my video blog I showcase the Electric Poodle project &#8212; a motor on a stick that was supposed to pull you forward on a skateboard and roller skates. Unfortunately it didn&#8217;t work that well because it was too heavy and not very portable, and hard to use. Here are a few similar projects [&#8230;] <a href="https://kaspars.net/blog/electric-poodle-project" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[<p><iframe loading="lazy" title="Electric Poodle, E-Paddle, Speedbat and Kickstick" width="650" height="366" src="https://www.youtube.com/embed/uKWEWvGtC6o?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p>In <a href="https://www.youtube.com/watch?v=uKWEWvGtC6o">episode 3</a> of <a href="https://www.youtube.com/channel/UCopSjr1a2QgRvm-yJRqcPpA">my video blog</a> I showcase the Electric Poodle project &#8212; a motor on a stick that was supposed to pull you forward on a skateboard and roller skates. Unfortunately it didn&#8217;t work that well because it was too heavy and not very portable, and hard to use.</p>
+<p>Here are a few similar projects that I discovered before and after building my prototype &#8212; <a href="http://www.epaddle.net">E-Paddle</a>, <a href="https://vimeo.com/5702197">Speedbat</a> and <a href="http://www.riserobotics.com/kickstick/">Kickstick</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" rel="bookmark" title="Part 2: DIY Electric Skateboard Electronics">Part 2: DIY Electric Skateboard Electronics</a></li>
+<li><a href="https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks" rel="bookmark" title="Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks">Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/electric-poodle-project/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep2-electric-poodle-150x150.png" length="39486" type="image/png" />	</item>
+		<item>
+		<title>Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</title>
+		<link>https://kaspars.net/blog/maytech-90mm-motor-review</link>
+					<comments>https://kaspars.net/blog/maytech-90mm-motor-review#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 08 Jan 2017 21:23:56 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6149</guid>
+
+					<description><![CDATA[In episode 2 of my video blog I review the Maytech 90mm sensored hub motor MTO9055HBM-60-HA for DIY&#160;electric skateboards and longboards. I compare it with the E-Wheelin i3 and show&#160;the trucks and the matching wheels. Here are my rough notes on the&#160;various dimensions and parameters of the motor: <a href="https://kaspars.net/blog/maytech-90mm-motor-review" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Review of Maytech 90mm Sensored Hub Motors for Electric Skateboards" width="650" height="366" src="https://www.youtube.com/embed/rpEv3Hr-U9E?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>In <a href="https://www.youtube.com/watch?v=rpEv3Hr-U9E">episode 2</a> of my video blog I review the <a href="https://www.flickr.com/photos/kasparsdambis/sets/72157678865233335">Maytech 90mm sensored hub motor MTO9055HBM-60-HA</a> for DIY&nbsp;electric skateboards and longboards. I compare it with the <a href="https://www.flickr.com/photos/kasparsdambis/sets/72157667661928215">E-Wheelin i3</a> and show&nbsp;the trucks and the matching wheels.</p>
+
+
+
+<p>Here are my rough notes on the&nbsp;various dimensions and parameters of the motor:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs.jpg"><img loading="lazy" decoding="async" width="2000" height="1500" src="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs-1024x768.jpg" alt="Notes on Maytech MTO9055HBM-60-HA hub motor for electric skateboards and longboards" class="wp-image-6152" srcset="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs-1024x768.jpg 1024w, https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs-800x600.jpg 800w, https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs.jpg 2000w" sizes="(max-width: 2000px) 100vw, 2000px" /></a></figure></div>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/maytech-hub-motor-flier-esc-wiring" rel="bookmark" title="Wiring Maytech Hub Motors to Flier Twin ESC">Wiring Maytech Hub Motors to Flier Twin ESC</a></li>
+<li><a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" rel="bookmark" title="Part 2: DIY Electric Skateboard Electronics">Part 2: DIY Electric Skateboard Electronics</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/maytech-90mm-motor-review/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep2-cover-150x150.jpg" length="7404" type="image/jpeg" />	</item>
+		<item>
+		<title>Starting a Video Blog</title>
+		<link>https://kaspars.net/blog/ep1-batteries</link>
+					<comments>https://kaspars.net/blog/ep1-batteries#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 01 Jan 2017 17:35:26 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Solar]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6139</guid>
+
+					<description><![CDATA[I&#8217;ve been wanting to do this since the days of Ze Show and Rocketboom so here we are on the first day of 2017. I knew that the first episode would be the hardest to make so I&#8217;m really looking forward to the next ones. In the very first episode of my video blog I [&#8230;] <a href="https://kaspars.net/blog/ep1-batteries" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="How to Compare Batteries and Choose Portable USB Battery Chargers" width="650" height="366" src="https://www.youtube.com/embed/CqTPjolm3I0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>I&#8217;ve been wanting to do this since the days of <a href="http://www.zefrank.com/theshow/">Ze Show</a> and <a href="https://en.wikipedia.org/wiki/Rocketboom">Rocketboom</a> so here we are on the first day of 2017. I knew that the first episode would be the hardest to make so I&#8217;m really looking forward to the next ones.</p>
+
+
+
+<p>In the very <a href="https://www.youtube.com/watch?v=CqTPjolm3I0">first episode</a> of <a href="https://youtube.com/channel/UCopSjr1a2QgRvm-yJRqcPpA">my video blog</a> I talk about batteries and USB battery packs, and how to compare their capacity ratings in mAh and Wh.&nbsp;<a href="https://en.wikipedia.org/wiki/List_of_battery_sizes#Lithium-Ion_batteries_.28rechargeable.29">Type 18650 battery cells</a> are very&nbsp;popular for&nbsp;computer batteries, USB battery banks and electric cars including Tesla.</p>
+
+
+
+<p>In the future episodes I&#8217;ll talk about my microcontroller projects, electric skateboards, scooters and bicycles, physical web, solar power, data logging and wireless transmission.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/home-batteries" rel="bookmark" title="Home Batteries">Home Batteries</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+<li><a href="https://kaspars.net/blog/electric-penny" rel="bookmark" title="Electric Penny Bicycle">Electric Penny Bicycle</a></li>
+</ol>
+</div>
+
+
+<hr/>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/ep1-batteries/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/comparing-batteries-cover-150x150.jpg" length="5767" type="image/jpeg" />	</item>
+	</channel>
+</rss>

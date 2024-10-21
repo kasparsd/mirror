@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Widget Context User Interface Update (WordPress) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Widget Context User Interface Update Comments Feed" href="https://kaspars.net/blog/widget-context-user-interface-update/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/2491"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/widget-context-user-interface-update">
+<link rel="shortlink" href="https://kaspars.net/2491">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwidget-context-user-interface-update">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwidget-context-user-interface-update&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/widget-context-user-interface-update">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Widget Context User Interface Update">
+<meta property="og:description" content="Here is the new user interface that I have in mind for the next version of the Widget Context plugin.&nbsp;Feedback and suggestions from everyon...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2010/06/widget-context-new-layout.png">
+<meta property="og:url" content="https://kaspars.net/blog/widget-context-user-interface-update">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/widget-context-user-interface-update">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-2491 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/wordpress/" rel="category tag">WordPress</a> →</div>
+		
+		<article class="post-2491 post type-post status-publish format-standard has-post-thumbnail hentry category-wordpress tag-plugin tag-user-interface has-featured-image" id="post-2491" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Widget Context User Interface Update			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Mon, 21 Jun 2010 00:44:26 +0300">June 21, 2010</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 21 Jun 2010 00:45:20 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/wordpress/" rel="category tag">WordPress</a></span> <span class="meta-item meta-tags tags"><a href="../tag/plugin/" rel="tag">Plugin</a><a href="../tag/user-interface/" rel="tag">User Interface</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">10&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<p>Here is the new user interface that I have in mind for the next version of the Widget Context plugin.&nbsp;Feedback and suggestions from everyone currently using the plugin is much appreciated.</p>
+<p><img decoding="async" class="aligncenter size-full wp-image-2492" title="Widget Context new user interface" src="../../wp-content/uploads/2010/06/widget-context-new-layout.png" alt="" width="448" height="600"></p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../bitmaps-for-gnome-panel-background/" rel="prev">Bitmaps for Gnome Panel Background</a></h4></li><li><h4 class="next"><a href="../laptop-from-aboard-the-shuttle-spacecraft/" rel="next">Laptop from Aboard the Shuttle Spacecraft</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../../feedback-widget-context-ui-2011-v1/" rel="bookmark" title="Request for Feedback: Widget Context UI Update 2011, v1">Request for Feedback: Widget Context UI Update 2011, v1</a></li>
+<li><a href="../widget-context-update-for-wordpress-2-8/" rel="bookmark" title="Widget Context Update for WordPress 2.8">Widget Context Update for WordPress 2.8</a></li>
+<li><a href="../rewrite-widget-context-plugin/" rel="bookmark" title="Major Rewrite of Widget Context">Major Rewrite of Widget Context</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					10 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1" id="comment-2609">
+				<div id="div-comment-2609" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/efcfb2b5cd04eda52c32fac06c5f9540/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/efcfb2b5cd04eda52c32fac06c5f9540/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.ruderetro.com" class="url" rel="ugc external nofollow">Al</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-2609">July 21, 2010 at 14:58</a>		</div>
+
+		<p>Wow, that looks very slick. The current version functions well but that is pretty sweet. I love that there is going to be an Advanced PHP rule too.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=2609#respond" data-commentid="2609" data-postid="2491" data-belowelement="div-comment-2609" data-respondelement="respond" data-replyto="Reply to Al" aria-label="Reply to Al">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2767">
+				<div id="div-comment-2767" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/8bd0d3e1bdfa58c92c4e98a2262f5071/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/8bd0d3e1bdfa58c92c4e98a2262f5071/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Stig</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-2767">August 11, 2010 at 17:55</a>		</div>
+
+		<p>Looks very good. Just been struggeling with the widget logic plugin (no php knowledge) – managed to get it to work though. But wish i’d seen this plugin first. </p>
+<p>New version looks great!  Very useful. Maybe a search for category as well?</p>
+<p>Post a comment here when it’s been updated so i can come back and have a look :-)</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=2767#respond" data-commentid="2767" data-postid="2491" data-belowelement="div-comment-2767" data-respondelement="respond" data-replyto="Reply to Stig" aria-label="Reply to Stig">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2772">
+				<div id="div-comment-2772" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/b43fa8591563ca1e6945be18540b7173/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/b43fa8591563ca1e6945be18540b7173/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.found.dk" class="url" rel="ugc external nofollow">Lasse Heindorff</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-2772">August 12, 2010 at 18:25</a>		</div>
+
+		<p>Looking good! I use your plugin on a number of sites and the only not-so-great things to mention is that:</p>
+<p>1) When editing widgets, Widget Context is always expanded and looks messy/takes up too much screen real estate</p>
+<p>2) You can’t choose single posts in certain categories where you want a widget to be shown (or not)</p>
+<p>This seems to fix both. When do you think the update will be available?</p>
+<p>Thanks a bunch for a great plugin! I’ll donate as soon as I see the next update! ;-) Lots of value in this plugin, no doubt.</p>
+<p>Lasse</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=2772#respond" data-commentid="2772" data-postid="2491" data-belowelement="div-comment-2772" data-respondelement="respond" data-replyto="Reply to Lasse Heindorff" aria-label="Reply to Lasse Heindorff">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2821">
+				<div id="div-comment-2821" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/33a9c70161b756307f709191381fd28c/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/33a9c70161b756307f709191381fd28c/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.brendancorcoran.com/" class="url" rel="ugc external nofollow">Brendan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-2821">August 18, 2010 at 00:17</a>		</div>
+
+		<p>Have you implemented this at all? I’d really like you to release this (or at least a beta version). The current context menu is gianormous, I wish I could have it hidden by default if I’m just editing widget settings.</p>
+<p>Looks great though! Intuitive design.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=2821#respond" data-commentid="2821" data-postid="2491" data-belowelement="div-comment-2821" data-respondelement="respond" data-replyto="Reply to Brendan" aria-label="Reply to Brendan">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-4964">
+				<div id="div-comment-4964" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/1a659e051ae2d889b0e4421408b6ff34/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/1a659e051ae2d889b0e4421408b6ff34/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.mediacentrum.cz" class="url" rel="ugc external nofollow">Tomas Kapler</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-4964">January 25, 2011 at 11:38</a>		</div>
+
+		<p>any news about this update? I have much more specific rules in 99% of cases (e.g. on this custom post type to depth x except y), so i can’t live without advanced php rules, so without widget logic (p.s.: it would be great, if that advanced php rules would be imported from widget logic settings, so i would not have to retype it when migrate).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=4964#respond" data-commentid="4964" data-postid="2491" data-belowelement="div-comment-4964" data-respondelement="respond" data-replyto="Reply to Tomas Kapler" aria-label="Reply to Tomas Kapler">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-5026">
+				<div id="div-comment-5026" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5026">January 26, 2011 at 14:07</a>		</div>
+
+		<p>Thanks for your suggestions, <a href="#comment-4964" rel="nofollow">Tomas</a>! I can’t really promise when the next update will be, but I’ll try to add that “advanced rules” feature, as well as easier post and custom post targeting.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=5026#respond" data-commentid="5026" data-postid="2491" data-belowelement="div-comment-5026" data-respondelement="respond" data-replyto="Reply to kaspars" aria-label="Reply to kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-5028">
+				<div id="div-comment-5028" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/1a659e051ae2d889b0e4421408b6ff34/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/1a659e051ae2d889b0e4421408b6ff34/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.mediacentrum.cz" class="url" rel="ugc external nofollow">Tomas Kapler</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5028">January 26, 2011 at 14:42</a>		</div>
+
+		<p>I have dreamed this night about your plugin ;-) and i got few more possible advancements<br>
+1. select box with other widgets (in both show &amp; hide) – so you can set “show this box when that selected box is (is not) visible)” – this could really revolucionalize the usage as you could set all settings just for one widget and the others will just check if that widget is shown or not.<br>
+2. possibility to fill both Show/Hide and check if it should be first – “show in all posts and NOT on post x” vs. “do not show on posts except post x”<br>
+3. possibility to change ID and class of the box DIV (PLEASE, if possible, it would be my most loved plugin ;) – in that case it could be possible to set other settings, which are normaly common for all widgets (prepending tag, clossing tag …).</p>
+<p>anyway i’m glad to see you are still developing it, i worried that it was abandonned.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=5028#respond" data-commentid="5028" data-postid="2491" data-belowelement="div-comment-5028" data-respondelement="respond" data-replyto="Reply to Tomas Kapler" aria-label="Reply to Tomas Kapler">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-5198">
+				<div id="div-comment-5198" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-5198">January 30, 2011 at 19:32</a>		</div>
+
+		<p>Thanks for your suggestions, <a href="#comment-5028" rel="nofollow">Tomas</a>!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=5198#respond" data-commentid="5198" data-postid="2491" data-belowelement="div-comment-5198" data-respondelement="respond" data-replyto="Reply to kaspars" aria-label="Reply to kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-6535">
+				<div id="div-comment-6535" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/efcfb2b5cd04eda52c32fac06c5f9540/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/efcfb2b5cd04eda52c32fac06c5f9540/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.ruderetro.com" class="url" rel="ugc external nofollow">Al</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-6535">March 30, 2011 at 10:12</a>		</div>
+
+		<p>Can you add the ability to display widgets on posts that have particular taxonomies?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=6535#respond" data-commentid="6535" data-postid="2491" data-belowelement="div-comment-6535" data-respondelement="respond" data-replyto="Reply to Al" aria-label="Reply to Al">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7681">
+				<div id="div-comment-7681" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/b3557c1807ae7ca00812a10567ad8221/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/b3557c1807ae7ca00812a10567ad8221/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ben</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-7681">April 19, 2011 at 23:32</a>		</div>
+
+		<p>+1 custom taxonomy support</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/widget-context-user-interface-update?replytocom=7681#respond" data-commentid="7681" data-postid="2491" data-belowelement="div-comment-7681" data-respondelement="respond" data-replyto="Reply to Ben" aria-label="Reply to Ben">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "af18a032f05bb5ed7b5d6b8e94ef3b11" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2491" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/widget-context-user-interface-update">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	83 queries in 0.4068 seconds on Mon, 21 Oct 2024 12:08:11 +0000.-->
+
+
+
+</body></html>

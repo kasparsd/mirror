@@ -1,0 +1,691 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Development —  Kaspars Dambis (Page 2)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Development Category Feed" href="https://kaspars.net/blog/topic/dev/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../../../../wp-content/uploads/minit/2ba270921f7aac313e58f56b1d73457e.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/2ba270921f7aac313e58f56b1d73457e.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/categories/147"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<link rel="icon" type="image/png" href="../../../../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../../../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../../../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../../../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="archive paged category category-dev category-147 custom-background wp-embed-responsive paged-2 category-paged-2 hfeed index-page has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../../../../" title="Kaspars Dambis" rel="home">
+					<img src="../../../../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async" fetchpriority="high">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../../../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../../../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../../../../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../../../../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../../../vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../../../../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../../../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../../../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../../../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../../../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../../../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../../../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../../../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../../../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		<div class="index-header">
+				<h1 class="index-heading">Development</h1>
+				<div class="index-description"><p>Notes on building websites, web applications and their components.</p>
+</div>
+			</div>
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../../../../">Home</a> → <a href="../../../../">Blog</a> → <a href="../../">Development</a> →</div><nav class="pagination post-pagination pagination-header">
+				<span class="status">Page 2 of 6</span>
+				<span class="links"><a href="../../" rel="prev">← Newer</a><a href="../3/" rel="next">Older →</a></span>
+			</nav>
+<article class="post-5351 post type-post status-publish format-standard hentry category-dev tag-how-to tag-nginx tag-snippet" id="post-5351" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../use-nginx-reverse-proxy-mirror-github-api/" rel="bookmark" title="Use Nginx Reverse Proxy to Mirror GitHub API">
+		Use Nginx Reverse Proxy to Mirror GitHub API		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Thu, 21 Aug 2014 19:50:36 +0300">August 21, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Fri, 09 Jan 2015 15:09:05 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/nginx/" rel="tag">Nginx</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a></span> <span class="meta-item meta-comment-count">
+			<a href="../../../../use-nginx-reverse-proxy-mirror-github-api/#comments">8&nbsp;Comments</a>
+		</span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5332 post type-post status-publish format-standard has-post-thumbnail hentry category-dev category-media-publishing has-featured-image" id="post-5332" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../rss-shared-links-os-x-yosemite/" rel="bookmark" title="RSS and Shared Links in OS X Yosemite">
+		RSS and Shared Links in OS X Yosemite		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Sat, 09 Aug 2014 13:26:02 +0300">August 9, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sat, 09 Aug 2014 13:26:02 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a>, <a href="../../../media-publishing/" rel="category tag">Publishing</a></span>  <span class="meta-item meta-comment-count">
+			<a href="../../../../rss-shared-links-os-x-yosemite/#comments">3&nbsp;Comments</a>
+		</span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5324 post type-post status-publish format-standard hentry category-dev tag-how-to tag-snippet" id="post-5324" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../twitter-follower-count-without-api/" rel="bookmark" title="Getting Twitter Follower Count without Using API">
+		Getting Twitter Follower Count without Using API		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Mon, 28 Jul 2014 10:46:12 +0300">July 28, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Fri, 29 May 2015 09:00:33 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a></span> <span class="meta-item meta-comment-count">
+			<a href="../../../../twitter-follower-count-without-api/#comments">9&nbsp;Comments</a>
+		</span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5151 post type-post status-publish format-standard hentry category-dev tag-how-to tag-snippet" id="post-5151" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../github-gists-ssh-access/" rel="bookmark" title="GitHub Gists SSH Access">
+		GitHub Gists SSH Access		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Tue, 04 Feb 2014 13:52:19 +0200">February 4, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Tue, 04 Feb 2014 13:52:19 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5145 post type-post status-publish format-quote hentry category-dev tag-css tag-semantics post_format-post-format-quote" id="post-5145" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../hakon-wium-lie-css-regions/" rel="bookmark" title="Håkon Wium Lie on CSS Regions">
+		Håkon Wium Lie on CSS Regions		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Wed, 22 Jan 2014 23:05:59 +0200">January 22, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Wed, 22 Jan 2014 23:07:17 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/css/" rel="tag">CSS</a><a href="../../../../tag/semantics/" rel="tag">Semantics</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5122 post type-post status-publish format-standard hentry category-dev tag-how-to tag-snippet tag-tool" id="post-5122" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../create-release-zip-git-tags/" rel="bookmark" title="Create Release ZIP Files from Git Tags">
+		Create Release ZIP Files from Git Tags		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Wed, 15 Jan 2014 14:17:22 +0200">January 15, 2014</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Fri, 09 Jan 2015 15:09:51 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a><a href="../../../../tag/tool/" rel="tag">Tool</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-5025 post type-post status-publish format-standard has-post-thumbnail hentry category-dev tag-css tag-how-to tag-javascript tag-snippet tag-user-experience has-featured-image" id="post-5025" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../change-viewport-meta-window-size/" rel="bookmark" title="Use Javascript to Change Viewport Width Depending on the Window Size">
+		Use Javascript to Change Viewport Width Depending on the Window Size		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Tue, 08 Oct 2013 12:44:14 +0300">October 8, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Tue, 08 Oct 2013 14:21:58 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/css/" rel="tag">CSS</a><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/javascript/" rel="tag">Javascript</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a><a href="../../../../tag/user-experience/" rel="tag">User Experience</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4862 post type-post status-publish format-quote hentry category-dev post_format-post-format-quote" id="post-4862" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../reusable-software/" rel="bookmark" title="Reusable Software">
+		Reusable Software		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Sat, 17 Aug 2013 13:38:40 +0300">August 17, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sat, 17 Aug 2013 13:38:40 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> 	</div>
+
+	
+	
+</article>
+
+<article class="post-4714 post type-post status-publish format-quote hentry category-dev post_format-post-format-quote" id="post-4714" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../darkleech-and-apache/" rel="bookmark" title="Darkleech and Apache">
+		Darkleech and Apache		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Thu, 04 Apr 2013 10:41:28 +0300">April 4, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 26 May 2013 21:54:03 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> 	</div>
+
+	
+	
+</article>
+
+<article class="post-4674 post type-post status-publish format-link has-post-thumbnail hentry category-dev category-wordpress tag-tool tag-user-interface post_format-post-format-link has-featured-image" id="post-4674" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../wordpress-draft-revision-control/" rel="bookmark" title="WordPress, Draft and Revision Control">
+		WordPress, Draft and Revision Control		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Thu, 14 Mar 2013 10:33:13 +0200">March 14, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 26 May 2013 23:23:43 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a>, <a href="../../../wordpress/" rel="category tag">WordPress</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/tool/" rel="tag">Tool</a><a href="../../../../tag/user-interface/" rel="tag">User Interface</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4582 post type-post status-publish format-link has-post-thumbnail hentry category-dev tag-php tag-tool post_format-post-format-link has-featured-image" id="post-4582" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../php-live-regex/" rel="bookmark" title="PHP Live Regex">
+		PHP Live Regex		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Mon, 25 Feb 2013 11:37:26 +0200">February 25, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 25 Feb 2013 11:37:26 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/php/" rel="tag">PHP</a><a href="../../../../tag/tool/" rel="tag">Tool</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4554 post type-post status-publish format-standard hentry category-dev category-wordpress tag-mysql tag-snippet" id="post-4554" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../avg-max-min-meta-value/" rel="bookmark" title="AVG, MAX, MIN on meta_value in WordPress">
+		AVG, MAX, MIN on meta_value in WordPress		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Sun, 17 Feb 2013 12:23:57 +0200">February 17, 2013</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 18 Feb 2013 10:32:40 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a>, <a href="../../../wordpress/" rel="category tag">WordPress</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/mysql/" rel="tag">MySQL</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4447 post type-post status-publish format-standard hentry category-dev tag-how-to tag-nginx tag-php tag-snippet" id="post-4447" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../php-proxy-dropbox-host-static-website/" rel="bookmark" title="Use PHP as a Proxy to Dropbox for Serving a Static Website">
+		Use PHP as a Proxy to Dropbox for Serving a Static Website		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Tue, 04 Dec 2012 17:04:21 +0200">December 4, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Tue, 12 Feb 2013 16:45:59 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/nginx/" rel="tag">Nginx</a><a href="../../../../tag/php/" rel="tag">PHP</a><a href="../../../../tag/snippet/" rel="tag">Snippet</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4444 post type-post status-publish format-link hentry category-dev tag-tool post_format-post-format-link" id="post-4444" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../webscript-io/" rel="bookmark" title="Webscript.io">
+		Webscript.io		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Sun, 02 Dec 2012 18:39:29 +0200">December 2, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 02 Dec 2012 18:39:29 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/tool/" rel="tag">Tool</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4420 post type-post status-publish format-standard has-post-thumbnail hentry category-dev tag-javascript tag-tool has-featured-image" id="post-4420" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../instagram-slideshow-angularjs/" rel="bookmark" title="Instagram Slideshow with AngularJS">
+		Instagram Slideshow with AngularJS		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Mon, 26 Nov 2012 15:05:29 +0200">November 26, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 26 May 2013 21:58:56 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/javascript/" rel="tag">Javascript</a><a href="../../../../tag/tool/" rel="tag">Tool</a></span> <span class="meta-item meta-comment-count">
+			<a href="../../../../instagram-slideshow-angularjs/#comments">8&nbsp;Comments</a>
+		</span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4412 post type-post status-publish format-link hentry category-dev tag-javascript tag-tool post_format-post-format-link" id="post-4412" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../angularjs/" rel="bookmark" title="AngularJS">
+		AngularJS		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Sat, 24 Nov 2012 17:04:16 +0200">November 24, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 26 May 2013 21:59:07 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/javascript/" rel="tag">Javascript</a><a href="../../../../tag/tool/" rel="tag">Tool</a></span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4396 post type-post status-publish format-standard has-post-thumbnail hentry category-dev has-featured-image" id="post-4396" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../detect-ipad-mini-javascript/" rel="bookmark" title="How to Detect iPad Mini Using Javascript">
+		How to Detect iPad Mini Using Javascript		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Wed, 14 Nov 2012 15:25:22 +0200">November 14, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 26 Aug 2013 16:59:23 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span>  <span class="meta-item meta-comment-count">
+			<a href="../../../../detect-ipad-mini-javascript/#comments">15&nbsp;Comments</a>
+		</span>	</div>
+
+	
+	
+</article>
+
+<article class="post-4389 post type-post status-publish format-quote hentry category-dev post_format-post-format-quote" id="post-4389" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../just-ship-it/" rel="bookmark" title="Just Ship It">
+		Just Ship It		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Wed, 07 Nov 2012 17:00:05 +0200">November 7, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Wed, 07 Nov 2012 17:08:06 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> 	</div>
+
+	
+	
+</article>
+
+<article class="post-4382 post type-post status-publish format-standard hentry category-dev" id="post-4382" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../on-oauth/" rel="bookmark" title="On OAuth">
+		On OAuth		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Wed, 07 Nov 2012 01:07:25 +0200">November 7, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 26 May 2013 21:54:14 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> 	</div>
+
+	
+	
+</article>
+
+<article class="post-4363 post type-post status-publish format-standard has-post-thumbnail hentry category-dev tag-how-to tag-tool has-featured-image" id="post-4363" role="article">
+
+	
+	<h1 class="entry-title" role="heading">
+		<a href="../../../../text-navigation-shortcuts/" rel="bookmark" title="Navigating Text Using Keyboard Shortcuts">
+		Navigating Text Using Keyboard Shortcuts		</a>
+	</h1>
+
+	
+	<div class="post-meta post-meta-footer">
+		<span class="meta-item meta-published time published">
+			<abbr title="Tue, 06 Nov 2012 11:08:55 +0200">November 6, 2012</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Tue, 06 Nov 2012 11:15:14 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../../" rel="category tag">Development</a></span> <span class="meta-item meta-tags tags"><a href="../../../../tag/how-to/" rel="tag">How to</a><a href="../../../../tag/tool/" rel="tag">Tool</a></span>	</div>
+
+	
+	
+</article>
+<nav class="pagination post-pagination pagination-footer">
+				<span class="status">Page 2 of 6</span>
+				<span class="links"><a href="../../" rel="prev">← Newer</a><a href="../3/" rel="next">Older →</a></span>
+			</nav>
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../../../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../../../cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147 current-cat"><a aria-current="page" href="../../">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../../../electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../../../home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../../../linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../../../meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../../../observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../../../passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../../../media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../../../vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../../../performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../../../wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../../../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../../../../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../../../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../../../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../../../../wp-content/uploads/minit/eeb4609df08dbc902c2aa1b00df08197.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../../../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	60 queries in 0.0754 seconds on Mon, 21 Oct 2024 12:08:33 +0000.-->
+
+
+
+</body></html>

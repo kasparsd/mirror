@@ -1,0 +1,753 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>WireGuard on Raspberry Pi (Home Automation, Linux) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » WireGuard on Raspberry Pi Comments Feed" href="https://kaspars.net/blog/wireguard-raspberry-pi/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/7597"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/wireguard-raspberry-pi">
+<link rel="shortlink" href="https://kaspars.net/7597">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwireguard-raspberry-pi">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwireguard-raspberry-pi&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wireguard-raspberry-pi">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="WireGuard on Raspberry Pi">
+<meta property="og:description" content="WireGuard is an awesome tool for securely accessing your Raspberry Pi computers even behind mobile networks that don’t provide a publi...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2020/06/raspberry-pi-wireguard.png">
+<meta property="og:url" content="https://kaspars.net/blog/wireguard-raspberry-pi">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/wireguard-raspberry-pi">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-7597 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/home-automation/" rel="category tag">Home Automation</a>,<a href="../topic/linux/" rel="category tag">Linux</a> →</div>
+		
+		<article class="post-7597 post type-post status-publish format-standard has-post-thumbnail hentry category-home-automation category-linux tag-raspberrypi tag-wireguard has-featured-image" id="post-7597" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					WireGuard on Raspberry Pi			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Tue, 30 Jun 2020 12:49:35 +0300">June 30, 2020</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 16 Aug 2020 12:14:26 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/home-automation/" rel="category tag">Home Automation</a>, <a href="../topic/linux/" rel="category tag">Linux</a></span> <span class="meta-item meta-tags tags"><a href="../tag/raspberrypi/" rel="tag">raspberrypi</a><a href="../tag/wireguard/" rel="tag">WireGuard</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">10&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p><a href="https://www.wireguard.com/">WireGuard</a> is an awesome tool for securely accessing your Raspberry Pi computers even behind mobile networks that don’t provide a public IP address. It has <a href="https://www.wireguard.com/install/">client applications</a> for iOS, macOS, Windows and all flavors of Linux.</p>
+
+
+
+<p>I use WireGuard to access <a href="https://www.home-assistant.io/">Home Assistant</a> and my <a href="../solar-raspberry-pi-camera/">solar powered Raspberry Pi surveillance camera</a> from anywhere.</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="3206" height="1668" src="../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal.png" alt="WireGuard network diagram" class="wp-image-7616" srcset="../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal.png 3206w, ../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal-800x416.png 800w, ../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal-1024x533.png 1024w, ../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal-1536x799.png 1536w, ../../wp-content/uploads/2020/06/wireguard-peer-diagram-horizontal-2048x1066.png 2048w" sizes="(max-width: 3206px) 100vw, 3206px"><figcaption>Example of a WireGuard network with four peers and one public peer that serves as a bounce server.</figcaption></figure>
+
+
+
+<p>Devices connected to the same WireGuard network can access all other devices on the same network. You can safely view webcam feeds or internet connected device configuration pages without exposing them to the public web. WireGuard is awesome!</p>
+
+
+
+<span id="more-7597"></span>
+
+
+
+<h2 class="wp-block-heading">Requirements and System Overview</h2>
+
+
+
+<p>WireGuard nodes require at least one publicly accessible node or peer which acts as a “bounce server” for all other nodes that are behind private networks that use NAT. The public node can be a Raspberry Pi connected to your home internet with a real (and potentially dynamic) IP address or the cheapest virtual private server on DigitalOcean with WireGuard installed and all peers listed in the network config file.</p>
+
+
+
+<h2 class="wp-block-heading">Important WireGuard History</h2>
+
+
+
+<p>In March 2020 <a href="https://arstechnica.com/gadgets/2020/03/wireguard-vpn-makes-it-to-1-0-0-and-into-the-next-linux-kernel/">WireGuard module was included in the Linux kernel version 5.6</a>. Here are instructions for installing WireGuard while you’re running a Linux distribution that is based on an earlier version of Linux kernel. </p>
+
+
+
+<p>Run <code>uname -a</code> to determine the current Linux kernel version. It should return something like this:</p>
+
+
+
+<pre class="wp-block-code"><code>Linux raspi 4.19.118-v7+ #1311 SMP Mon Apr 27 14:21:24 BST 2020 armv7l GNU/Linux</code></pre>
+
+
+
+<p>where <code>4.19.118-v7+</code> is the version of the Linux kernel on your device.</p>
+
+
+
+<h2 class="wp-block-heading">Install using Package Manager</h2>
+
+
+
+<p>WireGuard isn’t included <a href="http://archive.raspberrypi.org/debian/pool/main/w/">in the official Raspbian distribution</a>, yet. You can verify that by trying to install WireGuard from the package repository:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install wireguard</code></pre>
+
+
+
+<p>If that fails, you need to install and compile it from the source files as described below. There are tutorials that suggest using packages from the Debian repository but I wouldn’t recommend that.</p>
+
+
+
+<h2 class="wp-block-heading">Install from Source</h2>
+
+
+
+<p><a href="https://www.wireguard.com/compilation/">The official instructions for compiling WireGuard from source files</a> have been updated in early 2020 after the introduction of a separate package <code><a href="https://git.zx2c4.com/wireguard-linux-compat/">wireguard-linux-compat</a></code> for the WireGuard Linux kernel module which has been decoupled from the user-space tools <code><a href="https://git.zx2c4.com/wireguard-tools/">wireguard-tools</a></code>. </p>
+
+
+
+<p>We need to install the following two packages:</p>
+
+
+
+<ol class="wp-block-list"><li>WireGuard kernel module <em>only</em> for systems with Linux kernel below version 5.6, and</li><li>WireGuard command-line tools for interacting with the application.</li></ol>
+
+
+
+<p>First, install the build process dependencies:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install raspberrypi-kernel-headers libmnl-dev libelf-dev build-essential git</code></pre>
+
+
+
+<p>Clone and build the kernel module <em>only</em> if you’re running a Linux kernel version 3.10 to 5.5:</p>
+
+
+
+<pre class="wp-block-code"><code>git clone https://git.zx2c4.com/wireguard-linux-compat
+make -C wireguard-linux-compat/src -j$(nproc)
+sudo make -C wireguard-linux-compat/src install</code></pre>
+
+
+
+<p>Clone and build the <code>wg</code> and <code>wg-quick</code> command-line tools:</p>
+
+
+
+<pre class="wp-block-code"><code>git clone https://git.zx2c4.com/wireguard-tools/
+make -C wireguard-tools/src -j$(nproc)
+sudo make -C wireguard-tools/src install</code></pre>
+
+
+
+<p>That’s it! Now you need to configure the WireGuard to automatically start during the boot and which peers and servers to connect to.</p>
+
+
+
+<h2 class="wp-block-heading">Configure WireGuard</h2>
+
+
+
+<p>See <a href="https://github.com/pirate/wireguard-docs">this excellent and elaborate guide for configuring WireGuard</a> or follow the quick instructions below.</p>
+
+
+
+<h3 class="wp-block-heading">1. Generate the Authentication Keys </h3>
+
+
+
+<p>A pair of a private and a matching public key is used to communicate and authenticate the current instance of WireGuard with the rest of your WireGuard network. Use the <code>wg</code> utility to generate those keys.</p>
+
+
+
+<p>First, set the file permissions mode for all following operations to 077 using <code>umask 077</code> which translates to “only allow the current user to read the created files”:</p>
+
+
+
+<pre class="wp-block-code"><code>umask 077</code></pre>
+
+
+
+<p>Then generate the private key and store it in <code>privatekey</code> file in the current directory:</p>
+
+
+
+<pre class="wp-block-code"><code>wg genkey &gt; privatekey</code></pre>
+
+
+
+<p>The generate the matching public key to be referenced in all your WireGuard network peers from the <code>privatekey</code> that we generated previously:</p>
+
+
+
+<pre class="wp-block-code"><code>wg pubkey &gt; publickey &lt; privatekey</code></pre>
+
+
+
+<p>The <code>&gt;</code> and <code>&lt;</code> operators are used to send the output from one command as an input for another command. In this case we’re sending the contents of <code>privatekey</code> into <code>wg pubkey</code> which then produces the <code>publickey</code> file in the current directory.</p>
+
+
+
+<p>Use <code>cat privatekey</code> and <code>cat publickey</code> to output both keys to the terminal for reference.</p>
+
+
+
+<h3 class="wp-block-heading">2. Configure the WireGuard Network Interface</h3>
+
+
+
+<p>Your WireGuard installation can be associated with multiple WireGuard networks and each of them needs a dedicated network interface that is configured by adding <code>*.conf</code> files under the <code>/etc/wireguard</code> directory.</p>
+
+
+
+<p>For example, we’ll add a network called <code>wg0</code> by creating <code>/etc/wireguard/wg0.conf</code> with the following contents:</p>
+
+
+
+<pre class="wp-block-code"><code>[Interface]
+Address = 10.200.200.X/32
+PrivateKey = &lt;Your Private Key&gt;
+
+[Peer]
+PublicKey = &lt;Server Public Key&gt;
+AllowedIPs = 10.200.200.0/24
+Endpoint = &lt;Server IP address or FQDN&gt;:51820
+PersistentKeepalive = 25</code></pre>
+
+
+
+<p>The <code>[Interface]</code> section is where we define this computer on the network:</p>
+
+
+
+<ul class="wp-block-list"><li>Replace <code>&lt;Peer Private Key&gt;</code> with the contents of the <code>privatekey</code> we generated earlier. This string should never leave the device or be shared publicly. The contents of the <code>publickey</code> can be shared publicly and has to be known by all other peers that need to connect to your computer. </li><li>Set the <code>Address</code> to an IP address to be associated with this device on your network. Notice the <code>/32</code> suffix <a href="https://github.com/pirate/wireguard-docs/tree/51a1021dc4fa1fee6eb710cd663b8b540c8f8feb#cidr-notation">which provides some additional context for how the address is used</a>.</li></ul>
+
+
+
+<p>In the <code>[Peer]</code> section we define other WireGuard nodes or servers that we want to connect to:</p>
+
+
+
+<ul class="wp-block-list"><li><code>PublicKey</code> is the public key of the server we’re connecting to (not the one we generated above).</li><li><code>Endpoint</code> is the public hostname (if the peer is able to resolve the IP address) or the public IP address of the server. </li></ul>
+
+
+
+<p>See <a href="https://github.com/pirate/wireguard-docs/tree/51a1021dc4fa1fee6eb710cd663b8b540c8f8feb#config-reference">this WireGuard configuration reference</a> for the explanation of all configuration parameters.</p>
+
+
+
+<p>We can also use the <code>wg</code> command line tool to generate the same file:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo wg set wg0 \
+    private-key &lt;file path&gt; \
+    peer &lt;Server Public Key&gt; \
+    endpoint &lt;Server IP address or FQDN&gt;:51820 \
+    allowed-ips 10.200.200.0/24
+    persistent-keepalive 25</code></pre>
+
+
+
+<h3 class="wp-block-heading">3. Enable the WireGuard Interface</h3>
+
+
+
+<p>Enable the <code>wg0</code> interface we configured:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo wg-quick up wg0</code></pre>
+
+
+
+<p>Use <code>wg-quick down wg0</code> to stop the interface.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="835" height="501" src="../../wp-content/uploads/2020/06/wireguard-on-raspberry-pi.png" alt="WireGuard on Raspberry Pi" class="wp-image-7602" srcset="../../wp-content/uploads/2020/06/wireguard-on-raspberry-pi.png 835w, ../../wp-content/uploads/2020/06/wireguard-on-raspberry-pi-800x480.png 800w" sizes="(max-width: 835px) 100vw, 835px"><figcaption>Output of the <code>wg</code> command on Raspberry Pi showing that it’s connected to a WireGuard server which is just a regular WireGuard peer.</figcaption></figure>
+
+
+
+<h3 class="wp-block-heading">4. Start WireGuard on Boot</h3>
+
+
+
+<p>Register a script that came with the WireGuard utilities to start the WireGuard service automatically using Systemd during boot:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo systemctl enable wg-quick@wg0</code></pre>
+
+
+
+<p>where <code>wg0</code> is the name of the interface to start during the boot.</p>
+
+
+
+<p>To start the service right away:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo systemctl start wg-quick@wg0</code></pre>
+
+
+
+<p>To see the current status of the service:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo systemctl status wg-quick@wg0</code></pre>
+
+
+
+<h3 class="wp-block-heading">5. Debug WireGuard</h3>
+
+
+
+<p>Use the following commands to debug the WireGuard connection:</p>
+
+
+
+<ul class="wp-block-list"><li><code>sudo wg show</code> to monitor the connections.</li><li><code>journalctl --follow wg-quick@wg0</code> to monitor the WireGuard startup.</li></ul>
+
+
+
+<p></p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../css-minify-compress/" rel="prev">CSS Minification for Server-Side Rendered Apps</a></h4></li><li><h4 class="next"><a href="../contact-form-7-tablepress/" rel="next">Store Contact Form 7 Submissions in TablePress</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../wireguard-managers/" rel="bookmark" title="WireGuard Network Managers">WireGuard Network Managers</a></li>
+<li><a href="../wireguard-routing/" rel="bookmark" title="WireGuard Routing and Port Forwarding">WireGuard Routing and Port Forwarding</a></li>
+<li><a href="../wireguard-mikrotik-routeros/" rel="bookmark" title="WireGuard on MikroTik RouterOS">WireGuard on MikroTik RouterOS</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					10 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-230323">
+				<div id="div-comment-230323" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/90777be98f33d4215434c8d11368d69e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/90777be98f33d4215434c8d11368d69e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Graham</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-230323">July 2, 2020 at 01:18</a>		</div>
+
+		<p>Hi Kaspars,<br>
+It looks like WireGuard needs a publlc Bounce server with a non-NAT public IP address to set up the connection where both VPN endpoints are behind NAT. Did you use a publicly available Bounce Server?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=230323#respond" data-commentid="230323" data-postid="7597" data-belowelement="div-comment-230323" data-respondelement="respond" data-replyto="Reply to Graham" aria-label="Reply to Graham">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2 parent" id="comment-230434">
+				<div id="div-comment-230434" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-230434">July 2, 2020 at 12:27</a>		</div>
+
+		<p>That is an excellent point! I’ve updated the article to include the requirements and the system overview.</p>
+<p>I’m using a $5 virtual server on DigitalOcean to host a publicly accesible WireGuard node that serves as a bounce server for the other nodes behind NATs.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=230434#respond" data-commentid="230434" data-postid="7597" data-belowelement="div-comment-230434" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-242385">
+				<div id="div-comment-242385" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d2fe7ad22f017c41fc068408fa2ed532/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d2fe7ad22f017c41fc068408fa2ed532/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Graham</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-242385">August 11, 2020 at 06:56</a>		</div>
+
+		<p>I wonder whether it would be enough to use a Dynamic DNS service for the bounce node? can wireguard interpret a hostname or does it absolutely require an IP address for the bounce node?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=242385#respond" data-commentid="242385" data-postid="7597" data-belowelement="div-comment-242385" data-respondelement="respond" data-replyto="Reply to Graham" aria-label="Reply to Graham">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-4" id="comment-242402">
+				<div id="div-comment-242402" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-242402">August 11, 2020 at 10:51</a>		</div>
+
+		<p>Yes, the bounce node can be specified as a fully-qualified domain name as long as the peers are able to resolve the IP address. I use this for my personal network to ensure I don’t have to update every node if I decide to change the bounce server. I’ve updated the examples to include FQDN in addition to “Server IP address” for the <code>Endpoint</code> value.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-230741" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href="https://blog.adafruit.com/2020/07/03/wireguard-on-raspberry-pi-piday-raspberrypi-raspberry_pi/" class="url" rel="ugc external nofollow">WireGuard on Raspberry Pi #piday #raspberrypi @Raspberry_Pi « Adafruit Industries – Makers, hackers, artists, designers and engineers!</a> 			</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-242254">
+				<div id="div-comment-242254" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/87bd30b07f6f65577fee1fc78872cc26/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/87bd30b07f6f65577fee1fc78872cc26/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Yousif Anwar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-242254">August 10, 2020 at 21:05</a>		</div>
+
+		<p>Hi Kaspars,<br>
+If I want to connect office’s branches together to run an IP Phone system, this means without one branch at least having Static/Public IP it wont work?<br>
+If yes, will using VPS like you did will route all the traffic through that server? This will make the calls lags I believe or I am missing something?<br>
+Forgive my short knowledge in networking and VPN in advance.</p>
+<p>Thanks,</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=242254#respond" data-commentid="242254" data-postid="7597" data-belowelement="div-comment-242254" data-respondelement="respond" data-replyto="Reply to Yousif Anwar" aria-label="Reply to Yousif Anwar">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2 parent" id="comment-242405">
+				<div id="div-comment-242405" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-242405">August 11, 2020 at 11:09</a>		</div>
+
+		<p>I’m not very familiar with a lot of networking concepts myself 😂 </p>
+<p>I think the goal is to have at least one node that can be reached by all peers unless they’re able to find each other through other means. If all nodes are physically isolated (on different networks) than a bounce server is required for nodes to establish the connection, and yes — all traffic would get routed through that node and possibly increase the latency.</p>
+<p>I assume the offices have real (possibly dynamic) IP addresses so could you have one of them host a WireGuard bounce server that has the required 51820 port open from public internet?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=242405#respond" data-commentid="242405" data-postid="7597" data-belowelement="div-comment-242405" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-3" id="comment-242705">
+				<div id="div-comment-242705" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/87bd30b07f6f65577fee1fc78872cc26/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/87bd30b07f6f65577fee1fc78872cc26/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Yousif Anwar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-242705">August 12, 2020 at 08:26</a>		</div>
+
+		<p>Hi Kaspars,<br>
+Thank you for getting back on this.<br>
+Yes, offices are in different locations. They have Internet through Fiber, Wireless and sometimes DSL and all with dynamic IP (ISP DHCP), so even I hosted a WireGuard bounce server – whatever this means :D – it will still don’t have a Static/Public IP. About the port part, this I need to check with the ISP at that branch. But I am using WG with some commercial VPN providers and it’s working fine (I don’t know if this can relate in any way).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=242705#respond" data-commentid="242705" data-postid="7597" data-belowelement="div-comment-242705" data-respondelement="respond" data-replyto="Reply to Yousif Anwar" aria-label="Reply to Yousif Anwar">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-251671">
+				<div id="div-comment-251671" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/2bd84b67c063a2c7b4aa6d140d4a6690/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/2bd84b67c063a2c7b4aa6d140d4a6690/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Berta</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-251671">September 16, 2020 at 15:37</a>		</div>
+
+		<p>Thanks for the nice tutorial. I tried it step by step and got my phone and my windows computer connected. Only the admin page of my router was not accessible with is strange but not necessary. What is driving me crazy is that it is not working on any Linux distro and also not on ios. What makes the difference between linux/ios/android/windows. Any thought about that?</p>
+<p>Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=251671#respond" data-commentid="251671" data-postid="7597" data-belowelement="div-comment-251671" data-respondelement="respond" data-replyto="Reply to Berta" aria-label="Reply to Berta">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-251674">
+				<div id="div-comment-251674" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-251674">September 16, 2020 at 15:48</a>		</div>
+
+		<p>I’m glad you got it working!</p>
+<p>For the router admin page you would probably need to setup port forwarding on Raspberry Pi since the WireGuard network is on a different subnet (such as <code>10.0.0.1/24</code>) compared to your home network (such as <code>192.168.0.1/24</code>), right? See this follow-up post on <a href="../wireguard-routing/">WireGuard routing and port forwarding</a>.</p>
+<p>Another thing to check is the version of WireGuard on your devices. I’ve seen instances where pre-1.0 releases are not working with the newest version bundled with the Linux kernel. Be sure to also check the <code>AllowedIPs</code> contents on all devices to ensure they all include the same network.</p>
+<p>Be sure to check <a href="https://github.com/pirate/wireguard-docs/" rel="nofollow ugc">this awesome WireGuard documentation</a> for other debugging ideas.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/wireguard-raspberry-pi?replytocom=251674#respond" data-commentid="251674" data-postid="7597" data-belowelement="div-comment-251674" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a2385978891329442503c4230f3f2e9e" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="7597" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/wireguard-raspberry-pi">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	91 queries in 0.4514 seconds on Mon, 21 Oct 2024 12:08:04 +0000.-->
+
+
+
+</body></html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Building a Solar Powered Lora Meshtastic Community Network (Electronics) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Building a Solar Powered Lora Meshtastic Community Network Comments Feed" href="https://kaspars.net/blog/solar-lora-meshtastic/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/8648"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/solar-lora-meshtastic">
+<link rel="shortlink" href="https://kaspars.net/8648">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fsolar-lora-meshtastic">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fsolar-lora-meshtastic&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/solar-lora-meshtastic">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Building a Solar Powered Lora Meshtastic Community Network">
+<meta property="og:description" content="Meshtastic is a wonderful project for creating decentralised text-based communication networks for local communities using low power (and lo...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-scaled.jpeg">
+<meta property="og:url" content="https://kaspars.net/blog/solar-lora-meshtastic">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/solar-lora-meshtastic">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-8648 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a> →</div>
+		
+		<article class="post-8648 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics tag-meshtastic has-featured-image" id="post-8648" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Building a Solar Powered Lora Meshtastic Community Network			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Sat, 16 Dec 2023 09:00:08 +0200">December 16, 2023</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 28 Jan 2024 18:06:31 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a></span> <span class="meta-item meta-tags tags"><a href="../tag/meshtastic/" rel="tag">Meshtastic</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">8&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p><a href="https://meshtastic.org/">Meshtastic</a> is a wonderful project for creating decentralised text-based communication networks for local communities using <a href="https://meshtastic.org/docs/hardware/devices/">low power (and low cost) Lora radios</a>. Fun fact — the Meshtastic logo appears to reference the <a href="https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html">chirp modulation</a> used by Lora.</p>
+
+
+
+<span id="more-8648"></span>
+
+
+
+<p>The best way to learn about the project is to <a href="https://meshtastic.discourse.group/">explore the forum</a>, join <a href="https://discord.gg/ktMAKGBnBs">the Discord server</a> and <a href="https://www.reddit.com/r/meshtastic">the Reddit community</a>, follow <code>#meshtastic</code> <a href="https://twitter.com/hashtag/Meshtastic">on Twitter</a>, <a href="https://www.instagram.com/explore/tags/meshtastic/">Instagram</a> and on <a href="https://mastodon.social/tags/meshtastic">your ActivityPub network of choice</a>, and <a href="https://www.youtube.com/results?search_query=meshtastic">find recent videos on YouTube</a>.</p>
+
+
+
+<p>There are various community efforts to build local networks already:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://wikimesh.pp.ua/uk/home">Meshtastic Ukraine</a> with <a href="https://mesh.in.ua/grafana/">around 400 active nodes</a> in the 433 MHz range.</li>
+
+
+
+<li><a href="https://austinmesh.org">Austin Mesh</a> in Texas, USA with weekly Friday check-ins (also available globally through the MQTT gateway).</li>
+
+
+
+<li><a href="https://iffybooks.net/event/meshtastic-101-sept-10/">Iffy Books events</a> and <a href="https://iffybooks.net/solar-lora-circuit-diagram/">resources</a> (including <a href="https://github.com/iffybooks/meshtastic-zine">this incredible zine about Meshtastic</a>).</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Network Map</h2>
+
+
+
+<p>Here is a <a href="https://map.technicallyrural.com">map of all active nodes</a> connected to networks that relay messages <a href="https://meshtastic.org/docs/configuration/module/mqtt">to the official MQTT endpoint</a>. This map is created by a forum user and shared in <a href="https://meshtastic.discourse.group/t/where-is-the-world-map/6882/6">this thread</a>.</p>
+
+
+
+<h2 class="wp-block-heading">How to Build a Network</h2>
+
+
+
+<p>Following the learnings from the <a href="../solar-raspberry-pi-camera/" data-type="post" data-id="7205">solar-powered Raspberry Pi security camera project</a>, I want to build solar-powered repeat nodes (with <a href="https://meshtastic.org/docs/configuration/radio/device"><code>REPEATER</code> role</a>) to place in high enough places to enable coverage for everyone in the area. Since repeat nodes are invisible to the network and can’t send health or sensor data, another node with <code>SENSOR</code> role would be connected to the same battery and would broadcast the health of the repeater node along with temperature and humidity at very long intervals for maximum power savings.</p>
+
+
+
+<p>I’ve decided to use <a href="https://heltec.org/project/wifi-lora-32-v3/">Heltec WiFi Lora 32 (v3)</a> ($20, <a href="../../wp-content/uploads/2023/12/HTIT-WB32LAF_V3.1_Schematic_Diagram.pdf">schematic diagram</a>) for the repeater nodes as they use ESP32-S3FN8 for the main controller and SX1262 LoRa chip with an IPEX1.0 antenna connector. This type of connector is really practical for bringing the antenna outside of the enclosure as the larger SMA connector cables are usually harder to bend and require more space in the case.</p>
+
+
+
+<p>It also features a TP4054 charge controller and a voltage divider connected to an ADC pin for monitoring the battery voltage which is useful for telemetry. I’ve yet to figure out if it has any over discharge protection.</p>
+
+
+
+<p>It is reported that <a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit">RAK4631 WisBlock Core</a> (similarly priced) with the nRF52840 microcontroller and the same SX1262 LoRa radio uses significantly less power compared to ESP32 devices so it is probably a better choice for pure repeater nodes. However, I wanted something that is more universal with a screen and a case for this prototyping phase.</p>
+
+
+
+<h3 class="wp-block-heading">Power Requirements</h3>
+
+
+
+<p>There is <a href="https://meshtastic.discourse.group/t/solar-charging-of-meshtastic-devices/870">a great thread on the forum</a> with several posts linking to the following resources that outline the effective power requirements:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://docs.google.com/spreadsheets/d/1ft1bS3iXqFKU8SApU8ZLTq9r7QQEGESYnVgdtvdT67k/edit">Meshtastic ESP32 airtime and current draws (Google Sheets)</a></li>
+
+
+
+<li><a href="https://docs.google.com/spreadsheets/d/1UMZRrFwL2QfyxEf_jnd2sIuZqrikItOxJ1EPNF5UBdU/edit">NRF52840DK+SX1262 Meshtastic airtime/current draws (Google Sheets)</a></li>
+
+
+
+<li><a href="https://docs.google.com/spreadsheets/d/1wr6aqqmAICttwSqVga-WYILJpueYfDKX1ejSYZEfKY0/edit">Meshtastic Power Consumption Tests (Google Sheets)</a></li>
+
+
+
+<li><a href="https://docs.google.com/document/d/12GIY24vLKLABg2RUTPP6yMzokr44GMzJOE4p7ngaCbI/edit">How To Calculate Solar Panel and Battery Size (Google Sheets)</a></li>
+</ul>
+
+
+
+<p>The general consensus appears to be that ESP32 powered devices without any bluetooth, screen or GPS attachments need 0.1W on average.</p>
+
+
+
+<h3 class="wp-block-heading">Solar Power</h3>
+
+
+
+<p>For the initial prototype I found <a href="https://kaspars.net/go/4w-solar-panel-18650-battery" data-type="surl" data-id="8663">this 4W (D4W) solar panel</a> (affiliate link) with an integrated case for six 18650 battery cells. Using only three cells provides plenty of room for additional electronics like the LoRa board.</p>
+
+
+
+<p>In general it is best to oversize the photovoltaic panels significantly to ensure that required charging voltage is reached even when there is low solar radiation (such as during winter). </p>
+
+
+
+<figure class="wp-block-image alignwide size-large"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-1920x1440__t%3D1705742961.jpeg" alt="4W solar panel with 18650 batteries for Meshtastic Lora nodes" class="wp-image-8710" srcset="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-1920x1440.jpeg 1920w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-1280x960.jpeg 1280w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-1536x1152.jpeg 1536w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">In winter the charging power didn’t exceed 1W, though.</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-scaled.jpeg" alt="Charging circuit of 4W solar panel with six 18650 batteries and CL4056 for charge control and FP6276B boost controller for 5V output" class="wp-image-8708" srcset="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-scaled.jpeg 2560w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-1280x960.jpeg 1280w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-1920x1440.jpeg 1920w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-1536x1152.jpeg 1536w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-battery-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">4W solar panel with space for six 18650 batteries and a charging circuit.</figcaption></figure>
+
+
+
+<p>And here is a close-up of the circuitry:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-scaled.jpeg" alt="Charging circuit of 4W solar panel with 18650 batteries using CL4056 for charge control, FP6276B boost controller for 5V output and XB5352A for battery protection" class="wp-image-8709" srcset="../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-scaled.jpeg 2560w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-1280x960.jpeg 1280w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-1920x1440.jpeg 1920w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-1536x1152.jpeg 1536w, ../../wp-content/uploads/2023/12/meshtastic-4w-solar-panel-circuit-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">Charging circuit of 4W solar panel with 18650 batteries using CL4056 (<code>U3</code>) for charge control, FP6276B (<code>U4</code>) boost controller for 5V output and XB5352A (<code>U5</code>) batter protection chip <em>only</em> for the solar input.</figcaption></figure>
+
+
+
+<h3 class="wp-block-heading">Battery Undervoltage Protection</h3>
+
+
+
+<p>The board appears to use XySemi XB5352A (<a href="../../wp-content/uploads/2024/01/xb5352a-battery-protection.pdf">datasheet PDF</a>) battery management chip <code>U5</code> (the SOT-23-5 component to the right of the “on” switch) which handles over-voltage (4.30V for VCU with 4.10V recovery VCL), over-discharge (2.40V VDL with 3.0V recovery VDL), over-current (3.2A IOV1), and over-temperature protection. However, this chip is placed <strong>on the solar input</strong> so there is no under-voltage or over-discharge protection <em>on the battery side</em>. </p>
+
+
+
+<h2 class="wp-block-heading">Configuring the Solar Powered Repeater </h2>
+
+
+
+<p>And here is the case fitted with Heltec Lora 32 v3 with INA219 connected to pins 41 and 42 (confirmed this <a href="https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/b9a9180f8ec5ff69b69bdaa31684583c4a5a5813/variants/wifi_lora_32_v3/pins_arduino.h#L34-L35">with the Arduino Core library</a> and the <a href="https://github.com/meshtastic/firmware/blob/486bf796906d6237e4d29f0bd7d90144979e2f9e/variants/heltec_v3/variant.h#L7-L9">usage in the Meshtastic firmware</a>) for measuring the battery voltage and current over time and reported over <a href="https://github.com/meshtastic/firmware/blob/486bf796906d6237e4d29f0bd7d90144979e2f9e/src/modules/Telemetry/PowerTelemetry.cpp">Power Telemetry</a>. Note that simply attaching the device to the board will make the firmware <a href="https://github.com/meshtastic/firmware/blob/486bf796906d6237e4d29f0bd7d90144979e2f9e/src/Power.cpp#L287-L318">use the INA219 bus voltage reading also for Device Telemetry</a> (which is not documented).</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2560" height="1589" src="../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-scaled.jpeg" alt="Heltec Lora 32 v3 with an INA219 power sensor inside a 4W solar panel case" class="wp-image-8703" srcset="../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-scaled.jpeg 2560w, ../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-1280x795.jpeg 1280w, ../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-1920x1192.jpeg 1920w, ../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-1536x954.jpeg 1536w, ../../wp-content/uploads/2023/12/meshtastic-ina219-wemos-heltec-esp32-lora-2048x1271.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></figure>
+
+
+
+<h2 class="wp-block-heading">Next Steps</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Document the measured power consumption of Heltec Lora 32 v3 when used as Meshtastic <code>REPEATER</code>.</li>
+
+
+
+<li>Document the device configuration for optimal performance.</li>
+
+
+
+<li>Document the INA219 usage and setup.</li>
+</ul>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../powerwalker-vi-500-r1u/" rel="prev">Notes on PowerWalker VI 500 R1U UPS</a></h4></li><li><h4 class="next"><a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/" rel="next">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../solar-raspberry-pi-camera/" rel="bookmark" title="Solar Powered Raspberry Pi Camera">Solar Powered Raspberry Pi Camera</a></li>
+<li><a href="../raspberry-pi-wi-fi-settings-sd-card/" rel="bookmark" title="Storing Raspberry Pi Wi-Fi Network Settings on the SD Card">Storing Raspberry Pi Wi-Fi Network Settings on the SD Card</a></li>
+<li><a href="../aranet4-teardown/" rel="bookmark" title="Aranet4 Teardown">Aranet4 Teardown</a></li>
+<li><a href="../macbook-battery-remaining/" rel="bookmark" title="MacBook Battery Time Remaining">MacBook Battery Time Remaining</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					8 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-397077">
+				<div id="div-comment-397077" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/b37a951a457d7dc83730188586582230/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/b37a951a457d7dc83730188586582230/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="http://austinmesh.org" class="url" rel="ugc external nofollow">Will Martin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397077">December 21, 2023 at 22:45</a>		</div>
+
+		<p>Hi Kaspars – this is Will from Austin Mesh – thanks for mentioning us! We have a meeting tonight and I’m excited to keep building out the network. We’ve found that it’s better to over-spec both the batteries and solar panels. Our “version 5.0” solar repeater uses a 12 watt panel and a 6,400 mAh battery (parts list is on austinmesh.org). One of the main problems with the RAK chips is if the voltage falls to a certain level it will put it into a permanent fault state, so it’s best to have a battery that cleanly shuts off power if voltage falls below a certain level. The simpleest way we’ve found to do this is with the Voltaic Systems iot battery packs. The other way we’ve tried is to use a an 18650 battery and use a cutoff chip that shuts power if voltage drops below 4.25v: <a href="https://www.etsy.com/listing/1421193059/10-li-ion-battery-protection-modules-pcm" rel="nofollow ugc">https://www.etsy.com/listing/1421193059/10-li-ion-battery-protection-modules-pcm</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397077#respond" data-commentid="397077" data-postid="8648" data-belowelement="div-comment-397077" data-respondelement="respond" data-replyto="Reply to Will Martin" aria-label="Reply to Will Martin">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-397108">
+				<div id="div-comment-397108" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/0547eb5a799d59ed15f4164e81c868e6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/0547eb5a799d59ed15f4164e81c868e6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ryan T Carroll</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397108">March 24, 2024 at 17:44</a>		</div>
+
+		<p>Hey Mr. Martian. Although I am not from Texas (anymore) I wanted to pick your brain if I may.  I am very new to LoRa, but I can’t get enough.  I am attempting to build a solar powered Lora system.  Although my town is so small, if you blink you’ll pass it, I do want to build something for close family. Within 5-10 miles to start with.  I have purchased some equipment so far, but I keep getting conflicting designs and I’m totally lost.  I was wondering if you or someone you may know, would be able to reach out to possibly help with pointers and what not. I figured maybe email or messenger might be more prompt would bug everyone on this thread lol.   With having to order most things from overseas, I’d rather not take 6months to build due to ordering and returning wrong parts and whatnot.  Thanks in advance brother.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397108#respond" data-commentid="397108" data-postid="8648" data-belowelement="div-comment-397108" data-respondelement="respond" data-replyto="Reply to Ryan T Carroll" aria-label="Reply to Ryan T Carroll">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-397093">
+				<div id="div-comment-397093" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/ac491ed56c432884066a9fc121c37361/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/ac491ed56c432884066a9fc121c37361/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Jason Cameron</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397093">February 18, 2024 at 05:00</a>		</div>
+
+		<p>One thing that I have been unable to find is where to find places to put the nodes.  What are legal ways to place nodes in an area to get significant coverage?  I live around Wichita, Kansas, which is relatively flatter than most areas of the country, but I’m unsure of how to go about setting up nodes to provide coverage?  How do you go about it?  Also, I’m using a “hide my email” which is why it looks strange, but this is to keep spam at bay, I hope you understand.  I appreciate your time.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397093#respond" data-commentid="397093" data-postid="8648" data-belowelement="div-comment-397093" data-respondelement="respond" data-replyto="Reply to Jason Cameron" aria-label="Reply to Jason Cameron">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-397094">
+				<div id="div-comment-397094" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397094">February 18, 2024 at 09:38</a>		</div>
+
+		<p>That’s a great question. I’m also unsure about this here in Europe. I have the opposite problem of high density buildings and needing to place the nodes on roofs to allow for any decent coverage.</p>
+<p>The most practical examples I’ve seen on YouTube and the Meshtastic Discord channel are nodes higher up in mountains placed in wilderness or attached to trees.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397094#respond" data-commentid="397094" data-postid="8648" data-belowelement="div-comment-397094" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-397096">
+				<div id="div-comment-397096" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/0d9a38d745801b851a02e6eb435b304d/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/0d9a38d745801b851a02e6eb435b304d/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">brett</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397096">February 24, 2024 at 06:41</a>		</div>
+
+		<p>ask for forgiveness rather than permission. if authorities somehow manage to identify you as the owner, tell them you’re working with search and rescue to provide a wide-range capable communication network for their teams</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397096#respond" data-commentid="397096" data-postid="8648" data-belowelement="div-comment-397096" data-respondelement="respond" data-replyto="Reply to brett" aria-label="Reply to brett">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-397110">
+				<div id="div-comment-397110" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e3be24caefbe01ea924be1a91277a9/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e3be24caefbe01ea924be1a91277a9/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Daniel</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397110">April 22, 2024 at 22:49</a>		</div>
+
+		<p>Hey Kaspar.<br>
+Im currious how many nodes that one repeater can serve ? is it ok for 12 nodes for 1 repeater ?<br>
+I appreciate your time.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397110#respond" data-commentid="397110" data-postid="8648" data-belowelement="div-comment-397110" data-respondelement="respond" data-replyto="Reply to Daniel" aria-label="Reply to Daniel">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-397112">
+				<div id="div-comment-397112" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397112">April 25, 2024 at 13:25</a>		</div>
+
+		<p>Personally I haven’t tested this but it should be possible to serve dozens of nodes by a single repeater. The hardcoded limit in <a href="https://github.com/meshtastic/firmware/blob/e3610a2eb1e32350bb9b3adf1a7ced3394c0d024/src/mesh/mesh-pb-constants.h#L21" rel="nofollow ugc">the firmware is 100 nodes</a>. However, the air time limits usually are more important — all nodes (including repeaters) are permitted to have <a href="https://meshtastic.org/docs/configuration/radio/lora/#override-duty-cycle-limit" rel="nofollow ugc">a 10% duty cycle (depending on the radio frequency)</a> so a network with lots of traffic can easily saturate that.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397112#respond" data-commentid="397112" data-postid="8648" data-belowelement="div-comment-397112" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-397111">
+				<div id="div-comment-397111" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/d537e8e879d76135a01be42b3be38e15/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/d537e8e879d76135a01be42b3be38e15/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="https://meshabout.com" class="url" rel="ugc external nofollow">James Roberts</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397111">April 24, 2024 at 04:02</a>		</div>
+
+		<p>Nice node build and website, I recently discovered Meshtastic and started a website and YouTube Channel all about it, a mix of guides and tutorials, news and articles</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/solar-lora-meshtastic?replytocom=397111#respond" data-commentid="397111" data-postid="8648" data-belowelement="div-comment-397111" data-respondelement="respond" data-replyto="Reply to James Roberts" aria-label="Reply to James Roberts">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a5b51720c12dade51459b1915b7845f9" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="8648" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/solar-lora-meshtastic">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="" aria-current="page">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	89 queries in 0.4258 seconds on Mon, 21 Oct 2024 12:07:54 +0000.-->
+
+
+
+</body></html>

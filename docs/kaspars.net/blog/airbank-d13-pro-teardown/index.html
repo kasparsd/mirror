@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Airbank D13 Puffer Pro Pump Teardown (Electronics) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Airbank D13 Puffer Pro Pump Teardown Comments Feed" href="https://kaspars.net/blog/airbank-d13-pro-teardown/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/9169"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/airbank-d13-pro-teardown">
+<link rel="shortlink" href="https://kaspars.net/9169">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fairbank-d13-pro-teardown">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fairbank-d13-pro-teardown&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/airbank-d13-pro-teardown">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Airbank D13 Puffer Pro Pump Teardown">
+<meta property="og:description" content="Available for around $130 on AliExpress (including shipping) or from the manufacturer store, Airbank D13 Puffer Pro is a battery powered two...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2024/07/airbank-d13-pro-components-teardown-scaled.jpeg">
+<meta property="og:url" content="https://kaspars.net/blog/airbank-d13-pro-teardown">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/airbank-d13-pro-teardown">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-9169 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a> →</div>
+		
+		<article class="post-9169 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics has-featured-image" id="post-9169" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Airbank D13 Puffer Pro Pump Teardown			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Sun, 07 Jul 2024 14:53:18 +0300">July 7, 2024</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 08 Jul 2024 13:32:57 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a></span>  <span class="meta-item meta-comment-count">
+			<a href="#comments">9&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p>Available for around <a href="https://kaspars.net/go/buy-airbank-d13-puffer-pro" data-type="surl" data-id="9181">$130 on AliExpress</a> (including shipping) or from the <a href="https://kaspars.net/go/airbank-puffer-pro-manufacturer-store" data-type="surl" data-id="9238">manufacturer store</a>, Airbank D13 Puffer Pro is a battery powered two-stage pump that delivers up to 20 psi (1.4 bar) of pressure. Note that there is also a cheaper version without the battery that requires a 12V power supply.</p>
+
+
+
+<p>Contrary to the manufacturer specification on the web, this pump actually <strong>does support USB-C PD3.0 and </strong><strong>QC3.0</strong> power output and charging up to 30W. The included paper manual correctly states the supported USB-C voltage and power levels.</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-scaled.jpeg" alt="" class="wp-image-9189" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-1280x960.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-1920x1440.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-1536x1152.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-teardown-review-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></a><figcaption class="wp-element-caption">Two compressor motors, battery pack and the control board.</figcaption></figure>
+
+
+
+<span id="more-9169"></span>
+
+
+
+<p>Opening the pump is really easy with just six phillips screws at the back. Inside, everything is neatly laid out and with wires of the appropriate gauge and latching connectors for the pump and battery connections, along with some adhesive to keep them secure during transportation.</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-controller-top-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/07/airbank-d13-controller-top-scaled.jpeg" alt="Airbank D13 Pro controller board PCB with INJOINIC IP2366 power management chip and PY32F003 microcontoller" class="wp-image-9175" srcset="../../wp-content/uploads/2024/07/airbank-d13-controller-top-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-controller-top-1280x960.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-controller-top-1920x1440.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-controller-top-1536x1152.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-controller-top-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></a><figcaption class="wp-element-caption">Control board with <a href="http://www.injoinic.com/product_detail/id/25.html?lang=en-us">INJOINIC IP2366</a> power management chip (below the USB-C port), <a href="https://py32.org/en/mcu/PY32F003xx.html">PY32F003</a> ARM Cortex M0 microcontoller (bottom right), and Maplesemi mosfets (SLM60P03T and SLM100N03T).</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-scaled.jpeg" alt="Airbank D13Pro V1.3 2023 1120 PCB" class="wp-image-9178" srcset="../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-1280x960.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-1920x1440.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-1536x1152.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pcb-controller-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></a><figcaption class="wp-element-caption">Other side of the PCB (marked <code>D13Pro__V1.3_2023_1120</code>) with the display and control buttons, and programming or debug pin connections.</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Pump and Compressor</h2>
+
+
+
+<p>There are two motors inside — one for a simple fan and another one for driving a piston pump for the high-pressure stage (above 0.8 psi). Interestingly, the fan mode uses 8A at 11V compared to just 4A in the high-pressure mode as shown in this video (be aware of the loud audio):</p>
+
+
+
+<figure class="wp-block-video"><video controls="" muted="" src="../../wp-content/uploads/2024/07/airbank-puffer-pro-power-draw.mp4"></video><figcaption class="wp-element-caption">Current draw at 11V battery when running the compressor and the fan mode. </figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Battery</h2>
+
+
+
+<p>It features a pack of six 18650 Li-ion batteries in 3S2P configuration (3 in series, 2 in parallel) with the combined capacity of 57.72Wh (5200mAh at nominal voltage of 11.1V).</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-scaled.jpeg" alt="18650 Li-ion batteries in 3S2P configuration with capacity of 57.72Wh (5200mAh at nominal voltage of 11.1V)" class="wp-image-9183" style="width:840px;height:auto" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-1280x960.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-1920x1440.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-1536x1152.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-18650-li-ion-battery-5200mah-2048x1536.jpeg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></a><figcaption class="wp-element-caption">Battery capacity 57.72Wh (5200mAh at 11.1V).</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">USB-C Output</h2>
+
+
+
+<p>Turns out it actually does support USB-C PD 3.0 charging and output up to 30W at 20V in addition to Quick Charge 3.0 (QC3) with up to 12V and 3A (36W) output thanks to the <a href="https://www.lcsc.com/product-detail/Power-Management-Specialized-PMIC_INJOINIC-IP2366-I2C-version_C20415848.html">INJOINIC IP2366 power management chip</a>.</p>
+
+
+
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-scaled.jpeg" alt="USB-C PD3.0 output up to 20V and 1.5A" class="wp-image-9219" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-output-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a><figcaption class="wp-element-caption">AVHzY CT-3 showing the supported USB-C PD3.0 modes up to 30W (20V at 1.5A).</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-scaled.jpeg"><img loading="lazy" decoding="async" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-scaled.jpeg" alt="USB-C PD3.0 mode 20V at 1.5A activated" class="wp-image-9220" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-usb-c-pd-30w-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a></figure>
+
+
+
+<h2 class="wp-block-heading">Charging</h2>
+
+
+
+<p>Charging over USB-C supports PD3.0 30W input while the included charger GQ20PD02-ZG can only deliver QC3.0 20W at 12V/1.67A. It would take either 2 or 3 hours respectively to fully charge the battery.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-charging-scaled.jpeg" alt="Charging Airbank D13 Puffer Pro via USB-C QC3 at 30W (20V)" class="wp-image-9173" srcset="../../wp-content/uploads/2024/07/airbank-d13-charging-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-charging-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-charging-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-charging-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-charging-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-charging-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-charging-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></figure>
+
+
+
+<h3 class="wp-block-heading">Charging Error EE3</h3>
+
+
+
+<p>Having played with the supported USB mode enumeration, I tested the pump performance with an actual 10’4″ (317cm) SUP and was able to bring it to 18 psi twice, including the deflation.</p>
+
+
+
+<p>When attempting to charge it with the supplied USB-C charger and cable, I was now suddenly getting a message EE3 on the screen and it wouldn’t charge when left over night. I was able to fix the issue by removing and re-attaching the battery which presumably reset the controller state. Since this is not an easy operation for an average user, I’ve reached out to the manufacturer to confirm alternative solutions for resetting the device.   </p>
+
+
+
+<h2 class="wp-block-heading">Photos</h2>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-2 wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-scaled.jpeg"><img loading="lazy" decoding="async" data-id="9188" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-scaled.jpeg" alt="Top of Airbank D13 Pro pump" class="wp-image-9188" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-sup-pump-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a></figure>
+
+
+
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-back-scaled.jpeg"><img loading="lazy" decoding="async" data-id="9185" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-back-scaled.jpeg" alt="Handle of the Airbank D13 Pro pump" class="wp-image-9185" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-back-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a></figure>
+
+
+
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-scaled.jpeg"><img loading="lazy" decoding="async" data-id="9186" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-scaled.jpeg" alt="Airbank D13 Pro USB-C and 12V power ports" class="wp-image-9186" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-charge-pump-ports-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a></figure>
+
+
+
+<figure class="wp-block-image size-full"><a href="../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-scaled.jpeg"><img loading="lazy" decoding="async" data-id="9184" width="2560" height="2560" src="../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-scaled.jpeg" alt="Back of the Airbank D13 Pro pump" class="wp-image-9184" srcset="../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-scaled.jpeg 2560w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-1280x1280.jpeg 1280w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-1920x1920.jpeg 1920w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-300x300.jpeg 300w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-1536x1536.jpeg 1536w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-2048x2048.jpeg 2048w, ../../wp-content/uploads/2024/07/airbank-d13-pro-back-label-120x120.jpeg 120w" sizes="(max-width: 2560px) 100vw, 2560px"></a></figure>
+</figure>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../bafang-canbus/" rel="prev">Notes on Bafang CAN Bus</a></h4></li><li><h4 class="next"><a href="../applescript-resize-all-windows/" rel="next">Use AppleScript to Resize All Windows for Screen Recording</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../aranet4-teardown/" rel="bookmark" title="Aranet4 Teardown">Aranet4 Teardown</a></li>
+<li><a href="../gree-amber-nordic-gwh09yd-s6dba1/" rel="bookmark" title="Notes on Gree Amber Nordic / Prestige GWH09YD-S6DBA2A Heat Pump">Notes on Gree Amber Nordic / Prestige GWH09YD-S6DBA2A Heat Pump</a></li>
+<li><a href="../macbook-battery-remaining/" rel="bookmark" title="MacBook Battery Time Remaining">MacBook Battery Time Remaining</a></li>
+<li><a href="../nilan-compact-p2-geo3-polar/" rel="bookmark" title="Notes on Nilan Compact P2 GEO3 Polar">Notes on Nilan Compact P2 GEO3 Polar</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					9 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-397680">
+				<div id="div-comment-397680" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/74747d584e64320ffdb0011b8768af86/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/74747d584e64320ffdb0011b8768af86/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andrew</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397680">July 20, 2024 at 06:59</a>		</div>
+
+		<p>Thanks for the teardown. The one I have no longer holds a charge. Now I know what batteries to get. I have not ever built a battery pack, but there has to first time. I assume I get the flat top batteries and solder them together using what ever the old batteries have.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397680#respond" data-commentid="397680" data-postid="9169" data-belowelement="div-comment-397680" data-respondelement="respond" data-replyto="Reply to Andrew" aria-label="Reply to Andrew">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-397682">
+				<div id="div-comment-397682" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397682">July 20, 2024 at 09:11</a>		</div>
+
+		<p>You would need a pack of 6 Li-ion batteries of 18650 type in 3S2P configuration which provides 4.2V x 3 = 12.6V combined voltage when fully charged.</p>
+<p>Importantly you would also need to attach a battery management system (MBS) to the pack to control the charging, discharging and balancing of the cells since the pump control board doesn’t handle that.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397682#respond" data-commentid="397682" data-postid="9169" data-belowelement="div-comment-397682" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-397860">
+				<div id="div-comment-397860" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c2655abf17cb98afbe1fe54bbe92eb2b/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c2655abf17cb98afbe1fe54bbe92eb2b/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Neville Vooght</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397860">August 12, 2024 at 16:45</a>		</div>
+
+		<p>Hi I have a probank puffer pump &amp; need to replace the circuit board which started to melt the USB terminals it totally overheated could’ve even caught fire.<br>
+I see the circuit board which you are showing doesn’t seem to be the same circuit board as what I have. Do you know whether I can replace this? I can send a photo if required but grateful for your help.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397860#respond" data-commentid="397860" data-postid="9169" data-belowelement="div-comment-397860" data-respondelement="respond" data-replyto="Reply to Neville Vooght" aria-label="Reply to Neville Vooght">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-397861">
+				<div id="div-comment-397861" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397861">August 12, 2024 at 18:54</a>		</div>
+
+		<p>I would recommend you reach out to the manufacturer over their support email — they were quick to respond.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397861#respond" data-commentid="397861" data-postid="9169" data-belowelement="div-comment-397861" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-397945">
+				<div id="div-comment-397945" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fa7194b6d385fb6708603a12aac4f6bb/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fa7194b6d385fb6708603a12aac4f6bb/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Rob</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397945">August 29, 2024 at 11:46</a>		</div>
+
+		<p>Hi<br>
+What were the manufacturer’s advice to correct the charging error?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397945#respond" data-commentid="397945" data-postid="9169" data-belowelement="div-comment-397945" data-respondelement="respond" data-replyto="Reply to Rob" aria-label="Reply to Rob">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-397955">
+				<div id="div-comment-397955" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397955">August 31, 2024 at 14:06</a>		</div>
+
+		<p>Yes, they responded with “please try to test again if the air pump can charge properly after draining its full capacity. [..]  we have had feedback from previous customers that they never encountered an error message again when charging the air pump after draining the full charge.”</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=397955#respond" data-commentid="397955" data-postid="9169" data-belowelement="div-comment-397955" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-398031">
+				<div id="div-comment-398031" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/12bd1a4e1a1b02a3903f5d13d0dfc5c5/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/12bd1a4e1a1b02a3903f5d13d0dfc5c5/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Stephen Atkinson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398031">October 9, 2024 at 22:49</a>		</div>
+
+		<p>How exciting to find that someone has already torn-down this eact sup pump! I am so appreciative of the interior photos. My goal is to reduce the noise output from my Puffer Pro, and I am wondering how much space there is inside the case to potentially line some of the interior plastic surfaces with a self-stick “mass loaded vinyl” sheeting… It might be that I’ll have to apply it to the exterior for the best coverage. Does it appear to be that case that the only air inlet for the machine is via the “deflate” nozzle? I wonder how they deal with the machine over-heating as there does not appear to even be any ventilation holes.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=398031#respond" data-commentid="398031" data-postid="9169" data-belowelement="div-comment-398031" data-respondelement="respond" data-replyto="Reply to Stephen Atkinson" aria-label="Reply to Stephen Atkinson">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2 parent" id="comment-398033">
+				<div id="div-comment-398033" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398033">October 10, 2024 at 12:03</a>		</div>
+
+		<p>I don’t feel like there is enough room inside the case to limit the noise. Most of it comes from the second stage piston pump (see video) and the noise also escapes through the air inlet which you can’t really block. In terms of heat, I believe these pumps don’t really have an issue with the additional heat but the case does get almost too hot to touch (especially closer to the air connectors).</p>
+<p>A better approach might be to build a “dog-house” type of insulated box (one side open) that you place over the pump and direct that opening away from whatever is sensitive to the noise. Do share what you build!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=398033#respond" data-commentid="398033" data-postid="9169" data-belowelement="div-comment-398033" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-3" id="comment-398037">
+				<div id="div-comment-398037" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/12bd1a4e1a1b02a3903f5d13d0dfc5c5/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/12bd1a4e1a1b02a3903f5d13d0dfc5c5/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Stephen Atkinson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398037">October 12, 2024 at 19:42</a>		</div>
+
+		<p>Thanks so  much. I did build a sound box for the pump. In tests inside, it lowered sound 30 db. When I used it outside at the lake, it lowered it quite a bit, but was still very loud for my tastes. I’m not sure how to post a picture of my box, but I have: an exterior of 5/8″ particle board, with caulked joints; then a layer of 1/2″ closed cell foam (like that which came in the Puffer Pro case; then a layer of self-stick, mass loaded vinyl (1/2lb? or 1lb?) with foil backing, and then a thin layer (1/16″) self stick foam. The lid is a removed wall, with foam gasketing. I need to study how sound must be leaking out of the instake/exhaust holes of the box first. I’m thinking, some insulated “sleeves” (like interior sound insulated air ducting) might be next step. Solving acoustic transmission problems is as difficult as trying to dam water, but it’s a fun problem. Now I’ve got “error 4” (EE4). I’ve written to manufacturer, but I’ll try draining the battery also.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/airbank-d13-pro-teardown?replytocom=398037#respond" data-commentid="398037" data-postid="9169" data-belowelement="div-comment-398037" data-respondelement="respond" data-replyto="Reply to Stephen Atkinson" aria-label="Reply to Stephen Atkinson">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "af47279cbf7c86e4e73cccf64a0502bb" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="9169" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/airbank-d13-pro-teardown">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="" aria-current="page">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<style id="core-block-supports-inline-css" type="text/css">
+.wp-block-gallery.wp-block-gallery-1{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}.wp-block-gallery.wp-block-gallery-2{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
+</style>
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	107 queries in 0.4244 seconds on Mon, 21 Oct 2024 12:07:49 +0000.-->
+
+
+
+</body></html>

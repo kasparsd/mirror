@@ -1,0 +1,618 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Notes on Zemismart HomeKit Zigbee Hub (Electronics, Home Automation) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Notes on Zemismart HomeKit Zigbee Hub Comments Feed" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub/feed">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" type="text/css" media="all">
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c7aa1bc3ef3c368388ee909cc835a652.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/8147"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kaspars.net/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+<link rel="canonical" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub">
+<link rel="shortlink" href="https://kaspars.net/8147">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fzemismart-zigbee-homekit-hub">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fzemismart-zigbee-homekit-hub&amp;format=xml">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub">
+		<style>
+			#stand_with_ukraine_overlay {
+				border: 10px solid #0057B8;
+				padding: 5px;
+				text-align: center;
+				text-combine: #0057B8;
+				background-color: #FFD700;
+			}
+			#stand_with_ukraine_overlay a {
+				display: inline-block;
+				padding: 3px 6px;
+				color: #0057B8;
+				border: 2px transparent dashed;
+				text-decoration: underline;
+			}
+			#stand_with_ukraine_overlay a:hover,
+			#stand_with_ukraine_overlay a:focus {
+				border: 2px #0057B8 dashed;
+				text-decoration: underline;
+			}
+		</style>
+	<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Notes on Zemismart HomeKit Zigbee Hub">
+<meta property="og:description" content="Zemismart ZMHK-01 is one of the few hubs that is compatible with Apple HomeKit and can expose non-HomeKit Zigbee devices in the Home app sim...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-scaled.jpg">
+<meta property="og:url" content="https://kaspars.net/blog/zemismart-zigbee-homekit-hub">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-32x32.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-192x192.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-180x180.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2022/01/cropped-kaspars-dambis-square-small-270x270.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<link rel="http://webmention.org/" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+		<style type="text/css" id="wp-custom-css">
+			.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+
+#stand_with_ukraine_overlay { min-height:2.2em; } 		</style>
+		</head>
+<body class="post-template-default single single-post postid-8147 single-format-standard custom-background wp-embed-responsive has-header-image">
+
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-9331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a title="Advanced WordPress Courses" href="../../courses/">Courses</a></li>
+<li id="menu-item-9416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9416"><a title="Enterprise WordPress Consulting" href="../../consulting/">Consulting</a></li>
+<li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a title="Blog About Web Design, WordPress and Performance" href="../">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a title="Latest Blog Posts" href="../">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a title="My video blog about electronics and digital products" href="../topic/vlog/">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a title="Archive of all blogs posts" href="../archive/">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a title="About Kaspars Dambis" rel="author me" href="../../about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a title="What I’m Doing Now…" href="../../now/">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a title="My toolbox of products and services I love" href="../../uses/">Tools &amp; Services</a></li>
+	<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a title="My bookshelf" href="../../reads/">Books</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a>,<a href="../topic/home-automation/" rel="category tag">Home Automation</a> →</div>
+		
+		<article class="post-8147 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics category-home-automation tag-homekit tag-teardown tag-tuya tag-zigbee has-featured-image" id="post-8147" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Notes on Zemismart HomeKit Zigbee Hub			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Mon, 25 Apr 2022 12:22:42 +0300">April 25, 2022</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Mon, 17 Apr 2023 13:56:33 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a>, <a href="../topic/home-automation/" rel="category tag">Home Automation</a></span> <span class="meta-item meta-tags tags"><a href="../tag/homekit/" rel="tag">HomeKit</a><a href="../tag/teardown/" rel="tag">Teardown</a><a href="../tag/tuya/" rel="tag">Tuya</a><a href="../tag/zigbee/" rel="tag">Zigbee</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">11&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p><a href="https://www.zemismart.com/products/zmhk-01">Zemismart ZMHK-01</a> is one of the few hubs that is compatible with Apple HomeKit and can expose non-HomeKit Zigbee devices in the Home app similar to the <a href="../aqara-g2h-homekit/" data-type="post" data-id="8081">Aqara G2H camera hub</a>. Behind the scenes it uses the <a href="https://developer.tuya.com/en/docs/iot/zigbeetyzs4module?id=K989rhycrz23f">Tuya TYZS4 radio module</a> and is very similar to the Tuya reference designs used by many generic Tuya-compatible hubs.</p>
+
+
+
+<span id="more-8147"></span>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-scaled.jpg" alt="Zemismart Zigbee HomeKit Hub using the Tuya TYZS4 module " class="wp-image-8149" srcset="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-scaled.jpg 2560w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-800x600.jpg 800w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-1024x768.jpg 1024w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-1536x1152.jpg 1536w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-2048x1536.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">Zemismart Zigbee HomeKit Hub using the Tuya TYZS4 module for radio and RTL8196E as the main controller.</figcaption></figure>
+
+
+
+<p>Note: this device is very similar to <a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/" data-type="post" data-id="8458">NEO NAS-ZW05B0</a>!</p>
+
+
+
+<h2 class="wp-block-heading">Getting Root Access</h2>
+
+
+
+<p>Turns out it is very similar to the first generation of the Lidl Silvercrest Smart Gateway <a href="https://paulbanks.org/projects/lidl-zigbee/root/">which allows extracting the <code>root</code> user password over the UART connection</a> exposed on the back of the PCB. The screws are hidden behind the rubber ring on the bottom:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2000" height="1500" src="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-teardown-screws.jpg" alt="Screws for opening Zemismart Zigbee HomeKit Hub" class="wp-image-8150" srcset="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-teardown-screws.jpg 2000w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-teardown-screws-800x600.jpg 800w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-teardown-screws-1024x768.jpg 1024w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-teardown-screws-1536x1152.jpg 1536w" sizes="(max-width: 2000px) 100vw, 2000px"><figcaption class="wp-element-caption">Screws for opening Zemismart Zigbee HomeKit Hub.</figcaption></figure>
+
+
+
+<p>And the UART pins <code>TX</code> and <code>RX</code> are clearly marked on the back of the PCB. Note that you must use 3.3V for power and logic when connecting to the device.</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-scaled.jpg" alt="UART serial pins for Zemismart Zigbee HomeKit Hub" class="wp-image-8148" srcset="../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-scaled.jpg 2560w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-800x600.jpg 800w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-1024x768.jpg 1024w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-1536x1152.jpg 1536w, ../../wp-content/uploads/2022/04/zemismart-zigbee-homekit-hub-tuya-back-2048x1536.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">UART serial pins for Zemismart Zigbee HomeKit Hub.</figcaption></figure>
+
+
+
+<p>After extracting the password from the flash memory you’re able to connect to it over SSH running on port 2333:</p>
+
+
+
+<pre class="wp-block-code"><code>$ ssh root@gateway.local -p 2333</code></pre>
+
+
+
+<p>where <code>gateway.local</code> is the mDNS address of the device on your network. Alternatively, use the IP address of the device to connect.</p>
+
+
+
+<p>The device runs Linux with <a href="https://busybox.net/">BusyBox</a> v1.13.4 (2021-08-26 11:01:27 CST) and it uses <a href="https://gist.github.com/kasparsd/1cb3919a238bc94b93ccc72324cab517">a bunch of bash scripts to configure and launch the software</a>. Most of the runtime logic is handled by the following process:</p>
+
+
+
+<pre class="wp-block-code"><code>./tyZ3Gw /tuya/tuya_user2 /tuya/def.cfg</code></pre>
+
+
+
+<p>where <code>tyZ3Gw</code> (sounds like short for “Tuya Zigbee3 Gateway”) is the binary in the <code>/tuya/tuya_user2</code> working directory using <code>/tuya/def.cfg</code> for config:</p>
+
+
+
+<pre class="wp-block-code"><code>{
+	"user_cfg_file":"/tuya/config/user.cfg",
+	"platform":"RTL8196E",
+	"product_key":"keyYOURUNIQUEKEY",
+	"mode_id":"RTL8196E_TY01",
+	"storage_dir":"./",
+	"log_dir":"/tuya/log_dir/",
+	"tmp_dir":"/tmp/",
+	"bin_dir":"/tuya/",
+	"backup_dir":"/tuya/",
+	"net_led":"LED0",
+	"status_led":"LED1",
+	"reset_key":"KEY0",
+	"wan_interface":"eth1",
+	"wifi_interface":"wifi0",
+	"serial_port":"/dev/ttyS1",
+	"is_cts":true,
+	"is_sync_systime":true,
+	"is_hardward":true
+}</code></pre>
+
+
+
+<p>Note that there is no WiFi network interface on this device although it is mentioned in the config.</p>
+
+
+
+<h2 class="wp-block-heading">Zigbee Communication</h2>
+
+
+
+<p>The <code>zigbee_agent</code> binary talks to the <a href="https://www.nxp.com/products/wireless/thread/jn5189-88-t-high-performance-and-ultra-low-power-mcus-for-zigbee-and-thread-with-built-in-nfc-option:JN5189_88_T">NXP JN5189 Zigbee module</a> over UART at <code>/dev/ttyS2</code>. There is <a href="https://github.com/banksy-git/lidl-gateway-freedom/tree/master/gateway">a custom UART to TCP bridge software</a> <a href="https://paulbanks.org/projects/lidl-zigbee/ha/">developed by Paul Banks</a> that can be used to expose the Zigbee radio to the <a href="https://www.home-assistant.io/integrations/zha/">Home Assistant ZHA integration</a> over TCP. Note that this disables the Tuya and HomeKit integrations since they are no longer able to talk to the same UART device that is now used by the bridge.</p>
+
+
+
+<h2 class="wp-block-heading">Compatible Devices</h2>
+
+
+
+<p>I’ve successfully tested the following devices with the hub and they become available in the Home app:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://www.aliexpress.com/item/1005003417122659.html">Tuya ZigBee 3.0 Switch Modules (both 1 and 2 channel)</a> with Tuya 2T3L radio.</li>
+
+
+
+<li><a href="https://www.aliexpress.com/item/1005002164359835.html">GIRIER Tuya ZigBee 3.0 Smart Light Switch Module</a> with Tuya ZTU radio.</li>
+
+
+
+<li><a href="https://sonoff.tech/product/smart-home-security/snzb-03/">Sonoff SNZB-03</a> PIR motion sensor.</li>
+</ul>
+
+
+
+<p>The following devices are recognized by the Smart Life app but they <em>don’t show</em> up in the Home app:</p>
+
+
+
+<ul class="wp-block-list">
+<li> <a href="../tuya-smart-box-house-keeper-air-quality/" data-type="post" data-id="8204">Tuya TS0601 Smart Air Box House Keeper 6in1 air quality monitor</a> with ZT3L module.</li>
+</ul>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../hiking-dds238-2-modbus/" rel="prev">Use Hiking DDS238-2 ZN/S Energy Meter with Home Assistant</a></h4></li><li><h4 class="next"><a href="../ventilation-air-heat-cool-passive-house/" rel="next">Use Ventilation Exhaust Air for Space Heating and Hot Water</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../tuya-smart-box-house-keeper-air-quality/" rel="bookmark" title="Notes on Tuya Air Quality Sensors">Notes on Tuya Air Quality Sensors</a></li>
+<li><a href="../aqara-g2h-homekit/" rel="bookmark" title="Use Aqara G2H Zigbee Camera Hub with Home Assistant">Use Aqara G2H Zigbee Camera Hub with Home Assistant</a></li>
+<li><a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/" rel="bookmark" title="Notes on NEO Tuya Zigbee HomeKit Hub">Notes on NEO Tuya Zigbee HomeKit Hub</a></li>
+<li><a href="../tuya-sm-aw713-zigbee-wifi/" rel="bookmark" title="When Tuya SM-AW713Z (Zigbee) is Actually SM-AW713 (WiFi)">When Tuya SM-AW713Z (Zigbee) is Actually SM-AW713 (WiFi)</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					11 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-321757">
+				<div id="div-comment-321757" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/56cb123478b1b3b5d413204d6ca46db7/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/56cb123478b1b3b5d413204d6ca46db7/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Vlad</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-321757">July 13, 2022 at 12:27</a>		</div>
+
+		<p>Would it be possible to have ZHA code and tuya one running at the gataway in same time so I can have devices in both system? ” Note that this disables the Tuya and HomeKit integrations since they are no longer able to talk to the same UART device” – I don’t fully understand that – can the code by modified so both Tuya and ZHA share access to the UART or duplicate the UJART or is it by design not possible?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=321757#respond" data-commentid="321757" data-postid="8147" data-belowelement="div-comment-321757" data-respondelement="respond" data-replyto="Reply to Vlad" aria-label="Reply to Vlad">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-321762">
+				<div id="div-comment-321762" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-321762">July 13, 2022 at 13:57</a>		</div>
+
+		<p>The UART to TCP bridge needs to talk to the same UART device <code>/dev/ttyS2</code> as used by the Tuya integration and my understanding is that Linux prevents the same device port from being used by multiple services at the same time. I’m not sure if there are tools out there that can create virtual interfaces for the same hardware port and let multiple services talk to it. I’m also not sure how the Tuya binary will deal with the messages and responses not originating from itself.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=321762#respond" data-commentid="321762" data-postid="8147" data-belowelement="div-comment-321762" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-326159">
+				<div id="div-comment-326159" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/4a47615bc375b59d3a0f396cb6f04aa4/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/4a47615bc375b59d3a0f396cb6f04aa4/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Vitor Gomes</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-326159">August 27, 2022 at 06:47</a>		</div>
+
+		<p>Incredible. I’m using this hub since some months ago and loving it.</p>
+<p>Do you know others non-zemismart devices that is capable and exported to HomeKit? Or someway to know if this device could support it (like identifying the radio).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=326159#respond" data-commentid="326159" data-postid="8147" data-belowelement="div-comment-326159" data-respondelement="respond" data-replyto="Reply to Vitor Gomes" aria-label="Reply to Vitor Gomes">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-326163">
+				<div id="div-comment-326163" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-326163">August 27, 2022 at 08:19</a>		</div>
+
+		<p>Technically most of the Tuya Zigbee devices should work. I’ll be adding the ones I’ve tested to the list at the bottom of the post. Would love to hear if you test some too!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=326163#respond" data-commentid="326163" data-postid="8147" data-belowelement="div-comment-326163" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-326998">
+				<div id="div-comment-326998" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/4a47615bc375b59d3a0f396cb6f04aa4/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/4a47615bc375b59d3a0f396cb6f04aa4/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Vitor Gomes</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-326998">September 7, 2022 at 18:05</a>		</div>
+
+		<p>Thanks a lot! Me with friends have created a sheet to put some devices we’d tested <a href="https://docs.google.com/spreadsheets/d/1GQAZjaVC6yTxvoN3pNsCCkNLJNlsWGwKHN7k74lXF5c/edit?usp=sharing" rel="nofollow ugc">https://docs.google.com/spreadsheets/d/1GQAZjaVC6yTxvoN3pNsCCkNLJNlsWGwKHN7k74lXF5c/edit?usp=sharing</a></p>
+<p>Recently I found exactly the same LED Strip Controller as Zemismart use, so it’ll save a lot of money.</p>
+<p>I wonder if the Moes GU10 Zigbee will work or not.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=326998#respond" data-commentid="326998" data-postid="8147" data-belowelement="div-comment-326998" data-respondelement="respond" data-replyto="Reply to Vitor Gomes" aria-label="Reply to Vitor Gomes">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2 parent" id="comment-328799">
+				<div id="div-comment-328799" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/882abb7ea3735ec534524013be03d764/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/882abb7ea3735ec534524013be03d764/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Pedro Baptista</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-328799">September 26, 2022 at 12:51</a>		</div>
+
+		<p>Helo Thank you for the list.<br>
+Apparently the mais problem is with the courtain switch.<br>
+Do you know any courtain switch working with the hub?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=328799#respond" data-commentid="328799" data-postid="8147" data-belowelement="div-comment-328799" data-respondelement="respond" data-replyto="Reply to Pedro Baptista" aria-label="Reply to Pedro Baptista">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-3" id="comment-329278">
+				<div id="div-comment-329278" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-329278">October 2, 2022 at 11:17</a>		</div>
+
+		<p>No, unfortunately I haven’t tested any. Check out <a href="https://docs.google.com/spreadsheets/d/1GQAZjaVC6yTxvoN3pNsCCkNLJNlsWGwKHN7k74lXF5c/edit" rel="nofollow ugc">this spreadsheet</a> shared previously by Vitor.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=329278#respond" data-commentid="329278" data-postid="8147" data-belowelement="div-comment-329278" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-333081">
+				<div id="div-comment-333081" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/4103552b4358f0e82bda2bcafe5b6967/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/4103552b4358f0e82bda2bcafe5b6967/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Rob1</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-333081">November 21, 2022 at 00:22</a>		</div>
+
+		<p>Hello, have you had any luck with dimmers? I can’t seem to find any dimmer switch or module for homekit that would fit EU standards.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=333081#respond" data-commentid="333081" data-postid="8147" data-belowelement="div-comment-333081" data-respondelement="respond" data-replyto="Reply to Rob1" aria-label="Reply to Rob1">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-334170">
+				<div id="div-comment-334170" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-334170">December 3, 2022 at 21:25</a>		</div>
+
+		<p>Unfortunately, I haven’t tried any.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=334170#respond" data-commentid="334170" data-postid="8147" data-belowelement="div-comment-334170" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-353832">
+				<div id="div-comment-353832" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c2fe27e1ae105087d209003dab955174/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c2fe27e1ae105087d209003dab955174/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Adam k</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-353832">April 16, 2023 at 21:38</a>		</div>
+
+		<p>I have the ‘Neo Tuya Himekit Zigbee Hub’.<br>
+It’s basically the Zemismart but cheaper.</p>
+<p>Sonoff Zigbee relays (both the mini L+N and the new mini extreme live relays) these show up in smartlife and HomeKit, oddly they show as a light and a switch.</p>
+<p>I have the 20A Zigbee outlets (with power monitoring) and these work with Smartlife and HomeKit, but only on/off in HomeKit.</p>
+<p>Couldn’t get my Aqara accessories to work with it, but not sure if they are Zigbee 3.0.</p>
+<p>Tried some generic Tuya Zigbee light switches and they show up in SmartLife but not in HomeKit.</p>
+<p>Bought some Moes light switches (no neutral) to test out and see if they show up in HomeKit.</p>
+<p>Trying to get to a point where I don’t need home assistant or homebridge.</p>
+<p>I’ll update the list if I find anything else that works.<br>
+It’s difficult to know what will and won’t work.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=353832#respond" data-commentid="353832" data-postid="8147" data-belowelement="div-comment-353832" data-respondelement="respond" data-replyto="Reply to Adam k" aria-label="Reply to Adam k">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-353999">
+				<div id="div-comment-353999" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/661eb21385c25c01ad64ab9e13b37331/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-353999">April 17, 2023 at 13:19</a>		</div>
+
+		<p>Thanks for sharing your findings! I just got the same hub and posted <a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/" rel="ugc">a review here</a>. It appears like <a href="https://github.com/banksy-git/lidl-gateway-freedom/issues/31" rel="nofollow ugc">others haven’t been able to extract the root password, yet</a>.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/zemismart-zigbee-homekit-hub?replytocom=353999#respond" data-commentid="353999" data-postid="8147" data-belowelement="div-comment-353999" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a5c92738902fe18e567249f4b3df29bf" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-notify-me">
+			<label>
+			<input type="checkbox" name="comment-approved_notify-me" value="1">
+			Notify me by email when the comment gets approved.
+			</label>
+			</p><input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="8147" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	<form id="webmention-form" action="https://kaspars.net/wp-json/webmention/1.0/endpoint" method="post">
+	<p>
+		<label for="webmention-source">To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (<a href="https://indieweb.org/webmention">Learn More</a>)</label>
+	</p>
+	<p>
+		<input id="webmention-source" type="url" autocomplete="url" required="" pattern="^https?:\/\/(.*)" name="source" placeholder="URL/Permalink of your article">
+	</p>
+	<p>
+		<input id="webmention-submit" type="submit" name="submit" value="Ping me!">
+	</p>
+	<input id="webmention-format" type="hidden" name="format" value="html">
+	<input id="webmention-target" type="hidden" name="target" value="https://kaspars.net/blog/zemismart-zigbee-homekit-hub">
+</form>
+
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-17" class="widget widget_text"><h1 class="widget-title">Check out my WordPress products</h1>			<div class="textwidget"><p><a href="https://widgetcontext.com">Widget Context</a> for widget visibility, <a href="https://preseto.com/go/cf7-storage">Storage</a> and <a href="https://formcontrols.com">Controls</a> for Contact Form 7. Learn more about <a href="../../projects/">my projects →</a></p>
+</div>
+		</aside><aside id="convertkit_form-2" class="widget convertkit widget_convertkit_form"><h1 class="widget-title">Subscribe to My Newsletter</h1><script async="" data-uid="cda85cd940" src="https://wpelevator.ck.page/cda85cd940/index.js" data-jetpack-boost="ignore" data-no-defer="1" nowprocket=""></script></aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../nginx-rate-limit-php/">How to Rate Limit Requests to Specific PHP Files with Nginx</a>
+									</li>
+											<li>
+					<a href="../applescript-resize-all-windows/">Use AppleScript to Resize All Windows for Screen Recording</a>
+									</li>
+											<li>
+					<a href="../airbank-d13-pro-teardown/">Airbank D13 Puffer Pro Pump Teardown</a>
+									</li>
+											<li>
+					<a href="../bafang-canbus/">Notes on Bafang CAN Bus</a>
+									</li>
+											<li>
+					<a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a>
+									</li>
+											<li>
+					<a href="../solar-lora-meshtastic/">Building a Solar Powered Lora Meshtastic Community Network</a>
+									</li>
+											<li>
+					<a href="../powerwalker-vi-500-r1u/">Notes on PowerWalker VI 500 R1U UPS</a>
+									</li>
+											<li>
+					<a href="../beelink-u59-pro-n5105/">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a>
+									</li>
+											<li>
+					<a href="../neo-nas-zw05b0-tuya-zigbee-homekit-hub/">Notes on NEO Tuya Zigbee HomeKit Hub</a>
+									</li>
+											<li>
+					<a href="../nilan-compact-p2-geo3-polar/">Notes on Nilan Compact P2 GEO3 Polar</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a title="Blog about WordPress plugin development, website performance and optimization" href="../">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a title="About Kaspars Dambis" rel="author" href="../../about/">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a title="Contact Kaspars Dambis" href="../../contact/">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a title="My blog in Latvian" rel="me" href="https://kasparsdambis.lv">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a title="My code on GitHub" rel="me" href="https://github.com/kasparsd/">GitHub Profile</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a title="My WordPress profile" rel="me" href="https://profiles.wordpress.org/kasparsd">WordPress Profile</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a title="Kaspars on Twitter" rel="me" href="https://twitter.com/konstruktors">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a title="Follow on Mastadon (ActivityPub)" rel="me" href="https://mastodon.social/@kasparsd">Mastadon</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a title="My Video Blog" rel="me" href="https://www.youtube.com/kasparsdambis">YouTube</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a title="My photos on Flickr" rel="me" href="https://www.flickr.com/photos/kasparsdambis/">Flickr</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a title="My Instagram Photos" rel="me" href="https://www.instagram.com/kasparsd/">Instagram</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a title="My Micro Blog" rel="me" href="https://micro.blog/kaspars">Micro.blog</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script type="text/javascript" id="minit-js-js-extra">
+/* <![CDATA[ */
+var swu_options = {"text":"Stand With Ukraine","hashtag":"#StandWithUkraine","url":"https:\/\/war.ukraine.ua\/"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" defer="" src="../../wp-content/uploads/minit/83067bfb7b491520abc941f1d73c5bc2.js" id="minit-js-js"></script>
+
+<!-- Script helper footer: -->
+<script defer="" src="../../__reverse.kaspars.net/gtm/gtag/js/id%3DG-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	89 queries in 0.4438 seconds on Mon, 21 Oct 2024 12:07:56 +0000.-->
+
+
+
+</body></html>
