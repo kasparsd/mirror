@@ -1,0 +1,945 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Bafang CAN Bus Programming (Electronics) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Bafang CAN Bus Programming Comments Feed" href="https://kaspars.net/blog/bafang-canbus/feed">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fbafang-canbus">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fbafang-canbus&amp;format=xml">
+<meta property="og:title" content="Bafang CAN Bus Programming">
+<meta property="og:description" content="Bafang M200 mid-drive motor (model MM G210.250.C) with 36V battery connector (yellow, from left), empty 6-pin electric break connector (purple), 8-pin rear light and wheel speed connector, and 8-pin front light and display connector. I got my wife this Accolmile Antelope 1S electric bicycle with Bafang components from their latest M-series lineup of mid-drive motors...">
+<meta name="description" content="Bafang M200 mid-drive motor (model MM G210.250.C) with 36V battery connector (yellow, from left), empty 6-pin electric break connector (purple), 8-pin rear light and wheel speed connector, and 8-pin front light and display connector. I got my wife this Accolmile Antelope 1S electric bicycle with Bafang components from their latest M-series lineup of mid-drive motors...">
+<meta property="og:image" content="../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled.jpg">
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/00b8535b581c2eabd20c4d0653635f50.css" media="all">
+<link rel="stylesheet" id="wp-block-paragraph-css" href="../../wp-includes/blocks/paragraph/style.min_ver%3D7.1.css" media="all">
+<link rel="stylesheet" id="wp-block-heading-css" href="../../wp-includes/blocks/heading/style.min_ver%3D7.1.css" media="all">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:break-spaces}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/code/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="dominant-color-styles-inline-css">
+img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); }
+/*# sourceURL=dominant-color-styles-inline-css */
+</style>
+<style id="stand-width-ukraine-inline-css">
+#stand_with_ukraine_overlay{font-size:18px;line-height:1}#stand_with_ukraine_overlay a{background-color:gold;color:#0057b8;display:block;padding:1rem;text-align:center;text-decoration:none}#stand_with_ukraine_overlay a:focus,#stand_with_ukraine_overlay a:hover{background-color:#0057b8;color:gold}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/build/js/modules/style-ukraine.css */
+</style>
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/00b8535b581c2eabd20c4d0653635f50.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/9135"><meta name="generator" content="WordPress 7.1">
+<link rel="canonical" href="https://kaspars.net/blog/bafang-canbus">
+<link rel="shortlink" href="https://kaspars.net/9135">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/bafang-canbus"><meta name="generator" content="dominant-color-images 1.3.0">
+<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<link rel="site.standard.publication" href="at://did:plc:fd7xarjj37v5axbxczpgqj5c/site.standard.publication/3mqvlvldcxas4">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Bafang CAN Bus Programming">
+<meta property="og:description" content="Bafang M200 mid-drive motor (model MM G210.250.C) with 36V battery connector (yellow, from left), empty 6-pin electric break connector (purp...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled.jpg">
+<meta property="og:url" content="https://kaspars.net/blog/bafang-canbus">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg"><link rel="alternate" type="text/markdown" href="https://kaspars.net/blog/bafang-canbus/md">
+<meta name="generator" content="embed-optimizer 1.0.0-beta6">
+
+<link rel="alternate" title="ActivityPub (JSON)" type="application/activity+json" href="https://kaspars.net/blog/bafang-canbus">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-120x120.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<style id="wp-custom-css">
+a, code { word-break: break-word; }
+.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+#nav-main .sub-menu { min-width: 6rem; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+code { white-space:pre-wrap; }
+pre code,
+.wp-block-code code { white-space:inherit; }
+
+.activitypub-modal__overlay h1,
+.activitypub-modal__overlay h2,
+.activitypub-modal__overlay h3,
+.activitypub-modal__overlay h4 {
+	color:inherit;
+}
+
+#menu-indieweb-webring li { display: inline-block; }
+#menu-indieweb-webring li:nth-child(2) { margin: 0 1rem; }
+
+.h-card-profile { display:none; }
+</style>
+<style id="dambis-kit-form-inline-css">
+.kit-form {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+.kit-form input,
+.kit-form button {
+	font: inherit;
+	line-height: inherit;
+}
+
+.kit-form .kit-form__field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.kit-form .kit-form__input,
+.kit-form .kit-form__input[type="email"],
+.kit-form .kit-form__input[type="text"] {
+	font: inherit;
+	line-height: inherit;
+	padding: 0.5rem 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.kit-form .kit-form__input:focus {
+	outline: none;
+	border-color: #007cba;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.2);
+}
+
+.kit-form .kit-form__submit {
+	padding: 0.5rem 1.5rem;
+	background: #007cba;
+	color: #fff;
+	border: 1px solid #007cba;
+	border-radius: 0.25rem;
+	font: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	align-self: flex-end;
+	white-space: nowrap;
+}
+
+.kit-form .kit-form__submit:hover {
+	background: #005a87;
+}
+
+.kit-form .kit-form__submit:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.4);
+}
+
+@media (max-width: 768px) {
+
+	.kit-form {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.kit-form__submit {
+		margin-top: 0.5rem;
+		align-self: stretch;
+	}
+}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/css/kit.css */
+</style>
+
+</head>
+<body class="wp-singular post-template-default single single-post postid-9135 single-format-standard custom-background wp-embed-responsive wp-theme-list-theme wp-child-theme-list-konstruktors has-header-image">
+<div id="stand_with_ukraine_overlay" role="banner">
+				<a href="https://war.ukraine.ua" title="Stand With Ukraine" rel="nofollow">#StandWithUkraine</a>
+			</div><div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a href="../" title="Blog About Web Design, WordPress and Performance">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a href="../" title="Latest Blog Posts">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a href="../topic/vlog/" title="My video blog about electronics and digital products">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a href="../archive/" title="Archive of all blogs posts">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/" title="About Kaspars Dambis">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a href="../../now/" title="What I’m Doing Now…">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a href="../../uses/" title="My preferred hardware and software">Uses</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a href="../../reads/" title="My bookshelf">Reads</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a> →</div>
+		
+		<article class="post-9135 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics has-featured-image" id="post-9135" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Bafang CAN Bus Programming			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Sun, 21 Apr 2024 23:54:56 +0300">April 21, 2024</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Sun, 21 Dec 2025 16:58:38 +0200"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a></span>  <span class="meta-item meta-comment-count">
+			<a href="#comments">19&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<figure class="wp-block-image alignwide size-full"><img data-dominant-color="6f6e67" data-has-transparency="false" style="--dominant-color: #6f6e67;" loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D2560%2C1920.jpg" alt="Bafang M200 (M-series) mid-drive motor with CAN bus" class="wp-image-9137 not-transparent" srcset="../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C960.jpg 1280w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%252C1440.jpg 1920w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C1152.jpg 1536w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C1536.jpg 2048w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C288.jpg 384w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C576.jpg 768w, ../../wp-content/uploads/2024/04/bafang-m200-motor-connectors-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C768.jpg 1024w" sizes="auto, (max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">Bafang M200 mid-drive motor (model <code>MM G210.250.C</code>) with 36V battery connector (yellow, from left), empty 6-pin electric break connector (purple), 8-pin rear light and wheel speed connector, and 8-pin front light and display connector.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">I got my wife this <a href="https://accolmile.com/products/aantelope-1s">Accolmile Antelope 1S</a> electric bicycle with Bafang components from their latest <a href="https://www.bafang-e.com/en/products/motors/m-series/">M-series lineup of mid-drive motors</a> and <a href="https://www.bafang-e.com/en/oem-area/components/hmi/">displays</a> which communicate over a CAN bus. It’s a great city bike and the price includes fast shipping from the warehouse in Poland. Their support was also quick to send a replacement wheel for the original that got dented during transport (despite the thoughtful packaging).</p>
+
+
+
+<h2 class="wp-block-heading">CAN over NodeJS</h2>
+
+
+
+<p class="wp-block-paragraph">The M500/M600 motors are particularly popular with MTB riders so the communication protocol has been discussed in <a href="https://endless-sphere.com/sphere/threads/bafang-m500-m600-thread.100777/">this forum thread</a> and documented in <a href="https://github.com/OpenSourceEBike/Bafang_M500_M600">this GitHub repository</a>. Importantly, the <a href="https://bafang-e.com/en/oem-area/service/besst/"><abbr title="Bafang E-mobility Sales &amp; Service Tool">BESST</abbr> software</a> for managing the configuration and firmware updates is <a href="https://www.electronjs.org">an Electron app</a> with all logic as plain HTML and JS files (and bundled <a href="https://developer.chrome.com/blog/sourcemaps">source maps</a> for all minified code), including the CAN frame specification. I’ve started documenting my research in <a href="https://github.com/kasparsd/besst-reference">this GitHub repository</a>.</p>
+
+
+
+<span id="more-9135"></span>
+
+
+
+<h2 class="wp-block-heading">Connecting to CAN Bus</h2>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;6a9d756b3d1d8&quot;}" data-wp-interactive="core/image" data-wp-key="6a9d756b3d1d8" class="wp-block-image alignwide size-large wp-lightbox-container"><img data-dominant-color="d5d7d2" data-has-transparency="false" style="--dominant-color: #d5d7d2;" loading="lazy" decoding="async" width="1920" height="1234" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on--pointerdown="actions.preloadImage" data-wp-on--pointerenter="actions.preloadImageWithDelay" data-wp-on--pointerleave="actions.cancelPreload" data-wp-on-window--resize="callbacks.setButtonStyles" src="../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D1920%2C1234.png" alt="Wiring diagram for connecting to Bafang CAN-bus wiring between screen and motor controller" class="wp-image-11116 not-transparent" srcset="../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D1920%2C1234.png 1920w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D1280%252C823.png 1280w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D1536%252C987.png 1536w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D384%252C247.png 384w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D768%252C494.png 768w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D1024%252C658.png 1024w, ../../wp-content/uploads/2024/04/bafang-canbus-canable-wiring_strip%3Dall%26quality%3D90%26resize%3D2040%252C1311.png 2040w" sizes="auto, (max-width: 1920px) 100vw, 1920px"><button class="lightbox-trigger" type="button" aria-haspopup="dialog" data-wp-bind--aria-label="state.thisImage.triggerButtonAriaLabel" data-wp-init="callbacks.initTriggerButton" data-wp-on--click="actions.showLightbox" data-wp-style--right="state.thisImage.buttonRight" data-wp-style--top="state.thisImage.buttonTop">
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z"></path>
+			</svg>
+		</button></figure>
+
+
+
+<p class="wp-block-paragraph">The display connector at the wheel is the most convenient place to tap into the CAN bus. I purchased two HIGO 5-pin connectors B5-F and S5-F from <a href="https://shop.e-bike-technologies.de/de/">ETShop in Germany</a> for around €7 each (<a href="https://kaspars.net/go/bafang-5-pin-can-cable">AliExpress</a> / <a href="https://kaspars.net/go/amazon-bafang-5-pin-can-cable">Amazon</a>) and soldered the CAN high (green), CAN low (white) and ground (black) wires from each for a connection to (a copy of) the <a href="https://canable.io">CANable Pro 1.0 CAN-to-USB adapter</a> (<a href="https://kaspars.net/go/canable-pro">AliExpress</a> / <a href="https://kaspars.net/go/amazon-canable-pro">Amazon</a>). <strong>Be sure to test the wiring with a multimeter because one of the wires carries the full battery voltage!</strong></p>
+
+
+
+<p class="wp-block-paragraph">Technically <em>any CAN-to-USB adapter will work</em> (as long as it supports 250kbit transfer rate) and the choice depends more on the software you want to use for interacting with the bus. The CANable adapter runs the <a href="https://github.com/normaldotcom/canable-fw">slcan firmware</a> which implements the <a href="https://www.canusb.com/products/canusb/">Lawicel SLCAN protocol</a> (a basic ASCII serial) which is supported by various libraries, including SocketCAN.</p>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="a57f58" data-has-transparency="false" style="--dominant-color: #a57f58;" loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D2560%2C1920.jpeg" alt="HIGO S5-F connector wires for Bafang CAN bus" class="wp-image-9141 not-transparent" srcset="../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C960.jpeg 1280w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%252C1440.jpeg 1920w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C1152.jpeg 1536w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C1536.jpeg 2048w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C288.jpeg 384w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C576.jpeg 768w, ../../wp-content/uploads/2024/04/bafang-higo-s5-male-connector-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C768.jpeg 1024w" sizes="auto, (max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">Pinout of the HIGO S5-F (female) connector.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="7f7868" data-has-transparency="false" style="--dominant-color: #7f7868;" loading="lazy" decoding="async" width="2560" height="2560" src="../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D2560%2C2560.jpeg" alt="Bafang HIGO S5 and B5 connectors attached to CANable Pro" class="wp-image-9142 not-transparent" srcset="../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C384.jpeg 384w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C1280.jpeg 1280w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%252C1920.jpeg 1920w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D300%252C300.jpeg 300w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C1536.jpeg 1536w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C2048.jpeg 2048w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D120%252C120.jpeg 120w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C768.jpeg 768w, ../../wp-content/uploads/2024/04/bafang-can-bus-higo-s5-b5-canable-pro-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C1024.jpeg 1024w" sizes="auto, (max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">HIGO 5-pin B5-F and S5-F connectors attached to CANable Pro 1.0 CAN-to-USB adaptor.</figcaption></figure>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-dominant-color="656160" data-has-transparency="false" style="--dominant-color: #656160;" loading="lazy" decoding="async" width="2560" height="1920" src="../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D2560%2C1920.jpeg" alt="CANbus traffic between Bafang M200 and DP C245 display." class="wp-image-9143 not-transparent" srcset="../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C960.jpeg 1280w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%252C1440.jpeg 1920w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C1152.jpeg 1536w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C1536.jpeg 2048w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C288.jpeg 384w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C576.jpeg 768w, ../../wp-content/uploads/2024/04/cangaroo-can-bus-bafang-m200-motor-dp-c245-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C768.jpeg 1024w" sizes="auto, (max-width: 2560px) 100vw, 2560px"><figcaption class="wp-element-caption">Logging CANbus traffic between Bafang M200 (G210.250.C) motor and DP C245 display.</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Update Controller Configuration Manually</h2>
+
+
+
+<p class="wp-block-paragraph">I was able to test the setup by increasing the assisted maximum speed to 60km/h from the original 25km/h by sending <a href="https://github.com/kasparsd/besst-reference/blob/47b3139c6dc672b90358e546abc30992b20d48c9/app/static/js/webpack/device/controller.js#L652-L663">a CAN message</a> composed of the following components:</p>
+
+
+
+<ul class="wp-block-list">
+<li><code>0x05</code> for the <a href="https://github.com/kasparsd/besst-reference/blob/47b3139c6dc672b90358e546abc30992b20d48c9/app/static/js/webpack/node_modules/besst-usb-sdk/src/usbClient/common.js#L41-L53">message source</a> (<code>0x01</code> — torque sensor, <code>0x02</code> — controller, <code>0x03</code> — display or HMI, <code>0x04</code> — battery, <code>0x05</code> — BESST),</li>
+
+
+
+<li><code>0x02</code> for the message target (controller),</li>
+
+
+
+<li><code>0x00</code> for a WRITE <a href="https://github.com/kasparsd/besst-reference/blob/47b3139c6dc672b90358e546abc30992b20d48c9/app/static/js/webpack/node_modules/besst-usb-sdk/src/usbClient/common.js#L55-L68">operation</a> (<code>0x01</code> for READ),</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">which are transformed into a frame ID prefix for the <code>0x3203</code> code and subcode for “speed limit, wheel diameter and circumference” registry through <a href="https://github.com/kasparsd/besst-reference/blob/47b3139c6dc672b90358e546abc30992b20d48c9/app/static/js/webpack/node_modules/besst-usb-sdk/src/usbClient/common.js#L229-L237">this transformer function</a>:</p>
+
+
+
+<pre class="wp-block-code"><code>buildHexStringCommand = (source, target, opt, anfn, nfn) =&gt; {
+    const cmdPrefix = hexAllocToBinaryStr(source.toString(16), 5) + hexAllocToBinaryStr(target.toString(16), 5) + hexAllocToBinaryStr(opt.toString(16), 3);
+    let cmdPrefixHex = parseInt(cmdPrefix, 2).toString(16);
+    if (cmdPrefixHex.length % 2 !== 0) {
+        cmdPrefixHex = '0' + cmdPrefixHex;
+    }
+    let cmdHexString = cmdPrefixHex + anfn + nfn;
+    return hexReverse(cmdHexString);
+};</code></pre>
+
+
+
+<p class="wp-block-paragraph">which returns:</p>
+
+
+
+<pre class="wp-block-code"><code>05 10 32 03</code></pre>
+
+
+
+<p class="wp-block-paragraph">as the frame ID along with the payload:</p>
+
+
+
+<pre class="wp-block-code"><code>70 17 C0 2B B6 08 </code></pre>
+
+
+
+<p class="wp-block-paragraph">where (with little-endian byte order):</p>
+
+
+
+<ul class="wp-block-list">
+<li><code>0x1770</code> is 6000 or 60km/h × 100,</li>
+
+
+
+<li><code>0x2BC0</code> is 700 or 700c wheel diameter (29-inch), and</li>
+
+
+
+<li><code>0x08B6</code> is 2230 or 2230mm wheel circumference.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Use Bafang CANable Pro Software</h2>
+
+
+
+<p class="wp-block-paragraph">There is now the <a href="https://github.com/mdi-9/bafang_canable_pro">Bafang CANable Pro open-source software</a> that allows you to configure all parameters using a desktop app (see <a href="https://endless-sphere.com/sphere/threads/bafang-canable-pro-master-discussion.128228/">related forum thread</a>). Importantly, this requires CANable to be running the <a href="https://github.com/candle-usb/candleLight_fw">candlelight firmware</a> since it uses the <a href="https://github.com/torvalds/linux/blob/9094662f6707d1d4b53d18baba459604e8bb0783/drivers/net/can/usb/gs_usb.c#L34-L35">GS_USB protocol</a> for talking directly to the USB device without the Serial/UART translation layer.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../usb-c-pd65w-adapter-charger-18v-20v-batteries/" rel="prev">USB-C PD65W Adapter and Charger for 18V and 20V Power Tool Batteries</a></h4></li><li><h4 class="next"><a href="../airbank-d13-pro-teardown/" rel="next">Airbank D13 Puffer Pro Review and Teardown</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../diy-wireless-headphones/" rel="bookmark" title="DIY Professional Wireless Headphones">DIY Professional Wireless Headphones</a></li>
+<li><a href="../home-batteries/" rel="bookmark" title="Home Batteries">Home Batteries</a></li>
+<li><a href="../tabbed-widgets-update-version-1-3-1/" rel="bookmark" title="Tabbed Widgets Update: Version 1.3.1">Tabbed Widgets Update: Version 1.3.1</a></li>
+<li><a href="../solving-authentication-and-plugin-errors-after-upgrade-to-wordpress-2-5/" rel="bookmark" title="Solving the Authentication and Plugin Errors After an Upgrade to WordPress 2.5">Solving the Authentication and Plugin Errors After an Upgrade to WordPress 2.5</a></li>
+<li><a href="../poker3-mac/" rel="bookmark" title="Poker 3 for Mac">Poker 3 for Mac</a></li>
+<li><a href="../orange-pi-zero-gpio/" rel="bookmark" title="Orange Pi Zero GPIO Pins">Orange Pi Zero GPIO Pins</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					19 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1" id="comment-397285">
+				<div id="div-comment-397285" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/056c0b70bea6064be7011885778b2f8527c38c505b11d7c14448b3ffa58d1d93/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/056c0b70bea6064be7011885778b2f8527c38c505b11d7c14448b3ffa58d1d93/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andrey</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-397285">June 2, 2024 at 00:31</a>		</div>
+
+		<p>Hello. Maybe you will be interested in my project <a href="https://github.com/andrey-pr/OpenBafangTool" rel="nofollow ugc">https://github.com/andrey-pr/OpenBafangTool</a> . Its desktop configuration (and diagnostic) software for bafangs with can, and its already usable</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=397285#respond" data-commentid="397285" data-postid="9135" data-belowelement="div-comment-397285" data-respondelement="respond" data-replyto="Reply to Andrey" aria-label="Reply to Andrey">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-398093">
+				<div id="div-comment-398093" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/6dad4d15b239e0369e6bd6ea76ff24b98af81d3148fa808d9a87354a953b8546/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/6dad4d15b239e0369e6bd6ea76ff24b98af81d3148fa808d9a87354a953b8546/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Zeus</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398093">February 5, 2025 at 16:00</a>		</div>
+
+		<p>Thank you for the description: I found it clearer than elsewhere. I’m quite familiar with CAN, so all I needed is a description what message to send, and what is the wiring.</p>
+<p>To help others who find this article, I’ll add a few stumbling points that are not mentioned:</p>
+<ul>
+<li>I didn’t buy a special cable or connectors but just connected the wires one by one. (I had to 3D-print a small part to make it possible on the male part). The catch is, the controller won’t turn on without the display, nor will it stay on for long if the display is suddenly disconnected. So it’s not enough to just jam the two CAN wires into the controller end; all 5 wires need to be connected through, and two of them branched to the CAN adapter. There may be a more convenient location which would allow a terminal connection (perhaps instead of some optional sensor), but my bike didn’t have it easily accessible, or I didn’t find one.</li>
+<li>Given that the whole point is to send just one message, there is no need to have any custom software: any decent CAN software has this function, plus usually a nice GUI.</li>
+<li>It’s worth mentioning that we are working with the so-called <em>extended</em> CAN IDs, which are 29 bit long (as opposed to the standard 11 bits), in addition to the speed of 250 kbit/s. All CAN units/software support that, but it often needs to be enabled.</li>
+<li>For <em>this</em> one message, it is enough to know that the ID is <code>05 10 32 03</code>. But since you provide the contents description, it is crucial to note the length of each field:
+<ul>
+<li>If we consider the ID as 32 bit for convenience, the first (leftmost!) 3 bits are unused, bringing the ID to 29 bits.</li>
+<li>Then 5 bits for the source</li>
+<li>5 more bits for the destination</li>
+<li>3 bits for the operation</li>
+<li>That’s the higher 16 bits. The lower 16 bits are the code and subcode (32 03).</li>
+</ul>
+</li>
+</ul>
+<p>All this is, of course, just a Bafang’s invention: the CAN standard does not prescribe interpretation of the ID or data.</p>
+<p>The content is exactly 6 bytes long (generally it can be variable 0 to 8 and has to be set explicitly).</p>
+<p>I couldn’t work out the units for the wheel diameter (even though it’s probably only used for display). In any case, if we only want to change the speed limit, we’d better keep the existing values for the lower 4 bytes. To get them, we could probably request this message by changing the operation to READ, but there is no need to: the controller periodically sends this data anyway. We just need to run our favourite CAN software and intercept all messages for a few seconds while power is on. Then look for a message with the same 3203 code in the lower part of ID (mine was <code>02F83203</code>), and copy the data from there, just replacing the first two bytes with the desired speed (low-endian in 0.01 km/h).</p>
+<p>Works a treat: just a single message to send, no handshakes, encryption or other higher-level stuff.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398093#respond" data-commentid="398093" data-postid="9135" data-belowelement="div-comment-398093" data-respondelement="respond" data-replyto="Reply to Zeus" aria-label="Reply to Zeus">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-398096">
+				<div id="div-comment-398096" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398096">March 11, 2025 at 18:51</a>		</div>
+
+		<p>Very interesting to read.<br>
+I have a question. When buying a Canable (now 2.0), it’s best to use the isolated version like you did? I’ve a Tenways AGO-X bike with an M410 motor and want to give it a little bit more assisted speed around 30Km/h.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398096#respond" data-commentid="398096" data-postid="9135" data-belowelement="div-comment-398096" data-respondelement="respond" data-replyto="Reply to Andy" aria-label="Reply to Andy">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2 parent" id="comment-398097">
+				<div id="div-comment-398097" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398097">March 11, 2025 at 18:57</a>		</div>
+
+		<p>It wouldn’t hurt, that’s for sure! The risk of connecting the battery voltage to one of the data pins is definitely valid. I think the CAN transceiver chips have their own isolation but I’m not 100% sure.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398097#respond" data-commentid="398097" data-postid="9135" data-belowelement="div-comment-398097" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-398102">
+				<div id="div-comment-398102" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398102">March 31, 2025 at 18:39</a>		</div>
+
+		<p>I just connected my Canable 2.0 Pro with my bike (M410 motor) and when I connected the canable with the computer the HMI screen went out and now I’m unable to power on my bike. Have you any idea what could went wrong? I checked the wires at first to be sure and they are like on your pictures. Or is there a safety or something else?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398102#respond" data-commentid="398102" data-postid="9135" data-belowelement="div-comment-398102" data-respondelement="respond" data-replyto="Reply to Andy" aria-label="Reply to Andy">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-4" id="comment-398103">
+				<div id="div-comment-398103" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398103">March 31, 2025 at 19:03</a>		</div>
+
+		<p>I just measured and there is no power on the Black and Brown Wire, before when I measured I measured the battery voltage. So is there a safety or some sort of breaker.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-4" id="comment-398105">
+				<div id="div-comment-398105" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398105">March 31, 2025 at 20:13</a>		</div>
+
+		<p>Can you please share a diagram of the full wiring? The connection from the motor should go to the Canable (with CAN terminating resistor disabled) and then back to the screen. The screen should work even if you don’t connect Canable to the computer. Use the continuity mode on a multimeter to confirm that pins connecting to the motor are still connected to the matching HMI pins when the Canable is in place.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt depth-3" id="comment-398192">
+				<div id="div-comment-398192" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/abd7cfeca22ede841a279d266275cd51ea2f60e0396a307b78c2eee377a74670/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/abd7cfeca22ede841a279d266275cd51ea2f60e0396a307b78c2eee377a74670/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Doctor Bike Lucjan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398192">October 16, 2025 at 22:27</a>		</div>
+
+		<p>pod tym linkiem jest wyjaśnione jak działa załączanie sterownika przez wyświetlacz z can. Dołączone są schematy jak samemu sobie go zbudować.<br>
+<a href="https://opensourceebike.github.io/easy_diy_display_ebike_display/build_display-bafang_m500_M600.html" rel="nofollow ugc">https://opensourceebike.github.io/easy_diy_display_ebike_display/build_display-bafang_m500_M600.html</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398192#respond" data-commentid="398192" data-postid="9135" data-belowelement="div-comment-398192" data-respondelement="respond" data-replyto="Reply to Doctor Bike Lucjan" aria-label="Reply to Doctor Bike Lucjan">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-398104">
+				<div id="div-comment-398104" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398104">March 31, 2025 at 19:29</a>		</div>
+
+		<p>Very Very strange, when I first took out my battery and pushed the button to see how full the battery was (it’s one button and a LED with red and blue color modes) nothing happened but after I did that same thing again, the LED lighted up and showed me the battery is almost full so a blue light and when placing the battery back and trying to turn on the power with my HMI it worked again. Now I’m afraid to test things with my Canable :( (Sorry for spamming this topic, I’m full of adrenaline, it’s a brand new bike).</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398104#respond" data-commentid="398104" data-postid="9135" data-belowelement="div-comment-398104" data-respondelement="respond" data-replyto="Reply to Andy" aria-label="Reply to Andy">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-398199">
+				<div id="div-comment-398199" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/5f44484646ce9d9a865b68d3b86332004f691b930ee74450a0956ac2f535fffc/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/5f44484646ce9d9a865b68d3b86332004f691b930ee74450a0956ac2f535fffc/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ionut Pop</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398199">November 12, 2025 at 18:57</a>		</div>
+
+		<p>this happened to me for another reason, from the spark of the initial battery connection, it went in protective mode or something, and when the BMS capacitors forgot about it it worked again.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398199#respond" data-commentid="398199" data-postid="9135" data-belowelement="div-comment-398199" data-respondelement="respond" data-replyto="Reply to Ionut Pop" aria-label="Reply to Ionut Pop">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-398106">
+				<div id="div-comment-398106" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/43e6bac59fd8016029f6d851de497d72a9e6c696d227754537835e5612771b0a/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398106">March 31, 2025 at 21:16</a>		</div>
+
+		<p>I made a picture of my Canable and how I have my wires connected, I also did a continuity test from both ends (male to female) of the wires and that was positive. I also did a continuity test between the female connector and the Wago/Canable and between the male connector and the Wago/Canable. </p>
+<p>First I connected all the cables like in my picture (<a href="https://mega.nz/file/4FZWXL6L#-ux6PedM3EUbVsUImwxVqeEkJPc6UJQxoGSoOKPrcjk" rel="nofollow ugc">see here</a>) without connecting the Canable to my laptop and after that I switched on my HMI display. The moment I connected the Canable to my laptop with it’s usb cable the HMI display went out and by unplugging the Canable from my laptop I was not able to power on my HMI display and when I measured there was no voltage between the Brown and Black wire and at the beginning when I started there was a battery voltage (I believe it was 36V or something, battery was at 70% when starting the experiment)</p>
+<p>I have no idea if that is normal behavior but after that I was just unable to power on my bike and now I’m not really sure how or why it eventually worked again.</p>
+<p>I’ve got my bike a few weeks now and I’m not so fond of trying it again. What I just found out is if you remove the existing HMI and replace it with a 600C HMI then you are also able to change the speed limit and that display gives more info while riding the bike. Maybe that’s a more secure way. <a href="https://www.reddit.com/r/ebikes/comments/17g4yua/comment/kfjr02v/?context=3" rel="nofollow ugc">Topic is here</a>.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398106#respond" data-commentid="398106" data-postid="9135" data-belowelement="div-comment-398106" data-respondelement="respond" data-replyto="Reply to Andy" aria-label="Reply to Andy">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-398125">
+				<div id="div-comment-398125" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/c1b77f80a80ca1b8d4785a07531bde7d655e5cb0e55dbec7f862d264b0058c9e/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/c1b77f80a80ca1b8d4785a07531bde7d655e5cb0e55dbec7f862d264b0058c9e/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">AwesomePie</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398125">June 14, 2025 at 23:07</a>		</div>
+
+		<p>Do you have the pin out for BAFANG BE-Bus battery communication connector? I assume they are Can-H, Can-L and Gnd but cannot find the pin out documentation anywhere.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398125#respond" data-commentid="398125" data-postid="9135" data-belowelement="div-comment-398125" data-respondelement="respond" data-replyto="Reply to AwesomePie" aria-label="Reply to AwesomePie">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-398127">
+				<div id="div-comment-398127" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398127">June 19, 2025 at 18:57</a>		</div>
+
+		<p>Unfortunately I don’t have that.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398127#respond" data-commentid="398127" data-postid="9135" data-belowelement="div-comment-398127" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-398135">
+				<div id="div-comment-398135" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/51bdddbe0de17d74c6d0c5d0a496e2ae9c3edf352a5b355d0cb08918d4737ff6/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/51bdddbe0de17d74c6d0c5d0a496e2ae9c3edf352a5b355d0cb08918d4737ff6/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">soeren</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398135">August 3, 2025 at 21:31</a>		</div>
+
+		<p>Hello, thank you for this post, maybe someone can help me with my configuration, i have connected my bafang with a usb-can-interface and was able to read the can-communication but i did non found the adresses or packets you wrote about.</p>
+<p>(and i am not sure where the jumper on the interface is for, but without the jumper it does not work, i can’t read the communication, with the jumper it stops after several seconds and the DP C080.CB shuts down, when i start without the jumper and put it later in, then it works for a longer time)</p>
+<p>The parts work great, but i am not abled to drive more than ~30 km/h</p>
+<p>in the DP C080.CB i configured:</p>
+<p>20 inch wheel size (which fits my wheels)<br>
+1580mm diameter<br>
+60 km/h<br>
+the speed shown while driving seems correct</p>
+<p>the parts are:<br>
+MM G340 (750watt)<br>
+DP C080.CB</p>
+<p>here is the can output:  (I deleted the duplicate lines)<br>
+<a href="https://pastebin.com/YCS9fV5R" rel="nofollow ugc">https://pastebin.com/YCS9fV5R</a></p>
+<p>i connected the DP C080.CB with the bafang-go app, i’m not sure where the limitations comes from, the motor or the DP C080.CB ?</p>
+<p>thanks in advance!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398135#respond" data-commentid="398135" data-postid="9135" data-belowelement="div-comment-398135" data-respondelement="respond" data-replyto="Reply to soeren" aria-label="Reply to soeren">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-398136">
+				<div id="div-comment-398136" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398136">August 4, 2025 at 15:37</a>		</div>
+
+		<p>I believe the speed limit is set in the motor controller and the display only shows it and/or allows updating it.</p>
+<p>Can you please elaborate on what you mean by “in the DP C080.CB i configured”? Does the display have the option to increase the speed limit to 60km/h? Did you press “+” and “-” at the same time to save the setting? Does it show the 60km/h limit in the display after restarting the bike?</p>
+<p>I personally don’t have experience with the motor you mentioned. Have you tried using the <a href="https://github.com/andrey-pr/OpenBafangTool" rel="nofollow ugc">OpenBafangTool</a> mentioned in the earlier comments?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398136#respond" data-commentid="398136" data-postid="9135" data-belowelement="div-comment-398136" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-398183">
+				<div id="div-comment-398183" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/e3f7b2569ddd98111728b249fbf1da5092d7bc8f75c445730b133b477ccc0187/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/e3f7b2569ddd98111728b249fbf1da5092d7bc8f75c445730b133b477ccc0187/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Mike McGregor</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398183">October 10, 2025 at 04:39</a>		</div>
+
+		<p>Thanks for posting this. In one of your replies you mentioned removing the termination resistor. Why would you do this? Isn’t CAN a broadcast bus and each end point needs to be terminated properly to remove reflections, get the proper voltage swing between CANL and CANH etc?</p>
+<p>I’m planning on using the seeedstudio usb-can analyzer to observer what’s going on with my bafang hub motor</p>
+<p>New to this bus and just trying to understand. – Thanks Mike</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398183#respond" data-commentid="398183" data-postid="9135" data-belowelement="div-comment-398183" data-respondelement="respond" data-replyto="Reply to Mike McGregor" aria-label="Reply to Mike McGregor">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-398184">
+				<div id="div-comment-398184" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398184">October 10, 2025 at 07:58</a>		</div>
+
+		<p>That’s a great question! My understanding is that the termination needs to happen at the physical ends of the bus. Since the monitoring device is added inline with the hand remote, it doesn’t need the termination.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398184#respond" data-commentid="398184" data-postid="9135" data-belowelement="div-comment-398184" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-398219">
+				<div id="div-comment-398219" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/e84a0817452304477231641c57a49059168edfd78df7a62bd0c34b81422fff42/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/e84a0817452304477231641c57a49059168edfd78df7a62bd0c34b81422fff42/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">peter</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398219">April 5, 2026 at 05:41</a>		</div>
+
+		<p>Hey Kaspars</p>
+<p>Thanks for all the information, I’m trying run the motor calibration with a Lawicel and SAVVYCan, was there anything special you had to do before sending the message? I’ve tried sending the 0x6200 messages without success</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398219#respond" data-commentid="398219" data-postid="9135" data-belowelement="div-comment-398219" data-respondelement="respond" data-replyto="Reply to peter" aria-label="Reply to peter">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor even depth-2" id="comment-398220">
+				<div id="div-comment-398220" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398220">April 8, 2026 at 15:29</a>		</div>
+
+		<p>No, I didn’t have to do anything special. The important thing was to leave the display connected at all times as it appears to be exchanging some heartbeat data that keeps the connection alive and valid.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/bafang-canbus?replytocom=398220#respond" data-commentid="398220" data-postid="9135" data-belowelement="div-comment-398220" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="reply-on-fediverse">
+				Reply on <a href="../../__mastodon.social/search/q%3Dhttps%253A%252F%252Fkaspars.net%252Fblog%252Fbafang-canbus.html" rel="nofollow" target="_blank">Mastodon</a> or search for <a href="" onclick="event.preventDefault();navigator.clipboard.writeText(this.href).then(()=>alert(&quot;Link copied!&quot;));" title="Click to copy to clipboard">️this permalink</a> in your ActivityPub client, and it will show up here too
+				(also follow <a href="../author/kaspars/" onclick="event.preventDefault();navigator.clipboard.writeText(this.href).then(()=>alert(&quot;Link copied!&quot;));" title="Click to copy to clipboard">this blog</a>). 
+				Or simply leave a comment below:
+			</p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "aefdf8761231c013804b95fbcfa790e5" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment_pilot__notify_replies">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_replies" checked="checked" value="1">
+						Email me when someone replies to my comment.
+					</label>
+				</p>
+<p class="comment_pilot__notify_all">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_all" value="1">
+						Email me all new comments.
+					</label>
+				</p>
+<input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="9135" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-18" class="widget widget_text"><h1 class="widget-title">Subscribe</h1>			<div class="textwidget"><p>Get notified via e-mail when I publish new blog posts:</p>
+		<form action="" class="kit-form" method="post" data-form-id="7096068">
+							<input type="hidden" name="redirect_url" value="https://kaspars.net/subscribe?thanks">
+						<label class="kit-form__field">
+				Email:
+				<input type="email" name="email_address" placeholder="name@example.com" class="kit-form__input" required="">
+			</label>
+			<label class="kit-form__field">
+				Name:
+				<input type="text" name="fields[first_name]" placeholder="Name" class="kit-form__input">
+			</label>
+			<input type="submit" value="Subscribe" class="kit-form__submit">
+		</form>
+		
+</div>
+		</aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../umami-analytics/">Notes on Umami Analytics</a>
+									</li>
+											<li>
+					<a href="../setup-huawei-ma5671a/">Setup Huawei MA5671A SFP GPON for Your Fiber ISP</a>
+									</li>
+											<li>
+					<a href="../public-dns-local-development-url/">Setup Local Development Domain with Public DNS</a>
+									</li>
+											<li>
+					<a href="../google-account-custom-email/">Custom Email Address for Kids Google Account</a>
+									</li>
+											<li>
+					<a href="../fix-dell-monitor-flickering-mac/">Fix Dell Monitor Flickering and Ghosting on Mac</a>
+									</li>
+											<li>
+					<a href="../iron-sulphate-wood-silver/">Notes on Iron Sulphate for Graying Wood</a>
+									</li>
+											<li>
+					<a href="../notes-fair-package-manager/">Notes on FAIR Package Manager</a>
+									</li>
+											<li>
+					<a href="../wordpress-comments-potential/">The Potential of WordPress Comments</a>
+									</li>
+											<li>
+					<a href="../remote-logging-mikrotik-routeros/">Remote Logging for Mikrotik RouterOS</a>
+									</li>
+											<li>
+					<a href="../seriously-simple-podcasting-setup/">Customizing the Seriously Simple Podcasting Plugin</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside><aside id="nav_menu-2" class="widget widget_nav_menu"><h1 class="widget-title">IndieWeb Webring</h1><div class="menu-indieweb-webring-container"><ul id="menu-indieweb-webring" class="menu"><li id="menu-item-10912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10912"><a href="https://🕸💍.ws/previous" title="Visit previous site in the webring">← Previous</a></li>
+<li id="menu-item-10911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10911"><a href="https://🕸💍.ws" title="This site is part of the IndieWeb webring">IndieWeb 🕸💍 Webring</a></li>
+<li id="menu-item-10913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10913"><a href="https://🕸💍.ws/next" title="Visit next site in the webring">Next →</a></li>
+</ul></div></aside><aside id="text-19" class="widget widget_text">			<div class="textwidget"><div class="h-card h-card-profile"><a class="p-name u-url" href="../../">Kaspars Dambis</a><br>
+<img decoding="async" class="u-photo" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D600" alt="Kaspars Dambis"><p></p>
+<p class="p-note">Maker of things with passion for the web, electronics, personal finance and sustainable living. Blogging since 2007.</p>
+</div>
+</div>
+		</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a href="../" title="Blog about WordPress plugin development, website performance and optimization">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a rel="author" href="../../about/" title="About Kaspars Dambis">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a rel="me" href="https://kasparsdambis.lv" title="My blog in Latvian">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a rel="me" href="https://github.com/kasparsd/">GitHub</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a rel="me" href="https://profiles.wordpress.org/kasparsd" title="My WordPress profile">WordPress.org</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a rel="me" href="https://twitter.com/konstruktors" title="Kaspars on Twitter">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a rel="me" href="https://mastodon.social/@kasparsd" title="Follow on Mastadon (ActivityPub)">Mastadon</a></li>
+<li id="menu-item-9730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9730"><a rel="me" href="https://bsky.app/profile/kaspars.damb.is">Bluesky</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a rel="me" href="https://micro.blog/kasparsd" title="My Micro Blog">Micro.blog</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a rel="me" href="https://www.youtube.com/kasparsdambis" title="My Video Blog">YouTube</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a rel="me" href="https://www.instagram.com/kasparsd/" title="My Instagram Photos">Instagram</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a rel="me" href="https://www.flickr.com/photos/kasparsdambis/" title="My photos on Flickr">Flickr</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>
+window.dataLayer = window.dataLayer || []; window.dataLayer.push({"wp_post_id":9135,"wp_post_title":"Bafang CAN Bus Programming","wp_post_status":"publish","wp_post_type":"post"});
+</script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/list-konstruktors/*","/wp-content/themes/list-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<style type="text/css">
+			#commentform .reply-on-fediverse { padding-left:0; }
+			.reaction-list { margin:0 0 1.25em 0; padding:0; }
+			.reaction-list img { max-width:3rem; height:auto; border-radius:100%; }
+		</style>
+		<script id="wp-importmap" type="importmap">
+{"imports":{"@wordpress/interactivity":"https://kaspars.net/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1"}}
+</script>
+<script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/image/view-js-module" src="../../wp-includes/js/dist/script-modules/block-library/image/view.min_ver%3D25ee935fd6c67371d0f3.js" type="module"></script>
+<link rel="modulepreload" href="https://kaspars.net/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1" id="@wordpress/interactivity-js-modulepreload" fetchpriority="low">
+<script id="wp-script-module-data-@wordpress/interactivity" type="application/json">
+{"config":{"core/image":{"defaultAriaLabel":"Enlarged image","closeButtonText":"Close","prevButtonText":"Previous","nextButtonText":"Next"}},"state":{"core/image":{"metadata":{"6a9d756b3990f":{"uploadedSrc":"https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png","lightboxSrcset":"https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1280%2C823 1280w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1920%2C1234 1920w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1536%2C987 1536w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=384%2C247 384w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=768%2C494 768w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1024%2C658 1024w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=2040%2C1311 2040w","figureClassNames":"wp-block-image alignwide size-large","figureStyles":null,"imgClassNames":"wp-image-11116","imgStyles":null,"targetWidth":2040,"targetHeight":1311,"scaleAttr":false,"alt":"Wiring diagram for connecting to Bafang CAN-bus wiring between screen and motor controller","galleryId":null,"customAriaLabel":"Enlarged image: Wiring diagram for connecting to Bafang CAN-bus wiring between screen and motor controller","navigationButtonType":"icon","triggerButtonAriaLabel":"Enlarge"},"6a9d756b3d1d8":{"uploadedSrc":"https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png","lightboxSrcset":"https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1280%2C823 1280w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1920%2C1234 1920w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1536%2C987 1536w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=384%2C247 384w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=768%2C494 768w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=1024%2C658 1024w, https://kaspars.net/wp-content/uploads/2024/04/bafang-canbus-canable-wiring.png?strip=all&quality=90&resize=2040%2C1311 2040w","figureClassNames":"wp-block-image alignwide size-large","figureStyles":null,"imgClassNames":"wp-image-11116","imgStyles":null,"targetWidth":2040,"targetHeight":1311,"scaleAttr":false,"alt":"Wiring diagram for connecting to Bafang CAN-bus wiring between screen and motor controller","galleryId":null,"customAriaLabel":"Enlarged image: Wiring diagram for connecting to Bafang CAN-bus wiring between screen and motor controller","navigationButtonType":"icon","triggerButtonAriaLabel":"Enlarge"}}}}}
+</script>
+		<div class="wp-lightbox-overlay zoom" aria-label="Enlarged images" data-wp-interactive="core/image" data-wp-router-region="{ &quot;id&quot;: &quot;core/image-overlay&quot;, &quot;attachTo&quot;: &quot;body&quot; }" data-wp-key="wp-lightbox-overlay" data-wp-context="{}" data-wp-bind--role="state.roleAttribute" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--aria-modal="state.ariaModal" data-wp-class--active="state.overlayEnabled" data-wp-class--show-closing-animation="state.overlayOpened" data-wp-watch---focus="callbacks.setOverlayFocus" data-wp-watch---inert="callbacks.setInertElements" data-wp-on--keydown="actions.handleKeydown" data-wp-on--touchstart="actions.handleTouchStart" data-wp-on--touchmove="actions.handleTouchMove" data-wp-on--touchend="actions.handleTouchEnd" data-wp-on--click="actions.hideLightbox" data-wp-on-window--resize="callbacks.setOverlayStyles" data-wp-on-window--scroll="actions.handleScroll" data-wp-bind--style="state.overlayStyles" tabindex="-1">
+				<button type="button" style="fill:#000" class="wp-lightbox-close-button" data-wp-bind--aria-label="state.closeButtonAriaLabel">
+					<span class="wp-lightbox-close-icon" data-wp-bind--hidden="!state.hasNavigationIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></span>
+					<span class="wp-lightbox-close-text" data-wp-bind--hidden="!state.hasNavigationText">Close</span>
+				</button>
+				<button type="button" style="fill:#000" class="wp-lightbox-navigation-button wp-lightbox-navigation-button-prev" data-wp-bind--hidden="!state.hasNavigation" data-wp-on--click="actions.showPreviousImage" data-wp-bind--aria-label="state.prevButtonAriaLabel">
+					<span class="wp-lightbox-navigation-icon" data-wp-bind--hidden="!state.hasNavigationIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M14.6 7l-1.2-1L8 12l5.4 6 1.2-1-4.6-5z"></path></svg></span>
+					<span class="wp-lightbox-navigation-text" data-wp-bind--hidden="!state.hasNavigationText">Previous</span>
+				</button>
+				<div class="lightbox-image-container">
+					<figure data-wp-bind--class="state.selectedImage.figureClassNames" data-wp-bind--style="state.figureStyles">
+						<img data-wp-bind--alt="state.selectedImage.alt" data-wp-bind--class="state.selectedImage.imgClassNames" data-wp-bind--style="state.imgStyles" data-wp-bind--src="state.selectedImage.currentSrc">
+					</figure>
+				</div>
+				<div class="lightbox-image-container">
+					<figure data-wp-bind--class="state.selectedImage.figureClassNames" data-wp-bind--style="state.figureStyles">
+						<img data-wp-bind--alt="state.selectedImage.alt" data-wp-bind--class="state.selectedImage.imgClassNames" data-wp-bind--style="state.imgStyles" data-wp-bind--src="state.enlargedSrc" data-wp-bind--srcset="state.enlargedSrcset" sizes="100vw">
+					</figure>
+				</div>
+				<button type="button" style="fill:#000" class="wp-lightbox-navigation-button wp-lightbox-navigation-button-next" data-wp-bind--hidden="!state.hasNavigation" data-wp-on--click="actions.showNextImage" data-wp-bind--aria-label="state.nextButtonAriaLabel">
+					<span class="wp-lightbox-navigation-text" data-wp-bind--hidden="!state.hasNavigationText">Next</span>
+					<span class="wp-lightbox-navigation-icon" data-wp-bind--hidden="!state.hasNavigationIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M10.6 6L9.4 7l4.6 5-4.6 5 1.2 1 5.4-6z"></path></svg></span>
+				</button>
+				<div data-wp-text="state.ariaLabel" aria-live="polite" aria-atomic="true" class="screen-reader-text"></div>
+				<div class="scrim" style="background-color: #fff" aria-hidden="true"></div>
+		</div><script data-wp-strategy="defer" defer="" id="minit-js-js" src="../../wp-content/uploads/minit/ff19d15bc480d1572d5c780fa041e772.js"></script>
+<script id="minit-js-js-after">
+document.getElementById( 'minit-js-js' ).addEventListener( 'load', function () { wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } ); wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://kaspars.net/wp-json/" ) ); wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "d7573be918" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://kaspars.net/wp-admin/admin-ajax.php?action=rest-nonce"; } );
+//# sourceURL=minit-js-js-after
+</script>
+<!-- Generated in 0.1004 seconds with 2 queries on Sun, 06 Sep 2026 14:15:07 +0000. -->
+<!-- Script helper footer: -->
+<!--
+<script defer src="https://reverse.kaspars.net/gtm/gtag/js?id=G-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+-->
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	2 queries in 0.1005 seconds on Sun, 06 Sep 2026 14:15:07 +0000.-->
+
+
+
+</body></html>
