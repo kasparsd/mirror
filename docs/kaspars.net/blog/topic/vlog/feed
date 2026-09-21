@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Video Blog &#8211; Kaspars Dambis</title>
+	<atom:link href="https://kaspars.net/blog/topic/vlog/feed" rel="self" type="application/rss+xml" />
+	<link>https://kaspars.net</link>
+	<description>WordPress, Electronics &#38; Home Automation</description>
+	<lastBuildDate>Mon, 22 Dec 2025 17:35:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.1.1</generator>
+
+<image>
+	<url>https://kaspars.net/wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-120x120.jpeg</url>
+	<title>Video Blog &#8211; Kaspars Dambis</title>
+	<link>https://kaspars.net</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<atom:link rel="hub" href="https://pubsubhubbub.appspot.com"/>
+<atom:link rel="hub" href="https://pubsubhubbub.superfeedr.com"/>
+<atom:link rel="self" href="https://kaspars.net/blog/topic/vlog/feed"/>
+	<item>
+		<title>Use AppleScript to Resize All Windows for Screen Recording</title>
+		<link>https://kaspars.net/blog/applescript-resize-all-windows</link>
+					<comments>https://kaspars.net/blog/applescript-resize-all-windows#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Wed, 04 Sep 2024 09:47:40 +0000</pubDate>
+				<category><![CDATA[Meta]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=9360</guid>
+
+					<description><![CDATA[I wasn&#8217;t able to find a tool to resize and center all open windows to a specific size for screen recording, so I came up with this AppleScript: set windowWidth to 1024set windowHeight to 768tell application "Finder" set {0, 0, screenWidth, screenHeight} to bounds of window of desktopend telltell application "System Events" set position of [&#8230;] <a href="https://kaspars.net/blog/applescript-resize-all-windows" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-video alignwide"><video height="480" style="aspect-ratio: 640 / 480;" width="640" controls data-src="https://kaspars.net/wp-content/uploads/2024/09/with-chapters.mp4"></video></figure>
+
+
+
+<p class="wp-block-paragraph">I wasn&#8217;t able to find a tool to <strong>resize and center all open windows</strong> to a specific size for screen recording, so I came up with this AppleScript:</p>
+
+
+
+<pre class="wp-block-preformatted">set windowWidth to 1024<br />set windowHeight to 768<br /><br />tell application "Finder"<br />	set {0, 0, screenWidth, screenHeight} to bounds of window of desktop<br />end tell<br /><br />tell application "System Events"<br />	set position of windows of (application processes whose visible is true) to {(screenWidth - windowWidth) / 2, (screenHeight - windowHeight) / 2}<br />	set size of windows of (application processes whose visible is true) to {windowWidth, windowHeight}<br />end tell</pre>
+
+
+
+<p class="wp-block-paragraph">which you can save as an &#8220;Application&#8221; via Automator (built-in macOS app):</p>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="272829" data-has-transparency="true" data-blurhash="L14xrWtR8^IT?cWYM^e,8_jE%Nx]" style="--dominant-color: #272829; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAIAAAAUMWhjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACkElEQVRIiW2WUZLjOAxDAcbn2Nra+18xePNBUnK2Rkm73ZZFCCBItf/79x9ZVtnl+tifqsf1KX9cZZdt27JlSRIgIAIIJAmEhABRABQBkmqWSbLvVZrnljr6Gect33XeqbvYE+r5nbEl+S9DLwhJYInl1CstQJZlwe7kuRuzWoo7qlwrUUcQHa6pSRatnhFnH+hyepZOY9h1vrUpKI96Mv0JOFhp9YxtjKXCWUmQpGdC9847XPXeG2NAjhooUIpKilGZ2LbKCpJVEpfFw8mYl0EH/lRVuapcGgpCmAqRrNhVCuMx+ccgDIXnzp0crEQ/DGYhhJIyakzOjsIb/XrsuTlZjHeOWzAPR0AtjctKp922sEXfdjSOo5+9Wdt3Om6FrU3fPrVNm7TN6ZZkoiMu486BXt4bvX1s9Sq03iDHorcsXlf91kxJgjv7u+SgzkN+XjvLftay38kBSGaeQsOhU1EI3hjijPPHfbbrUPtIfgDL/Iy8bixFW6BAyL7Q3W1/LdRLAEs83fOECBSz3MHOZOPaFLp77jgtFEhLcOUxrET9YwipOLG/ExRcbZCmTcgL49so3bHFBTjGeVqGIont+PsdW0riAzh5M8iLBAdjddKbwSa5WyQo8de2v18hfZpVTaVak9VB4GL0adNHzdr4wDwkkqM0qvUV6INITiPySqSR+/Ag6XtAWQbXtzwJthSFCBnpg6Cjp7aMPTmAPhOTIQL/AzjVsklmCtxG+gIUVS7n9qHDoIO8vJz5zEQwpyIRehSQmH6eOfmSPR5Op9wq3fN8Ez6H/2z/XiVkeLpPGMW4u+R0eCt6A7R+u7+xzFQAGoyg4AYIQl3J27GBPvv2vwJ+AISvALvdG53gqG8GCf0Bryj14JU9jYYAAAAASUVORK5CYII=)" fetchpriority="high" decoding="async" width="2048" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&#038;quality=90&#038;resize=2048,1536" alt="Automator create an application with AppleScript" class="wp-image-9373 has-transparency" srcset="https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=1280%2C960 1280w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=1920%2C1440 1920w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=1536%2C1152 1536w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=384%2C288 384w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=768%2C576 768w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=1024%2C768 1024w, https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png?strip=all&amp;quality=90&amp;resize=2048%2C1536 2048w" sizes="(max-width: 2048px) 100vw, 2048px" /><figcaption class="wp-element-caption">Select &#8220;Application&#8221; document type in Automator.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="424142" data-has-transparency="true" data-blurhash="LCATcr4nE0%M~qD%M{xb4n%MxuRj" style="--dominant-color: #424142; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAIAAAAUMWhjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC0UlEQVRIidVVy5LcNgzsBkBy4oorlWM+Jf7/H/Ihrq0Vic4BlDS7m2R9DUbFgfhAg000xW9/fgMgSFI5BGl08xattdZbH32MMUYfvffeemstItzdzEiCkJTKpbXWmjlXrrlmKjMzQACg9jxi/2plOfWyn3c+az0IUncPSQggwmgAREEgWTuwsvP/fOP7ThqNABJJ0WCJNJmZpbIih7kB2PxIBV6x3N18t8/O/dgGIMgkAIdLMpjLQSARZgag2IdQALYDenhUezuxHQ83s2JYEEkYsCBIFAAkSIa7/zOAe0TsSGfs7Z6OuRXjqaQRueNsAIJiuPsOrALaAFfKZ9qnU9ELwDaAwVauazc3QPLNGZTVMfoH22k/2VWmqQQBQpDDq+iLt6Cx6ucdQB3D1VZz9m4A2lmmmwKZTJLJTCYoM6NSuPk5i6gquhyjXU71XqM4ZUC7dXBLh7xLSLhZ2mvAU0P7bEB8avtSOINFKq+Re9Jpe3pqt3mNKJUQCO4pmVnDT3OUisw3AESpk8nMzJUrV17eyuXLl62iXlKJvwBWrjeWKzNjrnmnLxhMlEyVndEmp7tPm1u4dbtBqbyEVvfaWmuuebVrrVTG6/F6py9WUKfLhdw9zxdcJe7rrqKTxX8BeHl9qZQqZYpGC0ZaKqQlpZBAQrl5iLkl8QlALqXix8uPyh0CRZMZzOnN2oy52sqZOXPNteaac845S9Lm9hGgvgR7A7lSGd//+l47YJKipbk8GM1aj3604+jHMY6jH6/jtfceLaKFhxfAvh4KINcbflamkvgDxQ8WbFqbra8+NIaN0cd4jDFGf/T+6H30Nlr09wDi3kGunDmf60jSfymnoX3F1y/48uBj/D76r7390mJE9LBm5kYnyQvgKtN7E5k/IU0AQCENjNZb/Bb+cOvGIAwgElsqc85jHnPO4ziO45hz/izARzOYwQAkMpGfzv/f2t9dCW7z0yyV2gAAAABJRU5ErkJggg==)" decoding="async" width="2048" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&#038;quality=90&#038;resize=2048,1536" alt="Run AppleScript to resize the application windows" class="wp-image-9372 has-transparency" srcset="https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=1280%2C960 1280w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=1920%2C1440 1920w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=1536%2C1152 1536w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=384%2C288 384w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=768%2C576 768w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=1024%2C768 1024w, https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png?strip=all&amp;quality=90&amp;resize=2048%2C1536 2048w" sizes="(max-width: 2048px) 100vw, 2048px" /><figcaption class="wp-element-caption">Add &#8220;Run AppleScript&#8221; action from the Utilities section and paste in the code from above.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">Save it to your desktop or any other convenient location. Double-click the app to run it. </p>
+
+
+
+<p class="wp-block-paragraph">Approve the permissions requests for Finder and System Events. In addition, open the &#8220;Settings&#8221; app and enable the newly created app under the &#8220;Accessibility&#8221; section:</p>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="363739" data-has-transparency="true" data-blurhash="L76u06?w-=xvs+jDadadWAbEa_f*" style="--dominant-color: #363739; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAIAAACx0EyoAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACvUlEQVRIiZVWUbLcIAyTMrllp73/HUJQP4xtkc2+Tpmd94AESZYNhL9+/xEkac4573vc9z3GGNc1ruu6xnWNcY0xxj3mfWtOSQAIECRIAiABCFAgCVPK/oGvjd8f/Uc7DYsGmjPkv5i4P46RangCtDFoNG8rf24J1aR6i4DVzyEfIWrnazjsegmcsVoGtsLYmKyrD0FNlEM172EKV110jeBj+NnEwu7HrJhXDoJJ5szDIl8K6NWiD3oC0gkyPds46PKfbnyxqI3SCo44mC5ZAsyQtuhpQ5Op166Nt0AA8nBclvbNfYAQmIa/GPIsaDZZEHwE0RxuxY7TwiH5KncxkkyLtH1/uLw6AghKTvjwzaal0n7s6DREKqGX3g7CQU25qTp3jQQoME13l3bAnbI0C6rX4u8LQSE6nPKfkBHFa0Kd1q+tCLS070aF16ZIwRHob7ugdUQ7dt93vdWX/a3ZuHoe87HNIWBdOKfALA04k/K3REtxZa2bK97WOoqqEwt6FXBErKqtVChtiivWI4x+J1cGRak6M/WB3tVSWvNXFEhrQEoZuNEWx4Rwfma/nE0kLUFJs9BBCaQgiHFkKrWr1pwgIJasNiRtqe+D6offYlcsK+HLmSnNIDu8ZppjpUnlz0K3IlkVrKyFnDRNE5rn4xq1lGZFpP1Og7XbxVzcvKE9gzg3QyrIsmdDLmcJipLAMGrFYuUfn3KAMslZPukN0oEXDkQGCEIC7RRsczQnNKNMnT050vlVlJaKcIyMqb5vZVUkCclxhoy9Rm234xlAJZSA2Pc/7f3QbkkO0N7rZdfmS/nDdDE2gh1XvmJGEMcu3GqhH1QYmRUvzD4f8tQL86Y0Bc0Dm0MZY24DP1ZqSyfGbityD+cnPDSl+cPnux1lvsvdRZ/Tvm4Jm8cy9RU+XagCRGUZ+IgBva9VI/0FuDQShakTnxcAAAAASUVORK5CYII=)" decoding="async" width="1430" height="1536" src="https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&#038;quality=90&#038;resize=1430,1536" alt="Enable Automator app permissions under Settings &gt; Accessibility" class="wp-image-9375 has-transparency" srcset="https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&amp;quality=90&amp;resize=1280%2C1375 1280w, https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&amp;quality=90&amp;resize=384%2C412 384w, https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&amp;quality=90&amp;resize=768%2C825 768w, https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&amp;quality=90&amp;resize=1024%2C1100 1024w, https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png?strip=all&amp;quality=90&amp;resize=1430%2C1536 1430w" sizes="(max-width: 1430px) 100vw, 1430px" /></figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/applescript-resize-all-windows/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2024/09/with-chapters.mp4" length="24127566" type="video/mp4" />
+
+		<enclosure url="https://kaspars.net/wp-content/uploads/2024/09/run-applescript.png" length="147285" type="image/png" /> <enclosure url="https://kaspars.net/wp-content/uploads/2024/09/create-as-application.png" length="146180" type="image/png" /> <enclosure url="https://kaspars.net/wp-content/uploads/2024/09/settings-accessibility-enable.png" length="82214" type="image/png" />	</item>
+		<item>
+		<title>Using Unit Tests to Find WordPress Plugin Bugs</title>
+		<link>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing</link>
+					<comments>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Fri, 24 Apr 2020 10:33:14 +0000</pubDate>
+				<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7494</guid>
+
+					<description><![CDATA[This is an unedited video of me fixing a bug reported by a user on the WordPress support forum for my Widget Context plugin. Here is the pull request on GitHub if you want to follow along. I start out by writing a unit test for the part of code that is responsible for the [&#8230;] <a href="https://kaspars.net/blog/wordpress-plugin-bug-unit-testing" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Fixing a WordPress Plugin Bug 🐛 with Unit Testing" width="650" height="366" src="https://www.youtube.com/embed/qzeadSqjgn4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">This is an unedited video of me fixing a bug reported by a user on the WordPress support forum for my <a href="https://widgetcontext.com">Widget Context plugin</a>. Here is the <a href="https://github.com/kasparsd/widget-context-wporg/pull/62/files">pull request on GitHub</a> if you want to follow along.</p>
+
+
+
+<span id="more-7494"></span>
+
+
+
+<p class="wp-block-paragraph">I start out by writing a unit test for the part of code that is responsible for the specific functionality and the new test actually fails so I&#8217;m able to find the bug and fix it while looking at related issues.</p>
+
+
+
+<p class="wp-block-paragraph">At the end I do the release dance &#8212; update the plugin version number, write the changelog, tag a release on GitHub and deploy to WP.org.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Let me know <a href="https://twitter.com/konstruktors">on Twitter</a> or in the comments below if you would like to see more of this kind of content.</em></p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/salinas-gulbuves-log-houses-powered-by-wordpress" rel="bookmark" title="Saliņas Guļbūves (log houses) Powered by WordPress">Saliņas Guļbūves (log houses) Powered by WordPress</a></li>
+<li><a href="https://kaspars.net/blog/widget-context-0-4-1" rel="bookmark" title="Widget Context 0.4.1">Widget Context 0.4.1</a></li>
+<li><a href="https://kaspars.net/blog/filter-pre-wp-nav-menu" rel="bookmark" title="Allow Plugins to Short-circuit wp_nav_menu">Allow Plugins to Short-circuit wp_nav_menu</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/wordpress-plugin-bug-unit-testing/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/04/fixing-wordpress-plugin-bug-unit-testing.png" length="502318" type="image/png" />	</item>
+		<item>
+		<title>How to Bulk Update the &#8220;Tested up to&#8221; Version for WordPress Plugins</title>
+		<link>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version</link>
+					<comments>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Thu, 02 Apr 2020 14:17:54 +0000</pubDate>
+				<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7470</guid>
+
+					<description><![CDATA[Here is a quick demo video of a bash script for updating the &#8220;Tested up to&#8221; version of multiple WordPress plugins at the same time. This solves the pain of updating the readme.txt file for all your plugins whenever a new version of WordPress is released. p.s. Background music provided by my kids 🥁🥳🤣 <a href="https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="How to Bulk Update the &quot;Tested up to&quot; Version for WordPress Plugins" width="650" height="366" src="https://www.youtube.com/embed/Vl0EbVnHvDs?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Here is <a href="https://www.youtube.com/watch?v=Vl0EbVnHvDs">a quick demo video</a> of <a href="https://github.com/wpsh/batch-mark-as-tested">a bash script</a> for updating the &#8220;Tested up to&#8221; version of multiple WordPress plugins at the same time. This solves the pain of updating the <code>readme.txt</code> file for all your plugins whenever a new version of WordPress is released.</p>
+
+
+
+<p class="wp-block-paragraph">p.s. Background music provided by my kids 🥁🥳🤣</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/plugins-bulk-update-tested-up-to-version/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/04/bulk-update-wordpress-plugin-tested-up-to-plugin-version.png" length="439639" type="image/png" />	</item>
+		<item>
+		<title>RAK7246 LoRaWAN Gateway Review</title>
+		<link>https://kaspars.net/blog/rak7246-gateway</link>
+					<comments>https://kaspars.net/blog/rak7246-gateway#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 22 Mar 2020 14:36:56 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[LoRaWAN]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7455</guid>
+
+					<description><![CDATA[Single channel LoRaWAN gateways are great for getting started with the LoRaWAN networks and actually sending some data from your sensors to the Things Network and other hubs. I built mine with HopeRF RFM95W radios attached directly to Raspberry Pi: But single-channel gateways are not really useful to the larger LoRaWAN community because they listen [&#8230;] <a href="https://kaspars.net/blog/rak7246-gateway" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="RAK7246 LoRaWAN Gateway Review" width="650" height="366" src="https://www.youtube.com/embed/x7AKwyV8h0Q?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Single channel LoRaWAN gateways are great for getting started with the LoRaWAN networks and actually sending some data from your sensors to the <a href="https://www.thethingsnetwork.org/">Things Network</a> and other hubs. I built mine with HopeRF RFM95W radios attached directly to Raspberry Pi:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-dominant-color="8f9481" data-has-transparency="false" data-blurhash="LSI=0yp0~BX9tSf7niWX}@R*I=s." style="--dominant-color: #8f9481; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADpElEQVQ4jU1Vy44kxw2MCLKqe2bWK1/8Cfr/T9DN32D4bsAQDB+00jw6SYYOWbMrIJBANboiGGSwkv/65y8A7JmZnp7u6uqq6lVV1VVdPd0z9owNgIRIiUFmMKQUDyHIFIMIQYAIAmkAtg0DMLyB6xfbNsawPd5PIAAABokxdf2Hom2Y+H6CyJm5iMZtt2c8PS5PzdS4Zmq2hcsBtgMzTdu2bF663OcFGlkz28PM9EzPVE/NrJ7VXd37rO72zFUiSYSYuzkxhzjmiBZsmrA+W7RmdiP2DDbXqguPqlW1tsxsE9vBJXCIZ/AMncMWOngILeZAhIhc3f4u8IO9HlWPVR9Vj6qPqkf36u49CVwCh3QGb6Fb8h6s4JY5gv056nxUG7bd091dVZv9Y9XHqve13qve13rvfnQ/ZnrPmTzEU7yFnpJPrRVcyXuwAz08hCRE5qPLgK/ud3Xvkj+q3tZ6W/W6Hq+rXle9db/3LLthkad4Dz6HXpJfDlWyR5OcwQwn2ISEfHQDmEugVtWjP9mr/ljr98f6/bF+W/Wt+lv363jBQT6Jf0v+lHq0ejgjWzA3bIwQw6xpGOPpmZpe02t3o/u96m3VH6t+W+v/j/pf1X+qfx0DBnGIP7ceLY9oBRRgQgHGTqs53/fge0Z7pmZ2OlfXo+uj663qW63/rvq1GjMwQKzgv6079EQ9SR+lu7SkEqsZoACQudcWMHZAPPD4r/iUrmnMFjAIkDPyCBN713HFURZt2jAowSQIkz9aKDpwIeGTfqb/wblxcMGgf6a/0k/0SR90AAEHLVrcy+0MYueapIUkh2iihJO4CyW0YCGEL4FXosAkXgJfEz8Fvya+BJ+C98BNPMQk4wIyRQDzORYIDk5zxAk6iKCCR/IJ+ru8DANBnMGn1HPq5YiXQ88Zz6F76hY8Q4eYgsg8Q7ZNNiSPQhwxhBBDCkXqcNw4L3IN2gQQRIZuoVvqfsRT6n7EPXVL3UJHMMUQReQhApxBwIJkccgRUxrFKB0n+k6VogeGCGt/iEJn6sy4pW4ZZ+rc7KFdvsg8QrBNNS1bQY440ki5BXQiSu7GmPCQ2AIZOkJHxpE6I45QXuy7fPIvDkaQYmgxPk2MlErHgWnOKGwCEiEyNldEho6IDG3ED3aSyJBgSxqY+ysuQrpuRSlCYQ1j7wnhfRmEFKGMiIs6QopgSPtVAiR3TGkYpIkgTZr79qB3I2MnXzBAfzpQXN1Q6io8+Ml+GcCfFLg5CMTur0MAAAAASUVORK5CYII=)" decoding="async" src="https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy-1024x683.jpeg" alt="" class="wp-image-7458 not-transparent"/><figcaption>Raspberry Pi 3 with a RFM95W LoRa module.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">But single-channel gateways are not really useful to the larger LoRaWAN community because they listen only on one of the eight frequencies and can&#8217;t relay the majority of the LoRaWAN sensor traffic.</p>
+
+
+
+<span id="more-7455"></span>
+
+
+
+<p class="wp-block-paragraph">Eight channel gateways have always been around USD 200 until very recently when the following low cost gateways have been introduced:</p>
+
+
+
+<ul class="wp-block-list"><li><a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/">The Things Network Indoor gateway</a></li><li><a href="https://mikrotik.com/products/group/lora-products">MicroTik wAP gateway</a></li><li><a href="https://kaspars.net/go/rak7246-aliexpress">RAK Wireless RAK7246</a></li></ul>
+
+
+
+<p class="wp-block-paragraph">And only the RAK7246 gateway uses a DIY-friendly design with Raspberry Pi Zero as the brain of the device.</p>
+
+
+
+<h2 class="wp-block-heading">The Good</h2>
+
+
+
+<ul class="wp-block-list"><li>Fully assembled device with all software pre-installed.</li><li>DIY friendly design with Raspberry Pi Zero.</li><li>Low price.</li></ul>
+
+
+
+<h2 class="wp-block-heading">The Bad</h2>
+
+
+
+<ul class="wp-block-list"><li>No labels for antenna and other ports.</li><li>Impossible to remove the SD card without disassembling the case.</li></ul>
+
+
+
+<h2 class="wp-block-heading">Buy the RAK7246 LoRaWAN Gateway</h2>
+
+
+
+<ul class="wp-block-list"><li>Buy RAK7246 from the <a href="https://kaspars.net/go/rak7246-store">RAK Wireless Store</a>.</li><li>Buy RAK7246 from the <a href="https://kaspars.net/go/rak7246-aliexpress">RAK Wireless on Aliexpress</a>.</li></ul>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/composer-travis-bash-source" rel="bookmark" title="Composer, Travis and Bash Source">Composer, Travis and Bash Source</a></li>
+<li><a href="https://kaspars.net/blog/preview-of-a-new-wordpress-theme" rel="bookmark" title="Preview of a new WordPress theme">Preview of a new WordPress theme</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/rak7246-gateway/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2020/03/rak7246-lorawan-gateway-raspberrypi-zero-review.png" length="923587" type="image/png" /> <enclosure url="https://kaspars.net/wp-content/uploads/2020/03/rfm95-lorawan-gateway-raspberrypi-diy.jpeg" length="1432986" type="image/jpeg" />	</item>
+		<item>
+		<title>Ikea Trådfri vs Xiaomi Mijia and Aqara Zigbee Switches</title>
+		<link>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches</link>
+					<comments>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 27 Oct 2019 15:00:57 +0000</pubDate>
+				<category><![CDATA[Home Automation]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Zigbee]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7322</guid>
+
+					<description><![CDATA[Ikea Trådfri Zigbee switches/dimmers react much quicker to button presses compared to Xiaomi Mijia and Aqara switches because they don&#8217;t support double clicks. This is similar to how mobile browsers wait a little longer for clicks on links to support the long-press events such as copying the links or opening them in a new window. <a href="https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Ikea Trådfri vs Xiaomi Mijia and Aqara Zigbee Switches" width="650" height="366" src="https://www.youtube.com/embed/bG-DW62mlYU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph"><a href="https://kaspars.net/go/ikea-tradfri-zigbee-switches">Ikea Trådfri Zigbee switches/dimmers</a> react much quicker to button presses compared to <a href="https://kaspars.net/go/xiaomi-mijia-zigbee-switch">Xiaomi Mijia</a> and Aqara switches because they don&#8217;t support double clicks. This is similar to how mobile browsers wait a little longer for clicks on links to support the long-press events such as copying the links or opening them in a new window.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/gree-amber-nordic-gwh09yd-s6dba1" rel="bookmark" title="Notes on Gree Amber Nordic / Prestige GWH09YD-S6DBA2A Heat Pump">Notes on Gree Amber Nordic / Prestige GWH09YD-S6DBA2A Heat Pump</a></li>
+<li><a href="https://kaspars.net/blog/hiking-dds238-2-modbus" rel="bookmark" title="Use Hiking DDS238-2 ZN/S Energy Meter with Home Assistant">Use Hiking DDS238-2 ZN/S Energy Meter with Home Assistant</a></li>
+<li><a href="https://kaspars.net/blog/apple-podcasts-subscriptions" rel="bookmark" title="Apple Podcasts Subscriptions">Apple Podcasts Subscriptions</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/ikea-tradfri-xiaomi-mijia-aqara-switches/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2019/10/xiaomi-mijia-ikea-tradfri-switches.jpeg" length="464117" type="image/jpeg" />	</item>
+		<item>
+		<title>Solar Powered Raspberry Pi Camera</title>
+		<link>https://kaspars.net/blog/solar-raspberry-pi-camera</link>
+					<comments>https://kaspars.net/blog/solar-raspberry-pi-camera#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Fri, 09 Aug 2019 17:54:25 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Home Automation]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[MikroTik]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=7205</guid>
+
+					<description><![CDATA[Update: this project was featured in issue 92 of the official Raspberry Pi magazine (download as PDF, buy the issue or subscribe). SSH-ing into a remote solar powered Raspberry Pi at the top of an apple tree has a special feeling &#8212; almost like commanding a spaceship where any mistake can cost you a lost [&#8230;] <a href="https://kaspars.net/blog/solar-raspberry-pi-camera" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Solar Powered Raspberry Pi Security Camera, Part 1" width="650" height="366" src="https://www.youtube.com/embed/M53eJI90ETE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Update:</strong> this project was featured in <a href="https://magpi.raspberrypi.org/issues/92/">issue 92 of the official Raspberry Pi magazine</a> (<a href="https://magpi.raspberrypi.org/issues/92/pdf">download as PDF</a>, <a href="https://store.rpipress.cc/products/the-magpi-magazine-92">buy the issue</a> or <a href="https://magpi.raspberrypi.org/subscribe/new">subscribe</a>).</p>
+
+
+
+<p class="wp-block-paragraph">SSH-ing into a remote solar powered Raspberry Pi at the top of an apple tree has a special feeling &#8212; almost like commanding a spaceship where any mistake can cost you a lost link.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree.jpeg"><img data-dominant-color="3d4036" data-has-transparency="false" data-blurhash="LUA19SMxn%Rj?wMxWBRj?vM_e.V@" style="--dominant-color: #3d4036; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADzUlEQVRIie2WTY8kNQyG3w871T2zn9zgTyJx4/dy5cJKM7szXYk5JNXTwy4HJFbiQBSlS2rHj187FRd//uVXirYjM7bWti3nbC2yOUMOSaBAFoBCAVUFkAApSbbsiHAcqy3JFGPuqMLaXECth6qq6axAVhUw/6y1CSSW4fqd6DpWFGKMIkGNGmOMtc6HOQdJkCDAugEAKJIkgQEOcgyOMcQ+BgkAoBijd1IgqaE+eu/uffTee6cEsgp0cawUXUMrgCDJkuwiajpdw64qDsa+d3K4iiQlWbs8XQOogqo4RN4Cjhpw1WDJraoaqKoxxuiSRMV+2UmOMTNMkrOeAKswRqmbEqVpcBQFh/mMymGP0YdjjG7bsiSJcXl6Bmm7Rt2UuqrKfTi64hB0qwAvBEuyuu3dPaLvtu3ln/H05Zmk7N7HmDJndftw7I6QTQligcXXgBcFsh12hGP5t0RK8fT4RFFW36PvvffR9973HpeLMx2mXykYx2EGOM/JTJGtCZikSSUZnx8+k5QVGdn2ftl7y71dItMZDlOiBbJeAIeIVWTOmGOKWPFP/4zHPx4p2nJGtsiWuWVkRAtHzAKsFHF5XwwC5KFgpkg3gFkCxsPvDxQUjubcIrfIltEi0s6QRQtSHYABDH4FsKaCnFK0ACLj02+fCBiK5nwX7S7iHLmF004rRKvEBSA6F2PoAFihWQClPZ8tTgV8j58EBrTBDdHgRKTD7+yT2IQQzGEMoRO70IkudAEiLVtpZTitFZUdoiiRr17vM3AHnpCJjOkYAjQzcwEuwBfUA/CcxInYhGak3zTfR5zTp3Cz007JWjfVNwaBBgQAYABPwPim3dfb7vDhhPtEmwHqbwD/yiCwfT/v/4//0Pgup+gNcAISEMD3AF4ayLrLOrAD+z9x2oC3wBloZ+SGCMiQEB9f29WxXknd2ImdeC5cgDEtCAstcEqcEm3OQAYiYNs6SSk67m9i4AloqAYEKgBjCPOOG9dbuoACAREmggghfJ++i9jWTaGwLJlknH8ECBgwmEAc0yifoXMxix5ggbOZEcUCIVOmLYcyFJ4dysv76gfbO4CAgAANJGAwfoDv4K2UoIsqCDhaZU0aBZqyHLIVV+/2DF8kI+8AgD5ExIb4yLiHN7hBAbng+QU26/NXwGLMbh9eHfoARMO0hcHI5T3O9AYnlKBBFQgQS0HNTwyRxkz26spha6VotYNwArgC3iJOjI3REA1KOCYA0PV4HQpwq8CrK19FaCmQcNgm3eCgTRsybMqQQdd8JYusmgwt7Oy9K3DPctwo+BM3ras0dYDvFgAAAABJRU5ErkJggg==)" decoding="async" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree-1024x1024.jpeg" alt="Raspberry Pi in a dummy security camera in a tree." class="wp-image-7206 not-transparent"/></a><figcaption class="wp-element-caption">Raspberry Pi in a dummy security camera case placed in an apple tree with a 100Wp photovoltaic panel and a 12V battery for power.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">I build this project to remotely monitor our countryside house.</p>
+
+
+
+<h2 class="wp-block-heading">Internet Connectivity</h2>
+
+
+
+<p class="wp-block-paragraph">There are two options:</p>
+
+
+
+<ol class="wp-block-list">
+<li>A mobile USB modem attached directly to the Raspberry Pi <a href="https://wiki.debian.org/Modem/3G">using the point-to-point (PPP) protocol</a>, or</li>
+
+
+
+<li>A <a href="https://mikrotik.com/product/wap_lte_kit">standalone mobile modem/router</a> creating a WiFi network.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">I decided to go with a standalone modem that is plugged in at my neighbours house because of complexities involved in creating a reliable <a href="https://github.com/kasparsd/remote-pine">PPP connection</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Components</h2>
+
+
+
+<ul class="wp-block-list">
+<li>$8 <a href="https://kaspars.net/go/raspberry-pi-zero-w">Raspberry Pi Zero W</a> which supports the camera module.</li>
+
+
+
+<li>$29 <a href="https://kaspars.net/go/raspberry-pi-camera-v2">Raspberry Pi Camera module</a> (and <a href="https://kaspars.net/go/raspberry-pi-zero-camera-cable">a cable for Raspberry Pi Zero</a>).</li>
+
+
+
+<li>$18 any 12V battery capable of delivering 1.5W x 24h = 36Wh, such as <a href="https://www.ebay.com/sch/i.html?_nkw=12v+7ah">this 7Ah Pb battery</a> (80Wh).</li>
+
+
+
+<li>$8 <a href="https://kaspars.net/go/dummy-security-camera">dummy security camera</a>.</li>
+
+
+
+<li>$10 <a href="https://kaspars.net/go/12v-solar-charge-controller">12V charge controller</a>.</li>
+
+
+
+<li>$2 <a href="https://kaspars.net/go/5v-dc-buck-converter">12V to 5V buck converter</a> to power the Raspberry Pi.</li>
+
+
+
+<li>$15 cabling and connectors.</li>
+
+
+
+<li>$132 <a href="https://kaspars.net/go/100w-flexible-solar-panel">100Wp solar panel</a>.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Total: $222 + $7 per month for a 10GB mobile data plan.</p>
+
+
+
+<h2 class="wp-block-heading">Notes</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Avoid blocking the <code>/dev/video0</code> device when not used to allow other things such as timelapse scripts to capture photos or record videos. This is hard with things like the Motion daemon which constantly blocks the video device source.</li>
+
+
+
+<li>Use the <a href="https://picamera.readthedocs.io/">official <code>picamera</code> Python library</a> for accessing the camera and formatting the image and video to match the required output.</li>
+
+
+
+<li><a href="https://www.harding.motd.ca/autossh/">AutoSSH</a> in combination with a custom <a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd service</a> is great for creating and maintaining a persistent SSH tunnel from Raspberry Pi to a remote server. <strong>Update:</strong> <a href="https://kaspars.net/blog/wireguard-raspberry-pi">Use WireGuard for secure remote access</a>.</li>
+
+
+
+<li>Rsync with hourly cron jobs is great for uploading and syncing photos and videos to a remote server for persistent storage. It also allows deleting older captures from Raspberry Pi while keeping them on the storage server.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Some of these scripts are available <a href="https://github.com/kasparsd/pine-monitor">in this GitHub project repository</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Photos</h2>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case.jpeg"><img data-dominant-color="81786e" data-has-transparency="false" data-blurhash="LWHnytaf-qn+0$ou%M%Mrq%LRks;" style="--dominant-color: #81786e; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEyElEQVRIiV1Wy64kRxWMx6nue33HFsjIC9jw+7DiW/gEFiDLCIM9A56hK4JFZndfUUqVqkpZJ84jzsngn/7wx7Tnefv83y+/fP7l038+/fzvn/758V8/fvzH33/+4fuf/vaXj3/+66fiC1Bg8Pvr7757/e2vX779+uWbr64frsfrxRf7IAwowRncztzS80xatUCx7veL7x5IHM8PACCAjy8EQAIEubcTJLnvHLyz3N6BuPeKNt/ALxBQQJCGFPiweDdOAJS4LBgCynbS+4U+YwBJkSZn9Ab9CAOFNdJBmRRFrl0iRUmAWkBEQJVp21nGU6S4gyzHRI51OfR29YfP+Yjiw3w7vkqmBIkStD2R9l8qVCR122JHsOMACnRbtzTW5eK3X81vvu+Lqq/89fhqH7Il0ZQkS5a0ImbLFgVSoJ2kxQ5ig+zyWJzx9Tqvb/PNd7igfPXLMVfPyKZFiyZNeSGK1ErAslNg0rQ9k6QpCqIELNk+Dl8vfn07Kh4tXny5zMVzyCN7++7HmymRelYfmDPvUrRyRJISxzoOX16O11shToGLfJnrzOGxl/WRRx7aGu98kSS0KDxJ2ibPMgCLFB4fx1yv55liNG0tXeY4ZmasWRFQpkYzGj+CkiiQfAeQ9YCuRpHlQ3OZy5kAHE0Qk4fnMsd4xrJpa/nu0Vhj79A2f7EB7klazcnl0zHH9Tw7ITB2G5JjHbMQtDGGHo41oxk/46BITpLNnhQtwc1Q+fDkOIBKPE4HIWHx8BzbusbcazijY3YQliURHCTFJinb3QLUYSWDhoDFm5UGrMgZHfZhjWnTgk3fkRa2JMskpznXGFq2BJgcqXInxIiwcEbpCZaEzbEO8zBHHHOE/bDXbguRw6aL/K1QsyW6rMJCLYxwlqmKkBVp67DGGGGEtWeEMRbGakRSwwQAcR8Tj0EHiTbrLACkZ0uwImzZPMRDGGIIq1aHD0hapDBs1mx/uM49wXSylic40xQJgxMoWYl3rzuqVbMmTJi1Nh7JcfM4EoSGEBjSZKSzSHC2Z+7jFiFWJWB2CKODDmpEjFAhhoSKHTfgmqAoa6BEwEIpgqY647S7YVAUYLVSzwxjxni/umAEjO8/7DwRa9wVCNgqaKKz2iOlagNAhFizg0wjRIga9mSlUgCLMVaRnxOwIohyHX5MFTVVkkjNo+ErVsggxume2kuqWDKgOrPz340hQgW5iw4GbJkyYcJwKYSiICPSiBr1VE7mxohZxkroAfDUBiChQihZriHCliFDhGjQPNJ5CvR2/KaKuSFLAxTVzHrjHUCEQKMEhIIFCyRY1gNuobNHC9nTpUKFPEWS5xYpEMdcXbYaDGSxJrnfVbssETLg8n7xFcUeX6W6EnZDHodmVgRdgoks9wMgUNiMAnYEQJb+YKv2bNkVjnpTtoPbfRQNqDHuhwDXjlKgViVQAkAAYQE8VssuvgJlQJzcim6bZ11yxIcCBNm1BwSXjiIKLOIQ5WIVy62h1iFFrkYK78UF2bYUR+uQxD0Mlrvm3akkWuShE/Z3lM2q0ZIoIXG+4yKgthrdRexduT4pe1ceAKH/+4IG0Cr2zuJqzqBBz24F1+FDJy86rWrf07bN9e7B2sbyyb1nY5PdPdIFHYD/A/z7I0RdVRGNAAAAAElFTkSuQmCC)" decoding="async" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case-1024x1024.jpeg" alt="" class="wp-image-7221 not-transparent"/></a><figcaption class="wp-element-caption">Raspberry Pi 3 with a camera module inside a &#8220;dummy&#8221; security camera case.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera.jpeg"><img data-dominant-color="a7a39f" data-has-transparency="false" data-blurhash="LSKKybD%Vr%h~qM_xtt6$et6InRi" style="--dominant-color: #a7a39f; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEdklEQVRIiXVWUbIbsQ0DKL3c/yI9RT97oNoWAfSDWieZtjuyx2t7AYKEKPJf//wHgARxnoUYCIlFrlq71s/av9b+tX9+7Z+ftX/W3rVWrSIBBHEsq622jnXcbStWAQz+9xUkmBeQ75d//eP/Pfm9dgCEyYOTu54/JYkRIpU4qcBAXdIg/GLmjw95eDbyKBhoxF82hPOtQ8cJL0d8A2HxD7H3oYcpCLCDCvIEHoe5zwMxyIGHTZu2bTlMcPlAXHQHDnzTcNO7HQKcOB3acRAjcUKShhcNCzZsxIjpCQwVcFL1hJgkgZ/bnVSAxDEdOpDjsVNCgqFR5koJy5S5DBuuMDHI3zFfEYkvGbZTQOxKIsOGDNt2cg3AAs1KLUhYhowKnMWk8M1AfnPEuSFuhwETT5JlSJFi2QlAFio0ldL8hmXY8VSoSBCBkwfXgZ25304lianQRgtyJEtyEpBOgYvlWtGOBAnllMEqpL4ERhxPhjN59paJXI+0IaeVliXbDgBWgQuV2ihhCTKWoAK9AJN1CRyPCHt4nN8EE1krrZy2JFl/E3RWQxsSZZYhByzG+Obelr/vsbcE4Na2jUFvuVuyjIBVwGJFnW4sYYkSaoVDQCKM8Te6ZVhbBgI7U9vJz2m1JPUQENhcqB7okmoU0ADrpuhWPrJlP1bZ0i2IlJa/64yCOKwCwoXVUJdUEiWWwAKwSCOMI0O2dNH/i8Dds3SX2zGqiphNQGlJJS2pl6gCkFGQa2JLUbsVdazdrSC21cOtlltq9VUQF4lS6Xu5rZJJAcAosGKlOzfME3XcuyUEtlo38En/uMjTqllaWnr0W5ZVIskgRCGwoC96uzs6cW+1knhCv9hXy/iAqFiZNmrbiiRpjYQgRBK4cwmO+6SP+xNr9+kgtqzWkEtWx4r1tLG6ffRrFcuWReY5AtTRhdY56c9D0CdJLPkmaKoRCREIppgwZjIciWJFMsgkAGO408d9fI7Px5egd58PvgomBDUsRIwJEKykECaX6epQCKeIOUY6fXw+Oh+fj/t9CXQ+QR7JH6un+rQBkySykAIWUn9xKEBoILajkz7q4/7ovC+Bzu7zBqY/DfSJD0cBQ6CARWxkDQfmvBRcAKbVw7KO++h8fN467+GIz1a/c6cixR033EgXDKCAIhawyPWIqLhiXgsAdtzum3qdj85b5+V++asAMaJYSCMiRKbIAn+jD9MkygENz2msqK0jHfVH/Va/dV46r+izfV4AgDnNBYgx6QIKtYhFLHKTiyiiJkswDY6J7KjT15qPgrfOK3pv9XsIpuUSJk2gyIU86N/wsQAmNZNT7tAYdcbfU+R+q1/uf7vf23oD4DOQkQFSJFFF1A2ci1xkAQXc7j9j1tjJijs60bFmE4yC17YOEAJEisH4JlUgb5G5yCKLKN7fn8kxybMnZuuNy3XcH+udfu34zORIzqYHQwLEPdC/oAQLvEf8nVrHHc9hn0eKOz7Rx37veFoukomNf47IHGqCBO/tRcdlyjN3PmNFHkHpuP8DoCQ+mIr/S8QAAAAASUVORK5CYII=)" decoding="async" src="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera-1024x1024.jpeg" alt="" class="wp-image-7215 not-transparent"/></a><figcaption class="wp-element-caption">Raspberry Pi with a camera module attached to a 12V battery charged by a 100Wp flexible solar panel.</figcaption></figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/solar-raspberry-pi-camera/feed</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-solar-panel-12v-in-a-tree.jpeg" length="877553" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-camera-in-dummy-security-camera-case.jpeg" length="891123" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2019/08/raspberry-pi-solar-panel-12v-camera.jpeg" length="786948" type="image/jpeg" />	</item>
+		<item>
+		<title>KEY-ID FIDO U2F: How to Remove the Green LED</title>
+		<link>https://kaspars.net/blog/key-id-remove-green-led</link>
+					<comments>https://kaspars.net/blog/key-id-remove-green-led#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 26 Nov 2017 19:37:48 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6548</guid>
+
+					<description><![CDATA[The KEY-ID FIDO U2F security keys are a nice alternative to YubiKey 4 Nano&#160;because they cost only $12 instead of $50. However they include a green LED that is always enabled which makes it unsuitable for a permanent installation. In this video I explain how to open the device and remove the LED. Here is [&#8230;] <a href="https://kaspars.net/blog/key-id-remove-green-led" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="KEY-ID FIDO U2F: How to Remove the Green LED" width="650" height="366" src="https://www.youtube.com/embed/AICoq0T_7MA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">The <a href="http://www.key-id.com/key-id-fido-u2f-security-key-online-security/">KEY-ID FIDO U2F security keys</a> are a nice alternative to <a href="https://www.yubico.com/product/yubikey-4-series/#yubikey-4-nano">YubiKey 4 Nano</a>&nbsp;because they cost only $12 instead of $50. However they include a green LED that is always enabled which makes it unsuitable for a permanent installation. In this video I explain how to open the device and remove the LED.</p>
+
+
+
+<p class="wp-block-paragraph">Here is <a href="https://github.com/hillbrad/U2FReviews">a great overview of the most popular FIDO U2F security keys</a>. And <a href="https://www.imperialviolet.org/2017/10/08/securitykeytest.html">this blog post has useful technical insight into the Key-ID key</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/attiny841-rfm69-mysensors" rel="bookmark" title="MySensors, RFM69 and ATTiny841">MySensors, RFM69 and ATTiny841</a></li>
+<li><a href="https://kaspars.net/blog/sign-in-with-apple" rel="bookmark" title="Notes on Sign In with Apple">Notes on Sign In with Apple</a></li>
+<li><a href="https://kaspars.net/blog/the-magic-of-software-licensing" rel="bookmark" title="The Magic of Software (Licensing)">The Magic of Software (Licensing)</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/key-id-remove-green-led/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Part 2: DIY Electric Skateboard Electronics</title>
+		<link>https://kaspars.net/blog/diy-electric-skateboard-electronics</link>
+					<comments>https://kaspars.net/blog/diy-electric-skateboard-electronics#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 12 Nov 2017 16:45:25 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Electric Skateboard]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6517</guid>
+
+					<description><![CDATA[In episode 9 of my video blog I explain the electronic components required for building a very simple and cheap electric skateboard with a hub motor. It is a follow-up to the&#160;part 1 of the DIY electric skateboard build video. Components Maytech 70mm hub motor Maytech remote with a receiver 120A Car ESC 6S battery [&#8230;] <a href="https://kaspars.net/blog/diy-electric-skateboard-electronics" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube alignwide wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Part 2: DIY Electric Skateboard Electronics" width="650" height="366" src="https://www.youtube.com/embed/yhm4l33IB4c?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=yhm4l33IB4c">episode 9</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I explain the electronic components required for building a very simple and cheap electric skateboard with a hub motor. It is a follow-up to the&nbsp;<a href="https://kaspars.net/blog/vlog/diy-electric-skatboard-hub-motor-trucks">part 1 of the DIY electric skateboard build video</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Components</h2>
+
+
+
+<ul class="wp-block-list"><li><a href="https://kaspars.net/go/maytech-70mm-hubs">Maytech 70mm hub motor</a></li><li><a href="https://kaspars.net/go/maytech-remote">Maytech remote with a receiver</a></li><li><a href="https://kaspars.net/go/120a-car-esc">120A Car ESC</a></li><li><a href="https://kaspars.net/go/6s-battery">6S battery pack</a></li></ul>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/diy-wireless-headphones" rel="bookmark" title="DIY Professional Wireless Headphones">DIY Professional Wireless Headphones</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-electric-skateboard-electronics/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/11/diy-electric-skateboard-hub-motor-electronics.jpg" length="125710" type="image/jpeg" />	</item>
+		<item>
+		<title>Part 1: DIY Electric Skatboard, Hub Motor &#038; Trucks</title>
+		<link>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks</link>
+					<comments>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 09 Apr 2017 10:04:03 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Electric Skateboard]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6331</guid>
+
+					<description><![CDATA[In episode 8 of my video blog I show&#160;how to modify standard skateboard trucks to fit a 70mm electric hub motor from Maytech (available for $99). This is a follow-up to my review of the Maytech 90mm hub motors and&#160;part 1 in series of how to build your own light-weight electric skateboard. Maytech 70mm Hub [&#8230;] <a href="https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Part 1: DIY Electric Skateboard, Hub Motor &amp; Trucks" width="650" height="366" src="https://www.youtube.com/embed/Sjut8hVuLWM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=Sjut8hVuLWM">episode 8</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I show&nbsp;how to modify standard skateboard trucks to fit <a href="http://www.maytech.cn/en/mto91hbm-ha/10270.html">a 70mm electric hub motor from Maytech</a> (available for $99). This is a follow-up to <a href="https://kaspars.net/blog/electronics/maytech-90mm-motor-review">my review of the Maytech 90mm hub motors</a> and&nbsp;part 1 in series of how to build your own light-weight electric skateboard.</p>
+
+
+
+<h2 class="wp-block-heading">Maytech 70mm Hub Motors</h2>
+
+
+
+<p class="wp-block-paragraph">Here are the photos of the hub motor motor components &#8212; the stator, rotor and the wheel.&nbsp;The rest of&nbsp;the photos are <a href="https://www.flickr.com/photos/kasparsdambis/albums/72157679043395564">available on Flickr</a>.</p>
+
+
+
+<p class="wp-block-paragraph">To buy these motors you can get in touch with Eileen from Maytech eileen@maytech.cn &#8212; and&nbsp;don&#8217;t forget to refer to this blog for a discount.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel.jpg"><img data-dominant-color="b3885e" data-has-transparency="false" data-blurhash="LKMY.e0g~8+b4V9bXmaPwu?ZIBR." style="--dominant-color: #b3885e; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADH0lEQVQ4jU2VYa7tOAiD/Rno2cksbhY4q7vB70d67rwqitJIxcVgw3///hMUvK5T/eP+qT6uH/fBKytW5IM3fTQns5nVSG1N0U2N67Gf8sdMMdaYQqYFkiT+XhHKvVQk5d3vISKK7neS4K9lGdlgAdCiJGQHRxUcOfKKDSsSEfbdk0iRIBLwhquiyl1UuYoqlSnLtDwCCblERRVV4lWtOPEF8AmrjRJWiSRzo7iKLk/T7WlPMc1YL0A90ptdcKioVt74hBMSaeV9902iLyE2XUx7xtP1jJ/2MzxFl8rYrf4gRQhLFl559UY/YVfa1IaNVyuCAirTRTfTfh4/48/UZ/wMT9NFlUzTzy2ThOSIxBuvONHPKittsmG3lJXC5afe33/Gz/jz1PPU5/EzPPM/gOeTy1FAEGudkNXCja+skpchFCsFXepLznhu9I+fp57hGXerC9N+RkLBgUDMwiKhKCREZNkl0cZSibbannkL8Izn8UzN42fuPVWyu+a5zZyway9efABuIXUiLQ5ZtJQo0Xy7pZnx3P4ZT7vHPXRThd39TPQWbuNezvFP0UfHLFcVcdYJLA4tGqZ4w10196uGKwUXLtndT0ucSLnU+xzPsoc9Uskn2XhT2iblVMWNx57i9YqijI0t/CtsoOdpSQ7EirPeJcdZcuDorLLxbiutbacq1bhx218qMK9gf58kSc9T+mqMlNbfBUsdLgBJKaMd0t8kGFOmfqNLibLZ1Z772s9URImf+CahLa2Jva7VWbJRUklfgJcouXUNRyJJssnZxQdJcWR6xhErHDuFihRrUl4qPtd6En8xmm1i5xIuHCQlu3vWnFWUxRZ0t3UBVNwmf2HsrbpuEWlFUtrKtra0Rb7MIiWbsDk/q2UtH9noBdDK1mu+xDcPyxX/AnyT2MqWzi2UeKdEstmsllj+igi6i0gWR5YsOd8DKr8AvCzt/lquc5tmb2WzWYnAHgG8Dtc2kvaaHUREd/hYsWTiX4CrMy+siEiUSCiJoo2kELj2LEltFOHbY+LOuuJWhYol+C2DfMepBUEL17KUCxYupMQF0x+SaxVGLJzsJAAAAABJRU5ErkJggg==)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel-800x533.jpg" alt="Maytech 70mm Hub Motor Parts, Stator, Rotor, Wheel" class="wp-image-6342 not-transparent"/></a><figcaption>Stator, rotor, wheel and the cover of the hub motor.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator.jpg"><img data-dominant-color="845738" data-has-transparency="false" data-blurhash="LTHmP,^P,Uiv}?$$jrI:;er=kWo}" style="--dominant-color: #845738; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADtklEQVQ4jUVVTY6luQ0jKb/qTpBcI+fNUQfpwdT7LInMoqoTg9DGsPmzoPjHv/8VFPAB/Ax+Bn8zfjo/Nq/NGdeYbfT6zt6dO7fn9r5nn/XbvkADESGe0im9Si/piEXqJAi+T8jgN8hEIUMFCRT49y2+59fbAEjAMAG+EYREeNa/Cb5/lCGjFmdZm1pwiaGXWGRRC234BRtJiIT/E0p8CQ1Fnt4ACQkoVFjmMc/iLF7DGrGDpi95mcbeVKfG3EWcJIRFKjZiwGRJigidpwECX1GowmO9jNfyY/ka1IBNXPpSF7hwY9o1q116g5hYkVJVcApFChQl6Lw7ACBEiip1jGO9lq/lR6MGauX628HFtk9bs9qBJ/ASI6m0lRygyIJEkXU+b4BATDFVQRln+Vp8LF7NM9BlmnvBi9zMTfXWDLeRMXaJEXXOqbiAAxQoiNL5fAwmAkp+KSjzrM7mzDcBL3ChC9zszbmutmbkRm6wQ9xSlc+JCzlkkSIJns8nYFLIQUBDKy1rWaNqVEMX+Ur/ia7Vqx7OwI3c5TTzlOq8XhUf5DAiCmDxt4ODmAZNrrTkSA211OE1r/2Y17pmm73Yga/zmNPKX6Vz8qOwhy6lGCFKznMNOo4TMyusMsIwXbnJDa9zjWdxN73oyQy27Tbusp/KrbqVvx9OaUtbtGCWT7ehOA69ypZHbrrhG1/6Atd5xnd8xz3b4531OG326H5uUIXC59Y/SlO14grL8OwaXsfWrnY0zW3MxVzrIS74OM9sd9+e6dme7cUsZjiT6e9+0F/p6+rtFg5Bbg68ocPNrqetWd7BGasLzb3QdXr2ds+9e9vdmMY098stGBDABvvOPNZHUAhYPoSJRSZubqMf4MRyYbXLmmid3fVM7oP7Zj/qy71yKw8JBQQYcP+D+QmdAIizdYoLLDFxax/ixRQLkMFXUAjjYM1p9eV98741b+0VHvFNgQT5VciT/ZVW4njAOkcG1mzgiU9BcjRLNHGIoilH69rRNPqtfms+y5/CW3oLYL7aHgnsX9lx/pn9EZ7z0gY0GniS8mBgpSuvypElU05tuINt7tW+az8rn4VPfckPAoQwYMP5ND9NGh/nlJM1LqwE6z3b5Vft0VZZtawNbNtwK115Ku/Kn8Vfqm/5CAw42HxPIsRzigmX6RDrLbf21BxNqaWhhuXAoU2MOMV7+C7+WbTwnX4Cf+08YA34e+0dKUmAESyM8sjFlVq6VFNDbeIgJrc0VVd6Si5C/D8BDRAxEsSIYeO/IznTphUvinQAAAAASUVORK5CYII=)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-800x533.jpg" alt="Maytech 70mm Hub Motor Stator" class="wp-image-6341 not-transparent"/></a><figcaption>Stator of the hub motor.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv.jpg"><img data-dominant-color="6e5d58" data-has-transparency="false" data-blurhash="LQE.Ox+bH@wJ~WrrIBwInO-oRQM{" style="--dominant-color: #6e5d58; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADn0lEQVQ4jX2VwZJdNRJEM0t13WCMMfwBX8Gf8z/MhoiBCDrsfu77pKpMFrqvmVnMKBSSNsojVSlL/PXnX/A08Ok9fvyInz7yx4/44Xt+/MAP7/n+W377xKeDR2IECcCW1KWqnmvNue7rfq7zXK9nvd7rduo2dZu+LZ+NKaQDIAECIGAbMGz858KmbRKGYQCPidiN4BbYSnyTRHoMjEDQBGwakCFRYot6dO7dhmz70n9okwTJIIMRjEAEwg4g+xjIgQhvogUJLXSzm9UcESRtBknAsrwHAyZA4hJWjIjhGAhjAIPIepcXgITtlqtRhVWciyNIBEyNGCRBXwzt4OFx9kFe6jFSAx5ECllHYoRH7I0b4FWYC2MwSDisyBEjIhgA7X8YO94RjIhhDkc6zAEmYTnnkQg6LoCqtZbn8Ai8qUvRY4yxiZtxNcCkSQQxGIMhhjGMAYvONcJBkwYkdZXm0ggHAeNS73Fk5hhjjOAgY7+kKx3YGBAIYCCEGA446LxHIGBCdnd3lWZ0QDAsWNEdfWRnZmaOHCPjyjcNbQYs2IRpPDrDhHISBnwZqCvQRL9t7I6u0ZV95HEcOTIzIzJiG287r6SWWnpcqY22BSjvFgCJKjdUUFntbrfV6KJqdGf3UV1HHtlHjooYEdtmklqqVqlKXXu5iXbObgAKSCyz1KVoVSulgt4A1d3d2Ud25U4Gr+rhDVhdq3pVrarqqlZZOdcEIELBbtSIUrSjnVJaTfew2i21+ug+alSOEY8o6RGl1TWrZ9e9anat7pZynScIkQp0sJOtKA+5hMNsUrbktq405dimuArQvkG3VtfsnlWza3ZVd1tZt5sJBz3YSSnkYaSZCCFkWpQ3RhmVa1vuekeWrtut7rXPXjW7S91S1p/PCPgIP4Wf0kogGUdIkiFAQMFwW+pCDEYAYcB+xKdV3dU1q9Ye1dcN+q/fAADh777Dp/fgN8xvQrZB0A6bNi271AyBBtu7JPoh3Tu9s9aqC7M2QFfVFW9fwC9894lP2I40ZLYQckmWu8ESSl7tVT1Lc9V91n3Vfa77XOecr3O9rHlfC7XQnW91HQBfwB+eqXfEO1D76OS2+S4c7va9+j7rda6v53o555ev5x8v5/35httnoPHf7QLwMXIhfBIfQCNsgjTogLbdu2rN9XrOL1/P55ev/3r+XL//hf/d0v/8ewDABn0nRBrc/4n1mK1WV9dc83w9X/79+Y/6/fw/6gD+BqG347FWZtGKAAAAAElFTkSuQmCC)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv-800x533.jpg" alt="Measuring the KV rating and speed of the Maytech 70mm hub motor" class="wp-image-6343 not-transparent"/></a><figcaption>Measuring the KV rating of the motor &#8212; 2100 RPM at 25V is 84.</figcaption></figure></div>
+
+
+
+<h2 class="wp-block-heading">FVT Sleeping Lion 120A Speed Controller (ESC)</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric.jpg"><img data-dominant-color="8e6a5d" data-has-transparency="false" data-blurhash="LEHT{pD$G]r?=z00S~nhYkE1S$$*" style="--dominant-color: #8e6a5d; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAIAAAAUMWhjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADgElEQVRIiW1VwRJjNwiTBH7Zfm8vnX76xkg92Mlup51hEicHhIQA/vnX3wCAMEEiW7HiTla8kAd4iJf0lF5dq3v1Ws9T66nnxfXweWU9WS/3OjHVVlkK2UAAnOxMPj/BBAACMLyvIEECJAmSJMx9/38AzZgAPgBKDgPGQpTwQBokQsKGDU/szLjMGZTjiSt2PCFvOVTL8zuDL0DF9w2IgAwISIgQJklB5BYlbIU0aNKn2kqsUF2zvz3gzZ6y62AgQnh0MpEKbJgAAQC83wjgIIHbtu2KKmRr3vwA6MOgfkUuhgEebttetBE75qcN8QnbKzWuD0DNzw8Abvlx3c8bPCRISBl53pgVb3rgoSdzW5I1mUl1/gMAnWL/LVF5FOuYmAhpCtXZy/Pm3tgbM5jJTNbO7PRCr6iigtjlNwF+GeC3BpzsHsaMkdNhWQUt7oV+Y78x7+yNvTM7e2Ot1EJ1JEhd3kAIHFN+JLI85ZFH3vIgExuIQVDQQj/on5k3Tt7ZmY21sVd6oRpVIFuYXwyQgoVj01G2spkNv+EN79hBAIWN/aR/ZH+zz9EK68He6IYEqkUczxHXMEpE8wSMbGTDPzNv+J04YdiZJ7NPe5HkmtTwoDemoYLUKiH4SGQGBJgwJj/gSGBgJ+94JwnangQBQ4YMCB4/BjbKKIFq1sKVKIgRk4bv9mAGUSREsE4iI0EcO5PjUU002RssUB+kAtVcr7sqYCTwxHO2EcgDS9wFFzDYiR2ZHS2zTH2Wz91pccAABtFYrzvqh8EF2B6JMs+EEVAoaEXjs0bR1oqe9JNarr7eh0KejQyw8fzxXb+I7ZG3XVRFokSKElhRQ5OauxhZ4IpWaqWe9JNerpXqqKPCuQd5fhyJEiMDj6fpTb1PdhwA9XXhLYZggQ016sC0e0Xt6u8iCtV5fjAJbtvogTZdt3YKKqqoDQ3rEAUgsMCCmmrUQjXUrrLKKlORAjbWK78a4MyGhBFJkuCFoZo1dBgABA65pioHQ40qqKIyZclkwE4/p8OJ4TnZQeIzBSJJ0SMff4IQeKKpos5nQR0pLEtDfgHWBbDBYwDkM14EAoikBVs5R0aAqCNRUY3PG6oc11LnunWqECAOf133S6jOJbiSh07OCSMpsKgGT4fqg6dQJ/sZ8gYFIt9hUnJG1yIVSrddiAkebkefgvR77fcfXoUDBvwHHj+fYm+XHOAAAAAASUVORK5CYII=)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric-800x600.jpg" alt="Favourite FVT 120A 12S ESC for Electric Skateboard" class="wp-image-6348 not-transparent"/></a></figure></div>
+
+
+
+<p class="wp-block-paragraph">During the first test run I was using the new <a href="http://www.szfvt.com/en/proshow-105-3-54-54-100-16-3.html">high-voltage 12S 120A skateboard speed controller from FVT</a>. Here are the <a href="https://www.flickr.com/photos/kasparsdambis/albums/72157681905832786">photos of&nbsp;the teardown</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/atom-wpcs-flags" rel="bookmark" title="Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags">Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags</a></li>
+<li><a href="https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero" rel="bookmark" title="PiJack Ethernet Hat for Raspberry Pi Zero">PiJack Ethernet Hat for Raspberry Pi Zero</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-electric-skatboard-hub-motor-trucks/feed</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/04/part-1-diy-electric-skateboard-hub-motor-trucks.jpg" length="200739" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-rotor-wheel-scaled.jpg" length="471863" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-stator-scaled.jpg" length="506148" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/04/maytech-70mm-hub-motor-speed-voltage-rating-kv-scaled.jpg" length="314682" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/04/favourite-fvt-120a-12s-esc-skateboard-electric-scaled.jpg" length="766236" type="image/jpeg" />	</item>
+		<item>
+		<title>DIY Professional Wireless Headphones</title>
+		<link>https://kaspars.net/blog/diy-wireless-headphones</link>
+					<comments>https://kaspars.net/blog/diy-wireless-headphones#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 12:47:27 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[How to]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6293</guid>
+
+					<description><![CDATA[In episode 7 of my video blog I explain how I converted the popular Sony MDR-7506 headphones into wireless headphones using a bluetooth audio receiver from Havit. This is a follow-up video to my previous&#160;research in&#160;using Bluetooth audio for capturing microphone input on iPhone 7 which doesn&#8217;t have the 3.5mm audio input jack. The Havit [&#8230;] <a href="https://kaspars.net/blog/diy-wireless-headphones" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="DIY Professional Wireless Headphones using Sony MDR-7506" width="650" height="366" src="https://www.youtube.com/embed/t5Zwb16MnJ4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=t5Zwb16MnJ4">episode 7</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I explain how I converted the popular <a href="https://kaspars.net/go/amazon-sony-mdr-7506" data-type="surl" data-id="10537">Sony MDR-7506 headphones</a> into wireless headphones using <a href="https://www.amazon.com/dp/B0185GZMMQ?tag=familytech03-20">a bluetooth audio receiver from Havit</a>. This is a follow-up video to my previous&nbsp;<a href="https://kaspars.net/blog/electronics/iphone-7-bluetooth-microphone">research in&nbsp;using Bluetooth audio for capturing microphone input on iPhone 7</a> which doesn&#8217;t have the 3.5mm audio input jack.</p>
+
+
+
+<p class="wp-block-paragraph">The Havit audio transceiver&nbsp;module uses the&nbsp;<a href="http://www.csr.com/products/63/csr8670">CSR8670 Bluetooth audio chip</a> which is also used in most of the similar devices. It also features a very capable <a href="https://www.diodes.com/assets/Datasheets/PAM8901_8.pdf">PAM8908 headphone driver</a> and audio amplifier.</p>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;6ab121528aa99&quot;}" data-wp-interactive="core/image" data-wp-key="6ab121528aa99" class="wp-block-image size-large wp-lightbox-container"><img data-dominant-color="999b95" data-has-transparency="false" data-blurhash="LgJ[Cg?b~p%Lxpt6odax-:jtRkR*" style="--dominant-color: #999b95; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEA0lEQVQ4jWVVa2/cNhCcfZHSOXXy//9hixa1Y99JIvfRD9I5AUpQEgFJM7vD2SVV/QUACFSMMY9j7Nuxbcd23x6P7XHfHo9t27bjOMY83GciQMUMUVYTVTVTU1U1VRVRYREWJiZiAikAoK7rfBSqqqoyK6t+rbOyKquIKglcv43nT6h6ri5IvSBRlRdKZGZkZEZkeLrH9HQP9/CIrCAqLgBFREyZnMHJlEkVSCABAiURAaRfMV+IkRHpnnPG9BjTj+HHMfdjjjE9ZlUQlyhp8pkzEZ1qAAwhVBSDqYiIiBRIVJ3BRqR7zBlj+njibvvYtrFtxxjHScBSqmwmmac6dM2kUiQXczEzgUCkGVknQYR7TI95oo+57fOxHffHcb/vj8c+jsNjACkCM25NMvKSpFCJVGgipJiLiS+Jwk+CuGSZPkac6Ns+7o/x+Xl8fOz3+3bse/gEhSr1JsuiGVWJKiCpkjKRUSzJnMwMIgJpRFaVe/pMnzFHjOnH4fs+H9u434+Pz/395/bxse2PLXwyZWu0LhpulUARQCiqokykgqWYi5iIGICGZ1aFp3u65/QcI8bw/fBtm/fH+Pl5vL3v72/b43PzOZTztoq/aGUxmMFMTGCATw4RkBQREyUIGlFVFVGnedxzeowZY8R++GObn/f5/jH++ff4+bbHPhar+U2QpSQmrqIqIZxMSYgqygrOIi4QAdBMZCKyMiqywjO83GvOGDOOEfvun3d/e59//znnm3//ozjRW6w950if5X7GVxwFqqKz4p51kIk6PfC8ZyKzMpGBCHhgzjoOfLzjeGAB/AcyKJOquIqqOPMEPicu7wIA9CrvX68JeG4dzhJiFWkmf7zqDbW8wrqKGosSC7EQM7PQ2XyIiRjEBLrqAOC6ugUB1xfMwiwqYqq96W21769NKvOHLA0vr7K8tLY0603NVI1VRZVFWURY6Nx4AkAKIsJXrMzEzCIiptpMl263tb1+64hYjTLcFOsqLy+23npfWuvNejOzs6mKiAhfBCAiKBEDRQTiZGYWUVFVbaa9t3Vp3249pzNq7ZwZIuiN15utt7asra3derNuamqmosLMzHw2IgBKJEARg5mFRURUxVRbs6XbbWl+65WhgmORzGAua9y7Lkvrq/WltW7WrDVTFZH/EzCjique+CIiZtpMe7N1aTEdGcLojbOCCGLUmvauvbe+WGvWmpnqbwR0DZASE4qoivhUSFRFVcy0Ne3NfLHMxlzDKDPAJcLWpDU9Y7d2HWm/CIj4yoC+9oBP95wsKnxayJq2qREGJDOyGFQsrCbWRE3Vzk0T0Wf6vyVAXy4iOs+N06Snk1iEVVhVTCVDgIwECCx0GlIuUU9XM8szwl8E+A/4mSi4m4/C8gAAAABJRU5ErkJggg==)" decoding="async" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on--pointerdown="actions.preloadImage" data-wp-on--pointerenter="actions.preloadImageWithDelay" data-wp-on--pointerleave="actions.cancelPreload" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter-1024x683.jpg" alt="Bluetooth Audio Transmitter and Receiver from Havit (CSR8670)" class="wp-image-6305 not-transparent"/><button
+			class="lightbox-trigger"
+			type="button"
+			aria-haspopup="dialog"
+			data-wp-bind--aria-label="state.thisImage.triggerButtonAriaLabel"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.thisImage.buttonRight"
+			data-wp-style--top="state.thisImage.buttonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button></figure>
+
+
+
+<p class="wp-block-paragraph">The 3.5mm input jack on the PCB can be soldered directly to the three audio signal wires of the&nbsp;Sony MDR-7508 headphones and placed inside the left headphone&nbsp;after drilling the required holes for the on/off switch, the micro-USB charging port and the 3.5mm audio input port which continues to work&nbsp;just like before the modifications:</p>
+
+
+<div class="wp-block-image">
+<figure data-wp-context="{&quot;imageId&quot;:&quot;6ab121528af0d&quot;}" data-wp-interactive="core/image" data-wp-key="6ab121528af0d" class="aligncenter size-large wp-lightbox-container"><img data-dominant-color="423f39" data-has-transparency="false" data-blurhash="LGA,j~?H9GV@%2%L-;xu9Gxt~W-;" style="--dominant-color: #423f39; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEOklEQVQ4jWVVyZLdxhHMWhp473GGokTpZJv+Y+kP/Fu+OBxyhA6kyNEM5y1Ad20+ADOS7IwKBJZGFSo7s0D/+OnHqooIM+ujL8tyu10vl/Pz+enr198eHz89fPnXx5/xK37HneL9D7i7++thvp/aUbhRSTpi1LjG+sWuy3jGeEQHjOvPAAoACETMIqLTNB/u3uP+JfuJ8PYd5sN9a01VWJiZaA+QgBoYxFsWkLp7VUVmZGRmVoFAzNJ0mubTm/vEB5kf7t4/mKMIKtqm963dNT2pzkKNIJWUqEriRnwieaYGnsEdon0MVGWmh3t4ZhYgIm2aDqcThHSeTvfvzP+WGVUgYmJhUmYlCMCVlAGXKiAzNVi/p/aFT5AEdF2XjZzIjPDIAMAqE2YSavN0jDfb/ap8ZbGAKqpEZkVUePIIoBKsIAVPIsdz0Y30cr1uvFdVoaqqCCJCQm1qVZmol9RZlbkdMiMyPNzDPMwChKQKkBI34micRyEnPZ+fARBtu8QszMKsotz23SMC7R9QW+aI8HB3MzMzMSNGIRMUICVSYlVpEyhZn54eQSQi2lRba9M0SWOR1lRVVYVFmAACXvJ7bLnHGMxCIGRlVHiRFAlIiERIg5GlDw+fmVmnaT4cDqcjmHRSIhJt0zy1pirCwgQAteV3dxNh3vvKDE+WIFbiBBUIYCYJqoJ8e+RlublHEQmLNm1bH/O0obWptda0qYqIMDET7YxtLWV4RGREhmVERVQGVRCKob/88z/zjLd/+aGodGqzHSKzAAIxMTOLiooQARDO2KgSERFh5leLgaooQVmUSZmURZWA/gKg48O/P7fj3fHN/TD32B1XqAJtBiYiAEWE3wPbw9plllW7aKMiMr3Kq3R7/zPw7nIZfbiZe/hrzxkRTEQFQqFqs/vGzEvEfuIRHuHu5jYiepW9FuiAr8PNzcLMzdzMhikLA8hKZkZVVYS7mY9tjbu5e7j5fjlsdBvdxi38lrnmS4G3AGVLr3C3YWOMtTcSLiAiRTfNVG0qsm3J6MO2GMO6We+j97H05TL6o/dLONL1CByBb4BJT0gKSxvW18EiACLSmokIMREqXyvYGKP33pfe1z7WPtZ1rGu/rct5uX5av44+MACDfsDMmKfD/TyfGBKeo5voWgSPaDa0qQhvft5aiHBzszH66H1dl7Uv67it63VZn6/Xj5fP9gSc9/Gu3373dxLig+o8CUl5WTcQe2Y306asvMsRKOSrmTee+hjrui7Lermtz9fbp6ff7CP+CH3z/VsiAhM1JpKKsuFRNdxYhZRJmIRoF+Xurn1euI8x+rrelvVyXb48ndePgT9Dj6dTASAUIakqK4ZXeA0qQTFKCIw/CH+3cESE+xjW+7gt69NlOX+64P+gOrXNLFkFZFSmp0c60imDKrmSAcJWZjfeNiU8zLz3cV3H43Xd/rb/g/8CgSTlNTDkYXoAAAAASUVORK5CYII=)" decoding="async" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on--pointerdown="actions.preloadImage" data-wp-on--pointerenter="actions.preloadImageWithDelay" data-wp-on--pointerleave="actions.cancelPreload" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers-1024x683.jpg" alt="Sony MDR-7506 Headphone Speaker" class="wp-image-6306 not-transparent"/><button
+			class="lightbox-trigger"
+			type="button"
+			aria-haspopup="dialog"
+			data-wp-bind--aria-label="state.thisImage.triggerButtonAriaLabel"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.thisImage.buttonRight"
+			data-wp-style--top="state.thisImage.buttonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button></figure>
+</div>]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/diy-wireless-headphones/feed</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/03/diy-professional-wireless-bluetooth-headphones-sony-mdr-7506-havit.jpg" length="210205" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/03/havit-bluetooth-receiver-transmitter-scaled.jpg" length="444264" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/03/sony-mdr-7506-headphones-speakers-scaled.jpg" length="408281" type="image/jpeg" />	</item>
+		<item>
+		<title>Display for Orange Pi Zero</title>
+		<link>https://kaspars.net/blog/spi-display-orange-pi-zero</link>
+					<comments>https://kaspars.net/blog/spi-display-orange-pi-zero#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 05 Mar 2017 17:00:22 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Orange Pi Zero]]></category>
+		<category><![CDATA[raspberrypi]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6275</guid>
+
+					<description><![CDATA[After figuring out the GPIO pin names for the Orange Pi Zero expansion port it is relatively easy to configure any TFT display as a FBTFT device attached over the SPI bus, as long as you know the name of the chip used to drive the LCD screen. Here is a list of all the chips supported by the [&#8230;] <a href="https://kaspars.net/blog/spi-display-orange-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Display for Orange Pi Zero" width="650" height="366" src="https://www.youtube.com/embed/Td-R_Rk2VQ4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">After figuring out the <a href="https://kaspars.net/blog/linux/orange-pi-zero-gpio">GPIO pin names</a> for the <a href="https://kaspars.net/go/orange-pi-store" data-type="surl" data-id="6378">Orange Pi Zero</a> expansion port it is relatively easy to configure any TFT display as <a href="https://github.com/notro/fbtft/wiki/fbtft_device">a FBTFT device</a> attached over the SPI bus, as long as you know the name of the chip used to drive the LCD screen. Here is <a href="https://github.com/torvalds/linux/tree/master/drivers/staging/fbtft">a list of all the chips supported by the Linux kernel</a> out of the box.</p>
+
+
+
+<p class="wp-block-paragraph">The display I have&nbsp;is&nbsp;very similar to this <a href="http://www.waveshare.com/product/3.2inch-RPi-LCD-B.htm">3.2″ Waveshare touch-screen display</a> (<a href="https://kaspars.net/go/waveshare-32inch-display">AliExpress</a> / <a href="https://kaspars.net/go/amazon-waveshare-3-5-touchscreen">Amazon</a>) that uses the <a href="https://cdn-shop.adafruit.com/datasheets/ILI9340.pdf">ILI9340 LCD driver (PDF)</a> chip. It was only a matter of specifying the two GPIO pins used for <code>DC</code> (Data or Command) and <code>RST</code> (Reset) in addition to the SPI port.</p>
+
+
+
+<ul class="wp-block-list">
+<li>H2+ port <code>PA00</code>&nbsp;maps to&nbsp;<strong>GPIO 0</strong>, connected to <code>RST</code></li>
+
+
+
+<li>H2+ port <code>PA03</code>&nbsp;maps to <strong>GPIO 3</strong>, connected to <code>DC</code></li>
+
+
+
+<li>H2+ <strong>SPI bus 1</strong> is connected to the display module SPI pins.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">The following command can be used to load the FBTFT device with the required configuration: </p>
+
+
+
+<pre class="wp-block-code"><code>$ sudo modprobe fbtft_device custom name=fb_ili9340 gpios=dc:3,reset:0 speed=16000000 busnum=1 rotate=90</code></pre>
+
+
+
+<p class="wp-block-paragraph">And then map the console output to the newly created framebuffer device:</p>
+
+
+
+<pre class="wp-block-code"><code>$ con2fbmap 1 8</code></pre>
+
+
+
+<p class="wp-block-paragraph">where 8 stands for <code>/dev/fb8</code>.</p>
+
+
+
+<p class="wp-block-paragraph">Here is the display running <code>htop</code>:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare.jpg"><img data-dominant-color="80837e" data-has-transparency="false" data-blurhash="LaIhW?a}~V-;xtNGofxu^+M|Iot7" style="--dominant-color: #80837e; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEeElEQVQ4jWVVS89kNxE99fDj3u4vkwwkkxAJgRQE0khs+f9LJFaDEgmxCdIMEYsQZr6vu++168Hi9jfiUbKPvfGpcrlOmf7x/XeZYeZj7Nu2XS/Xy+Xp6fHp8fHpcrncbrc5LBOipbW+rOvpdD6dT+u6rmvvrdVaiooIERIZERY+w6b7DLeIUCAB3DEzn+cBmRkZmUQRkRGZkRHHPjLyPihA9PHEYchEIjUiMo9DH809wt3NzcymWQQkEiI8p34cqixMBCCDiSmRkWEZ7uEHR0ZohEemh7v7geZubtPnsLnNsY3hnsw6E0EMZhIhYRAlITI8XIWYQBmZnmHhFm4ZlhFqbhnpZubTzMzntDls7HNsY7/u2/W2TXOQ1DlHhAEOONIzPcKsziKqIgSmRHqG553dM0PNZkaamdmcNuf8T/bb4+3yeLluY0ZyqX2d82y2u4/wYT7mXGZttRQVZRJKQiAD4RmGiMxQmzMyzHzanDaGjTHHPvZt3y7b7cP16cfHD++v2x5Q7ef19uk+LnNe59zG3Oayjr7U0ooWIWViSsqgDKQjA5k6bWbGcYH7DebY57iN/Wm7/nT58O79j999+Nd1m5BFTp+9vt5+se+fj3Ed48XYH9ZlbXWppakUISEIJSMpAwhkqtnMjGk+bd6zZHPMsY39st/+eXv80/sf8MNb/A1I+NfLmy+/ebNtf9jH12NuY2xjPCzt1Gov2pSLkBLdfSABqJtFhpu7m5kdON2GzW3uP20XPL7F97jbuxve/Rmvf/dHi997THdzc1t8NmvFijRhvfsAUxKgHp6Rca/c8LsSwiPM42aGDf9r3/4Fpb1R7cLKJMA9J6FQCeEUCgITGNCMyMxnTOQhbBCIiJUL5P8cIHEd2OfTsH3aMBvTpnBhMoIQHERMRAgiRgIJJAFEIAIxWFiKlKbtRT3j/Evof/O3L9BXaOkiSszETHRQEhGInjdMREpgIIgOjbKwqmiV2rSd6vqz5ZPfvPjqr79VvP073m/AGa9e4dVLvPz09fnh82V96H2trddaSymqqqLCIiREzCBAmThBTGAOYVXWIqVqXWo/99PLk/96UqXl2/MXGAEp6P1X59NX5/Xn59Nn5+WTpT8sbW1lqaUXqcp6PAyBCURQYTman3KqeJFStPbSlmYPi/sEpS5l/fI8hwOirdbT0h+Wfl77eemnXpdel6qtSFE55PaRnQAV1szMpBCoRFGvWlv1tYb3SCchXcqyW3iCRUstvbWl16W3pdfeaq/aihblIiyCg/2oUSBVWBIAKAMuoVKquhW36m6ZwUKlF7PIBLGI1tJqba32XlurrWotWlVUSOS5/OlQWRKgzJpIJIJTRYu46eEjvGYGhLSpeyaIWbRULfWgLrWVWrQUUWEVYj4CP9iDkMhUZs5MMIRTOERERVS0qNZSMkBglYgEEbNqKaW0UmtttZSqtagqq7LwkffEcyPKTCCPKsokEDMRMwmTCLOIqKhLhIIpAiASUSm1lFJqOdZ7+CJ8/4GO5CRl0tHs/g1NBnI99a86DAAAAABJRU5ErkJggg==)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare-800x534.jpg" alt="3.2″ TFT LCD Display for Orange Pi Zero Over SPI" class="wp-image-6246 not-transparent"/></a></figure>
+</div>
+
+
+<h2 class="wp-block-heading">Permanent Setup</h2>
+
+
+
+<p class="wp-block-paragraph">Create a new file&nbsp;<code>/etc/modules-load.d/fbtft.conf</code> with the following content:</p>
+
+
+
+<pre class="wp-block-code"><code>fbtft_device</code></pre>
+
+
+
+<p class="wp-block-paragraph">Create another file <code>/etc/modprobe.d/fbtft.conf</code> with the configuration for&nbsp;the <code>fbtft_device</code>&nbsp;device: </p>
+
+
+
+<pre class="wp-block-code"><code>options fbtft_device custom name=fb_ili9340 gpios=dc:3,reset:0 speed=16000000 busnum=1 rotate=90</code></pre>
+
+
+
+<p class="wp-block-paragraph">Finally, edit <code>/boot/armbianEnv.txt</code> to map the console output to the framebuffer device during the boot, by appending the following: </p>
+
+
+
+<pre class="wp-block-code"><code>extraargs="fbcon=map:8"</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/spi-display-orange-pi-zero/feed</wfw:commentRss>
+			<slash:comments>44</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/03/display-for-orange-pi-zero.jpg" length="123873" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-tft-lcd-display-320x240-waveshare.jpg" length="482798" type="image/jpeg" />	</item>
+		<item>
+		<title>PiJack Ethernet Hat for Raspberry Pi Zero</title>
+		<link>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero</link>
+					<comments>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sat, 11 Feb 2017 19:09:43 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6206</guid>
+
+					<description><![CDATA[In episode 5 of my video blog I review the PiJack Ethernet Hat ($15) for the Raspberry Pi Zero. This is a follow-up to my review of the Orange Pi Zero computer ($9) which has a built-in Ethernet and WiFi. PiJack uses&#160;the Microchip ENC28J60 Ethernet controller which is capable of 10 Mbps (or just 1.25MB/s). While the [&#8230;] <a href="https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed aligncenter is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="PiJack Ethernet Hat for Raspberry Pi Zero" width="650" height="366" src="https://www.youtube.com/embed/PcT6ncGLMjE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=PcT6ncGLMjE">episode 5</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I review the <a href="https://pijack.net/">PiJack Ethernet Hat</a> ($15) for the Raspberry Pi Zero. This is a follow-up to <a href="https://www.youtube.com/watch?v=RUf0WLs7U_8">my review</a> of the <a href="https://kaspars.net/go/orange-pi-store" data-type="surl" data-id="6378">Orange Pi Zero</a> computer ($9) which has a built-in Ethernet and WiFi.</p>
+
+
+
+<p class="wp-block-paragraph">PiJack uses&nbsp;the <a href="http://www.microchip.com/wwwproducts/en/en022889">Microchip ENC28J60 Ethernet controller</a> which is capable of 10 Mbps (or just 1.25MB/s). While the Raspberry Pi Zero will&nbsp;recognize and configure the PiJack automatically, the actual networking speed&nbsp;didn&#8217;t exceed 5 Mbps with&nbsp;the&nbsp;<code>iperf</code>&nbsp;test&nbsp;or when downloading a large file over a local network using <code>wget</code>.</p>
+
+
+<div class="wp-block-image size-large wp-image-6212">
+<figure class="aligncenter"><img data-dominant-color="363636" data-has-transparency="true" data-blurhash="LA7^}V%Mt7oe~qxaofj@_3WBfPoe" style="--dominant-color: #363636; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAIAAAD4YuoOAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABpElEQVQ4jZ1UUXvbMAg8ajXZv963b794cxtVkuH2AMjy0pdWcUhk5DsOA/L7108ABOjLYCSNRjMjSQsHQRIECIAglsX44GIBEsXIOEAEnNHIQLeFAiTjwXx84SAy0IuvHGMsCuDoFwW+xxSBJxFPdxdfaa1lPCeBY1uSzFR5lpgRThymqmeO8nhU30YKMmSzSRBS3DMjmWn/RAEAShC8vb9FQJnshSAXVyZLgiVlnBpO6EjR/ndfUuQEE13/+05PlkIgrwrSSBD82fcV3piBq6pbVdXjyD/xa2pubSnjE/e0Zd93T1GU6AmvqoevMfoYvfda60dr+NIqj1qngBXdkfvovdVa6+hfwz0Jhh7RZyQj23qoHscYY/TeP1r/NjqAsm3bqUAEIiICEUAgLyLby/baX1tvTbt+h+B+vyUBvO69Xvw95rtUMzVTmtEU9Mv8Ii2GzNyFdYIfd+8OLlMoa/LstxiEIEgBAbdwuzQGsmH9LMr9dosOnJNuYl4aa4JSBIkOgBIdcEHPEYpSSpkEJM2QM86bdzme8YpQAJEgiGR/qgD4B/3OR7n0s7qMAAAAAElFTkSuQmCC)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver-1024x509.png" alt="PiJack Hat for Raspberry Pi Zero with ENC28J60 Ethernet Controller" class="wp-image-6212 has-transparency"/><figcaption class="wp-element-caption">PiJack uses the Microchip ENC28J60 Ethernet controller.</figcaption></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Here is the <code>ethtool</code>&nbsp;report with the PiJack connected:</p>
+
+
+<div class="wp-block-image size-large wp-image-6210">
+<figure class="aligncenter"><img data-dominant-color="3a3a3a" data-has-transparency="true" data-blurhash="LH9H2^xtoyof~qoeoeof_3axa{oe" style="--dominant-color: #3a3a3a; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAIAAAAzPjmrAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB1ElEQVQ4ja2U3WrcMBSERxsRSGhaGih98V6VPmBLNoSUJF1bmplenCPZTX8gNF5z0Err+XZGPiqfv3wCAMO2bMuKm3ZOwQYMAEApZdQxjBXbjhpPxBegWjbmylBXjv8OKCguKCiegKjCL4S6tgb4dwfWBHgAynMTKDHngTCGhUGsp9MPGOluk5a0d+DpYM9AmTPxH/LHRn4M1IeHxy2hkYwkcfBmqA6tFA0IkNOZ0M5HLNb7++9jj2ZEQbCoBAgzKA8Tmx9kSjOIkZgB1Lu7u90eO9KRFOqivM9KoZE+ZmypOBbHwADq8fYWG2FKUyQpdYkkPXiwIEcWmHs/vNlFKV2SUW+ON7uXlGJId/bWW+tt7cvallN7bMuKE9Dxsqt+O34FYMui2MlTb09twekJy/JCsT9d5fLjGWBJJNihBXgN3XkdDgeX4sMBceMMOLwmoF5ffUB2maQuNvaVa2sL1ics/G/A+3fXyDaP11GiTLFTpDrVqEY2aqUa2SWIMOEOd/jf/6FevXkL7I7BZOSuWzajuZ8dY4giIKoc1QRkMA8+1MuLi0BtHRvHEZ2iyhNsvPajz7J78w6A7UHKZqvn5+f50OZgw+wAqb6ZzwZO9X0dAwP4CcxF79U0eMxCAAAAAElFTkSuQmCC)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet-1024x534.png" alt="Ethtool Report of PiJack Ethernet Hat for Raspberry Pi Zero" class="wp-image-6210 has-transparency"/><figcaption class="wp-element-caption">Ethtool Report of PiJack.</figcaption></figure>
+</div>
+
+
+<h2 class="wp-block-heading">Power Consumption</h2>
+
+
+
+<p class="wp-block-paragraph">Transferring a 1GB file over a local network using PiJack attached to the Raspberry Pi Zero consumes around 170mA or 0.85W while the Orange Pi Zero uses around 100mA or 0.5W for the same task. These are only very rough figures&nbsp;and will probably be different with&nbsp;your setup.</p>
+
+
+
+<h2 class="wp-block-heading">Conclusions</h2>
+
+
+
+<p class="wp-block-paragraph">PiJack is a good product if you don&#8217;t want to move away from the Raspberry Pi ecosystem for your project and you need to transfer only limited amounts of data. The Orange Pi Zero and NanoPi NEO are much cheaper at&nbsp;$10 and offer higher networking speeds and lower power consumption. The <a href="https://www.armbian.com/">Armbian</a> operating system has <a href="https://forum.armbian.com/">a great community</a> and plenty&nbsp;people interested in improving both the performance and power consumption of these well documented <a href="http://linux-sunxi.org/Main_Page">Allwinner SoC</a> based&nbsp;computers.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethernet-hat-raspberry-pi-zero.jpg" length="44686" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/02/pijack-raspberrypi-ethernet-enc28j60-driver.png" length="111561" type="image/png" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/02/pijack-ethtool-raspberrypi-zero-ethernet.png" length="97149" type="image/png" />	</item>
+		<item>
+		<title>Orange Pi Zero as a Web Server</title>
+		<link>https://kaspars.net/blog/orange-pi-zero</link>
+					<comments>https://kaspars.net/blog/orange-pi-zero#comments</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Mon, 30 Jan 2017 11:10:51 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Nginx]]></category>
+		<category><![CDATA[raspberrypi]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6192</guid>
+
+					<description><![CDATA[In episode 4 of my video blog I review Orange Pi Zero &#8212; the cheapest low-power computer with native Ethernet support, available on AliExpress for only $9. I&#8217;m using it as a headless webserver running Armbian to host a ToR relay. With Wi-Fi and USB ports disabled it consumes around 0.5W which amounts to 4.5kWh per year or $1.50. <a href="https://kaspars.net/blog/orange-pi-zero" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Orange Pi Zero as a Headless Webserver" width="650" height="366" src="https://www.youtube.com/embed/RUf0WLs7U_8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=RUf0WLs7U_8">episode 4</a> of <a href="https://kaspars.net/go/vlog">my video blog</a> I review <a href="https://kaspars.net/go/orange-pi-store" data-type="surl" data-id="6372">Orange Pi Zero</a> &#8212; the cheapest low-power computer with native Ethernet support, <a href="https://kaspars.net/go/orange-pi-store" data-type="surl" data-id="6372">available on AliExpress for only $9</a>. I&#8217;m using it as a headless webserver running <a href="https://www.armbian.com/">Armbian</a> to host a <a href="https://community.torproject.org/relay/">ToR relay</a>. With Wi-Fi and USB ports disabled it consumes around 0.5W which amounts to 4.5kWh per year or $1.50.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/orange-pi-zero/feed</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep4-orange-pi-zero-review.png" length="366948" type="image/png" />	</item>
+		<item>
+		<title>The Electric Poodle Project</title>
+		<link>https://kaspars.net/blog/electric-poodle-project</link>
+					<comments>https://kaspars.net/blog/electric-poodle-project#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 15 Jan 2017 18:27:10 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6162</guid>
+
+					<description><![CDATA[In episode 3 of my video blog I showcase the Electric Poodle project &#8212; a motor on a stick that was supposed to pull you forward on a skateboard and roller skates. Unfortunately it didn&#8217;t work that well because it was too heavy and not very portable, and hard to use. Here are a few similar projects [&#8230;] <a href="https://kaspars.net/blog/electric-poodle-project" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[<p><iframe loading="lazy" title="Electric Poodle, E-Paddle, Speedbat and Kickstick" width="650" height="366" src="https://www.youtube.com/embed/uKWEWvGtC6o?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p>In <a href="https://www.youtube.com/watch?v=uKWEWvGtC6o">episode 3</a> of <a href="https://www.youtube.com/channel/UCopSjr1a2QgRvm-yJRqcPpA">my video blog</a> I showcase the Electric Poodle project &#8212; a motor on a stick that was supposed to pull you forward on a skateboard and roller skates. Unfortunately it didn&#8217;t work that well because it was too heavy and not very portable, and hard to use.</p>
+<p>Here are a few similar projects that I discovered before and after building my prototype &#8212; <a href="http://www.epaddle.net">E-Paddle</a>, <a href="https://vimeo.com/5702197">Speedbat</a> and <a href="http://www.riserobotics.com/kickstick/">Kickstick</a>.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/diy-wireless-headphones" rel="bookmark" title="DIY Professional Wireless Headphones">DIY Professional Wireless Headphones</a></li>
+<li><a href="https://kaspars.net/blog/atom-wpcs-flags" rel="bookmark" title="Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags">Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags</a></li>
+<li><a href="https://kaspars.net/blog/ep1-batteries" rel="bookmark" title="Starting a Video Blog">Starting a Video Blog</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/electric-poodle-project/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep2-electric-poodle.png" length="353749" type="image/png" />	</item>
+		<item>
+		<title>Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</title>
+		<link>https://kaspars.net/blog/maytech-90mm-motor-review</link>
+					<comments>https://kaspars.net/blog/maytech-90mm-motor-review#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 08 Jan 2017 21:23:56 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Mobility]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6149</guid>
+
+					<description><![CDATA[In episode 2 of my video blog I review the Maytech 90mm sensored hub motor MTO9055HBM-60-HA for DIY&#160;electric skateboards and longboards. I compare it with the E-Wheelin i3 and show&#160;the trucks and the matching wheels. Here are my rough notes on the&#160;various dimensions and parameters of the motor: <a href="https://kaspars.net/blog/maytech-90mm-motor-review" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Review of Maytech 90mm Sensored Hub Motors for Electric Skateboards" width="650" height="366" src="https://www.youtube.com/embed/rpEv3Hr-U9E?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">In <a href="https://www.youtube.com/watch?v=rpEv3Hr-U9E">episode 2</a> of my video blog I review the <a href="https://www.flickr.com/photos/kasparsdambis/sets/72157678865233335">Maytech 90mm sensored hub motor MTO9055HBM-60-HA</a> for DIY&nbsp;electric skateboards and longboards. I compare it with the <a href="https://www.flickr.com/photos/kasparsdambis/sets/72157667661928215">E-Wheelin i3</a> and show&nbsp;the trucks and the matching wheels.</p>
+
+
+
+<p class="wp-block-paragraph">Here are my rough notes on the&nbsp;various dimensions and parameters of the motor:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs.jpg"><img data-dominant-color="aea69e" data-has-transparency="false" data-blurhash="LXKdrN%M9Gt6~WofM|axM{ayofWB" style="--dominant-color: #aea69e; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAIAAAAUMWhjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC/0lEQVRIiW1VW7LkKgyzRPa/lqnZwV1W/NL9MKTTZw5FU0BAwpbtxn9//8AMIAmuxcVrrXWttda61rXIxbVIGmCAyWTq7pqWkREZkX6He/qd4ele6V3Z1U0zM4PBnib7d/7e+17gl9mcksnM+Hz6Dfez1M99GPBMf9Lrs+DrCvQ6pV8O/9tw+ovm3JSZTJyHvFHOeyWdn0yva7+R4fu6nnbNLmZ3JPyJLEkyk7Yv9fMpP+Y6CC3pOuiG7ZmN2BJeXbI2wAw48m0rsNE1oyS1qTW9L52DkjVkEjZ6Q0ALECBrI+15g6Q2a/u8dj9rf1N3t7rV15gPszbjfG0ZGjAAE/sGM0ACj/DHcWqzPg5sqVstlXooqvtq6YkGdctMw4bvbqAgbjVbrT4w0mB1qzWTqsmz6qu7J0YBENDjzE/QSqZlaAOFk8wb9OndXZPeXVmVVVVZ1Vd1bQJDE9yKipKWZJSRRokkmpiolp5y0VWd1Tm4XVmZVVmZmVV9ZdXGN4NAkGqKXJTYYotLbJIL7FNUtgVVlTk9K/diD1FZWVdmjosBQ2NXPZIDOhw96ATnKcdF1VUZmZlP0YvIjAifjeorMicTcRoJkKtR5GpWr0WwhxhDMMHW44pIj908wsN9b2RVXZ5uUy4OB0kCtUhyNVm1Flng4gTudpG6qzLrC3q6++0REZV1uceu1hP0BAESLHKRxbVHoEjYUblbGoIcdPfbB9rvcA8Pj8y6PHyn/E6rUQEbneTiIrjICeRdjyaRKqsy0t3d4/b7dr/9vv12j0PgvjUYE3h0LpLkwjoTguBYe8rBdlFGuN9x34fgUFTWdceNkwiGBx/kuAjkeOkJgidKu6uzchOMBYfD/RBExMtFO6E5RjQXSaJqOF/4J9Gy3hrc99biHh/lhwAniHiMINjsRfIToJ8YkrqnLGRkxGgasbWIe5aZeWXllwUNEhQlSi09BMRW6TFg8nhnWWY84+7hWXlV1UdhAKD2f4jOP7bMKBOBLfEw7Dp0ClK9Jqc+VdX/c61DTYFM1G4AAAAASUVORK5CYII=)" decoding="async" src="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs-1024x768.jpg" alt="Notes on Maytech MTO9055HBM-60-HA hub motor for electric skateboards and longboards" class="wp-image-6152 not-transparent"/></a></figure></div>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/pijack-ethernet-raspberry-pi-zero" rel="bookmark" title="PiJack Ethernet Hat for Raspberry Pi Zero">PiJack Ethernet Hat for Raspberry Pi Zero</a></li>
+<li><a href="https://kaspars.net/blog/diy-wireless-headphones" rel="bookmark" title="DIY Professional Wireless Headphones">DIY Professional Wireless Headphones</a></li>
+<li><a href="https://kaspars.net/blog/atom-wpcs-flags" rel="bookmark" title="Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags">Atom Autocomplete for WordPress Coding Standard (WPCS) Whitelist Flags</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/maytech-90mm-motor-review/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/ep2-cover.jpg" length="283867" type="image/jpeg" /> <enclosure url="https://kaspars.net/wp-content/uploads/2017/01/maytech-mto9055hbm-60-ha-specs.jpg" length="206630" type="image/jpeg" />	</item>
+		<item>
+		<title>Starting a Video Blog</title>
+		<link>https://kaspars.net/blog/ep1-batteries</link>
+					<comments>https://kaspars.net/blog/ep1-batteries#respond</comments>
+		
+		<dc:creator><![CDATA[Kaspars]]></dc:creator>
+		<pubDate>Sun, 01 Jan 2017 17:35:26 +0000</pubDate>
+				<category><![CDATA[Electronics]]></category>
+		<category><![CDATA[Video Blog]]></category>
+		<category><![CDATA[Solar]]></category>
+		<guid isPermaLink="false">https://kaspars.net/?p=6139</guid>
+
+					<description><![CDATA[I&#8217;ve been wanting to do this since the days of Ze Show and Rocketboom so here we are on the first day of 2017. I knew that the first episode would be the hardest to make so I&#8217;m really looking forward to the next ones. In the very first episode of my video blog I [&#8230;] <a href="https://kaspars.net/blog/ep1-batteries" class="read-more excerpt-read-more">Read&#160;more&#160;&#8594;</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="How to Compare Batteries and Choose Portable USB Battery Chargers" width="650" height="366" src="https://www.youtube.com/embed/CqTPjolm3I0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">I&#8217;ve been wanting to do this since the days of <a href="http://www.zefrank.com/theshow/">Ze Show</a> and <a href="https://en.wikipedia.org/wiki/Rocketboom">Rocketboom</a> so here we are on the first day of 2017. I knew that the first episode would be the hardest to make so I&#8217;m really looking forward to the next ones.</p>
+
+
+
+<p class="wp-block-paragraph">In the very <a href="https://www.youtube.com/watch?v=CqTPjolm3I0">first episode</a> of <a href="https://youtube.com/channel/UCopSjr1a2QgRvm-yJRqcPpA">my video blog</a> I talk about batteries and USB battery packs, and how to compare their capacity ratings in mAh and Wh.&nbsp;<a href="https://en.wikipedia.org/wiki/List_of_battery_sizes#Lithium-Ion_batteries_.28rechargeable.29">Type 18650 battery cells</a> are very&nbsp;popular for&nbsp;computer batteries, USB battery banks and electric cars including Tesla.</p>
+
+
+
+<p class="wp-block-paragraph">In the future episodes I&#8217;ll talk about my microcontroller projects, electric skateboards, scooters and bicycles, physical web, solar power, data logging and wireless transmission.</p>
+<div class='yarpp yarpp-related yarpp-related-rss yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://kaspars.net/blog/habits" rel="bookmark" title="Habits">Habits</a></li>
+<li><a href="https://kaspars.net/blog/maytech-90mm-motor-review" rel="bookmark" title="Video Review of the Maytech 90mm Hub Motors for Electric Skateboards">Video Review of the Maytech 90mm Hub Motors for Electric Skateboards</a></li>
+<li><a href="https://kaspars.net/blog/diy-wireless-headphones" rel="bookmark" title="DIY Professional Wireless Headphones">DIY Professional Wireless Headphones</a></li>
+</ol>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://kaspars.net/blog/ep1-batteries/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<enclosure url="https://kaspars.net/wp-content/uploads/2017/01/comparing-batteries-cover.jpg" length="232341" type="image/jpeg" />	</item>
+	</channel>
+</rss>
