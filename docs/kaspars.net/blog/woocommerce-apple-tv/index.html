@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>WooCommerce for Apple TV (WordPress) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<script>
+(()=>{var s;(s=document.documentElement).classList.add("dk-expands-js"),setTimeout(()=>{s.classList.contains("dk-expands-ready")||s.classList.remove("dk-expands-js")},4e3)})();
+</script>
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » WooCommerce for Apple TV Comments Feed" href="https://kaspars.net/blog/woocommerce-apple-tv/feed">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwoocommerce-apple-tv">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fwoocommerce-apple-tv&amp;format=xml">
+<meta property="og:title" content="WooCommerce for Apple TV">
+<meta property="og:description" content="[caption id=&quot;attachment_5667&quot; align=&quot;alignnone&quot; width=&quot;1000&quot;] See below for more screenshots of the Apple TV shopping experience[/caption] I wonder if it has to be a tvOS app. Glad there is&nbsp;the WooCommerce REST API.&nbsp;Apparently it's all HTML and Javascript with some Apple specific app magic on top: You build these client-server apps using web technologies such as HTTPS,...">
+<meta name="description" content="[caption id=&quot;attachment_5667&quot; align=&quot;alignnone&quot; width=&quot;1000&quot;] See below for more screenshots of the Apple TV shopping experience[/caption] I wonder if it has to be a tvOS app. Glad there is&nbsp;the WooCommerce REST API.&nbsp;Apparently it's all HTML and Javascript with some Apple specific app magic on top: You build these client-server apps using web technologies such as HTTPS,...">
+<meta property="og:image" content="../../wp-content/uploads/2015/09/apple-tv-store-homepage.jpeg">
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c8ad22cc04d41eccde7058cde46d0070.css" media="all">
+<link rel="stylesheet" id="webmention-css" href="../../wp-content/plugins/webmention/assets/css/webmention_ver%3D5.10.1.css" media="all">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="dominant-color-styles-inline-css">
+img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); }
+/*# sourceURL=dominant-color-styles-inline-css */
+</style>
+<style id="stand-width-ukraine-inline-css">
+#stand_with_ukraine_overlay{font-size:18px;line-height:1}#stand_with_ukraine_overlay a{background-color:gold;color:#0057b8;display:block;padding:1rem;text-align:center;text-decoration:none}#stand_with_ukraine_overlay a:focus,#stand_with_ukraine_overlay a:hover{background-color:#0057b8;color:gold}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/build/js/modules/style-ukraine.css */
+</style>
+<style id="dambis-kit--blurhash-inline-css">
+img[data-blurhash]{background-image:var(--dambis-kit-blurhash);background-size:cover;background-position:center}
+/*# sourceURL=dambis-kit--blurhash-inline-css */
+</style>
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c8ad22cc04d41eccde7058cde46d0070.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/5648"><meta name="generator" content="WordPress 7.1.3">
+<link rel="canonical" href="https://kaspars.net/blog/woocommerce-apple-tv">
+<link rel="shortlink" href="https://kaspars.net/5648">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/woocommerce-apple-tv"><meta name="generator" content="dominant-color-images 1.3.0">
+<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<link rel="site.standard.publication" href="at://did:plc:fd7xarjj37v5axbxczpgqj5c/site.standard.publication/3mqvlvldcxas4">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="WooCommerce for Apple TV">
+<meta property="og:description" content="See below for more screenshots of the Apple TV shopping experience I wonder if it has to be a tvOS app. Glad there is&nbsp;the WooCommerce REST ...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2015/09/apple-tv-store-homepage.jpeg">
+<meta property="og:url" content="https://kaspars.net/blog/woocommerce-apple-tv">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg"><link rel="alternate" type="text/markdown" href="https://kaspars.net/blog/woocommerce-apple-tv/md">
+<meta name="generator" content="embed-optimizer 1.0.0-beta6">
+
+<link rel="alternate" title="ActivityPub (JSON)" type="application/activity+json" href="https://kaspars.net/blog/woocommerce-apple-tv">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-120x120.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<style id="wp-custom-css">
+a, code { word-break: break-word; }
+.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+#nav-main .sub-menu { min-width: 6rem; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+code { white-space:pre-wrap; }
+pre code,
+.wp-block-code code { white-space:inherit; }
+
+.activitypub-modal__overlay h1,
+.activitypub-modal__overlay h2,
+.activitypub-modal__overlay h3,
+.activitypub-modal__overlay h4 {
+	color:inherit;
+}
+
+#menu-indieweb-webring li { display: inline-block; }
+#menu-indieweb-webring li:nth-child(2) { margin: 0 1rem; }
+
+.h-card-profile { display:none; }
+</style>
+<style id="dambis-kit-form-inline-css">
+.kit-form {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+.kit-form input,
+.kit-form button {
+	font: inherit;
+	line-height: inherit;
+}
+
+.kit-form .kit-form__field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.kit-form .kit-form__input,
+.kit-form .kit-form__input[type="email"],
+.kit-form .kit-form__input[type="text"] {
+	font: inherit;
+	line-height: inherit;
+	padding: 0.5rem 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.kit-form .kit-form__input:focus {
+	outline: none;
+	border-color: #007cba;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.2);
+}
+
+.kit-form .kit-form__submit {
+	padding: 0.5rem 1.5rem;
+	background: #007cba;
+	color: #fff;
+	border: 1px solid #007cba;
+	border-radius: 0.25rem;
+	font: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	align-self: flex-end;
+	white-space: nowrap;
+}
+
+.kit-form .kit-form__submit:hover {
+	background: #005a87;
+}
+
+.kit-form .kit-form__submit:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.4);
+}
+
+@media (max-width: 768px) {
+
+	.kit-form {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.kit-form__submit {
+		margin-top: 0.5rem;
+		align-self: stretch;
+	}
+}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/css/kit.css */
+</style>
+
+</head>
+<body class="wp-singular post-template-default single single-post postid-5648 single-format-standard custom-background wp-embed-responsive wp-theme-list-theme wp-child-theme-list-konstruktors has-header-image">
+<div id="stand_with_ukraine_overlay" role="banner">
+				<a href="https://war.ukraine.ua" title="Stand With Ukraine" rel="nofollow">#StandWithUkraine</a>
+			</div><div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a href="../" title="Blog About Web Design, WordPress and Performance">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a href="../" title="Latest Blog Posts">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a href="../topic/vlog/" title="My video blog about electronics and digital products">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a href="../archive/" title="Archive of all blogs posts">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/" title="About Kaspars Dambis">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a href="../../now/" title="What I’m Doing Now…">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a href="../../uses/" title="My preferred hardware and software">Uses</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a href="../../reads/" title="My bookshelf">Reads</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/wordpress/" rel="category tag">WordPress</a> →</div>
+		
+		<article class="post-5648 post type-post status-publish format-standard has-post-thumbnail hentry category-wordpress has-featured-image" id="post-5648" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					WooCommerce for Apple TV			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Wed, 09 Sep 2015 21:20:46 +0300">September 9, 2015</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Thu, 10 Sep 2015 20:39:40 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/wordpress/" rel="category tag">WordPress</a></span>  <span class="meta-item meta-comment-count">
+			<a href="#comments">1&nbsp;Comment</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				<div id="attachment_5667-2" style="width: 1010px" class="wp-caption alignnone"><img data-dominant-color="716e6f" data-has-transparency="false" data-blurhash="LjG+O7-;D%%fxut7WAju00M{%LM{" style="--dominant-color: #716e6f; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD2UlEQVQ4jW3U227cVBQG4H8d7PGcUtIilcMdXPESvAYPwSXPyAVCgKqKlrZqG5q2IZ2kmVPGY+914MKTQgNby9uWZfvT8tp70fc/fAcgHeGIgugpenjH2XMURghSIEoiVDHVTIpUJIfDLPrO2na/3WyvLi5Onz48QYdbQ+u6yUQK0hDIADkgoCRO4QwBhFhIhSuhikhpAAJiQWJJ8PC+zI7vf3ly/uI/wNH8HhIZCM80eMkhjzRKJ6QQmERYhVW4YlKCUlIEhUfpS9d1k/mkmY1GE61n+dPzlx8D9+5+hkRGhmdYhmWUDEMaEAQwk5CIqLCKVEzKpATKoPCwUvqu37e7+XY2n4+ns3p6VD3+7enZv4B792+ASE8vEZZpmQ4kEYhYRFhUpRKuRJRJGIxEeFix0nVd2+6209l0PBnX40YmTb74+dkjG4C7x59+AMIjLMIyLDJACQIxi6iIitSqlbAKCxFTICOtlNJ13a5tJ824qZuKa8mKTHHdPHr76wrQo6NjZGZkxPD1CIvwQCQSRCTMoqKVaqVSqVTCysRIwMMHoGmaWishQVCWtH2Wr2Fvq1O80elklpkZmRFuEebhnhYZCYCJmFlVtNYbQ0SFmBLp4cWsrisRQSIsS+/drszn/e64P/7G7LFqXY0SOfwiYQ/2MA+OjCSACcyilWilVX0LgIezCAD3KH0ZjfrRaDQajepm3IzHzXw6ZVcQEQACEREINFwRKCkBEB3uHYKZiIiYADCImZhoSPTmkMMsylNVM8vMzAyPMD+EOyKRyUQZnAggh6InpWRQUBIiwszMzfxwNnczd3czt95t47prd8iMyPTwf4BAxACIsKhUtaqpFtVaWYWZkuARZtZ1Xdvu2/Zm2rftbt9u291Fu8G1rlZLYFim7hZRDsaQAYFEeKiB1kMcVmoCkVHMuq5v2/319nq93qzXq/VqtV4ul++Wiz8vn+BCLy4XH/aBm0fxKB4W6YEYinwDjFRrlVpEhYSSEBnm1nX9vt1fb3fr1WZ5ubp89/78zeL1L2cP8Qew0bPzt0hkRFh4iejdi0cfaYFIAg2A1FqNVEaqtXB12MwD0PeHDDbLzdXi6t3p4uTHV8/x7NAqXr0+ATI9o4T37p373r2L7CILKMEiUouOVMeqjWojXAspQRAYgK5t2+1mu7pcnr/+68GD3z9qdi9O/8hAeETv1nrZmq3MFmbnHgCBGKqoqjtV9XldHVc6U5kI15SaQWFe9n273W0u35+/fPIG69vtmr76Fhmwgu4a60vsz24/8fG402A6/aKuPmE0WaS/iqtod1gAi/9/4W8+MhJlFMz3xgAAAABJRU5ErkJggg==)" loading="lazy" decoding="async" aria-describedby="caption-attachment-5667-2" class="wp-image-5667 size-full not-transparent" src="../../wp-content/uploads/2015/09/apple-tv-store-homepage_strip%3Dall%26quality%3D90%26resize%3D1000%2C563.jpeg" alt="Store homepage and category browser on Apple TV" width="1000" height="563" srcset="../../wp-content/uploads/2015/09/apple-tv-store-homepage_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-store-homepage_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-store-homepage_strip%3Dall%26quality%3D90%26resize%3D1000%2C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px"><p id="caption-attachment-5667-2" class="wp-caption-text">See below for more screenshots of the Apple TV shopping experience</p></div>
+<p>I wonder if it has to be a <a href="https://developer.apple.com/tvos/">tvOS</a> app. Glad there is&nbsp;the <a href="http://docs.woothemes.com/document/woocommerce-rest-api/">WooCommerce REST API</a>.&nbsp;Apparently <a href="https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/YourFirstAppleTVApp.html">it’s all HTML and Javascript with some Apple specific app magic on top</a>:</p>
+<blockquote><p>You build these client-server apps using web technologies such as HTTPS, XMLHTTPRequest, DOM, and JavaScript. You use Apple’s custom markup language, TVML, to create interfaces, and you specify app behaviors in a TVML document using JavaScript. The TVMLKit framework provides the bridge between your native code and the JavaScript/TMVL code in your user interface.</p></blockquote>
+<p>Here is an illustration of the <a href="https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/YourFirstAppleTVApp.html">Apple TV app client-server model</a>:</p>
+<div id="attachment_5652-2" style="width: 810px" class="wp-caption aligncenter"><a href="https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/YourFirstAppleTVApp.html"><img data-dominant-color="e9ebeb" data-has-transparency="false" data-blurhash="LORC[7WAV@%N~qRjWXoe-;%MM{Rj" style="--dominant-color: #e9ebeb; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAANCAIAAABHKvtLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABZklEQVQ4ja2US44CQQxDbafuf196iD2LVNFoxGIWBCHxafxspxomwbcnge3YSfR1dQCZAQKsj1/Pc78nSBL/tWJv+06SLHdyQ+3M5z4OAJAkRbGoPfxsHKNs9wCQrMfjuuXjuO3B+LUeUke6SqUqqUTxjbT9eX7dJ4DXdT0SjJzddvdYiO0d4gCqqqpWVQ2JkijwRbBPhHkNZF3XdQC23T2Mtnsy7o5UVSWtWr2qqpY0OUgewkTfgJ5W1vPnGWzArd49F+aVgLatGiMppxTJorY+puI+mN4Vjcpe8G4q9+w9B4wT2qYJE0Q6iWmCZ4tzeDq75CBewREhEHDsQgrI+6hO3aRIgpiTbI/6+477DWAk6zQIQhBIMJCY6CQgOdyiRA6Jcy7H3XjfAHcOJskSBSYgEgYBFSYKckcbAgXOUgUQ4336nf8Fv2ZvAvEkIJEQ3Lr8cycfhkACIggwo34eZybK3GdO/AvbRx6EC4wphwAAAABJRU5ErkJggg==)" loading="lazy" decoding="async" aria-describedby="caption-attachment-5652-2" class="wp-image-5652 size-medium not-transparent" src="../../wp-content/uploads/2015/09/apple-tv-app-flow-800x321.png/" alt="Apple TV App Flow" width="800" height="321"></a><p id="caption-attachment-5652-2" class="wp-caption-text">Source: <a href="https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/YourFirstAppleTVApp.html">developer.apple.com</a></p></div>
+<blockquote><p>Your JavaScript file loads TVML pages and pushes each page onto the navigation stack. As the user navigates through your app, TVML pages are pushed and popped from the stack. After the user closes your app, the Apple TV home screen appears.</p></blockquote>
+<p>Here are the <a href="https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html">docs for the Apple’s Television Markup Language (TVML)</a>&nbsp;with&nbsp;<a href="https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/ProductTemplate.html">an example of a product page</a>:</p>
+<pre><code>&lt;productTemplate&gt;
+   &lt;banner&gt;
+      &lt;infoList&gt;
+      &lt;/infoList&gt;
+      &lt;stack&gt;
+         &lt;title&gt;…&lt;/title&gt;
+         &lt;subtitle&gt;…&lt;subtitle&gt;
+         &lt;row&gt;
+         &lt;/row&gt;
+            &lt;description&gt;…&lt;/description&gt;
+            &lt;buttonLockup&gt;
+            &lt;/buttonLockup&gt;
+      &lt;/stack&gt;
+      &lt;heroImage src="…" /&gt;
+   &lt;/banner&gt;
+   &lt;shelf&gt;
+   &lt;/shelf&gt;
+   &lt;!—- Everything following is under the fold —-&gt;
+   &lt;shelf&gt;
+   &lt;/shelf&gt;
+   &lt;productInfo&gt;
+   &lt;/productInfo&gt;
+&lt;/productTemplate&gt;</code></pre>
+<p>which results into&nbsp;something like this:</p>
+<div id="attachment_5654-2" style="width: 810px" class="wp-caption aligncenter"><a href="https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/ProductTemplate.html"><img data-dominant-color="eae0e3" data-has-transparency="false" data-blurhash="LIRoy?~V.mI]?c%1s+Ir.RIVV[-n" style="--dominant-color: #eae0e3; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAUCAIAAABj86gYAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACdklEQVQ4jX2V267dOAxDF+n9/z/ciJwHOfu0QDuGEOSCkBYl0WrL31fJMBtpkum0KS1BRZWRkLFkyZYlSUaShMTnH+hLUVoKlBZKoW1VeJ+BqrRiPwgqVKryPwQXvTSkbZs2bWnbKqi7SQMSGGUzkkCo6j8JSkND3pg06TRhSl6CSqiy5PZIlm2MqlXpHwTJSv+iTyeZZDrphFQDxZVY6W1HtntSy1uVvxNsbZO3yE8neWYJMp0wYb4qLcHxOfbRiXt0Of4guIWbl+CiM5OZzvTJPJmnT5jwhPyWgY/z8TnuxyfiCEnmw7zoq3uGLsGzPdpn+jx5Jr+SJ/N0ps/wlKBgLB37+MT9mJqYqJasz0xVoCL6EvxMwHSezOSZeWaezK/M8EyfKCjbNcf+uDW1ajaOFD6ZAUTVqqNGV/2sOG98K9E8zZAwKAhbNVicuZ1VUSGJT5KXIDdyOZq7OpNJ9s0k6fZwUTEUkdXr7W3pDvPntYp3rJI2SpqSL0PaXGDC/UWAFGQpQgtyB7EX+HPr29cEKK36s6ZrQT++wc6vKXQn2LKx14VAoBYBH3Q7tEW7ty/b6w4pWSzBzqlpJakyNpaPdOSzriekCqSPxFJBK/E1NwjvVRviSMKBSlB5CXQsHx3r2N50hIX0kfXF+wJVF3qhgmqtHFY5CJnv9o1fjd54/ZqPjFC7eYj+jq6gQnb7lgTobAKrtw82X6a9WZflEui6+tu9RZEi5YWuVAsMvd6sFfqLe7D3/LnX7QT4bCJb2B0O9NqS1HtyqUhGL/gV4cpyVqvKe8ytGBVwi3xz1rU9sbiXZiuq98sS6He5e9tGxXn7FCj6D6mPmTcAh3OLAAAAAElFTkSuQmCC)" loading="lazy" decoding="async" aria-describedby="caption-attachment-5654-2" class="wp-image-5654 size-medium not-transparent" src="../../wp-content/uploads/2015/09/apple-tv-product-page-layout-e1441906697619-800x488.png/" alt="Apple TV Store Product Page Layout" width="800" height="488"></a><p id="caption-attachment-5654-2" class="wp-caption-text">Source: <a href="https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/ProductTemplate.html">developer.apple.com</a></p></div>
+<h2>Screenshots of the Apple TV Shopping&nbsp;Experience</h2>
+
+		<style>
+			#gallery-2 {
+				margin: auto;
+			}
+			#gallery-2 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 100%;
+			}
+			#gallery-2 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-2 .gallery-caption {
+				margin-left: 0;
+			}
+			/* see gallery_shortcode() in wp-includes/media.php */
+		</style>
+		<div id="gallery-2" class="gallery galleryid-5648 gallery-columns-1 gallery-size-full"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-store-category-browser.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-store-category-browser.jpeg" class="attachment-full size-full not-transparent" alt="Store category browser and selector on Apple TV" aria-describedby="gallery-2-5666" srcset="../../wp-content/uploads/2015/09/apple-tv-store-category-browser_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-store-category-browser_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-store-category-browser_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="686160" style="--dominant-color: #686160;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADZUlEQVQ4jW1UXYskRRCM/KzqnnF29xRPUZ/0//8bQVD8OBF8EBTxlJ2uyvChZs5VLJKiu+nKyMiKSMG7tQOf4dNXr19fPr+cPjhvl95PLbt7mpmqigAgUECJlApMxd3CPSMyW4uW2TJaRLqHmauq/wOQgKFpczVXMzNXNdW1i4rI+k8AEago12cVUVEV0RfLVE3l3wBnfNRwyYdTbnu2PbJnZqRHmNoiQBTuIcLFwN3SrbmnewvP8Ah3D3NTsTvAA57O+HD7+HF7uPTTue9733rbMlu4q9ktP4osYi4AVXEzj9WibG3tLSLD0/xdixqeHvHJCU/bRw/9cunnU9/3bV8A7m6qIiIrOyc5gYJQFWbmEZm5UmdrrbXIFp6+AN57xL7h/RMe+xeX/nju53Pfz33fbgwy3FVVBQTBWTXJQU4IVWBuHuuKM1u2fgeIdA9V89cnRMN77emUj3ue9tz3tm2t76331lrmnQHAImfVYElBgRKVxSDCW0Zmtsy2mhVpHmbquyMM3V4135u35tk8e0SP6JEZGW6qqkKySKkCC0UAKgJ1XUoNtwxLt7zfs7mbmXvBuTnS4S6+NLoi7BaqKkJQWCxoQUklaqnVREzFREyWOtXkplRVdf4J4sqDKIIEAULwr1DB8gDXO1gAyGU9AYXrbGHxXA8kivb0F/DM2Hvr52xba73lYuluNwMICJCYrKoaVbM4yQILICA3q92rF1GIAiBpDtSEXX+P82MuXUa4x8vxQLA4a85ZY84x5/EOpriKF4gACgghpFSxirPK/gB+A+KKxNvYHiybe6iZqEKEYLGq5pxzzjHGMeYxxvWYY8xjzDGrZt3cUYVJVnFUzckx5nGMm5PfAPj5rW8/WnbzEDWKVHHMEeFupgqgwFkcrFE1yElQRNVMj8OPEdcZ1xE5PA73Z7OQl7PoDSDf/SRtEzOKTHDM2ccRGe5244PJumNw3ntjamF+uB8eR8TVPN1TzVVeDjvgB0C++obeSnUQx5zP42gt3c1sTdNJTvLOgCQgUFE3C7Or+dVsZQ9Tl/8AAPge0K+/ROQUHeBR83m0CDcXVQiKKNYoDtZckgQUMNVQPUyvamm6yv8/AADfPqP/+ov1XTyoMsFR7lPVBFLgCxJVVQQFMJEhMlWm6lAdqi5iIvo3jp7AxCbjCbwAAAAASUVORK5CYII=)" data-blurhash="LSF$In00R*D$x]M{xtWB4.%LaKxu"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5666">
+				Store category browser and selector
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-shop-product-browser-selector.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-shop-product-browser-selector.jpeg" class="attachment-full size-full not-transparent" alt="Shop product browser and picker" aria-describedby="gallery-2-5663" srcset="../../wp-content/uploads/2015/09/apple-tv-shop-product-browser-selector_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-shop-product-browser-selector_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-shop-product-browser-selector_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="848083" style="--dominant-color: #848083;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADm0lEQVQ4jWVUa6vdVBBdM3v2K8k5597bevtQSqtgEUEUFX+8P0G/qyAqavFDQSwi9STz8MPOuS04CZudkMyaWWvNJrwVj4FHwA1wevTl4fmj+cHNdHVsh6XOU2k91yJSkiTiREQARYS7m7mZXi5VVTM1Uzf3cLnLTsACVCDjnhxKKpLkcidJKaUkSVJKwomJOICIYGciIwIREYEQQBCBCM7u7gJgAm6AK+AEHIFlfjLdXvXj0ufept56q72V1kqtkksS4bR3gAiP8NGB2Sj/7Q4iXL4CGChAAyZg6p9Nnzycb6+n62M/Hfthactcp6m2lmvNuaQsiYWYiYCAR4S5mdkdP6pq6qY2AN4FCBCg4Fl98rA9vd9vr/vNqV+d+vHQDkubpzZNpbVSWy5FRJIIMxMIQESEDwAzVdNtYLzR4D4+Jkh63OXBodw/1ptjuz6206EdD/1waMvc5rlOvbZeWi2liuQkkpiJmS4AboOVPbvqZmZuFu5y/OI9Ek69pqWXw1xOSz0u7bC0w9KWuS1zm6Y6TbX3WmsuNZc8tCYaLEV4+B1F26UJ0x1guj0RM9csvckylXmqU69Tr73VXmtrtbfWWm2ttgFQRCRxYmYCAFysqqpqm6qKqZqqm3m45KkSM5ecWsk155ql5FyyZJGcJUveV5Gcc8k5ZxFJKaUhwy4CmzITGxEzjMmYzDjcBUxggAEmMIFAYx1x94bpEqA3W4AIvn+538TjkYMcLNt6BnOiCGFSYdNkKkOj4Y6LR8aGmWnn/q6DGBSZqb750UfIP69eUWKuNZtmCkscOSELlUwlcxbOwilRYtDd2WAppX1yEeHhbq5D591Io6oIlz9//IWKyHHOV8eq5xamHMbkiTxREDnBIyxCzVQ3kVVEmBOPA2Fg7k7V4aUx2G4WEfL7b98zkIF2eqd/+HRebyfXNXyDa4SGq9tmtupWzsNCOaXEPDq4zMEAGAfGJbu7RYR8DSTgIXDv1cvrb15ePX//uD3717az6+q2mq7b1ra1nFspVXLZy2cmUCAQ4YOii067cG4eHhECwIAXwAsAwEc//PTo9csb+/Tsupquup11beu5tn4pX5iZiAEEEB57/aMJtzEU4e4RO8Db8R3w169/f5C+Vfr8wo+u61bO5wHAnIgZl4PIPdzd/JLf3cLcPcIjIvA/AAB/AO3n1+nqBddKIsFkEWoqW5UklBIRIxCAeww3Dsp9wIRHuEcMAv8DKiLalV5/Hv4AAAAASUVORK5CYII=)" data-blurhash="LbI}x44T8_oMxbjZaeof00%MtRRj"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5663">
+				Shop product browser and picker
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-store-product-listings.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-store-product-listings.jpeg" class="attachment-full size-full not-transparent" alt="Apple TV store category product listing and selector" aria-describedby="gallery-2-5668" srcset="../../wp-content/uploads/2015/09/apple-tv-store-product-listings_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-store-product-listings_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-store-product-listings_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="807c7e" style="--dominant-color: #807c7e;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADvUlEQVQ4jWVV26odxxGtrqq+zeyts89BUgiykA12QK8J+P8/wK+GEHDIiy9BEDkiaHd33fIw20dH9mIouqBZq6u6ek2Cz/EG4DW8eP63t/df/OnZ8/vT5byd97712mopJWcmQsQEkCLC3M18qS2xuXSIXpddl35cNtSnunjw7wQaAEOnzMiEREiESIj0FDcBiOQO4BzJHZSBHIiAKJhu6wD/TOAVwAVgf/PQz1vrrbZaa6u11dZqbbWWnDMzIWJKEAHuruaixqIogqSJBFAAFUhRTB8rQIAvAV4A3OOb86uH/e68nfa+733btm3v29Z6q7WWkpmZCDFhQLiHmYnaEilLSlk8F+XFU3hJFhUzfgtAAA1gBzjB5dlfX52fX0535+182vfTdvu23ntrrdTjGggRASAi1ExU15K6Vpkzj8ljcp48ZxYVVX4FgAAZoD7ft6++3l4+nO6f7Tf2fdv3bT/t+9633tpvRRAj3QTsEJBV58xjcM7ETIzEyGuJEl/OgB34/qE8vG739/1yNGfrW2+997713vu2bdvWem+1llKOLqUEHuFmojrX4pyRGQkTJkBICZCSKPL+9YtElfqlnO7qeW9br72VVkuttR7xuOHWamut/TaslFKKcDNjVSRKmAIgws3d3DwsUhAC59MlYaa25da4FC5MmQ8QP0HOOZd8i58EkCxhCgh3V1PRXDIv5aykhhHIkBAQU0JIKaV0xJQSJHiSPQITppTwMY2IpyneNt0iYmIZHxOVgAxZSNXUzMzc/ICZudnjwszMMCFApJQAwm7bzfyIN4R7eIQHfYMfZLw3L5EyUE65YC7EhXKmnI8u0fGej8oAIg5pVVUVWUvWmnPOMeaYY4w555xrLRFVpZcfYLwH+eW/ShHcgAoyJ2Y8eIkSYkJMAE+oTVVE1jqI5xjXcR3jer1+vF6v1+v1UFlrifD3AAXgDHD3z58vv7q8pSAGzpgzMqVj7CDczUzWqp/cAtLjmC6RueaY8zrGxzGuc4w151pqyu+eeNFf/vPvP3/H9m0OYiACRLhNiKmJrFFKYc50vAJI4W7uoiqic62x1pjzuuaYa8paour2mdn9A+B/80f/e4PCKVMiBIwIMxeROethFHwcHwDcw8xFH4uQITLXGiJLdamZ++/t+ieA8u6H/POJe6FMyAePqq66CnMmJESESBBhHmauaqK2VKfoEp1qU1XMxNz++D8AgH8BPPzwy/birp16bpkYE0KEmUpmRqTj+OFg7qY3x15iS32ZLbVlLu7qYRH/B0+2ndCJMVPlAAAAAElFTkSuQmCC)" data-blurhash="LdIX{o8_00xat7o1WBoe4nxu%NM{"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5668">
+				Store category product listing and selector
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-single-product-page.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-single-product-page.jpeg" class="attachment-full size-full not-transparent" alt="Single product page on Apple TV" aria-describedby="gallery-2-5665" srcset="../../wp-content/uploads/2015/09/apple-tv-single-product-page_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-single-product-page_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-single-product-page_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="777576" style="--dominant-color: #777576;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACoUlEQVQ4jW1UyY7bMAyVRC22JdnOgjaTWZoMBmiRS///f6YDFHPqLbYpqQfKipMJD4JgU498fCQ5u2c/drvnw2G92bRdZ62tm6YyRhujlFJKAYAEEAAAIGbjnC8vnHPOOWNM3g1gvdfGKK0lGQBICZAh4Rq9XJYxuBCcMc75nQA/j8dvu12/WnnvnXNN01RVpY3RWispYY64hF5SWXLKLJb2+3T6/vCwWq/btnXeN01T17UhdKVk4bEIcPlS+FEAilGgXx8fd09Pm+227/u267xzjbV1XVdVpbXWWkspc6EWORf0HFtKOUfKJN5eXpTWvm27vu/6vu26tm29c9a5uq6X6dP7q6IAgBCzRhcrFDnn8uV4BICqqqxz3ns/o9s5fWMMFUdKeVPsS/JSkkcuI/EQggshu74HAGNM0zTOOWttYy2VvtSnPCvoXAhiQMkrwlZKlRgAAkBwLquqAgBtjDGGWqWYWlipPjX5koEEIAYZXSl1nU2WI5/8jjHOOWPUD7dtd2Nf3kpETCkJIRARQ8CQDRHpJK0YY+RG9RExCiFSSimlC6gQHJFaMzGWAESM8Ho4ICJLKc/hQkVKiDEWY0wxWwghhhBiDDHGEGJK9DellM+UiiuGAOu+H85nRKSfVIGUEuESYggBQ8BpmqYJERFxmiac74UsEQ/kgOQ+wZ+Pj3/v72MIYU5nmWmBIxvHcRzHYRjoMs4fLw4Lp3Ecz+fzlWbH/X7//Lzebruuc97bpqlo0JSSNGhFgy9jXIagzFoW7O6y2+33/WpFu4g23aW7bwZNCJhHmaaB4mU5vy47Ms3Yr9Nps91672uKobVUSpYtTZtiOcyFyLz4qP3gboDA2N/PT5lSYizGiCTGNBXppnG8KDPN6s8ykBLDOA7D8B/F5X3iplSd6gAAAABJRU5ErkJggg==)" data-blurhash="LjIY2*00RjM{xuRjWBj[4n%MWBt7"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5665">
+				Single product page on Apple TV
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-product-page-multiple-product-images.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-product-page-multiple-product-images.jpeg" class="attachment-full size-full not-transparent" alt="Inidividual product page with photo, price, description" aria-describedby="gallery-2-5660" srcset="../../wp-content/uploads/2015/09/apple-tv-product-page-multiple-product-images_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-product-page-multiple-product-images_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-product-page-multiple-product-images_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="888485" style="--dominant-color: #888485;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACxklEQVQ4jX2UW2/bOBCF50aK4kWUYjtO0iZNgKKLRVv//1/VhwALrChZ6gMlyrGLngdiIBjz+ZwhB+FGxvvTz5/3x2PXtsF7Z21tTKWUVkoxMxEjEiLhKiJARGYgAqJSABEiyi3guN/XxlRaK6WUUpKllIgws9wAgAhzu48AJAKAa8DL4fDy/Ly7u4sxhhC8c7auTVVprbXI4oBoAQAgUWFcArItQMTSmgG+v74e39529/ex65oYvffWudoYU1VaKfURgB9TKiaQeQktn18ANEDwPn792j48xP0+dl2I0YdgvbfWGmOM1lrrJaMcEREBbN0R6aI7rgMARPn3dGKlqhBs2/q2DW3r29aH4EKwztV1NrA4kKuIigkiWlMqRebL/efPxKzrug7BNo2L0TeNC8F5XxeA1urSwQrYGBetC2BxEGIkZmWMcc4656y11tp605rQBqD1IpXutEZEzAsjzwBAqqoiIqUXqRtJuaxK3TqgdQCEuHUnojUignm+fgi3XwDg4r5tXxABAC9+kOtyIoD0fU/MEyKKSFWplIZVMgwiQsw5DZjneZpm5gnxw5zXiIoDupzB+69fJKLrejyfJ8SZCJiBGYhmxHmep2k6n8/jOC4zuNoWpfs6g23UiIDIh5T+e3//v++HaRrneZrnCWACmKZpmudz1jiOwzCO4zAMQ0pDSkPfp5TSRZFSGlJKw5DrPqV+GFJKS4BPAEdjdqdT9/jY7nZN1/mmcd7nC1XegRLJQ+aSzMX9ISJcz20JXk3uLYTn02n/8NDe3YWm8c7V1pqqqvIuEpErwBrIMgDm5TFnxi0gqzse//n2bb/fxxi9cza/ZqUUc1lHfBu9CDIXRt4WfwZk6aenHy8vu65rnLPG1KsJlQHrhckdiRlFUCQX2/b+CyDr8fX10+HQeu+qymQGkTDL+sdJhERyd1SKRECk7NTfWgemFBcrsLwAAAAASUVORK5CYII=)" data-blurhash="LkJkfk00IURP%MWBWBay00%Mozof"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5660">
+				Inidividual product page with photo, price, description
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-product-photo-detailed-view.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-product-photo-detailed-view.jpeg" class="attachment-full size-full not-transparent" alt="Large size product photo zoom" aria-describedby="gallery-2-5661" srcset="../../wp-content/uploads/2015/09/apple-tv-product-photo-detailed-view_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-product-photo-detailed-view_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-product-photo-detailed-view_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="605d5f" style="--dominant-color: #605d5f;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEV0lEQVQ4jWWT328cNRDHx/bYXttr790lKaStoKggISTECxLiBYm/nkeKVBVRBILSpG1yd3u5H2t7/WN5uFASGI0syzNffzxjm8BdewDffP3dp4+efHBy1rnOKM2FJJSWUsOY9t73u92bfvPL1erFxVt49grGPwEAYAFPP4Wnj79/+MEnD87OT+aLruuM0arhnNN7AAmKccEQGXKGiIiMIWOIyJEhY8hQMNTIgCM48a9MICKTyAQyZIwzhnhUId7d/xN3vlCtbXSrtFFav6+gVkScgORSQowPtH7Y6sszC8sPATzMHDj1lZYL1TjVWK2MVkYrrZTg/B7gs+7RmekWrZu3zlmntOFCHAFxHJEhmaDkMob4+TDEk2H1NMEwwkn3xcx85MyZ1XNrZtbMXOvaViklxB3AtwDn9uTMzha2m1tnXaeMEUIQSnOtMY4COQUylVJiLN4T79/k5Me0sO2jrj135tS1J65ddHbWWWutVvpfwJcAj0Gdtd3c2JmxM+usdcoYLm9bFGPkiASmmnMOoQzD5AeVxzQm05pTq09avTge37YzZ61zWikhBJ4CnAE8Bljoj7qmdY1x2ljdWtPeAhgtpQrOKSFTKTnGcdCj1lkrjDqLUZlmbppOK6eVM9q2xrXGtkZrzYXAJwAGoANoXauF1FIq2dy6Uu8roJTWUlOMQTZaSiNFkHKSIjNopDBSmEboRuhG6kZq1WjVKK0YYagBFIAEEBQFRU6RM+SInHOBnCMnjJZaai2Co+BcIApEjiiQCWQMbl8nZ4wjco6CI+ecc84IA4A7/yBUmCYAIP/4HSPk/sL/c44Z5HYK5J8YHgAIQARIa59SyvnoxyERRsnESik5p5JzzjmXnHM5Jo05l5xZzimXlMsx9t6EqAAUXwA8BlAAM7gchsF7731ovEfVEKSlVsJYqSXG0fsQQvAh+BiGGA8h7kPIacyU8RhNjEOMPkQfQhMCCkEIFUKyDLAGIAAWfPPoYzF3qBoqOKGkApRSxjSGGIfB7w/77W63udn2m82q75f9erW52XqfCKFc8qbhUqIQiJxSBgSmaSols2On1gAIYLTjC8caQZBNBHIpKaUQ4uD97rDfbneb7Xbd91fr/u1q+ep6+fJ6+fvNbqxAuEAhkQvKkFIGALVOOZdxTOz9LV0BiKvL5uE5lRIolKmmnMIYB+/3h8Nuv9tst6u+v1qvL5arX99d//DX5c3zl2F5eR3ZH0rOuWTIKWMAZJqmnGsaU4yR3XkI8AZA8iK0BkJyLWNKIYZhGPb7/c1u129urvv1xXL187urZ68u4MUzgAQAMGxqkL8ZOUfOCIUJaqkl5zGOwYd7AAC4uO6NE4yxWmtOY4jRD8PucLjZ7pabzdt1/8v18vnrS3j+4z3ZYQVk9rsUp7cNmkrOaUwxxP8CAOB1eneqO0ZorTWlFGMcvN8eDuvd9nW/+fHdEn56CRD/K+sROlMFt5QhANSp5pJT/hu4JFIQ1ofdSgAAAABJRU5ErkJggg==)" data-blurhash="LoG+K~IAs:00xuayj[V@4.tQWV%g"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5661">
+				Large size product photo zoom
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-product-buy-now.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-product-buy-now.jpeg" class="attachment-full size-full not-transparent" alt="Buy now button on the single product page" aria-describedby="gallery-2-5658" srcset="../../wp-content/uploads/2015/09/apple-tv-product-buy-now_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-product-buy-now_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-product-buy-now_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="605e5e" style="--dominant-color: #605e5e;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADiElEQVQ4jXWUy47lRAyGfa0qV+X06QsMdA8wXKWR2PL+L4NGbFiCOEnKNotkGC7DH6s2ifyV7fhH+Ji+Avj07XeX+yezoaUKMwJiAkRABEYQAjMX1Wq1det92NKtD+vWzGprWoqoELP8NzsCLJ+PZqPUprWoKhMTIGQeAIgkSGFmFRYRFhZmFpYPcegjgAbwwxd3Ty/fL/cP1pdaq4gSEgJAZnpkBEYgABNpkVpb69Z6tyNGN7PaWilFVIkJ/579G4DPfvz24dXL5frQx6W1pqUwCyFBZkZmeLjDXwCVUqt16733MfoYNrpZb62VWkSVmREABOA1wCdfXx+ev7s+fnq53vflYtZLrUd/EDEz0yPCwz09AIAJVbXW2sz66GOMg9F7b9ZKqVqUmfGnb5+kmF0eluvj5Xp/ubuOy13vo7ZWahURJj7aE+7h7icgCUlV6lnBGMsYyzJOgNXjcsLy6s1bZqlmY7m8j+UoU0sREUI6++/u08NnRGQmE4m8B4wxlmUsyxhLP8ZQaymFmeVy/8jMpbbex/lFH8egVIsIExEkRMYBcJ/hkZlEpCK11dqsmlWzZta6mXXrJ4CYpbZOTLXWUquWqrVoKVqKailFmYUIEyAjiAiRkDDIM4EIWVT0H6GqWlS1lFJIFAAEiJAYkJEYjxSH6MMJAIAfBIiAAIhA+OFERCRAAiQkBKTjz5R9ekQS8T4P+anpTgSIea5wuLuHT/djBkmE7jNiHi88pvt0nz736SyzEAGi/Pb778w8PRKRiJmZmPBM6iKCRHAAwn0eAM8EJNIMICRm0VU2lVVZhZkRKSHdg5n54eHx9sc654wIyExISMiM48pzzrnv+75t+7at67qt27au27bN/WRlJgAcbYRz3yPTPXzOfU5+9+7dz7/86nP6nB7nc6ae+7bt67au67rebn/cbrf1drvdbtu6rtu277tPD4+IyIiAyIwM95hz7nNu+76t6z+s4uXl9ZdfvH56fLi7u+u9t/Z+G4+OZXjEOQEAIhbVUqs1670fe9x772attVqKHC7wEa9+eX5+/Xx/vfY+aisiephpZHqmZ0TCMTBRrbWdgINiZmat1lKKivK/zO7vevP59enV81iWUiuLIFMCOKQnBEDSWUCrZmbjsDvr3cya1VJLURUl+n/Ae4wu18+0NRJNwkB0BAdKZpZSSrVqw/qwMQ5AM2vtBLAQ859+Psl7n8jqvgAAAABJRU5ErkJggg==)" data-blurhash="LeGbr000%MD%xaR*oeae4n%MM{xu"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5658">
+				Buy now button on the single product page
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-product-options-variations-selector.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-product-options-variations-selector.jpeg" class="attachment-full size-full not-transparent" alt="Product options and variations on Apple TV" aria-describedby="gallery-2-5659" srcset="../../wp-content/uploads/2015/09/apple-tv-product-options-variations-selector_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-product-options-variations-selector_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-product-options-variations-selector_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="726f71" style="--dominant-color: #726f71;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACyklEQVQ4jX2US6/cRBCF693dbs/kPjLAEBFFkAUS///nkF2UsMgiZEHuuB8squ15Ic5iZHus+lznVBfCnX4/vP3h3ZvH58fdfp/nnKYpxmjBTE1EmJmYEAkRABCg9w59UztfdgDoXW6qM4CmIMLETEy3YiImJkYiRESADnDFaAPhz6DDLeBd/ml+2MeUQghmpmaqqqqmZmaiOpogWhHohDs59wKwBzi+/uXp58P+6SHPc0opxBhCCCGuF6Zqqur9MTGeGR36f2EA5P3+yMqWY5rztMt5nqc555zTNKWUYkoxxRQHYyShsvbBhAibV3dBAHR5+8dvSMgsahpCCDHGlFJKaUoxxhjWn5RGFyG4acLeByENo9z3dpEz9C5Ph2cEJCZmURU1c0wY5cz8SQhx68PcKBERGml4/fseuszzDIiESMzMrKpqZmaqJqoqepYNOUNUhEfg6ATovXsHFwALwW1EIiZ2d30Yr+fTHWFZpXKeKEQcSTvigiFEBACISOjvoY82bC72MdLdh96Ft/IU1v8A1nuptfjrrTVi6gAIUIiYmcuqWmoptdRa6lApdXWm935v0doEyPd/vo8PIiIiEamirfXRFpGzeJjkMwNeQ1WYL051h3GW2wXg769ft/rMLCqqtoRQamm19WFMP39grbWUUhZVFRa6CPkygC0G+evjZ0RAIhbxUQkxhBhTSmVxX2pttdVWSi2lLKfT6XTSF1MRFuFt8Y3P9+JnAPqCSwAZMMfX02GfX+3ybp7mOc855zzlKU15mlJMKW7nwFRFb0ZoVHetaZyz37QDOD6/eTwe9g+v5v0u7+Yp5ylN0Y92CGqmKjwOwdW+a9fq9+saAL4BfPvy8fjl84+/vl+WUymlLEtZltPycnp58VUhIixMxNvS9mBba+7n/wFcn6DShz/PAzLircuyqF3F2wGG97XV1mqtrVZH9Nb/BUhhK6UzeTN/AAAAAElFTkSuQmCC)" data-blurhash="LcHV0Z00IUt7xuWBWBWB4n-;azRj"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5659">
+				Product options and variations on Apple TV
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-shop-checkout-shipping-payment.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-shop-checkout-shipping-payment.jpeg" class="attachment-full size-full not-transparent" alt="Store checkout page, payment and shipping details on Apple TV" aria-describedby="gallery-2-5662" srcset="../../wp-content/uploads/2015/09/apple-tv-shop-checkout-shipping-payment_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-shop-checkout-shipping-payment_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-shop-checkout-shipping-payment_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="898683" style="--dominant-color: #898683;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADZ0lEQVQ4jXWVS48bRRSFT9Wt7q5+ud32jGcyk0yiEAiEiEHACqQs+N9sEBLLLPkLKBskUMK46z5YVNlORkOpbbe8qK/uuefccnhonRO++uFit3s+TZuhH7u2bZqmChURee8cHAxmZqqqpqoqpqqq+U+YwQAzAAgPA56i73dtO8TYx9g2sa3rpgohEHnvAcBgpqamoqKqkkmmamYoDwB7CPDyBs+ef7+7uJ7nzWpcdV3XxljXdQiBiLxzAGB2OLuIqIgWUmEUDAB3b/fXz/HiyzeXj663m7NpvR6Goe+6eAB4771zBmRFVJRFRETKzz2G3Zfo9ilevPr56vrmfLeb5800TcMwdJ8CnHNZHREVEWbh8hFmOch1QpwAr1f47OWbq0dPLi4uz87O581mNU3jMHZd18RY19URkLt73D3xcZVKPiYUwOfAzde357vL7eZsM2/neTvP8zSth3Houv7jCuCQASzCzCkxc0opv2SEioiaqSoMoQIeAZdP+/V8Po7TMI7DkJ/VMI7jOHZdH9sCcN4DuQJhEU6cOKWUAQVxIpiaWbgBRqBfX8W2izE2TWya2MSmKe9tE2MT21DXgM/lOoCooqBEyafgPDmfnCdHyRN5EREhVVMzsxAAAigET+Q8eU/e+/JN5Ml7Iu/puPtpOe+JvJpX8qKO1Cs5b/7gH4XBLLwHCFiWPTNnv3FxnQoLizKriHgKcJ942ky52FRFi6lOsdBSAv0N/ANM+KvbXsdhjG3bxFjVTahqCsF7cs4Z3CGgpcOJeVnSflmWJS3Lsl/2aUlLWpaUUlpy5zmxCAcAd8Dbd+je/dmtt+2waro+NJGqGt6rIbHsl1Q3NYWKvMcnNuWUEuc+M3NKp8iplibnehn47e0fYVxTbH1VmScxLCx3S+r+vYuxLTYlyjKVGSFccpASc8qRy0pZVgh2CpoAv/z6+xtfMdxe7C7xh7v98P5D15ccVKEqSc6jKCdZOFOES/tyB+xQwf1ZBODbn3589vhmd76b1+txXPVdF2Pb1HWoquOws6NM+cjCwqzCGWsqefeHAQDOvvnu1ZMnF9vtepqGfmhj2zRNVVXheB/AUJwimk8trCKmbFmffC3gfwAA8MXt7eOri81mPY5928YYm6oKVBDO7DCyxUQyxlSgbKpmgnLv2H+ehQ7lfQa1cQAAAABJRU5ErkJggg==)" data-blurhash="LoJu4I9F4nM{s,fQWYay00tR-;t7"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5662">
+				Store checkout page, payment and shipping details on Apple TV 
+				</dd></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon landscape">
+				<a href="../../wp-content/uploads/2015/09/apple-tv-shop-purchase-confirmation.jpeg"><img loading="lazy" decoding="async" width="1000" height="563" src="../../wp-content/uploads/2015/09/apple-tv-shop-purchase-confirmation.jpeg" class="attachment-full size-full not-transparent" alt="Purchase confirmation on Apple TV" aria-describedby="gallery-2-5664" srcset="../../wp-content/uploads/2015/09/apple-tv-shop-purchase-confirmation_strip%3Dall%26quality%3D90%26resize%3D384%252C216.jpeg 384w, ../../wp-content/uploads/2015/09/apple-tv-shop-purchase-confirmation_strip%3Dall%26quality%3D90%26resize%3D768%252C432.jpeg 768w, ../../wp-content/uploads/2015/09/apple-tv-shop-purchase-confirmation_strip%3Dall%26quality%3D90%26resize%3D1000%252C563.jpeg 1000w" sizes="auto, (max-width: 1000px) 100vw, 1000px" data-has-transparency="false" data-dominant-color="84807e" style="--dominant-color: #84807e;--dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAECUlEQVQ4jXWUy28cRRDGq7ure149OzO79sYhMQ85USQkQCAFbvz33JAQQoqEBKeQYCfxenfe/armMOs8HPKpD30Y1a9r6vuKwUf64SHcf/Rks72o1ttVtdG6yosyzYskyZRKUEohkDMGABSJQvDeOmusnew8mrk3c2/mzprO2SH4Ge9UXwMkGqQqUCqJEhFRIkpEFBIFopCIXAjO+BHAAKKIKCiIIIQQgi+HI+cYubwLOD+B+vSirLa6rItyVWhdFEVe5FlWJGmqVIIohUC2dEAUgndOoOWCA2MRgGIkiAQxAjB+B/B1Bvcef7XeXjTre3WzqeqmXFWFLotCp1meJqk8/iLBGIMIRMF775yzVppZIHIhGOeMM8YY51x6Z/H96p99++Tk7Mv15qxen9ZNU1VNuVrpsszzIssXgJJSci4YYxEiBfLeOWuNUbOSElEIwRcER86VR4sKoAK418D24pvN9mG93lbNSVU3VdVUdV2uSq3LolgAiUoSXN4JLMYYKHjnrTVmVlKiWN4PDIADCMakExYfVadKF9V2U21Oy2qjy1rrSuuVLldal6UudbkAsjRNlVJS4rGDSCGQc84YiYicMwCIFCnEEIACEHHGJK7un8tE5asyK1ZprtOsSLM8zfI0e095lt8CGEcADsAAIsqAKDhnAJGIvA/OeWW9lR5lQB+JOGKao0JUCUqFqFCqxZgSJUqJUkoplTyKcQnAb6fGAFBglCF4RBSIiEIg54JxwRgHJoARhhA5RSKgCBEgxg9cy9hiSGAA7ONMfqC4iGKkSIFiCDEEwn7fqVyhFLlOrTXOWbfIO+9ur945L9E7yRkwBBAAAEAAIbz9yDlnnbXW2aOMNcZYsWuv3HUrlMAEpTrmV0pERIFCcMEFX9qIESJFBgTRAzkKi0HnaZqnaRrHcRjHoR/6vu/7oe+HYRynaRIEMIC9unmdkJFJgrjEfckKYwAQIcZIgUI4xspZa6w18zxN8/Re3a7t2q5r36prh757F7Rnz19O7Uuin2J0MXqiQGGxuTPGTNmtTRG5EAAQIwUfrHNLE8Mw9H3fdl17aA+HQ9t2Xd9N03x3chnA0x+fPDh/fLo9a9YndV2X5arQOs/yBYASBV8AMQR/C5jGYej6rm0Ph8N+v9/d7HeH/XXf3/y/Nb5/DOcXP59uHzTrk2pVa13meZ6my7pGwTljjIhCCM4tYxiHoe+6w6Hd7W5eX795fnn5+99/Qms/7b0vEC6efrc9+7xpTstVVRQ6TfMkWbYpZ8AoLqvUGjOPYz8M7aHd3ez+fXX161/PpsvhWEd8CnAgmP65kpmKwEOI3pNzwVpvjTWznWczjdM4jH3f923XHvb7m+vrNy8uX/zyx29+597V+Q8La3XuuIofWwAAAABJRU5ErkJggg==)" data-blurhash="LqI}w~D%00t7%MRjaea}4nt7-:WC"></a>
+			</dt>
+				<dd class="wp-caption-text gallery-caption" id="gallery-2-5664">
+				Purchase confirmation on Apple TV
+				</dd></dl><br style="clear: both">
+		</div>
+
+<p>Screenshots from the <a href="http://www.apple.com/apple-events/september-2015/">Apple Special Event</a> video.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../contact-form-7-controls/" rel="prev">Version 0.2 of Contact Form 7 Controls</a></h4></li><li><h4 class="next"><a href="../ux-wordpress-com/" rel="next">WordPress.com User Experience</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../custom-fields-metabox-gutenberg/" rel="bookmark" title="Custom Fields Metabox in Gutenberg Block Editor">Custom Fields Metabox in Gutenberg Block Editor</a></li>
+<li><a href="../show-hide-wordpress-blocks/" rel="bookmark" title="How to Show and Hide Gutenberg Blocks in Context">How to Show and Hide Gutenberg Blocks in Context</a></li>
+<li><a href="../monitor-memcached-with-munin/" rel="bookmark" title="Monitor Memcached with Munin">Monitor Memcached with Munin</a></li>
+<li><a href="../wordpress-multisite-without-domain-mapping/" rel="bookmark" title="WordPress Multisite Without a Domain Mapping Plugin">WordPress Multisite Without a Domain Mapping Plugin</a></li>
+<li><a href="../google-humor-page-speed-suggestion/" rel="bookmark" title="Google humor: page speed suggestion">Google humor: page speed suggestion</a></li>
+<li><a href="../agneka-simple-minimalistic-wordpress-theme/" rel="bookmark" title="Agneka Simple — WordPress Theme">Agneka Simple — WordPress Theme</a></li>
+<li><a href="../retiring-wproll/" rel="bookmark" title="Retiring the WordPress Blogroll">Retiring the WordPress Blogroll</a></li>
+<li><a href="../remove-index-html-from-the-url/" rel="bookmark" title="Remove index.html from the URL">Remove index.html from the URL</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					1 Comment				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1" id="comment-107325">
+				<div id="div-comment-107325" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/106e6b0cc83e1e03c0f54b4ca840a18981eb87bebb0845b3aa4aa9e9bcb568bc/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/106e6b0cc83e1e03c0f54b4ca840a18981eb87bebb0845b3aa4aa9e9bcb568bc/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">amirreza</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-107325">October 10, 2015 at 11:16</a>		</div>
+
+		<p>Tv-commerce solution would be great</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/woocommerce-apple-tv?replytocom=107325#respond" data-commentid="107325" data-postid="5648" data-belowelement="div-comment-107325" data-respondelement="respond" data-replyto="Reply to amirreza" aria-label="Reply to amirreza">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+				</ol>
+
+							
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a0ddcc582b2fd28adce82b2654f0800b" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment_pilot__notify_replies">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_replies" checked="checked" value="1">
+						Email me when someone replies to my comment.
+					</label>
+				</p>
+<p class="comment_pilot__notify_all">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_all" value="1">
+						Email me all new comments.
+					</label>
+				</p>
+<input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="5648" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			<aside id="text-18" class="widget widget_text"><h1 class="widget-title">Subscribe</h1>			<div class="textwidget"><p>Get notified via e-mail when I publish new blog posts:</p>
+		<form action="" class="kit-form" method="post" data-form-id="7096068" data-capture-url="https://kaspars.net/wp-json/dambis-kit/v1/kit/lead">
+							<input type="hidden" name="redirect_url" value="https://kaspars.net/subscribe?thanks">
+						<label class="kit-form__field">
+				Email:
+				<input type="email" name="email_address" placeholder="name@example.com" class="kit-form__input" required="">
+			</label>
+			<label class="kit-form__field">
+				Name:
+				<input type="text" name="fields[first_name]" placeholder="Name" class="kit-form__input">
+			</label>
+			<input type="submit" value="Subscribe" class="kit-form__submit">
+		</form>
+		
+</div>
+		</aside>
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="../high-power-capacity-battery-power-tools/">Building High Capacity 18V/20Ah Battery for Makita Power Tools</a>
+									</li>
+											<li>
+					<a href="../umami-analytics/">Notes on Umami Analytics</a>
+									</li>
+											<li>
+					<a href="../setup-huawei-ma5671a/">Setup Huawei MA5671A SFP GPON for Your Fiber ISP</a>
+									</li>
+											<li>
+					<a href="../public-dns-local-development-url/">Setup Local Development Domain with Public DNS</a>
+									</li>
+											<li>
+					<a href="../google-account-custom-email/">Custom Email Address for Kids Google Account</a>
+									</li>
+											<li>
+					<a href="../fix-dell-monitor-flickering-mac/">Fix Dell Monitor Flickering and Ghosting on Mac</a>
+									</li>
+											<li>
+					<a href="../iron-sulphate-wood-silver/">Notes on Iron Sulphate for Graying Wood</a>
+									</li>
+											<li>
+					<a href="../notes-fair-package-manager/">Notes on FAIR Package Manager</a>
+									</li>
+											<li>
+					<a href="../wordpress-comments-potential/">The Potential of WordPress Comments</a>
+									</li>
+											<li>
+					<a href="../remote-logging-mikrotik-routeros/">Remote Logging for Mikrotik RouterOS</a>
+									</li>
+					</ul>
+
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside><aside id="nav_menu-2" class="widget widget_nav_menu"><h1 class="widget-title">IndieWeb Webring</h1><div class="menu-indieweb-webring-container"><ul id="menu-indieweb-webring" class="menu"><li id="menu-item-10912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10912"><a href="https://🕸💍.ws/previous" title="Visit previous site in the webring">← Previous</a></li>
+<li id="menu-item-10911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10911"><a href="https://🕸💍.ws" title="This site is part of the IndieWeb webring">IndieWeb 🕸💍 Webring</a></li>
+<li id="menu-item-10913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10913"><a href="https://🕸💍.ws/next" title="Visit next site in the webring">Next →</a></li>
+</ul></div></aside><aside id="text-19" class="widget widget_text">			<div class="textwidget"><div class="h-card h-card-profile"><a class="p-name u-url" href="../../">Kaspars Dambis</a><br>
+<img decoding="async" class="u-photo" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D600" alt="Kaspars Dambis"><p></p>
+<p class="p-note">Maker of things with passion for the web, electronics, personal finance and sustainable living. Blogging since 2007.</p>
+</div>
+</div>
+		</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a href="../" title="Blog about WordPress plugin development, website performance and optimization">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a rel="author" href="../../about/" title="About Kaspars Dambis">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a rel="me" href="https://kasparsdambis.lv" title="My blog in Latvian">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a rel="me" href="https://github.com/kasparsd/">GitHub</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a rel="me" href="https://profiles.wordpress.org/kasparsd" title="My WordPress profile">WordPress.org</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a rel="me" href="https://twitter.com/konstruktors" title="Kaspars on Twitter">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a rel="me" href="https://mastodon.social/@kasparsd" title="Follow on Mastadon (ActivityPub)">Mastadon</a></li>
+<li id="menu-item-9730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9730"><a rel="me" href="https://bsky.app/profile/kaspars.damb.is">Bluesky</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a rel="me" href="https://micro.blog/kasparsd" title="My Micro Blog">Micro.blog</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a rel="me" href="https://www.youtube.com/kasparsdambis" title="My Video Blog">YouTube</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a rel="me" href="https://www.instagram.com/kasparsd/" title="My Instagram Photos">Instagram</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a rel="me" href="https://www.flickr.com/photos/kasparsdambis/" title="My photos on Flickr">Flickr</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>
+window.dataLayer = window.dataLayer || []; window.dataLayer.push({"wp_post_id":5648,"wp_post_title":"WooCommerce for Apple TV","wp_post_status":"publish","wp_post_type":"post"});
+</script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/list-konstruktors/*","/wp-content/themes/list-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<style type="text/css">
+			#commentform .reply-on-fediverse { padding-left:0; }
+			.reaction-list { margin:0 0 1.25em 0; padding:0; }
+			.reaction-list img { max-width:3rem; height:auto; border-radius:100%; }
+		</style>
+		<script data-wp-strategy="defer" defer="" id="minit-js-js" src="../../wp-content/uploads/minit/fb553c352a6638710e8f7f5d3c056db0.js"></script>
+<script id="minit-js-js-after">
+document.getElementById( 'minit-js-js' ).addEventListener( 'load', function () { wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } ); wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://kaspars.net/wp-json/" ) ); wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "174f32d9cc" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://kaspars.net/wp-admin/admin-ajax.php?action=rest-nonce"; } );
+//# sourceURL=minit-js-js-after
+</script>
+<!-- Generated in 0.1101 seconds with 7 queries on Sun, 18 Oct 2026 13:05:29 +0000. -->
+<!-- Script helper footer: -->
+<!--
+<script defer src="https://reverse.kaspars.net/gtm/gtag/js?id=G-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+-->
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	7 queries in 0.1102 seconds on Sun, 18 Oct 2026 13:05:29 +0000.-->
+
+
+
+</body></html>
