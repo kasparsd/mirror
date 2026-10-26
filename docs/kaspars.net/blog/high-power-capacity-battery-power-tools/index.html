@@ -1,0 +1,647 @@
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<title>Building High Capacity 18V/20Ah Battery for Makita Power Tools (Electronics) —  Kaspars Dambis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="max-image-preview:large">
+<script>
+(()=>{var s;(s=document.documentElement).classList.add("dk-expands-js"),setTimeout(()=>{s.classList.contains("dk-expands-ready")||s.classList.remove("dk-expands-js")},4e3)})();
+</script>
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Feed" href="https://kaspars.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Comments Feed" href="https://kaspars.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kaspars Dambis » Building High Capacity 18V/20Ah Battery for Makita Power Tools Comments Feed" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools/feed">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fhigh-power-capacity-battery-power-tools">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kaspars.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkaspars.net%2Fblog%2Fhigh-power-capacity-battery-power-tools&amp;format=xml">
+<meta property="og:title" content="Building High Capacity 18V/20Ah Battery for Makita Power Tools">
+<meta property="og:description" content="Note: work in progress (lab notes). My Makita grass trimmer lasts about 15 minutes with two 18V/6Ah batteries (each rated at 108Wh). Makita now offers 12Ah/216Wh LXT packs (released in 2025) but I wanted something even more capable so I bought two 20-cell DIY kits on AliExpress instead. Using 5Ah cells arranged in 5S4P, each...">
+<meta name="description" content="Note: work in progress (lab notes). My Makita grass trimmer lasts about 15 minutes with two 18V/6Ah batteries (each rated at 108Wh). Makita now offers 12Ah/216Wh LXT packs (released in 2025) but I wanted something even more capable so I bought two 20-cell DIY kits on AliExpress instead. Using 5Ah cells arranged in 5S4P, each...">
+<meta property="og:image" content="../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled.jpg">
+<link rel="stylesheet" id="minit-css-css" href="../../wp-content/uploads/minit/c8ad22cc04d41eccde7058cde46d0070.css" media="all">
+<link rel="stylesheet" id="webmention-css" href="../../wp-content/plugins/webmention/assets/css/webmention_ver%3D5.11.0.css" media="all">
+<link rel="stylesheet" id="wp-block-paragraph-css" href="../../wp-includes/blocks/paragraph/style.min_ver%3D7.1.3.css" media="all">
+<link rel="stylesheet" id="wp-block-heading-css" href="../../wp-includes/blocks/heading/style.min_ver%3D7.1.3.css" media="all">
+<link rel="stylesheet" id="wp-block-table-css" href="../../wp-includes/blocks/table/style.min_ver%3D7.1.3.css" media="all">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:break-spaces}
+/*# sourceURL=https://kaspars.net/wp-includes/blocks/code/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="dominant-color-styles-inline-css">
+img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); }
+/*# sourceURL=dominant-color-styles-inline-css */
+</style>
+<style id="stand-width-ukraine-inline-css">
+#stand_with_ukraine_overlay{font-size:18px;line-height:1}#stand_with_ukraine_overlay a{background-color:gold;color:#0057b8;display:block;padding:1rem;text-align:center;text-decoration:none}#stand_with_ukraine_overlay a:focus,#stand_with_ukraine_overlay a:hover{background-color:#0057b8;color:gold}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/build/js/modules/style-ukraine.css */
+</style>
+<style id="dambis-kit--blurhash-inline-css">
+img[data-blurhash]{background-image:var(--dambis-kit-blurhash);background-size:cover;background-position:center}
+/*# sourceURL=dambis-kit--blurhash-inline-css */
+</style>
+<link rel="preload" href="https://kaspars.net/wp-content/uploads/minit/c8ad22cc04d41eccde7058cde46d0070.css" as="style"><link rel="https://api.w.org/" href="https://kaspars.net/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://kaspars.net/wp-json/wp/v2/posts/11410"><meta name="generator" content="WordPress 7.1.3">
+<link rel="canonical" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools">
+<link rel="shortlink" href="https://kaspars.net/11410">
+<link rel="alternate" type="application/activity+json" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools"><meta name="generator" content="dominant-color-images 1.3.0">
+<meta property="fediverse:creator" name="fediverse:creator" content="kaspars@kaspars.net">
+<link rel="site.standard.publication" href="at://did:plc:fd7xarjj37v5axbxczpgqj5c/site.standard.publication/3mqvlvldcxas4">
+<meta property="og:site_name" content="Kaspars Dambis">
+<meta property="og:title" content="Building High Capacity 18V/20Ah Battery for Makita Power Tools">
+<meta property="og:description" content="Note: work in progress (lab notes). My Makita grass trimmer lasts about 15 minutes with two 18V/6Ah batteries (each rated at 108Wh). Makita ...">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled.jpg">
+<meta property="og:url" content="https://kaspars.net/blog/high-power-capacity-battery-power-tools">
+<link rel="icon" type="image/png" href="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg"><link rel="alternate" type="text/markdown" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools/md">
+<meta name="generator" content="embed-optimizer 1.0.0-beta6">
+
+<link rel="alternate" title="ActivityPub (JSON)" type="application/activity+json" href="https://kaspars.net/?p=11410">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-120x120.jpeg" sizes="32x32">
+<link rel="icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<meta name="msapplication-TileImage" content="https://kaspars.net/wp-content/uploads/2025/08/cropped-kaspars-dambis-2025-sq-scaled-1-300x300.jpeg">
+<link rel="webmention" href="https://kaspars.net/wp-json/webmention/1.0/endpoint">
+<style id="wp-custom-css">
+a, code { word-break: break-word; }
+.yarpp-related li a { font-weight:normal; padding:0.25em 0; }
+.yarpp-related ul { margin-left:0; margin-right:0; padding-left:0; }
+
+.is-type-video .wp-block-embed__wrapper { background-color:#ddd; }
+
+#nav-main .sub-menu { min-width: 6rem; }
+
+figure figcaption { text-align:center; font-style:italic; font-size:0.9em; }
+
+.wp-block-gallery ul { margin-left:0; }
+
+code { white-space:pre-wrap; }
+pre code,
+.wp-block-code code { white-space:inherit; }
+
+.activitypub-modal__overlay h1,
+.activitypub-modal__overlay h2,
+.activitypub-modal__overlay h3,
+.activitypub-modal__overlay h4 {
+	color:inherit;
+}
+
+#menu-indieweb-webring li { display: inline-block; }
+#menu-indieweb-webring li:nth-child(2) { margin: 0 1rem; }
+
+.h-card-profile { display:none; }
+</style>
+<style id="dambis-kit-form-inline-css">
+.kit-form {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+.kit-form input,
+.kit-form button {
+	font: inherit;
+	line-height: inherit;
+}
+
+.kit-form .kit-form__field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.kit-form .kit-form__input,
+.kit-form .kit-form__input[type="email"],
+.kit-form .kit-form__input[type="text"] {
+	font: inherit;
+	line-height: inherit;
+	padding: 0.5rem 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.kit-form .kit-form__input:focus {
+	outline: none;
+	border-color: #007cba;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.2);
+}
+
+.kit-form .kit-form__submit {
+	padding: 0.5rem 1.5rem;
+	background: #007cba;
+	color: #fff;
+	border: 1px solid #007cba;
+	border-radius: 0.25rem;
+	font: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	align-self: flex-end;
+	white-space: nowrap;
+}
+
+.kit-form .kit-form__submit:hover {
+	background: #005a87;
+}
+
+.kit-form .kit-form__submit:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.4);
+}
+
+@media (max-width: 768px) {
+
+	.kit-form {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.kit-form__submit {
+		margin-top: 0.5rem;
+		align-self: stretch;
+	}
+}
+
+/*# sourceURL=https://kaspars.net/wp-content/plugins/dambis-kit/css/kit.css */
+</style>
+
+</head>
+<body class="wp-singular post-template-default single single-post postid-11410 single-format-standard custom-background wp-embed-responsive wp-theme-list-theme wp-child-theme-list-konstruktors has-header-image">
+<div id="stand_with_ukraine_overlay" role="banner">
+				<a href="https://war.ukraine.ua" title="Stand With Ukraine" rel="nofollow">#StandWithUkraine</a>
+			</div><div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="../../" title="Kaspars Dambis" rel="home">
+					<img src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D300%26d%3Dmm%26r%3Dg" width="300" height="300" alt="Kaspars Dambis" title="Kaspars Dambis" class="custom-logo" decoding="async">					<strong>Kaspars Dambis</strong>
+				</a>
+				<em>WordPress, Electronics &amp; Home Automation</em>
+			</p>
+
+			<a id="nav-main-toggle" href="#nav-main">Menu</a>
+					<div id="nav-main" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4174" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-4174"><a href="../" title="Blog About Web Design, WordPress and Performance">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-4884" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4884"><a href="../" title="Latest Blog Posts">Latest Posts</a></li>
+	<li id="menu-item-6198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6198"><a href="../topic/vlog/" title="My video blog about electronics and digital products">Video Blog</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4943"><a href="../archive/" title="Archive of all blogs posts">All Posts</a></li>
+	<li id="menu-item-6242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6242"><a href="../../subscribe/">Subscribe</a></li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="../../projects/">Projects</a></li>
+<li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4176"><a rel="author me" href="../../about/" title="About Kaspars Dambis">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5784"><a href="../../about/">About Me</a></li>
+	<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a href="../../now/" title="What I’m Doing Now…">Now</a></li>
+	<li id="menu-item-6726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6726"><a href="../../uses/" title="My preferred hardware and software">Uses</a></li>
+	<li id="menu-item-6925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6925"><a href="../../reads/" title="My bookshelf">Reads</a></li>
+	<li id="menu-item-4178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4178"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+</ul>
+</li>
+</ul></div>		</nav>
+
+		
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<div class="breadcrumb breadcrumb-count-3" itemprop="breadcrumb"><a href="../../">Home</a> → <a href="../">Blog</a> → <a href="../topic/electronics/" rel="category tag">Electronics</a> →</div>
+		
+		<article class="post-11410 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics tag-how-to has-featured-image" id="post-11410" role="article">
+
+			
+						<h1 class="entry-title" role="heading">
+					Building High Capacity 18V/20Ah Battery for Makita Power Tools			</h1>
+			
+			
+			<div class="post-meta post-meta-header">
+				<span class="meta-item meta-published time published">
+			<abbr title="Thu, 08 Oct 2026 11:34:26 +0300">October 8, 2026</abbr>
+		</span> <span class="meta-item meta-updated time updated">
+			<span class="value-title" title="Thu, 08 Oct 2026 16:25:05 +0300"></span>
+		</span> <span class="meta-item meta-author author vcard">
+			<span class="name fn">
+				<span class="value-title" title="Kaspars"></span>
+			</span>
+		</span> <span class="meta-item meta-category category"><a href="../topic/electronics/" rel="category tag">Electronics</a></span> <span class="meta-item meta-tags tags"><a href="../tag/how-to/" rel="tag">How to</a></span> <span class="meta-item meta-comment-count">
+			<a href="#comments">2&nbsp;Comments</a>
+		</span>			</div>
+
+			
+			<div class="entry-content">
+				
+<p class="wp-block-paragraph">Note: work in progress (lab notes).</p>
+
+
+
+<p class="wp-block-paragraph">My Makita grass trimmer lasts about 15 minutes with two 18V/6Ah batteries (each rated at 108Wh). Makita now offers 12Ah/216Wh LXT packs (released in 2025) but I wanted something even more capable so I bought two 20-cell DIY kits on AliExpress instead. </p>
+
+
+
+<p class="wp-block-paragraph">Using 5Ah cells arranged in 5S4P, each pack would have a nominal capacity of 20Ah or 360Wh which is about 3x the capacity of my current packs, or 50 minutes of runtime (hopefully).</p>
+
+
+
+<h2 class="wp-block-heading">Batteries: 20pcs of 21700 Cells</h2>
+
+
+
+<p class="wp-block-paragraph">These kits use 20 pieces of 21700 cells (larger size and higher capacity than 18650 cells) arranged in 5S/4P configuration and I got 50 Shineway 3.7V/5Ah (<a href="../../wp-content/uploads/2026/10/SWY-21700-5000-5C-cell-datasheet.pdf">PDF datasheet</a>) for $160 (including shipping and taxes) which is a total of 925Wh (amazing value).</p>
+
+
+
+<p class="wp-block-paragraph">I did some tests and they appear to have the promised capacity at these lower 0.5A and 1A discharge rates:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-dominant-color="4f4d3c" data-has-transparency="false" data-blurhash="L5BM#lXK9vKq~pVtt7Me^keos:R7" style="--dominant-color: #4f4d3c; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAIAAACor3u9AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACtUlEQVQ4jV2VQZbsNgwDq2jPzXKWbHL/1bSBLCj/maQf29aTJYEESch//v4LHGfmHr+u+brma+brmnscHRUKbZ/0aT/JJ2ecQhFGb731S7+ce7zwEu/S9wAqhQK0bWWHQmm7r7Ng/6UU3Mn91Xbnqnfpu6C2bdO6h6Vj0J4I9uOvVw9cWwkUAg2VWDX304giBB56kUgwCA6oC5DSNGnapgnpCSdWjEaiUQWZ++mzJwxeTPPUab30uIEKpKR9QtqEJ92ZluVY+ogyiC8r9zcfq3RK9MJqNXJRnUHc1KQ84SlPSHiT/JMHPU8EGJn7ux9ROjB1qQleNnQYPRFgSurnxXhK0hZPLl6zpcfD+zsfcP4HUEKHjjPLoMXWZy18SsJmZQHaQEpLakoD3t/9BodMO+fTAnDRQXGEWYyn89QnPjXZCEo7zTT0KWFjI0N9KWqnXLW1oVvvzTCjEcRJJ/Tp/AKgXabSPvRpP+VJn5Ah3p9+yyxAY7O+2NJeQ8cTwTJbnvLUHIw2L0Ce9nOMT3ls5n76SGwbyZDPqePo6VY7m4Jw2E0ny8IBePuiD3noB77bZ3hyt9kKa3MsSWKyqa0eCbBsl3uarrzdfKCS0MdfXHn/Uor+10IsKeP6kAX80SP4U5oH60dQspnwHmQLBN5qxPbMgC1KVwmXMnk18uziVPLbBPzx4J7O9vd0Bn/s6Ad69Ogo5dmrdTQHQ3EwOOuAZ/V9MdSFuZity9HpXgWOunIo6yhHBc12yeoEFt3iULQjeF8dNgJmmAsvzkUz7qQOr76oW7Dr7ECDAzB1MeY4fA14Dy9FzOzV5lzMjNOXK18ApwQGO0yIMBAcLVOn6/sMtb8APKcvM3U8yfA/APwaIQ4ERsteAkeMmc3DVhG/SN7BLtxLYwF+qvIcXrs6frJ/bq2f3XvSv+Mt7K0+Lc0fAAAAAElFTkSuQmCC)" loading="lazy" decoding="async" width="1920" height="1273" src="../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D1920%2C1273.jpg" alt="SWY 21700 5.0Ah 3.7V 18.00Wh 26C23D05" class="wp-image-11417 not-transparent" srcset="../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D1920%2C1273.jpg 1920w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D1280%252C849.jpg 1280w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D1536%252C1018.jpg 1536w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D2048%252C1358.jpg 2048w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D384%252C255.jpg 384w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D768%252C509.jpg 768w, ../../wp-content/uploads/2026/10/swy-21700-5ah-18wh-cell_strip%3Dall%26quality%3D90%26resize%3D1024%252C679.jpg 1024w" sizes="auto, (max-width: 1920px) 100vw, 1920px"><figcaption class="wp-element-caption">SWY 21700 5.0Ah 3.7V 18.00Wh 26C23D05 cell capacity — 5049mAh during 0.5A discharge and 5363mAh during 1A charging.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">The manufacturer also publishes a really nice discharge graph (part of the <a href="../../wp-content/uploads/2026/10/SWY-21700-5000-5C-cell-datasheet.pdf">datasheet</a>) at various current rates:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-dominant-color="dae3ea" data-has-transparency="false" data-blurhash="LLQJo^E3WY-;~qE2D*oeR.D*9aoe" style="--dominant-color: #dae3ea; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAIAAAC1qksFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACMUlEQVQ4jYWUUY7bQAxDSXmy9z9bL9Az9HM3Fl8/NHayRYsOAnuAwKJIUfSPn78kSbJkYaukKh3ldfhx+LGOx6rH4/hY67H033O2zu7zTCcJy7YkCV8w8oDtg7heIPsvNb8dJLi/Y6369snNw8YSsiDzC4mP+k91wV3daD3WfAEgyUiSzUUsUCSJOqrIrvo3i0QkBCkiEutj1S0A8IYvC0khHbk3OTjWUVV/0SpRupOIkAgE6+NRu3+AEMA3EigZ6oEKtUJSR1WV7QsHAiQz2SRwAyxPx4nAsTPw2ojMFOJUJZXk6KqjyoMhD7HdYZKQzB201uHxR6xEHjreLUGILMWy3VVT/egaDuXbhlthkhCCALEOeyRRkIWwMNniD8wYzC5Xl4+uqV81AJ7xvDDIvoglYbGf+++XnJ2QZAxmXxgzgw0wJDwufcMYsywIaIu3T3cnne7uTnY7G6FMFRRVeZGQ7HsD2KYHiXV265Kuu8/e57qMJS6RavScHot5Wra9F36qZ/QRWs9na5Zj997n+YLJzUC2ZUolS5EsoYoi27Ofeil8kdD6+jq3Zm8I5938Xkum/TIS+C40XV7hc+3DZXCQ1ufzebvrQug9hHH0FVBSqdih98oeA3vEd/mRFYD1+XXuobwNeDZ+r/tkuO25o+8hMRg7toImDWYXhNbXszf4NYdX78nEeFnUmHlXHdv4WuQt1EWiX0ppnR29M8jVwJVK8g7tKb8daf2Z8rzDDJKA3yJuPuGK/WKcAAAAAElFTkSuQmCC)" loading="lazy" decoding="async" width="1920" height="1081" src="../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%2C1081.png" alt="SWY 21700 5.0Ah 3.7V 18.00Wh discharge current rates" class="wp-image-11436 not-transparent" srcset="../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%2C1081.png 1920w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C721.png 1280w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C865.png 1536w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C1153.png 2048w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C216.png 384w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C432.png 768w, ../../wp-content/uploads/2026/10/SWY-21700-5Ah-charge-discharge-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C577.png 1024w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></figure>
+
+
+
+<p class="wp-block-paragraph">At 3C (15A) discharge rate we’re still getting 16.5Wh of energy and 60C maximum surface temperature. Since the maximum expected discharge rate is 2C or 10A per cell (see below), we should be able to get 16Wh of usable energy at ~50C surface temperature.</p>
+
+
+
+<h2 class="wp-block-heading">Battery Protection System (BMS)</h2>
+
+
+
+<p class="wp-block-paragraph">The BMS board that came with the kit was one of the most popular implementations found on AliExpress which are built around the <a href="http://www.cellwise-semi.com/en/">CellWise Microelectronics</a> CC9053/CC1053 battery protection chips. It monitors the five series-connected cell groups (5S) and controls external power transistors (MOSFETs) which connect or disconnect the pack when a protection condition is detected. The external charger still has to regulate charging current and voltage.</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-dominant-color="abafad" data-has-transparency="false" data-blurhash="LjNdO7xa~q%MRit7xuoM_3Rjbat7" style="--dominant-color: #abafad; --dambis-kit-blurhash:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAIAAABE/PnQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEVUlEQVRIiW1W23bkOAjkKjn//6kzZ7YtAbUPyOkkM7SO82JXIYqCMAD6Frhfv3//6t+v379//fnz5/V67b1REBGzMee8ruv6+Liuj+u6xnWNMXy4mqmpqLAIMxMTEwv9DAAEQv8FEf4d1K/h+QLn3fc3jWL/IKhCoYD6HiiASCqrKiv7kZlZpc87xEVMRMzCABPTTwJU9qeZDfKOquISJhYNjROWGRFdFmJWIpACzMXEzH8TZGRG9DPyoOzYe++qYhaAWERVVU3UxJRFWJiYiQCCoORowMz8nQARsQ9mxN599l57rZWVzJJVREQsLMJHTyGmrrxWqarIW+evBMj9GbH33nutvdZa97rXWhHJzGZZBfT9uZ8EOppZ2ZtAmOl9AyD2Wnuvk+9aB/5ed0dEELNqZNVpFiYi7tyrUFWZqWai0lXqEhUBiFx77d246+FYa637Xq/7fr3+2xFErLojMwsFIiYQP+kjK83dMlWFpa/AVmsBiMhG32t1zfeDfq/79Xr9114DqWpEFAqETp9ABapCVnlWWqqpiIgIMdtaG0BGrP2FYu31aHvf677v1+t174WCqO7MBKF9ynyqRADQFtE01ecGuwmyVY2nb/b771r3Wq/7vtedVaIaVSBmYT5idiMxgbpWZpUtNbNFRBPEfk5EtA+ehm2ytXZUimiBWVTU1NzMVU/nCLcbul9xCDICQHwxbB4DV32eqsiKzKhkgEP3F3qPjMiw1EyJbNc1jbB0V/8cO/VtojFARNwH6L6kIupuBVA4jXSiAAYIJTA6LzVWBxOYqH0kwqJiqqbqYGERVdeey6KfGvAx3fmwDxMbMTO1JXuEN6qIiIqqmpm7+4gJsCFZxH3McY0xh7ubm5lZZ2AqqqoifUSYjUUIYOBA9hzTN7T7GOPKIlGtAqu4+5jz4/qY18ec1xxz9MZxN2/ZVVVPm6pqL7WqUjU1O9Dm7mP4vGZUgVk8vAgian2F6+qNds3rmnOMMcboCz1NJcxsZgaAmUGoqk67wcfec87IBEhEIxNEotIEc17XdR5jzEZ3M7WW5wwjM7ce8URUBc+MyOGxx947IrLTV/OsJGIxMfcxxpxzXnPOq5N3Hw3/aCAtqpkPACJC3D6syPQYo+2WPZrFzAtFzKpqw8cYY44555xzjOFPcUzPKO36ELG5O4BUIWaAqioix+iFlpVFIGHxjAJYuAVqgjHnbPTh/mirovy4molMTIlISpgYQLVjI8YY+dxARCITBBYxOyKP8dk+w/1oe7ZN24KIPhcOi5hbAZnp6eEZkTEys4hIRCwLBFHRbt6j60PQ2n6tfuPTl5XJImaW5mZpHr4tzNMTABOnFjGJiHaLNfp80nd/py9y/qH4QUBEqj0Z1dTUzMzcvFeXVBOoufno33Afw4e5m/+oT8+uvwiI6Xj9i6HbiSVCRKLN29zf4p/1+YuAqOURFuazTM7yA7i3wBkoIu9UzjuqJ/0v+PQ/eqAgJ3VwXwcAAAAASUVORK5CYII=)" loading="lazy" decoding="async" width="1920" height="1718" src="../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%2C1718.jpg" alt="18V 5S battery protection BMS board with CellWise chip" class="wp-image-11413 not-transparent" srcset="../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D1920%2C1718.jpg 1920w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D1280%252C1145.jpg 1280w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D1536%252C1374.jpg 1536w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D2048%252C1833.jpg 2048w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D384%252C344.jpg 384w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D768%252C687.jpg 768w, ../../wp-content/uploads/2026/10/18v-makita-power-tool-batter-bms-protection-components-scaled_strip%3Dall%26quality%3D90%26resize%3D1024%252C916.jpg 1024w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></figure>
+
+
+
+<p class="wp-block-paragraph">CW1053 provides overcharge, over-discharge, over-current, short-circuit and temperature protection. It does not support cell balancing and the exact protection thresholds (voltage, current, temperature) depend on the surrounding circuit.</p>
+
+
+
+<p class="wp-block-paragraph">To evaluate a board you should check the following:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Discharge path:</strong> the components carrying current between the cells and the positive/negative power tool terminals. The board above has 7 power transistors on the output path followed by three shunt resistors.</li>
+
+
+
+<li><strong>Charge path:</strong> the components carrying current between the charger terminal and the cell groups. This is usually a separate circuit with a much lower current limit (unfortunately). The board above has 2 parallel diodes followed by 2 smaller charging transistors.</li>
+
+
+
+<li><strong>Balancing:</strong> whether the board can discharge individual high-voltage groups or only monitor them and stop charging. The board above doesn’t have any.</li>
+
+
+
+<li><strong>Protection:</strong> the actual voltage, current and temperature thresholds usually configured through different resistor values (defined in datasheet).</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Output Current and Power</h2>
+
+
+
+<p class="wp-block-paragraph">The current required by the tool can be determined by dividing the maximum power output (such as 1kW in case of the trimmer) with the battery voltage which (in case of 2x18V packs) is 36V nominal:</p>
+
+
+
+<pre class="wp-block-code"><code>1000W / 36V = 28A</code></pre>
+
+
+
+<p class="wp-block-paragraph">Note that with a fully charged or slightly discharged battery the current would be lower or higher. Accounting for additional heat losses in the motor and the power supply, we can estimate the required output to be 40A.</p>
+
+
+
+<figure class="wp-block-image size-full"><img data-dominant-color="03af03" data-has-transparency="true" style="--dominant-color: #03af03;" loading="lazy" decoding="async" width="1800" height="650" src="../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D1800%2C650.png" alt="5S4P 18V battery pack with 20 cells" class="wp-image-11434 has-transparency" srcset="../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D1280%252C462.png 1280w, ../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D1536%252C555.png 1536w, ../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D384%252C139.png 384w, ../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D768%252C277.png 768w, ../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D1024%252C370.png 1024w, ../../wp-content/uploads/2026/10/makita-20-cell-5s4p-pack-voltage-current_strip%3Dall%26quality%3D90%26resize%3D1800%2C650.png 1800w" sizes="auto, (max-width: 1800px) 100vw, 1800px"><figcaption class="wp-element-caption">5S4P battery pack configuration. Pack +/- are the main battery terminals on both ends (full voltage) while parallel cell groups have their balancing and over/under-voltage terminals (black bars) for the BMS.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">With two packs connected in series the current remains at 40A per pack. Since the packs have 5 cell groups in series, each of them must provide the same 40A. Each group contains 4 cells in parallel so <strong>each cell must provide 10A</strong>.</p>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th></th><th>Voltage</th><th>Current</th><th>Power</th></tr></thead><tbody><tr><td><strong>One cell</strong></td><td>3.6V</td><td>10A</td><td>36W</td></tr><tr><td><strong>One 4P cell group</strong></td><td>3.6V</td><td>40A</td><td>144W</td></tr><tr><td><strong>One 5S4P pack</strong></td><td>18V</td><td>40A</td><td>720W</td></tr><tr><td><strong>Two packs in series</strong></td><td>36V</td><td>40A</td><td>1440W</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">The Shineway cells have a 5C rating for maximum continuous discharge which is 25A (5Cx5Ah nominal capacity) so doing 10A at peak should be OK.</p>
+			</div>
+
+			<ul class="post-nav">
+				<li><h4 class="prev"><a href="../umami-analytics/" rel="prev">Notes on Umami Analytics</a></h4></li>			</ul>
+
+			
+		</article>
+
+		<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="../powerwalker-vi-500-r1u/" rel="bookmark" title="Notes on PowerWalker VI 500 R1U UPS">Notes on PowerWalker VI 500 R1U UPS</a></li>
+<li><a href="../bafang-canbus/" rel="bookmark" title="Bafang CAN Bus Programming">Bafang CAN Bus Programming</a></li>
+<li><a href="../micropython-button-debounce/" rel="bookmark" title="MicroPython Button Debounce">MicroPython Button Debounce</a></li>
+<li><a href="../wproll-update/" rel="bookmark" title="WordPress Blogroll Still Rolling">WordPress Blogroll Still Rolling</a></li>
+<li><a href="../habits/" rel="bookmark" title="Habits">Habits</a></li>
+<li><a href="../solar-lora-meshtastic/" rel="bookmark" title="Building a Solar Powered Lora Meshtastic Community Network">Building a Solar Powered Lora Meshtastic Community Network</a></li>
+<li><a href="../sensor-pilot-web-bluetooth/" rel="bookmark" title="Sensor Pilot: A Progressive Web App (PWA) for Bluetooth Sensors">Sensor Pilot: A Progressive Web App (PWA) for Bluetooth Sensors</a></li>
+<li><a href="../beelink-u59-pro-n5105/" rel="bookmark" title="Notes on Beelink U59 Pro (Intel N5105) as a Home Server">Notes on Beelink U59 Pro (Intel N5105) as a Home Server</a></li>
+</ol>
+</div>
+
+			<div class="comments-wrap">
+		<div class="comments has-comments" id="comments">
+
+							<h2 class="comments-title">
+					2 Comments				</h2>
+
+				<ol class="commentlist">
+							<li class="comment even thread-even depth-1 parent" id="comment-398273">
+				<div id="div-comment-398273" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/fd969da15d9a035e3bf32b32bf3c6c852dfe0d3ab9d11a5a4cb3971b90f2dc02/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/fd969da15d9a035e3bf32b32bf3c6c852dfe0d3ab9d11a5a4cb3971b90f2dc02/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn">Ima Mur</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398273">October 8, 2026 at 19:34</a>		</div>
+
+		<p>As even extra large batteries on trimmer does not give too much of a working time, but add extra weight for hands, I am thinking of putting extra batteries in backpack. So what do you think of idea to add 3 to 5 kgs of batteries and make some kind of connector to trimmer like I saw from Huqvarna? Trimmer stays light, and you have extra power for longer jobs. And you can use it with other Makita tools if needed, like reciprocated saw – I use in demolition jobs and working on bushes.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools?replytocom=398273#respond" data-commentid="398273" data-postid="11410" data-belowelement="div-comment-398273" data-respondelement="respond" data-replyto="Reply to Ima Mur" aria-label="Reply to Ima Mur">Reply</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-kaspars bypostauthor odd alt depth-2" id="comment-398274">
+				<div id="div-comment-398274" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D64%26d%3Dmm%26r%3Dg" srcset="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D128%26d%3Dmm%26r%3Dg 2x" class="avatar avatar-64 photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">			<cite class="fn"><a href="../../" class="url" rel="ugc">Kaspars</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="#comment-398274">October 8, 2026 at 21:42</a>		</div>
+
+		<p>Indeed, there is even an official Makita battery backpack (PDC01) which fits 4x18V batteries (up to 6Ah BL1860B so 432Wh combined) and weighs ~5kg + 2.4kg for the batteries. </p>
+<p>While looking up the model numbers I discovered they also make integrated battery backpacks with the largest being <a href="https://makitatools.com/products/details/PDC1500" rel="nofollow ugc">PDC1500</a> with 1567Wh and the total weight of 11kg for around $2k.</p>
+<p>The backpack approach would definitely be nicer in terms of comfort and usability. It would require 100pcs of 5Ah cells. I currently have 50 cells which weigh 3.6kg so it would be 8kg or roughly 10kg with the whole harness.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://kaspars.net/blog/high-power-capacity-battery-power-tools?replytocom=398274#respond" data-commentid="398274" data-postid="11410" data-belowelement="div-comment-398274" data-respondelement="respond" data-replyto="Reply to Kaspars" aria-label="Reply to Kaspars">Reply</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+				</ol>
+
+							
+			
+<h2>Likes</h2>
+<ul class="reaction-list reaction-list--like">
+			<li id="comment-398277" class="like even thread-even depth-1 p-like h-cite avatar-only activitypub-comment">
+			<div class="comment-body">
+				<span class="p-author h-card">
+					<a class="u-url" title="… liked this!" href="https://mastodon.social/@richlv">
+													<img alt="" src="../../wp-content/uploads/activitypub/actors/11483/ecd55db85f2c38598460e3bae8547f45.webp" srcset="../../wp-content/uploads/activitypub/actors/11483/ecd55db85f2c38598460e3bae8547f45.webp 2x" class="avatar avatar-64 photo avatar-default avatar avatar-activitypub avatar-64 photo u-photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">							<span class="emoji-overlay" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: none" stroke="currentColor" stroke-width="1.5"><path d="M4.00002 12L5.00001 20M13.2295 4.75C12.7709 4.75 12.3398 4.96848 12.0686 5.33829L7.06032 12.1678C7.02166 12.2205 7.00519 12.2862 7.01443 12.351L7.87735 18.3914C7.94773 18.8841 8.36965 19.25 8.8673 19.25L17.2725 19.25C17.7062 19.25 18.0905 18.9705 18.224 18.5578L20.2211 12.3848C20.4823 11.5774 19.8804 10.75 19.0318 10.75L14.9758 10.75C14.3435 10.75 13.8711 10.1689 14 9.55L14.6389 6.48326C14.8252 5.58927 14.1427 4.75 13.2295 4.75Z" vector-effect="non-scaling-stroke"></path></svg></span>											</a>
+					<span class="hide-name p-name">Rihards Olups</span>
+				</span>
+			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-398275" class="like odd alt thread-odd thread-alt depth-1 p-like h-cite avatar-only activitypub-comment">
+			<div class="comment-body">
+				<span class="p-author h-card">
+					<a class="u-url" title="… liked this!" href="https://mastodon.social/@nonzerosumjames">
+													<img alt="" src="../../wp-content/uploads/activitypub/actors/10749/76cca5579fb2b7059cf1ded084ed3480.webp" srcset="../../wp-content/uploads/activitypub/actors/10749/76cca5579fb2b7059cf1ded084ed3480.webp 2x" class="avatar avatar-64 photo avatar-default avatar avatar-activitypub avatar-64 photo u-photo" height="64" width="64" onerror="this.onerror=null;this.src='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';this.srcset='https://kaspars.net/wp-content/plugins/webmention/assets/img/mm.jpg';" loading="lazy" decoding="async">							<span class="emoji-overlay" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: none" stroke="currentColor" stroke-width="1.5"><path d="M4.00002 12L5.00001 20M13.2295 4.75C12.7709 4.75 12.3398 4.96848 12.0686 5.33829L7.06032 12.1678C7.02166 12.2205 7.00519 12.2862 7.01443 12.351L7.87735 18.3914C7.94773 18.8841 8.36965 19.25 8.8673 19.25L17.2725 19.25C17.7062 19.25 18.0905 18.9705 18.224 18.5578L20.2211 12.3848C20.4823 11.5774 19.8804 10.75 19.0318 10.75L14.9758 10.75C14.3435 10.75 13.8711 10.1689 14 9.55L14.6389 6.48326C14.8252 5.58927 14.1427 4.75 13.2295 4.75Z" vector-effect="non-scaling-stroke"></path></svg></span>											</a>
+					<span class="hide-name p-name">James</span>
+				</span>
+			</div>
+		</li><!-- #comment-## -->
+</ul>
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kaspars.net/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="reply-on-fediverse">
+				Reply on <a href="../../__mastodon.social/search/q%3Dhttps%253A%252F%252Fkaspars.net%252Fblog%252Fhigh-power-capacity-battery-power-tools.html" rel="nofollow" target="_blank">Mastodon</a> or search for <a href="" onclick="event.preventDefault();navigator.clipboard.writeText(this.href).then(()=>alert(&quot;Link copied!&quot;));" title="Click to copy to clipboard">️this permalink</a> in your ActivityPub client, and it will show up here too
+				(also follow <a href="../author/kaspars/" onclick="event.preventDefault();navigator.clipboard.writeText(this.href).then(()=>alert(&quot;Link copied!&quot;));" title="Click to copy to clipboard">this blog</a>). 
+				Or simply leave a comment below:
+			</p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea autocomplete="new-password" id="bfac3e1ff0" name="bfac3e1ff0" cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="">document.getElementById("comment").setAttribute( "id", "a1851ef53a82828dac06173230d239bc" );document.getElementById("bfac3e1ff0").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment_pilot__notify_replies">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_replies" checked="checked" value="1">
+						Email me when someone replies to my comment.
+					</label>
+				</p>
+<p class="comment_pilot__notify_all">
+					<label>
+						<input type="checkbox" name="comment_pilot__notify_all" value="1">
+						Email me all new comments.
+					</label>
+				</p>
+<input type="hidden" name="wp-comment-cookies-consent" value="1"><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="11410" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+		</div><!-- #comments -->
+	</div>
+	
+		
+		
+		</div><!-- content-main -->
+	</div><!-- wrap -->
+</div>
+
+<div class="wrap wrap-footer" role="contentinfo">
+	<div class="wrap-section-in">
+
+		
+				<div id="footer">
+			
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="" aria-current="page">Building High Capacity 18V/20Ah Battery for Makita Power Tools</a>
+									</li>
+											<li>
+					<a href="../umami-analytics/">Notes on Umami Analytics</a>
+									</li>
+											<li>
+					<a href="../setup-huawei-ma5671a/">Setup Huawei MA5671A SFP GPON for Your Fiber ISP</a>
+									</li>
+											<li>
+					<a href="../public-dns-local-development-url/">Setup Local Development Domain with Public DNS</a>
+									</li>
+											<li>
+					<a href="../google-account-custom-email/">Custom Email Address for Kids Google Account</a>
+									</li>
+											<li>
+					<a href="../fix-dell-monitor-flickering-mac/">Fix Dell Monitor Flickering and Ghosting on Mac</a>
+									</li>
+											<li>
+					<a href="../iron-sulphate-wood-silver/">Notes on Iron Sulphate for Graying Wood</a>
+									</li>
+											<li>
+					<a href="../notes-fair-package-manager/">Notes on FAIR Package Manager</a>
+									</li>
+											<li>
+					<a href="../wordpress-comments-potential/">The Potential of WordPress Comments</a>
+									</li>
+											<li>
+					<a href="../remote-logging-mikrotik-routeros/">Remote Logging for Mikrotik RouterOS</a>
+									</li>
+					</ul>
+
+		</aside><aside id="text-18" class="widget widget_text"><h1 class="widget-title">Subscribe</h1>			<div class="textwidget"><p>Get notified via e-mail when I publish new blog posts:</p>
+		<form action="" class="kit-form" method="post" data-form-id="7096068" data-capture-url="https://kaspars.net/wp-json/dambis-kit/v1/kit/lead">
+							<input type="hidden" name="redirect_url" value="https://kaspars.net/subscribe?thanks">
+						<label class="kit-form__field">
+				Email:
+				<input type="email" name="email_address" placeholder="name@example.com" class="kit-form__input" required="">
+			</label>
+			<label class="kit-form__field">
+				Name:
+				<input type="text" name="fields[first_name]" placeholder="Name" class="kit-form__input">
+			</label>
+			<input type="submit" value="Subscribe" class="kit-form__submit">
+		</form>
+		
+</div>
+		</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Blog Topics</h1>
+			<ul>
+					<li class="cat-item cat-item-174"><a href="../topic/cryptography/">Cryptography</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="../topic/design/">Design</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="../topic/dev/">Development</a>
+</li>
+	<li class="cat-item cat-item-156"><a href="../topic/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-188"><a href="../topic/home-automation/">Home Automation</a>
+</li>
+	<li class="cat-item cat-item-155"><a href="../topic/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="../topic/meta/">Meta</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="../topic/observatory/">Observatory</a>
+</li>
+	<li class="cat-item cat-item-189"><a href="../topic/passive-house/">Passive House</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="../topic/media-publishing/">Publishing</a>
+</li>
+	<li class="cat-item cat-item-184"><a href="../topic/vlog/">Video Blog</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="../topic/performance/">Web Performance</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="../topic/wordpress/">WordPress</a>
+</li>
+			</ul>
+
+			</aside><aside id="nav_menu-2" class="widget widget_nav_menu"><h1 class="widget-title">IndieWeb Webring</h1><div class="menu-indieweb-webring-container"><ul id="menu-indieweb-webring" class="menu"><li id="menu-item-10912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10912"><a href="https://🕸💍.ws/previous" title="Visit previous site in the webring">← Previous</a></li>
+<li id="menu-item-10911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10911"><a href="https://🕸💍.ws" title="This site is part of the IndieWeb webring">IndieWeb 🕸💍 Webring</a></li>
+<li id="menu-item-10913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10913"><a href="https://🕸💍.ws/next" title="Visit next site in the webring">Next →</a></li>
+</ul></div></aside><aside id="text-19" class="widget widget_text">			<div class="textwidget"><div class="h-card h-card-profile"><a class="p-name u-url" href="../../">Kaspars Dambis</a><br>
+<img decoding="async" class="u-photo" src="../../__reverse.kaspars.net/gravatar/avatar/92bfcd3a8c3a21a033a6484d32c25a40b113ec6891f674336081513d5c98ef76/s%3D600" alt="Kaspars Dambis"><p></p>
+<p class="p-note">Maker of things with passion for the web, electronics, personal finance and sustainable living. Blogging since 2007.</p>
+</div>
+</div>
+		</aside>		</div>
+		
+		<div class="footer-menu-wrap">
+					<strong class="home"><a href="../../">Kaspars Dambis</a></strong>
+					<div id="nav-footer" class="menu-personal-links-container"><ul id="menu-personal-links" class="menu"><li id="menu-item-4829" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-4829"><a href="../" title="Blog about WordPress plugin development, website performance and optimization">Blog</a></li>
+<li id="menu-item-5187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5187"><a rel="author" href="../../about/" title="About Kaspars Dambis">About</a></li>
+<li id="menu-item-5188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5188"><a href="../../contact/" title="Contact Kaspars Dambis">Contact</a></li>
+<li id="menu-item-6908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908"><a rel="me" href="https://kasparsdambis.lv" title="My blog in Latvian">Latviski</a></li>
+</ul></div>
+				</div><div id="nav-social" class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-5185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a rel="me" href="https://github.com/kasparsd/">GitHub</a></li>
+<li id="menu-item-5186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a rel="me" href="https://profiles.wordpress.org/kasparsd" title="My WordPress profile">WordPress.org</a></li>
+<li id="menu-item-5184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a rel="me" href="https://twitter.com/konstruktors" title="Kaspars on Twitter">Twitter</a></li>
+<li id="menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8591"><a rel="me" href="https://mastodon.social/@kasparsd" title="Follow on Mastadon (ActivityPub)">Mastadon</a></li>
+<li id="menu-item-9730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9730"><a rel="me" href="https://bsky.app/profile/kaspars.damb.is">Bluesky</a></li>
+<li id="menu-item-6512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6512"><a rel="me" href="https://micro.blog/kasparsd" title="My Micro Blog">Micro.blog</a></li>
+<li id="menu-item-6160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6160"><a rel="me" href="https://www.youtube.com/kasparsdambis" title="My Video Blog">YouTube</a></li>
+<li id="menu-item-5793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5793"><a rel="me" href="https://www.instagram.com/kasparsd/" title="My Instagram Photos">Instagram</a></li>
+<li id="menu-item-5195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5195"><a rel="me" href="https://www.flickr.com/photos/kasparsdambis/" title="My photos on Flickr">Flickr</a></li>
+</ul></div>
+		
+		<div class="theme-credits"><p>Powered by <a href="https://wordpress.org">WordPress</a> and <a href="https://preseto.com/themes/list">List Theme</a>.</p></div>	</div>
+</div>
+
+<script>
+window.dataLayer = window.dataLayer || []; window.dataLayer.push({"wp_post_id":11410,"wp_post_title":"Building High Capacity 18V\/20Ah Battery for Makita Power Tools","wp_post_status":"publish","wp_post_type":"post"});
+</script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/list-konstruktors/*","/wp-content/themes/list-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<style type="text/css">
+			#commentform .reply-on-fediverse { padding-left:0; }
+			.reaction-list { margin:0 0 1.25em 0; padding:0; }
+			.reaction-list img { max-width:3rem; height:auto; border-radius:100%; }
+		</style>
+		<script data-wp-strategy="defer" defer="" id="minit-js-js" src="../../wp-content/uploads/minit/fb553c352a6638710e8f7f5d3c056db0.js"></script>
+<script id="minit-js-js-after">
+document.getElementById( 'minit-js-js' ).addEventListener( 'load', function () { wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } ); wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://kaspars.net/wp-json/" ) ); wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "b0b1cb5c79" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://kaspars.net/wp-admin/admin-ajax.php?action=rest-nonce"; } );
+//# sourceURL=minit-js-js-after
+</script>
+<!-- Generated in 0.0876 seconds with 6 queries on Mon, 26 Oct 2026 09:56:46 +0000. -->
+<!-- Script helper footer: -->
+<!--
+<script defer src="https://reverse.kaspars.net/gtm/gtag/js?id=G-4GVR01JRX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4GVR01JRX8');
+</script>
+-->
+
+
+<!--
+	List Theme by Preseto at https://preseto.com
+	6 queries in 0.0876 seconds on Mon, 26 Oct 2026 09:56:46 +0000.-->
+
+
+
+</body></html>
