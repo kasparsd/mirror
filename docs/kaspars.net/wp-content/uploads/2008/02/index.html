@@ -1,0 +1,564 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>How to create the perfect lists style using CSS</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style type="text/css">
+
+.examplebox { border:1px solid #ccc; margin-bottom:2em; width:100%; }
+
+body { font:0.9em sans-serif; line-height:1.2em; background:#fff; color:#000; min-height:0; }
+h1, h2, h3, h4, h5, h6 { display:block; margin-top:1.25em; clear:both; }
+h2 { margin-top:1.5em; color:#000; }
+h3 { font-size:1em; color:#c00; }
+p { margin:auto 0 1em 0; }
+
+
+.soul { margin:2em auto; width:40%; }
+.wrap { float:left; width:100%; clear:both; }
+.fa { float:left; }
+.fc { float:right; }
+.column2 { width:48%; }
+
+.maketransparent * { background:transparent; }
+.noborder *, .noborder div { border:none; }
+
+li { background:#ccc; margin-top:0.25em; margin-bottom:0.25em; }
+ul, ol { background:#ff6; }
+li span { background:#fcc; }
+
+.default ul, .default ol { width:auto; }
+
+.e1 ul { padding-left:40px; }
+.e2 ul { margin-left:40px; }
+.e3 ul { padding-left:0; }
+.e4 ul { margin-left:0; }
+.e5 ul { padding:0; }
+.e6 ul { margin:0; }
+.e7 ul { padding:1em 0; }
+.e8 ul { margin:1em 0; }
+
+ul.normal, ol.normal { margin:auto -3em 1em 0; padding:0; position:relative; left:-3em; overflow:hidden; }
+.normal ul, .normal ol { margin-left:1em; padding-left:0; }
+.normal li { margin-left:5em; display:list-item; }
+.normal li li { margin-left:1em; }
+
+.flat li { margin-left:3em; }
+.flat li ul, .flat li ol { margin-left:1em; padding-left:0; }
+.flat li li { margin-left:0; }
+
+ul.bullet-a li { list-style-image: url('bullet-image-a.png');  }
+ul.bullet-b li { list-style-image: url('bullet-image-b.png'); }
+
+.spaced { margin-bottom:0; }
+.spaced ul, .spaced ol { margin-top:1em; }
+.spaced li { margin-bottom:1em; }
+
+.indent li { text-indent:-1em; padding-left:1em; overflow:visible; }
+.inside li { list-style-position:inside; }
+.clear li { list-style-type:none; }
+
+</style>
+<!--[if lte IE 6]><style>ul.normal, ol.normal { height:0; overflow:visible; }</style><![endif]-->
+  </head>
+<body>
+
+<div class="soul">
+	<div class="wrap">
+		<h2>Default list formating</h2>
+		<div class="column2 fa">
+			<div class="examplebox default maketransparent">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>
+			</div>	
+		</div>
+		<div class="column2 fc">
+			<div class="examplebox default maketransparent">
+				<ol>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ol>	
+			</div>		
+		</div>
+	</div>
+	
+	<div class="wrap">
+		<h2>Default list formating (visually)</h2>
+		<div class="column2 fa">
+			<div class="examplebox default">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>
+			</div>	
+		</div>
+		<div class="column2 fc">
+			<div class="examplebox default">
+				<ol>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ol>	
+			</div>		
+		</div>
+	</div>
+	
+	<div class="wrap">
+	<h2>Where is the list's margin and padding?</h2>
+	
+		<div class="column2 fa">
+			<h3>ul { padding-left:40px; }</h3>
+			<div class="examplebox e1">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+		
+			<h3>ul { padding-left:0; }</h3>
+			<div class="examplebox e3">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+
+			<h3>ul { padding:1em 0; }</h3>
+			<div class="examplebox e7">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+
+			<h3>ul { padding:0; }</h3>
+			<div class="examplebox e5">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+		</div>
+
+	
+		<div class="column2 fc">
+			<h3>ul { margin-left:40px; }</h3>
+			<div class="examplebox e2">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+	
+			<h3>ul { margin-left:0; }</h3>
+			<div class="examplebox e4">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+
+			<h3>ul { margin:1em 0; }</h3>
+			<div class="examplebox e8">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+						
+			<h3>ul { margin:0; }</h3>
+			<div class="examplebox e6">
+				<ul>
+					<li><span>List item one</span></li>
+					<li><span>Another list item</span></li>
+					<li><span>Next in here</span></li>
+					<li><span>The final item</span></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrap">
+		<h2>Getting it consistent among browsers</h2>
+		
+		<p><em>Notice</em>: All of the following examples use an additional CSS identifier <code>ul.normal</code> and <code>ol.normal</code>, which for you should be simply <code>ul</code> and <code>ol</code>.</p>
+	
+		<div class="wrap">
+			<div class="column2 fc">
+				<h3>CSS:</h3>
+<pre>/* Used by IE7, but wont't 
+   harm anybody else. */
+body { min-height:0; }
+
+ul, ol { 
+   margin:auto -3em 1em 0; 
+   padding:0; 
+   position:relative; 
+   left:-3em;
+   overflow:hidden;
+}
+
+ul ul, ul ol, 
+ol ol, ol ul { 
+   margin-left:1em; 
+   padding-left:0; 
+}
+
+ul li, ol li { 
+   margin-left:5em; 
+}
+
+li li { 
+   margin-left:1em; 
+}
+
+ul, ol { 
+   /* Apply only (!) 
+      to IE6 */
+   height:0;
+   overflow:visible;
+}
+</pre>
+			</div>
+			<div class="column2 fa">
+				<h3>Normal unordered list</h3>
+				<div class="examplebox">
+					<ul class="normal">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>							
+						</li>
+						<li><span>Another list item a b c d e f g h i j k l m n o</span></li>
+						<li><span>Next in here</span></li>
+						<li><span>The final item</span></li>
+					</ul>	
+				</div>
+				
+				<h3>Normal ordered list</h3>
+				<div class="examplebox">
+					<ol class="normal">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span>
+							<ol>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ol>
+						</li>
+						<li><span>Next in here</span></li>
+						<li><span>The final item</span></li>
+					</ol>	
+				</div>				
+						
+			</div>
+		</div>
+		
+		<div class="wrap">
+			<div class="column2 fc">
+				<h3>CSS:</h3>
+<pre>.flat li { 
+   margin-left:3em; 
+}
+
+.flat li ul, .flat li ol { 
+   margin-left:1em; 
+   padding-left:0; 
+}
+
+.flat li li { 
+   margin-left:0; 
+}
+</pre>
+			</div>
+			<div class="column2 fa">		
+				<h3>Flat unordered list</h3>
+				<div class="examplebox">
+					<ul class="normal flat">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span></li>
+						<li><span>Another list item with letters inside:</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>						
+						</li>
+						<li><span>Next in here</span></li>
+						<li><span>The final item</span></li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="wrap">
+			<div class="column2 fc">
+				<h3>CSS:</h3>
+				<p>In addition to <code>.flat</code> style:</p>
+<pre>.spaced { 
+   margin-bottom:0; 
+}
+
+.spaced ul, .spaced ol { 
+   margin-top:1em; 
+}
+
+.spaced li { 
+   margin-bottom:1em; 
+}
+</pre>
+			</div>
+			<div class="column2 fa">		
+				<h3>Flat and "spaced" unordered list</h3>
+				<div class="examplebox">
+					<ul class="normal spaced flat">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span></li>
+						<li><span>Another list item with letters inside.</span></li>
+						<li><span>Final item on the list.</span></li>
+					</ul>	
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		
+		<div class="wrap">
+			<div class="column2 fc">
+				<h3>CSS:</h3>
+				<p><em>Note: don't forget to remove the line break after <code>list-style-image:</code> to get it work.</em></p>
+<pre>ul.bullet-a li { 
+   list-style-image: 
+   url('bullet-image-a.png');  
+}
+
+ul.bullet-b li { 
+   list-style-image: 
+   url('bullet-image-b.png'); 
+}
+
+.indent li { 
+   padding-left:1em; 
+   text-indent:-1em; 
+}
+
+.inside li { 
+   list-style-position:inside; 
+}
+
+.clear li { 
+   list-style-type:none; 
+}
+</pre>
+			</div>
+			<div class="column2 fa">		
+				<h3>Unordered list with image bullets normal</h3>
+				<div class="examplebox">
+					<ul class="normal bullet-a">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>						
+						</li>
+						<li><span>About the credit cards and mortage payments;</span></li>
+						<li><span>Final item on the list.</span></li>
+					</ul>	
+				</div>
+				
+				<h3>Unordered list with image bullets flat</h3>
+				<div class="examplebox">
+					<ul class="normal bullet-a flat">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span></li>
+						<li><span>About the credit cards and mortage payments;</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>						
+						</li>
+						<li><span>Final item on the list.</span></li>
+					</ul>	
+				</div>
+
+				<h3>Unordered list with image bullets flat and spaced</h3>
+				<div class="examplebox">
+					<ul class="normal bullet-b flat spaced">
+						<li><span>This is very useful for a a a  list which are in fact paragraphs and contain a lot of text;</span></li>
+						<li><span>About the credit cards and mortage payments;</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>						
+						</li>
+						<li><span>Final item on the list.</span></li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+		
+	<div class="wrap maketransparent">
+		<div class="column2 fa">	
+			<h2>Final examples</h2>
+			
+			<h3>Simple list</h3>
+			<div class="examplebox">
+				<ul class="normal">
+					<li><span>This is very useful for a a a  list which are in fact paragraphs and contain a lot of text;</span>
+						<ul>
+							<li><span>First item inside</span></li>
+							<li><span>Second item inside</span></li>
+						</ul>						
+					</li>
+					<li><span>About the credit cards and mortage payments;</span></li>
+					<li><span>Final item on the list.</span></li>
+				</ul>	
+			</div>
+
+				<h3>Normal spaced ordered list</h3>
+				<div class="examplebox">
+					<ul class="normal spaced">
+						<li><span>This is very useful for list items which are in fact paragraphs and contain a lot of text:</span>
+							<ul>
+								<li><span>First item inside</span></li>
+								<li><span>Second item inside</span></li>
+							</ul>
+						</li>
+						<li><span>Next in here</span></li>
+						<li><span>The final item</span></li>
+					</ul>	
+				</div>
+				
+			<h3>Unordered list with image bullets normal</h3>
+			<div class="examplebox">
+				<ul class="normal bullet-a">
+					<li><span>This is very useful for a a a  list which are in fact paragraphs and contain a lot of text;</span>
+						<ul>
+							<li><span>First item inside</span></li>
+							<li><span>Second item inside</span></li>
+						</ul>						
+					</li>
+					<li><span>About the credit cards and mortage payments;</span></li>
+					<li><span>Final item on the list.</span></li>
+				</ul>	
+			</div>
+		
+			<h3>Unordered list with image bullets flat and spaced</h3>
+			<div class="examplebox">
+				<ul class="normal bullet-a flat spaced">
+					<li><span>This is very useful for a a a  list which are in fact paragraphs and contain a lot of text;</span></li>
+					<li><span>About the credit cards and mortage payments;</span>
+						<ul>
+							<li><span>First item inside</span></li>
+							<li><span>Second item inside</span></li>
+						</ul>						
+					</li>
+					<li><span>Final item on the list.</span></li>
+				</ul>	
+			</div>
+	
+			<h3>Unordered list with image bullets flat and spaced</h3>
+			<div class="examplebox">
+				<ul class="normal bullet-b flat spaced">
+					<li><span>This is very useful for a a a  list which are in fact paragraphs and contain a lot of text;</span></li>
+					<li><span>About the credit cards and mortage payments;</span>
+						<ul>
+							<li><span>First item inside</span></li>
+							<li><span>Second item inside</span></li>
+						</ul>						
+					</li>
+					<li><span>Final item on the list.</span></li>
+				</ul>	
+			</div>
+			
+			<h3>Flat and indented unordered list</h3>
+			<p>Be sure to take the following things with you:</p>
+			<div class="examplebox">
+				<ul class="normal flat indent clear">
+					<li><span>passport (valid upon 3 month from now) or other ID,</span></li>
+					<li><span>printed airplane ticket,</span></li>
+					<li><span>hotel confirmation.</span></li>
+				</ul>	
+			</div>
+		
+			<h3>Clear unordered list</h3>
+			<p>Be sure to take the following things with you:</p>
+			<div class="examplebox">
+				<ul class="normal clear">
+					<li><span>passport (valid upon 3 month from now),</span></li>
+					<li><span>printed airplane ticket,</span></li>
+					<li><span>hotel confirmation.</span></li>
+				</ul>	
+			</div>
+			
+			<h3>Unordered list with list bullet inside</h3>
+			<p>Be sure to take the following things with you:</p>
+			<div class="examplebox">
+				<ul class="normal inside">
+					<li><span>passport (valid upon 3 month from now),</span></li>
+					<li><span>printed airplane ticket,</span></li>
+					<li><span>hotel confirmation.</span></li>
+				</ul>	
+			</div>						
+		
+		</div>		
+	</div>	
+		
+	
+	<div class="noborder maketransparent article">
+	<h2>Example of an article</h2>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In gravida. Maecenas libero ligula, aliquet a, consequat at, dignissim vitae, eros. Vestibulum posuere urna sed turpis. Cras vulputate tortor sed libero. Nam nulla. Ut et purus id erat mattis nonummy.</p> 
+	<ul class="normal flat spaced">
+		<li>Donec blandit ante at metus. Aliquam erat volutpat. Suspendisse nisi magna, venenatis eget, lobortis sit amet, fringilla ut, eros. Morbi pretium, leo eget vulputate blandit, pede sem ornare quam, sed rutrum odio eros eget elit.</li>
+		<li>Nam nulla nisi, laoreet quis, sagittis quis, volutpat sed, diam. Cras diam magna, faucibus sit amet, ornare eget, consequat sit amet, ligula.</li>
+		<li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam pede. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</li>
+	</ul>
+	<p>Duis ultrices eleifend ipsum. Pellentesque eget odio. Donec lobortis. Aenean viverra, arcu sed interdum rhoncus:</p>
+	<ul class="normal bullet-a">
+		<li>pede erat faucibus quam, eu porta lorem justo in odio</li>
+		<li>donec rutrum nisi ut nibh. In felis diam,</li>
+		<li>ultrices nec, mollis at, euismod non, nunc. Sed at mi.</li>
+	</ul>
+	<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Morbi nunc augue, mattis quis, lacinia in, blandit id, neque. Curabitur cursus magna et massa. Nullam quis sem. Mauris aliquam elementum libero. Maecenas laoreet. Nulla pellentesque tincidunt massa. Mauris at augue ut tellus tincidunt porta.</p>
+	<p>Sed sed quam in magna bibendum ullamcorper. Vestibulum posuere pede non felis. Quisque gravida iaculis sapien.</p>
+	<ol class="normal">
+		<li>Vivamus odio ipsum, luctus ac, gravida eget, lacinia sit amet, magna. Praesent convallis augue non lectus.</li>
+		<li>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Praesent sollicitudin quam.</li>
+		<li>Sed sodales mi et pede. Phasellus ultricies urna. Pellentesque lobortis. Fusce pellentesque porta lorem.</li>
+	</ol>
+	<p>Maecenas nunc ipsum, tincidunt a, luctus id, volutpat sed, orci. Maecenas aliquam. Donec fringilla aliquet risus. Nullam a elit non tellus molestie ullamcorper. Proin porta rhoncus dolor. Morbi rutrum. Aliquam id metus sed purus blandit sollicitudin.</p> 
+	<ul class="normal bullet-b">
+		<li>In hac habitasse platea dictumst.</li> 
+		<li>Integer malesuada faucibus mauris.
+			<ol>
+			<li>Sed semper, turpis vitae</li>
+			<li>commodo ullamcorper, augue arcu</li>
+			</ol>
+		</li> 
+		<li>sollicitudin lectus, ac ultrices diam ante ac orci.</li>
+	</ul>
+	<p>Vestibulum molestie, tellus ac pretium accumsan, lacus tellus aliquet nulla, vel commodo ligula ligula sit amet mi. Cras enim lacus, rhoncus vel, molestie tincidunt, ornare at, pede. Sed sapien erat, adipiscing sed, facilisis vel, sollicitudin ut, velit. Nullam quis nulla. Curabitur ligula metus, viverra sed, feugiat ut, porttitor dignissim, erat. Aenean rutrum enim in odio. Sed faucibus dapibus mi. Etiam dapibus. Ut varius lectus in purus. Cras tellus magna, placerat quis, eleifend sit amet, pharetra eget, nunc. Nullam viverra leo id arcu. Mauris eu urna.</p>
+	</div>
+	
+</div>
+
+
+
+</body></html>

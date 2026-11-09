@@ -1,0 +1,126 @@
+/* Webmention Form Styles */
+.webmention-form {
+	margin: 1.5em 0;
+}
+
+.webmention-form label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.webmention-form .webmention-source {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	padding: 0.5em;
+	font-size: inherit;
+	font-family: inherit;
+	border: 1px solid #949494;
+	box-sizing: border-box;
+}
+
+.webmention-form__submit {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: baseline;
+	gap: 0.5em 1em;
+}
+
+/* Let the summary sit next to the button and the text span the full width below. */
+.webmention-form__help {
+	display: contents;
+	font-size: 0.875em;
+}
+
+.webmention-form__help summary {
+	cursor: pointer;
+}
+
+.webmention-form__help::details-content {
+	display: contents;
+}
+
+.webmention-form__help > div {
+	grid-column: 1 / -1;
+}
+
+.webmention-form__help:not([open]) > div {
+	display: none;
+}
+
+/* Reaction List Styles */
+.reaction-list ul {
+	border-style: solid;
+}
+
+.reaction-list li {
+	display: inline-block;
+	list-style: none;
+	vertical-align: top;
+	margin-left: 3px;
+	position: relative;
+}
+
+.avatar-only .comment-body {
+	float: left;
+	display: inline-block;
+	position: relative;
+	margin: 0 5px 10px 0;
+}
+
+.comment-body .emoji-overlay {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	line-height: 0;
+	color: #1e1e1e;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.emoji-overlay svg,
+.reaction-icon svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+}
+
+.hide-name {
+	display: none;
+}
+
+.avatar-only.no-avatar .comment-body {
+	position: static;
+}
+
+.avatar-only.no-avatar .reaction-icon {
+	font-size: 2em;
+	display: inline-block;
+}
+
+.reaction-list details summary {
+	cursor: pointer;
+}
+
+.reaction-list summary::marker {
+	content: none;
+}
+
+.reaction-list summary::after {
+	content: '+';
+	font-size: 2em;
+	height: 0;
+}
+
+.reaction-list [open] summary::after {
+	content: '-';
+	width: .75em;
+	height: 0;
+}
+
+/* RSVP Styles */
+data.p-rsvp {
+	text-decoration: underline dotted;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px;
+}
