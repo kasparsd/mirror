@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 777 469">
+  <defs>
+    <path id="a" d="M.15.25h675.7v339.6H.15"/>
+    <path id="c" d="M0 0h3v4.941H0z"/>
+    <path id="e" d="M0 0h3v6H0z"/>
+    <path id="g" d="M0 0h3v4.446H0z"/>
+    <path id="i" d="M0 0h6v5.891H0z"/>
+    <path id="k" d="M0 0h3v6H0z"/>
+    <path id="m" d="M0 0h3v4.941H0z"/>
+    <path id="o" d="M0 0h3v6H0z"/>
+    <path id="q" d="M0 0h3v4.446H0z"/>
+    <path id="s" d="M0 0h3v6H0z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#A84F4F" d="M77 340h676v15H77z" opacity=".25"/>
+    <path fill="#6AA84F" d="M77 79h676v81H77z" opacity=".25"/>
+    <g transform="translate(77 58)">
+      <path stroke="#CCC" d="M93.5.5v339M209.5.5v339M326.5.5v339M442.5.5v339M559.5.5v339M675.5.5v339"/>
+      <path fill="none" d="M1 .5v339H0V.5zM24 .5v339h-1V.5zM47 .5v339h-1V.5zM71 .5v339h-1V.5zM117 .5v339h-1V.5zM140 .5v339h-1V.5zM164 .5v339h-1V.5zM187 .5v339h-1V.5zM234 .5v339h-1V.5zM257 .5v339h-1V.5zM280 .5v339h-1V.5zM304 .5v339h-1V.5zM350 .5v339h-1V.5zM373 .5v339h-1V.5zM397 .5v339h-1V.5zM420 .5v339h-1V.5zM467 .5v339h-1V.5zM490 .5v339h-1V.5zM513 .5v339h-1V.5zM537 .5v339h-1V.5zM583 .5v339h-1V.5zM606 .5v339h-1V.5zM630 .5v339h-1V.5zM653 .5v339h-1V.5z"/>
+      <path stroke="#333" d="M.5 339.5h675"/>
+      <path stroke="#CCC" d="M.5 315.5h675M.5 291.5h675M.5 267.5h675M.5 242.5h675M.5 218.5h675M.5 194.5h675M.5 170.5h675M.5 145.5h675M.5 121.5h675M.5 97.5h675M.5 73.5h675M.5 48.5h675M.5 24.5h675M.5.5h675"/>
+      <path stroke="#000" d="M675.5 339.5H.5"/>
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a"/>
+      </mask>
+      <path stroke="#6AA84F" stroke-dasharray="4,5" stroke-width="4" d="m.15 337.91 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.94 23.3-1.941 23.3-1.941 23.3-1.94 23.3-1.941" mask="url(#b)"/>
+    </g>
+    <path stroke="#C00" stroke-dasharray="4,5" stroke-width="4" d="m77.15 396.404 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446 23.3-1.446 23.3-1.445 23.3-1.446 23.3-1.446"/>
+    <path stroke="#6AA84F" stroke-width="4" d="m77.15 395.909 23.3-2.134 23.3-2.348 23.3-2.583 23.3-2.841 23.3-3.126 23.3-3.438 23.3-3.781 23.3-4.16 23.3-4.576 23.3-5.033 23.3-5.537 23.3-6.09 23.3-6.699 23.3-7.37 23.3-8.106 23.3-8.917 23.3-9.808 23.3-10.79 23.3-11.868 23.3-13.055 23.3-14.361 23.3-15.797 23.3-17.376 23.3-19.114 23.3-21.026 23.3-23.128 23.3-25.441 23.3-27.985 23.3-30.783"/>
+    <path stroke="#C00" stroke-width="4" d="m77.15 396.404 23.3-1.59 23.3-1.749 23.3-1.925 23.3-2.116 23.3-2.329 23.3-2.561 23.3-2.817 23.3-3.099 23.3-3.409 23.3-3.75 23.3-4.125 23.3-4.537 23.3-4.991 23.3-5.49 23.3-6.039 23.3-6.643 23.3-7.308 23.3-8.038 23.3-8.842 23.3-9.726 23.3-10.699 23.3-11.768 23.3-12.946 23.3-14.24 23.3-15.664 23.3-17.23 23.3-18.954 23.3-20.849 23.3-22.933"/>
+    <g transform="translate(77.15 392.91)">
+      <mask id="d" fill="#fff">
+        <use xlink:href="#c"/>
+      </mask>
+      <path fill="none" d="M3 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#d)"/>
+    </g>
+    <path fill="none" d="M103.45 393.969a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM126.75 392.028a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM150.05 390.088a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM173.35 388.147a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM196.65 386.207a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM219.95 384.266a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM243.25 382.325a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM266.55 380.385a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM289.85 378.444a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM313.15 376.504a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM336.45 374.563a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM359.75 372.623a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM383.05 370.682a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM406.35 368.741a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM429.65 366.8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM452.95 364.86a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM476.25 362.92a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM499.55 360.98a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM522.85 359.039a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM546.15 357.098a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM569.45 355.157a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM592.75 353.217a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM616.05 351.276a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM639.35 349.336a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM662.65 347.395a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM685.95 345.455a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM709.25 343.514a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM732.55 341.573a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+    <g transform="translate(749.85 336.633)">
+      <mask id="f" fill="#fff">
+        <use xlink:href="#e"/>
+      </mask>
+      <path fill="none" d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#f)"/>
+    </g>
+    <g transform="translate(77.15 393.404)">
+      <mask id="h" fill="#fff">
+        <use xlink:href="#g"/>
+      </mask>
+      <path fill="none" d="M3 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#h)"/>
+    </g>
+    <g transform="translate(97.45 391.959)">
+      <mask id="j" fill="#fff">
+        <use xlink:href="#i"/>
+      </mask>
+      <path fill="none" d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#j)"/>
+    </g>
+    <path fill="none" d="M126.75 393.513a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM150.05 392.067a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM173.35 390.621a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM196.65 389.176a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM219.95 387.73a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM243.25 386.284a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM266.55 384.838a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM289.85 383.393a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM313.15 381.947a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM336.45 380.501a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM359.75 379.056a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM383.05 377.61a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM406.35 376.164a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM429.65 374.718a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM452.95 373.273a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM476.25 371.827a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM499.55 370.381a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM522.85 368.936a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM546.15 367.49a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM569.45 366.044a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM592.75 364.598a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM616.05 363.153a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM639.35 361.707a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM662.65 360.261a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM685.95 358.815a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM709.25 357.37a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM732.55 355.924a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+    <g transform="translate(749.85 351.478)">
+      <mask id="l" fill="#fff">
+        <use xlink:href="#k"/>
+      </mask>
+      <path fill="none" d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#l)"/>
+    </g>
+    <g transform="translate(77.15 392.91)">
+      <mask id="n" fill="#fff">
+        <use xlink:href="#m"/>
+      </mask>
+      <path fill="none" d="M3 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#n)"/>
+    </g>
+    <path fill="none" d="M103.45 393.775a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM126.75 391.427a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM150.05 388.844a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM173.35 386.003a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM196.65 382.877a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM219.95 379.44a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM243.25 375.658a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM266.55 371.498a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM289.85 366.922a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM313.15 361.889a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM336.45 356.352a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM359.75 350.262a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM383.05 343.563a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM406.35 336.193a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM429.65 328.087a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM452.95 319.17a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM476.25 309.362a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM499.55 298.572a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM522.85 286.704a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM546.15 273.649a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM569.45 259.288a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM592.75 243.491a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM616.05 226.115a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM639.35 207a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM662.65 185.975a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM685.95 162.847a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM709.25 137.406a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM732.55 109.421a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+    <g transform="translate(749.85 75.638)">
+      <mask id="p" fill="#fff">
+        <use xlink:href="#o"/>
+      </mask>
+      <path fill="none" d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#p)"/>
+    </g>
+    <g transform="translate(77.15 393.404)">
+      <mask id="r" fill="#fff">
+        <use xlink:href="#q"/>
+      </mask>
+      <path fill="none" d="M3 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#r)"/>
+    </g>
+    <path fill="none" d="M103.45 394.814a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM126.75 393.065a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM150.05 391.14a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM173.35 389.024a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM196.65 386.695a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM219.95 384.134a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM243.25 381.317a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM266.55 378.218a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM289.85 374.809a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM313.15 371.059a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM336.45 366.934a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM359.75 362.397a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM383.05 357.406a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM406.35 351.916a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM429.65 345.877a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM452.95 339.233a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM476.25 331.926a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM499.55 323.888a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM522.85 315.046a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM546.15 305.32a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM569.45 294.621a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM592.75 282.853a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM616.05 269.907a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM639.35 255.667a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM662.65 240.003a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM685.95 222.773a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM709.25 203.82a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM732.55 182.97a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+    <g transform="translate(749.85 157.037)">
+      <mask id="t" fill="#fff">
+        <use xlink:href="#s"/>
+      </mask>
+      <path fill="none" d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" mask="url(#t)"/>
+    </g>
+    <path stroke="#000" d="M77.5 400.5v-6M100.5 400.5v-6M123.5 400.5v-6M147.5 400.5v-6M193.5 400.5v-6M216.5 400.5v-6M240.5 400.5v-6M263.5 400.5v-6M310.5 400.5v-6M333.5 400.5v-6M356.5 400.5v-6M380.5 400.5v-6M426.5 400.5v-6M449.5 400.5v-6M473.5 400.5v-6M496.5 400.5v-6M543.5 400.5v-6M566.5 400.5v-6M589.5 400.5v-6M613.5 400.5v-6M659.5 400.5v-6M682.5 400.5v-6M706.5 400.5v-6M729.5 400.5v-6"/>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="402" y="450.444">Gadi</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="57.15" y="399.444">€0</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="26.15" y="375.187">€50,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="350.929">€100,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="326.672">€150,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="302.415">€200,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="278.158">€250,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="253.901">€300,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="229.644">€350,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="205.387">€400,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="181.129">€450,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="156.872">€500,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="132.615">€550,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="108.358">€600,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="84.101">€650,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="19.15" y="59.844">€700,000</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="166.85" y="418.444">5</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="279.85" y="418.444">10</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="396.35" y="418.444">15</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="512.85" y="418.444">20</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="629.35" y="418.444">25</tspan>
+        </text>
+    <text fill="#000" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="745.85" y="418.444">30</tspan>
+        </text>
+    <path stroke="#6AA84F" stroke-dasharray="4,5" stroke-width="4" d="M47 28.15h13"/>
+    <text fill="#1A1A1A" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="68" y="29.744">Iemaksātais ar IIN atlaidi</tspan>
+        </text>
+    <path stroke="#C00" stroke-dasharray="4,5" stroke-width="4" d="M220 28.15h13"/>
+    <text fill="#1A1A1A" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="241" y="29.744">Iemaksātais bez IIN atlaides</tspan>
+        </text>
+    <path stroke="#6AA84F" stroke-width="4" d="M412 28.15h12"/>
+    <text fill="#1A1A1A" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="432" y="29.744">Uzkrātais ar IIN atlaidi</tspan>
+        </text>
+    <path stroke="#C00" stroke-width="4" d="M567 28.15h12"/>
+    <text fill="#1A1A1A" font-family="ArialMT, Arial" font-size="12">
+            <tspan x="587" y="29.744">Uzkrātais bez IIN atlaides</tspan>
+        </text>
+    <text fill="#222" font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold">
+            <tspan x="198" y="351">IIN atlaide</tspan>
+        </text>
+    <text fill="#222" font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold">
+            <tspan x="179" y="124">IIN atlaides peļņa</tspan>
+        </text>
+  </g>
+</svg>

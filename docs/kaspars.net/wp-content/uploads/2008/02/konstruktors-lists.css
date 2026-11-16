@@ -1,0 +1,24 @@
+ul, ol {
+   margin:auto -3em 1em 0; padding:0; 
+   position:relative; left:-3em; overflow:hidden;
+}
+
+li { margin-top:0.25em; margin-bottom:0.25em; }
+ul ul, ul ol, 
+ol ol, ol ul { margin-left:1em; padding-left:0; }
+ul li, ol li { margin-left:5em; }
+li li { margin-left:1em; }
+
+.flat li { margin-left:3em; }
+.flat li ul, .flat li ol { margin-left:1em; padding-left:0; }
+.flat li li { margin-left:0; }
+
+.spaced { margin-bottom:0; }
+.spaced ul, .spaced ol { margin-top:1em; }
+.spaced li { margin-bottom:1em; }
+.indent li { padding-left:1em; text-indent:-1em; }
+.inside li { list-style-position:inside; }
+.clear li { list-style-type:none; }
+
+ul.bullet-a li { list-style-image: url('bullet-image-a.png'); }
+ul.bullet-b li { list-style-image: url('bullet-image-b.png'); }

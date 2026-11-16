@@ -1,0 +1,1072 @@
+tune
+tune
+tune
+tune
+hostproxy
+hostproxy
+hostproxy
+pf bd
+7b#1
+0" "d
+p6  & 
+4R$ 
+$ "c
+REGDOMAIN Option 0x%x
+boarddata
+DB142-051-D1234
+ff(,"
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+EHIGKAPKA
+"""""""""
+ABEG1257pu
+<=<<<=<<=<<==<
+<=<<<=<<<==<<=<<<=<<<=<<<===<===@
+#&"(#&"(#&"(#&"(
+eeeeeeee
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+EJLNKONKO
+LXhx
+LXhx
+LXhx
+NV^f
+LP\h
+LPT\
+=======<=======<<=<=====<==<=<<<===<<<<<=====<<<==========<====<=<====<=A@
+00,H21(P<<+U>A>V
+BAATBBBT???SAA>S
+"&,.
+bootrouter
+bootrouter
+altapp_1
+altapp_2
+altapp_3
+bootrouter
+bootrouter
+9!1C
++U@H0
++D080
+3#@y
+08A2H
+p0T7U#+
+gg&
+(&#2&C<&SF&cP&s]&
+d:1H
+"PT0F
+ %0  t
+A_INIT() FAILED.
+WARN : board data checksum fail
+NVRM
+B c0
+s2R"
+b$C4 
+S6r&
+<`A
+>2.Q
+P%@Fpg`
+RwbVr
+ftGd$T
+Wfvv
+F4VL
+DXeH
+uJTZ7j
+ld\EL
+n6~UNt^
+UPGRADE_SUCCESS
+SYNC_TIMEOUT
+RETRY_TIMEOUT
+TRANSMISSION_ABORT
+INVALID_IMG
+UNSUPPORT_PROTOCOL
+UNKNOWN_STATE
+sbl_config
+flash_descriptor
+OTA_IMG
+RAW_IMG
+#RB%
+JU75
+ IA""
+$F-
+3Lj
+0L%
+$,a>
+$@QD
+ HA2
+U@3000t`3
+ #0  
+"4f)
+Usage:
+%c - UART Firmware Upgrade
+%c - Reset
+Please input the cmd: 
+upgrade status: %s
+failed, please retry.
+Usage:
+%c - UART Firmware Upgrade
+%c - Reset
+Please input the cmd: 
+Usage:
+%c - UART Firmware Upgrade
+%c - Reset
+Please input the cmd: 
+nvram_state: 0x%x %d
+sbl_cfg: %d
+method1: %d
+method2: 0x%x
+method2: 0x%x
+method2: 0x%x
+cmd_upgrade: 0x%x
+cmd_reset: 0x%x
+dbg_uart_rxpin: 0x%x
+dbg_uart_txpin: 0x%x
+Trigger method - Assert PIN check:
+Invalid upgrade GPIO number %d [%d]
+Upgrade PIN[%d] state %d
+UART Upgrade PIN[%d] is not asserted
+Trigger method - Delay and check magic pattern:
+delay and check: out! %d - %d
+TIMEOUT - not got magic pattern
+Trigger method - unknown %d
+flash: 0x%x 0x%x
+partitiontbl_addr: 0x%x
+partition_tbl_size: %d
+[0]: addr=0x%x - %d size=0x%x
+partitiontbl:
+[%d]: addr=0x%x - 0x%x %d !!%d!! [%d %d]
+[%d]: addr=0x%x size=0x%x
+[select]: none !
+update[%d]: 0x%x
+update[%d]: %s - age %d
+can't malloc buf %d
+Can not select partition %d
+erase[%d]: addr=0x%x - %d
+[OTA image] verify checksum fail!
+dsetpatch
+main_app
+main_app
+NVRM
+<}9]
+nY~'w
+DATA_THREAD_TASK
+OTA_THREAD_TASK
+UART_THREAD_TASK
+INDOOR_THREAD_TASK
+STATION_THREAD_TASK
+TEST_THREAD_TASK
+%4d-%2d-%2d %2d:%2d:%2d
+%4u-%2u-%2u %2u:%2u:%2u
+power on mem:%d
+UART0
+4004CTEST
+waiting......
+Mid:%s
+Vender:%s
+%s+InV%d.bin
+%s+OutEepV%d.bin
+blockcnt err:%d
+VBuf_InHidDownPer finish: %d
+C_UARTSENDINDATA send err!
+_packet_printf:%p, len = %d
+%02x 
+magic = 0x%x 
+Accept: */*
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)
+Connection: Keep-Alive
+GET %s HTTP/1.1
+Host: %s
+ota connect failed!
+socket init error
+ota resend msg
+Content-Length: 
+FileMd5: 
+%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x
+ota image header corrent1!
+ota image header corrent2!
+checksum ok
+checksum error
+OTA upgrade finished!
+OTA upgrade fail: error code = %d!
+the f_StrProBar is:%d
+http://
+ota ip is: %x, %s
+%3d.%3d.%3d.%3d
+%u.%u.%u.%u
+RSN/WPA2= 
+802.1X 
+PSK 
+WEP 
+TKIP 
+AES 
+WPA= 
+WEP 
+Datahosta name is [%s]
+ip address is [%x].port is [%d]
+close connect station socket
+%2X%2X%2X%2X%2X%2X
+ -------------------dat tcp close ------------------------
+Report Repeat Data Count is %d
+Report Data Count is %d
+Report After TenMin Data Count is %d
+ Close socket successful, socket is %d
+ Close faile, code is %d
+dat_tcp_socket not exist! error code is %d
+OEEPHidSvrVer
+DevID
+name
+induptype
+outduptype
+SetTem
+WdSpd
+Quiet
+SwUpDn
+SwingLfRig
+Add0.5
+TemUn
+TemRec
+Health
+SvSt
+SwhSw
+HeatCoolType
+StHt
+LTemDry
+SwhSlp
+SlpMod
+HasTmr
+TmrLpTms
+TmrOff
+TmrOn
+CurTmHor
+CurTmMin
+TmrOnHorLf
+TmrOnMinLf
+TmrOffHorLf
+TmrOffMinLf
+DsplySt
+EnvFun
+JFErrorCode
+AssHt
+SwhFreAir
+AllErr
+Coolmod
+HeatCool
+LedLig
+SmartMod
+Add0.1
+ModelType
+AppTimer
+Wind
+UDFanPort
+DnPUDSwing
+DnPLLRSwing
+DnPRLRSwing
+AirQ
+PM2P5
+ElcDatHor
+ElcDatDte
+ElcDatMth
+HumSen
+ElcP
+ElcOnKwh
+ElcAllKwhClr
+ElcAllKwhH
+ElcAllKwhL
+AutoClean
+TemSen
+Emod
+PctCleOnTm
+EvapClr
+NobodySave
+BlkTemCom
+HabitLearn
+SmartWind
+HandCtl
+VocCtl
+VocIdiom
+VocRole
+ImgUpdateCol
+EnvArea1St
+EnvArea2St
+EnvArea3St
+EnvArea4St
+EnvArea5St
+EnvArea6St
+EnvArea7St
+EnvArea8St
+EnvArea9St
+FbidBloPer
+DIYGra1PoiAmo
+SwhDIYGra1
+Slp1L1
+Slp1H1
+Slp1L2
+Slp1H2
+Slp1L3
+Slp1H3
+Slp1L4
+Slp1H4
+Slp1L5
+Slp1H5
+Slp1L6
+Slp1H6
+Slp1L7
+Slp1H7
+Slp1L8
+Slp1H8
+ImgVerSta
+VocUpdateCol
+VocVerSta
+LigSen
+Video
+PctCleSetTm
+MasSub
+MasIDUMod
+GetEr
+HeatSvStTemMax
+HumiSvStTemMin
+CoolSvStTemMin
+Wmod
+WsetTmp
+WschOn
+WschOnMin
+WschOff
+WschOffMin
+Wtmr1
+Wtmr1Min
+Wtmr2
+Wtmr2Min
+Wtmr3
+Wtmr3Min
+WsenTmpH
+WsenTmpM
+WsenTmpL
+Werr
+WsenNub
+WstpSv
+WstpH
+WatTmp
+MaeS
+FanMod
+ModS
+VitiGr
+GasN
+TemSor
+HumSor
+PM2P5V
+PctCle
+PctRe
+IDUAirQu
+AirQu
+ODUViti
+GasAvail
+GasLED
+GasMod
+GasMas
+PM2P5Sta
+SorErr
+CommErr
+Dmod
+Dfltr
+Dpump
+Dwet
+DwatFul
+DwatSen
+Smod
+Sfog
+RemWarnLig
+Security
+SecurityMode
+ImageRecovery
+Srst
+Swat
+Swash
+SrstPP
+SrstPF
+SrstCF
+SrstRF
+SrstAF
+MakeWat
+WatErr
+mode
+wspd
+light
+StTmr
+fltrst
+wipm25
+wopm25
+estate
+airQlt
+Purify
+DFPoint
+EnvTem
+CpsTem
+ImgUpdateSucs
+VocUpdateRes
+MicroSen
+ReplaceHEPA
+UnmanedShutDown
+UnmanedOffTime
+PMVComfort
+Defrost
+Antifreeze
+FavorMode
+ImgUpdateSta
+ImgUpdateFail
+VocUpdateSta
+MafIdf
+SwhWifi
+SwhWifiRe
+SwhWifiCo
+datDump
+datRep
+datFailRe
+datPeroid
+subCnt
+InHidDownPer
+OEEPHidDownPer
+devinhidownver
+deveephidownver
+inUpStat
+outUpStat
+ACStupPos
+SaveGuid
+NoiseSet
+RoomLen
+RoomWid
+RoomHigh
+CoolNoise
+HeatNoise
+ElcErg
+ElcGear
+Elc1Kwh
+AutoUpdate
+AutoComnCloud
+lock
+apssid
+appsw
+host
+time
+vender
+model
+series
+brand
+catalog
+country
+InHid
+InHidSvrVer
+OEEPHid
+pack
+tcid
+----indoor udp recv loop mem left: %d!------
+close wifidiscon indoor socket
+cols
+week
+setT
+updateT
+enable
+deleteT
+queryT
+index
+count
+scan
+status
+bind
+upgrade
+Uptemp = %s
+recv upgrade pack error!
+the IndUpgradeMode is:%d
+the OutdUpgradeMode is:%d
+recv upgrade pack wifi indoor!
+surver
+dis.gree.com
+station tcp qcom_connect() succeed: %d
+asvr
+configok
+devLogin
+gree
+bindok
+resT
+listT
+total
+list
+hbok
+uname
+tcpPort
+udpPort
+Receive udpPort:%d
+datHostPort
+wlan
+ssid
+recv upgrade pack wifi station!
+dump
+period
+datHost
+loginRes
+ ***** Enter Factory 2 period *****
+ ***** Enter Factory 1 period *****
+moduletest
+test1234
+ ***** Factory 1 period successful !!!*****
+connecting MAC: %s   WifiHidVer: %s
+WiFi connect success!
+Connect failure!
+u%04x
+null
+false
+true
+wifi default!
+7f200143
+7f200142
+7f2cc000
+6df91a7290097f6df76098cbac8cbc76
+frame (type=%02x,len=%d,rssi=%d)
+Router key:%s
+GREEIOTIOT
+ssid=%s
+channel=%d
+rssi=%d
+security = 
+NONE! 
+GREE connection version V1.2
+success
+ITlink task exit OK
+6d8r%4e5a78d9bcf
+Glink4004C-V2.0
+ltlink_verify failed.
+======group_link_end == 1 ==========
+10001
+V1.2.1
+362001065736+U-QCOM4004CV3.78.bin
+WifiHidVer: %s
+WifiHidCode: %s
+2021-3-12 00:00:00
+Host version        : Hostless
+Target version      : QCM
+Firmware version    : %s
+Firmware changelist : %s
+Interface version   : EBS
+ - built on %s %s
+12345678
+wifi connecting...
+wifi connect err: %d
+callback value: %d
+mutex tsk
+task index is full.
+malloc stack failed.
+malloc thr failed.
+thread create failed, return value : 0x%x.
+### MEM FREE : %d.
+ --->tsk exit : %s.
+event flags 0
+create event 0x%x.
+wake up at failed.
+Jun 27 2019
+22:54:04
+%d.%d.%d.%d
+UART1
+Enable
+Disable
+UART2
+main_app
+B c0
+s2R"
+b$C4 
+S6r&
+<`A
+>2.Q
+P%@Fpg`
+RwbVr
+ftGd$T
+Wfvv
+F4VL
+DXeH
+uJTZ7j
+ld\EL
+n6~UNt^
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+c=|"
+%{:d
+r,m3
+4j+u
+main_app
+"2F
+K3ge
+300t
+K3ge
+D@@tG
+K3ge
+D@@tG
+K3BH
+K3BJ
+K3BL
+K3B^
+\Ff(E
+rD/"J
+"D/N
+&&=#&] &}
+&&=#&] &}
+Q&)N"
+U{3{D
+h%"D
+I*"\I
+]q"X
+[r"O
+<"M
+Zq"X
+)!2ARA
+rN#2
+2N$q
+"aE
+D@@t*#  tF
+LtLcLWLO<^<M<<<*Q
+\q2E
+Z,BG
+\qBI
+!f.(
+I2L
+\rBO
+"^q2O
+^uBL
+[s"[qBJ
+I5IE
+92K
+\rBK
+\rBO
+\JRM
+D)F:
+.gh7
+D.RWwRWY
+D*R^I
+Y3YC
+L/
+Y3YC
+,]
+t,N
+t,^
+300t
+\HaB
+300t
+@@dPD 
+ 08u
+Ic)S
+*
+ "ah2aie
+aJ2aNBaMbaL"aOraK
+aW2a[BaZbaY"a\raX
+ad2agBaIbaHraG
+2ae2
+!g"aDV
+"!D0z
+aE,
+"aje
+"!jVO0
+b!fr%
+[rw&J
+BZqBM
+020`3
+P302T
+<K
+yaG>
+U*EB
+\n|
+&)_&9d&IO&Y"C
+*1#
+9"J
+RB%2B&w
+&IhrE
+*+
+L@mv
+M]BMY@
+M\BMX
+M`AI
+BMev
+Y1
+RCDRc
+f9(`
+!.eX
+!.eY
+!.eX
+a;%A
+a/%N
+a-Ba7
+_ra1
+fIMQ
+!9KU
+a5KU
+)&9
+f]>e
+!)
+""C
+!5Ly
+!5L8
+!5LO
+!5L[
+!/%h
+!/eb
+a>R!>
+a%Ba(
+!5<=
+2!%B!(
+2!<`
+ba:V
+"_tBH
+"Yp0
+,"N
+L+BJ
+-BL
+ ;
+"^t
+=BL
+;.
+Vi^I
+URSK
+4&^7
+&O1M
+)Wj"
+l&-
+&)!&9
+KABKB
+BL_rLf
+L[bLZ
+LcbLe
+91
+2B@2b
+C&)H&9M&I*
+Z9
+Z9
+\;
+91
+G@]
+"GAe
+"K3W
+"K3W
+RaAa:
+baBI
+f9.P
+)baa
+`~v
+ ba: 
+raW
+!YVi
+:f9Q
+:fI;P
+fIJ!
+!]K"
+!VJ
+aY"!`P
+ "a`
+raWm
+)&9
+a<eR
+!<eQ
+aF1j
+!G!1
+!ZBJ
+raW
+BSq
+VjMBSs
+raW
+$I
+!9m
+BSr
+}BI
+!Z-
+BSr
+BSq
+!f(q
+ff&(
+#&$ f4
+i&$ff4
+KfPRTZWR
+;3;"B
+K3;UB
+YxIh
+2&*!&:
+ 2 R
+,'rJ
+&))&93&I<&YE&iR
+A[x%
+(18Q
+'+Z
+ (axQ81*'
+K3Kw'
+91zX
+Y+W
+9z8Ij
+ 2 eC
+ ,0  t
+L>L=A
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+ ,0  t
+_,=V
+a-L?
+a-L>L
+R<(v
+)ghW
+)gh;
+&"f-
+(f=%<
+R!0`E
+.#7i
+0#7i
+3 %0*&"
+9!yA)1I
+!yQb
+9B9R9b9r9
+2B4
+-7i1
+y$9T
+9DYT
+.YDYT
+9DYT
+!rArA
+!<f`i
+Vo0
+Lk%?
+~1k
+! {3
+H+,;,
+Yr"Z3*e
+2B!P
+V:
+"K3W
+KDK3
++UK3KD
+9W)'
+2%eF
+2%e`
+<+
+&";f2
+*vj
+*vj
+*vj
+* V:
++
+Ia9Q
+&"5&2$
+f"$Q
+'bgo
+>Bf 
+&#V&3~&CM&Su
+JfRF
+3hBM
+H"h2
+DI"g$
+3hBM
+#s+
+#s+
+&SC&c0&s8
+ &"T&bV&
+RFD&c
+RFT&s
+b+V>
+ @A!PQ!
+iBb+
+b,"
+"%89V
+"+09
+cZVZ
+rb,)R
+_&)f
+&s+
+b("b)
+rb%
+3 1% 9"
+18 
+Ps0a
+1`U PU
+J"Z3G
+P\Ag
+J"Z3G
+w0<A
+`3 P3
+0;Ap
+J"P3
+Ps0a
+W3|W
+J`U PU
+G24'4
+P\Ag
+P`3 P3
+0;Ap
+0<Ag
+01A 
+PQA@
+@3 F;
+A@07
+Ps0gC
+`3 `U 
+30YA
+ w 
+Ps 
+ w 
+@w p#
+Ps |
+ w 
+@w p#
+gC&0D
+/`s 
+E@ W
+P `p%
+gC*0D
+P `p%
+Y1I!
+ & m
+0" 
+}0L
+ *82
+Ji2F
+v<\,
+m<j2
+gLO\H
+rL.<
+B2B
+PW:M"
+"jUpU0RD
+ :vr
+pD4pp4
+f0`U0RB
+YFB"
+XHPS 
+YHB"
+0r0 a`01`
+#4`QA75:@
+" P`p%
+S` `p&
+DIV0
+01` r  !`
+01A72
+DIV0
+76
+DIV0
+ !`@
+Z3p3 
+01A72
+DIV0
+A_INIT() FAILED.
+snapshot ...
+UART %d failed on %s,  map %x, status %d
+Unable to register UART RX Interrupt
+sbl_config
+flash_descriptor
+index.html                      
+image.jpg                       
+hello.wav                       
+<html>
+<head><title>IOE Kingfisher</title></head>
+<body>
+<form action="index.cgi" enctype="application/x-www-form-urlencoded" method="post" name="cred">
+<h1>IOE Kingfisher Simple Connect v2</h1>
+<p>SSID <input maxlength="32" name="ssid" size="32" type="text" /></p>
+<p> SSID is <!--#echo var="ssid" --></p>
+<p>Authentication <input name="auth" type="radio" value="open"/>Open<input name="auth" type="radio" value="wpa"/>WPA<input name="auth" type="radio" value="wpa2"/>WPA2</p>
+<p> Authen is <!--#echo var="auth" --></p>
+<p>Encryption <input name="sec" type="radio" value="none"/>None<input name="sec" type="radio" value="tkip"/>TKIP<input name="sec" type="radio" value="AES"/>CCMP</p>
+<p> Encryption is <!--#echo var="sec" --></p>
+<p>Passphrase <input maxlength="32" name="pass" size="32" type="password" /></p>
+<p> Passphrase is <!--#echo var="pass" --></p>
+<p><input name="Submit" type="submit" value="Submit"></p>
+</form>
+</body>
+</html>
+JFIF
+
+
+$3br
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+G>6x
+tWVx
+em[i
+;(nm
+y-mb
+U<$i
+F$i4
+RIFF
+WAVEfmt 
+data
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}||||||||||||||||||{{{{{{{{{{{{{{{{||||||||||||||||||||||||||||||{{{{{{{{{{{{{{{{zzzzzzzzzzzzzzzzzzzzzzzzzz{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||}}}}~~
+~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}||||||||||{{{{{{{{{{{{zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyyyyyyyyyyyyyyyyyyxxxxxxxxxxxxxxxxxxxxyyyyyyyyyyzzzzzz{{{{{{||||}}}}}}~~~~~~
+~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~
+~~~~~~~~~~~~}}}}}}}}}}}}||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzzzzzzzz{{{{{{||||||}}}}~~~~~~~~
+~~~~~~}}}}}}}}}}}}}}||||||||||||||||||||}}}}}}}}}}}}}}~~~~~~
+~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||{{{{||||||||||||||||}}}}}}}}}}}}~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}||||||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||}}}}}}}}}}~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}||||||||||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||}}}}}}}}~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz{{{{{{{{{{{{||||||||||}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}||||||||{{{{{{{{{{{{{{{{{{{{zzzzzzzzzzzzzzyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzzzzzzzz{{{{{{{{||||||}}}}~~~~~~
+~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}||||||||||||||{{{{{{{{{{{{zzzzzzzzzzzzzzzzzzyyyyyyyyyyyyyyyyyyyyyyyyyyxxxxxxxxxxxxxxxxxxxxyyyyyyyyzzzzzz{{{{{{||||||}}}}~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||{{{{{{{{{{{{{{{{{{zzzzzzzzzzyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzzzzzzzzzz{{{{{{||||}}}}~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}||||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||}}}}}}}}~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||||||{{{{{{{{{{{{{{{{zzzzzzzzzzzzzzzzyyyyyyyyyyyyyyyyyyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxxxxxxwwwwwwwwwwwwwwwwwwwwvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvwwwwwwwwwwxxxxxxxxyyyyyyzzzzzz{{{{{{||||||}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||}}}}}}}}~~~~~~
+~~~~~~~~~~~~~~}}}}}}}}}}}}}}||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||}}}}}}}}}}}}~~~~~~~~
+~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}}}}}}}}}||||||||||||}}}}}}}}}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~}}}}}}}}}}}}}}}}||||||||||||||{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{||||||||||||||}}}}}}}}}}}}}}}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
